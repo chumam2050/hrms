@@ -239,6 +239,11 @@ export const EMPLOYEE_CHECKIN_FIELDS = [
 		fieldtype: "Time",
 	},
 	{
+		fieldname: "checkin_photo",
+		label: "Photo",
+		fieldtype: "Attach Image",
+	},
+	{
 		fieldname: "formatted_latitude",
 		label: "Latitude",
 		fieldtype: "Data",

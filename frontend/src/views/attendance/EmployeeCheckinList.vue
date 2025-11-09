@@ -16,7 +16,7 @@ import { inject } from "vue"
 
 const __ = inject("$translate")
 
-const EMPLOYEE_CHECKIN_FIELDS = ["name", "log_type", "time", "latitude", "longitude"]
+const EMPLOYEE_CHECKIN_FIELDS = ["name", "log_type", "time", "checkin_photo", "latitude", "longitude"]
 
 const FILTER_CONFIG = [
 	{

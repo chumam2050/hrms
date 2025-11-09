@@ -16,6 +16,8 @@
   "device_id",
   "skip_auto_attendance",
   "attendance",
+  "photo_section",
+  "checkin_photo",
   "location_section",
   "latitude",
   "column_break_yqpi",
@@ -95,6 +97,16 @@
    "label": "Attendance Marked",
    "options": "Attendance",
    "read_only": 1
+  },
+  {
+   "fieldname": "photo_section",
+   "fieldtype": "Section Break",
+   "label": "Photo"
+  },
+  {
+   "fieldname": "checkin_photo",
+   "fieldtype": "Attach Image",
+   "label": "Check-in Photo"
   },
   {
    "fieldname": "shift_start",

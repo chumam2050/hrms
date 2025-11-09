@@ -69,7 +69,38 @@
 				</div>
 			</template>
 
-			<Button :loading="checkins.insert.loading" variant="solid" class="w-full py-5 text-sm disabled:bg-gray-700" @click="submitLog(nextAction.action)">
+			<!-- Camera Section -->
+			<div class="w-full flex flex-col gap-3">
+				<Button variant="outline" class="w-full py-5 text-sm" @click="triggerCamera">
+					<template #prefix>
+						<FeatherIcon name="camera" class="w-4" />
+					</template>
+					{{ photoPreview ? __("Retake Selfie") : __("Capture Selfie") }}
+				</Button>
+				
+				<!-- Photo Preview -->
+				<div v-if="photoPreview" class="relative w-full">
+					<img :src="photoPreview" class="w-full h-48 object-cover rounded-lg border-2 border-gray-300" />
+					<button 
+						@click="removePhoto" 
+						class="absolute top-2 right-2 bg-red-500 text-white rounded-full p-2 hover:bg-red-600"
+					>
+						<FeatherIcon name="x" class="w-4 h-4" />
+					</button>
+				</div>
+
+				<!-- Hidden file input -->
+				<input 
+					ref="cameraInput"
+					type="file" 
+					accept="image/*" 
+					capture="user"
+					class="hidden"
+					@change="handlePhotoCapture"
+				/>
+			</div>
+
+			<Button :loading="checkins.insert.loading || uploadingPhoto" variant="solid" class="w-full py-5 text-sm disabled:bg-gray-700" @click="submitLog(nextAction.action)">
 				{{ __("Confirm {0}", [nextAction.label]) }}
 			</Button>
 		</div>
@@ -93,6 +124,11 @@ const checkinTimestamp = ref(null)
 const latitude = ref(0)
 const longitude = ref(0)
 const locationStatus = ref("")
+const cameraInput = ref(null)
+const photoFile = ref(null)
+const photoPreview = ref(null)
+const photoUrl = ref(null)
+const uploadingPhoto = ref(false)
 const settings = createResource({
 	url: "hrms.api.get_hr_settings",
 	auto: true,
@@ -155,43 +191,130 @@ const handleEmployeeCheckin = () => {
 	}
 }
 
+const triggerCamera = () => {
+	cameraInput.value.click()
+}
+
+const handlePhotoCapture = (event) => {
+	const file = event.target.files[0]
+	if (file) {
+		photoFile.value = file
+		
+		// Create preview
+		const reader = new FileReader()
+		reader.onload = (e) => {
+			photoPreview.value = e.target.result
+		}
+		reader.readAsDataURL(file)
+	}
+}
+
+const removePhoto = () => {
+	photoFile.value = null
+	photoPreview.value = null
+	photoUrl.value = null
+	if (cameraInput.value) {
+		cameraInput.value.value = ''
+	}
+}
+
+const uploadPhoto = async () => {
+	if (!photoFile.value) return null
+	
+	uploadingPhoto.value = true
+	
+	try {
+		const formData = new FormData()
+		formData.append('file', photoFile.value)
+		formData.append('is_private', 0)
+		formData.append('folder', 'Home/Attachments')
+		
+		const response = await fetch('/api/method/upload_file', {
+			method: 'POST',
+			headers: {
+				'Accept': 'application/json',
+				'X-Frappe-CSRF-Token': window.csrf_token
+			},
+			body: formData
+		})
+		
+		if (!response.ok) {
+			throw new Error('Upload failed')
+		}
+		
+		const data = await response.json()
+		photoUrl.value = data.message.file_url
+		return data.message.file_url
+	} catch (error) {
+		console.error('Photo upload error:', error)
+		toast({
+			title: __("Error"),
+			text: __("Failed to upload photo"),
+			icon: "alert-circle",
+			position: "bottom-center",
+			iconClasses: "text-red-500",
+		})
+		return null
+	} finally {
+		uploadingPhoto.value = false
+	}
+}
+
 const submitLog = (logType) => {
 	const actionLabel = logType === "IN" ? __("Check-in") : __("Check-out")
 
-	checkins.insert.submit(
-		{
-			employee: employee.data.name,
-			log_type: logType,
-			time: checkinTimestamp.value,
-			latitude: latitude.value,
-			longitude: longitude.value,
-		},
-		{
-			onSuccess() {
-				modalController.dismiss()
-				toast({
-					title: __("Success"),
-					text: __("{0} successful!", [actionLabel]),
-					icon: "check-circle",
-					position: "bottom-center",
-					iconClasses: "text-green-500",
-				})
-			},
-			onError(error) {
-				let messages = error.messages || []
-
-				for (const message of messages) {
-					toast({
-						title: __("Error"),
-						text: message || __("{0} failed!", [actionLabel]),
-						icon: "alert-circle",
-						position: "bottom-center",
-						iconClasses: "text-red-500",
-					})
-				}
-			},
+	const doSubmit = async () => {
+		let checkinPhotoUrl = null
+		
+		// Upload photo first if exists
+		if (photoFile.value) {
+			checkinPhotoUrl = await uploadPhoto()
+			if (!checkinPhotoUrl && photoFile.value) {
+				// Photo upload failed but user wanted to upload
+				return
+			}
 		}
-	)
+
+		checkins.insert.submit(
+			{
+				employee: employee.data.name,
+				log_type: logType,
+				time: checkinTimestamp.value,
+				latitude: latitude.value,
+				longitude: longitude.value,
+				checkin_photo: checkinPhotoUrl,
+			},
+			{
+				onSuccess() {
+					modalController.dismiss()
+					// Reset photo state
+					removePhoto()
+					toast({
+						title: __("Success"),
+						text: __("{0} successful!", [actionLabel]),
+						icon: "check-circle",
+						position: "bottom-center",
+						iconClasses: "text-green-500",
+					})
+				},
+				onError(error) {
+					let messages = error.messages || []
+
+					for (const message of messages) {
+						toast({
+							title: __("Error"),
+							text: message || __("{0} failed!", [actionLabel]),
+							icon: "alert-circle",
+							position: "bottom-center",
+							iconClasses: "text-red-500",
+						})
+					}
+				},
+			}
+		)
+	}
+
+	doSubmit()
 }
 
 onMounted(() => {
