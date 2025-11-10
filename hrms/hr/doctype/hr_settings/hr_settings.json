@@ -52,6 +52,7 @@
   "attendance_settings_section",
   "allow_employee_checkin_from_mobile_app",
   "allow_geolocation_tracking",
+  "require_checkin_selfie",
   "unlink_payment_section",
   "unlink_payment_on_cancellation_of_employee_advance"
  ],
@@ -317,6 +318,13 @@
    "fieldname": "allow_geolocation_tracking",
    "fieldtype": "Check",
    "label": "Allow Geolocation Tracking"
+  },
+  {
+   "default": "0",
+   "description": "Require employees to capture selfie when checking in from mobile app",
+   "fieldname": "require_checkin_selfie",
+   "fieldtype": "Check",
+   "label": "Require Checkin Selfie"
   },
   {
    "fieldname": "attendance_settings_section",

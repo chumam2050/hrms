@@ -70,7 +70,7 @@
 			</template>
 
 			<!-- Camera Section -->
-			<div class="w-full flex flex-col gap-3">
+			<div v-if="settings.data?.require_checkin_selfie" class="w-full flex flex-col gap-3">
 				<Button variant="outline" class="w-full py-5 text-sm" @click="triggerCamera">
 					<template #prefix>
 						<FeatherIcon name="camera" class="w-4" />
@@ -264,6 +264,18 @@ const submitLog = (logType) => {
 	const actionLabel = logType === "IN" ? __("Check-in") : __("Check-out")
 
 	const doSubmit = async () => {
+		// Check if selfie is required but not provided
+		if (settings.data?.require_checkin_selfie && !photoFile.value) {
+			toast({
+				title: __("Error"),
+				text: __("Please capture a selfie before checking in"),
+				icon: "alert-circle",
+				position: "bottom-center",
+				iconClasses: "text-red-500",
+			})
+			return
+		}
+
 		let checkinPhotoUrl = null
 		
 		// Upload photo first if exists
