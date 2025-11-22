@@ -3,6 +3,7 @@ import { createResource, call } from "frappe-ui"
 import { userResource } from "./user"
 import { employeeResource } from "./employee"
 import router from "@/router"
+import { translationsPlugin } from "@/plugins/translationsPlugin"
 
 export function sessionUser() {
 	let cookies = new URLSearchParams(document.cookie.split("; ").join("&"))
@@ -13,13 +14,26 @@ export function sessionUser() {
 	return _sessionUser
 }
 
-function handleLogin(response) {
+async function handleLogin(response) {
 	if (response.message === "Logged In") {
-		userResource.reload()
+		await userResource.reload()
 		employeeResource.reload()
 
 		session.user = sessionUser()
-		router.replace({ path: "/" })
+		
+		// Reload translations with user's language preference
+		await translationsPlugin.reload()
+		
+		// Check if user has a different language preference
+		const userLang = userResource.data?.language
+		const currentLang = document.documentElement.lang || 'en'
+		
+		if (userLang && userLang !== currentLang && userLang !== 'en') {
+			// User has different language, need to reload to apply it
+			window.location.href = '/'
+		} else {
+			router.replace({ path: "/" })
+		}
 	}
 }
 

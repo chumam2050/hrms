@@ -475,7 +475,7 @@ msgstr ""
 
 #: frontend/src/components/ExpensesTable.vue:123
 msgid "Add Expense"
-msgstr ""
+msgstr "Tambah Biaya"
 
 #: hrms/public/js/performance/performance_feedback.js:95
 msgid "Add Feedback"
@@ -483,7 +483,7 @@ msgstr ""
 
 #: frontend/src/components/ExpenseTaxesTable.vue:118
 msgid "Add Tax"
-msgstr ""
+msgstr "Tambah Pajak"
 
 #: hrms/hr/employee_property_update.js:116
 msgid "Add to Details"
@@ -1083,7 +1083,7 @@ msgstr "Magang"
 #: frontend/src/components/RequestActionSheet.vue:290
 #: hrms/hr/doctype/leave_application/leave_application.json
 msgid "Approval"
-msgstr ""
+msgstr "Persetujuan"
 
 #. Label of the approval_status (Select) field in DocType 'Expense Claim'
 #: hrms/hr/doctype/expense_claim/expense_claim.json
@@ -1130,11 +1130,11 @@ msgstr ""
 
 #: frontend/src/components/FileUploaderView.vue:53
 msgid "Are you sure you want to delete the attachment"
-msgstr ""
+msgstr "Apakah Anda yakin ingin menghapus lampiran ini"
 
 #: frontend/src/components/FormView.vue:228
 msgid "Are you sure you want to delete the {0}"
-msgstr ""
+msgstr "Apakah Anda yakin ingin menghapus {0}"
 
 #: hrms/payroll/doctype/salary_slip/salary_slip_list.js:19
 msgid "Are you sure you want to email the selected salary slips?"
@@ -1279,7 +1279,7 @@ msgstr "Absensi"
 
 #: frontend/src/components/AttendanceCalendar.vue:3
 msgid "Attendance Calendar"
-msgstr ""
+msgstr "Kalender Kehadiran"
 
 #. Label of a chart in the Shift & Attendance Workspace
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
@@ -1326,7 +1326,7 @@ msgstr "Permintaan Kehadiran"
 
 #: frontend/src/views/attendance/AttendanceRequestList.vue:5
 msgid "Attendance Request History"
-msgstr ""
+msgstr "Riwayat Permintaan Absensi"
 
 #. Label of the attendance_settings_section (Section Break) field in DocType
 #. 'HR Settings'
@@ -1830,11 +1830,11 @@ msgstr ""
 
 #: frontend/src/components/CheckInPanel.vue:123
 msgid "Check In"
-msgstr ""
+msgstr "Absen Masuk"
 
 #: frontend/src/components/CheckInPanel.vue:122
 msgid "Check Out"
-msgstr ""
+msgstr "Absen Keluar"
 
 #. Label of the check_vacancies (Check) field in DocType 'HR Settings'
 #: hrms/hr/doctype/hr_settings/hr_settings.json
@@ -1848,7 +1848,7 @@ msgstr ""
 
 #: frontend/src/components/CheckInPanel.vue:159
 msgid "Check-in"
-msgstr ""
+msgstr "Lapor Masuk"
 
 #. Label of the check_in_date (Date) field in DocType 'Travel Itinerary'
 #: hrms/hr/doctype/travel_itinerary/travel_itinerary.json
@@ -1857,7 +1857,7 @@ msgstr ""
 
 #: frontend/src/components/CheckInPanel.vue:159
 msgid "Check-out"
-msgstr ""
+msgstr "Lapor Keluar"
 
 #. Label of the check_out_date (Date) field in DocType 'Travel Itinerary'
 #: hrms/hr/doctype/travel_itinerary/travel_itinerary.json
@@ -1897,7 +1897,7 @@ msgstr ""
 #: frontend/src/views/Home.vue:47
 #: frontend/src/views/expense_claim/Dashboard.vue:17
 msgid "Claim an Expense"
-msgstr ""
+msgstr "Klaim Biaya"
 
 #. Option for the 'Status' (Select) field in DocType 'Employee Advance'
 #: frontend/src/views/employee_advance/List.vue:42
@@ -1965,7 +1965,11 @@ msgstr ""
 
 #: frontend/src/views/Profile.vue:177
 msgid "Company Information"
-msgstr ""
+msgstr "Informasi Perusahaan"
+
+#: frontend/src/views/Profile.vue:219
+msgid "Contact Information"
+msgstr "Informasi Kontak"
 
 #. Name of a DocType
 #. Label of the compensatory_request (Link) field in DocType 'Leave Allocation'
@@ -2022,7 +2026,7 @@ msgstr ""
 
 #: frontend/src/components/CheckInPanel.vue:73
 msgid "Confirm {0}"
-msgstr ""
+msgstr "Konfirmasi {0}"
 
 #: hrms/hr/report/shift_attendance/shift_attendance.js:58
 msgid "Consider Grace Period"
@@ -2198,7 +2202,7 @@ msgstr ""
 #. Advance'
 #: hrms/hr/doctype/employee_advance/employee_advance.json
 msgid "Currency "
-msgstr ""
+msgstr "Mata Uang"
 
 #: hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.py:94
 msgid "Currency of selected Income Tax Slab should be {0} instead of {1}"
@@ -2334,7 +2338,7 @@ msgstr ""
 #. Application'
 #: hrms/hr/doctype/leave_application/leave_application.json
 msgid "Dates & Reason"
-msgstr ""
+msgstr "Tanggal & Alasan"
 
 #. Label of the dates_based_on (Select) field in DocType 'Leave Control Panel'
 #: hrms/hr/doctype/leave_control_panel/leave_control_panel.json
@@ -2477,11 +2481,11 @@ msgstr ""
 
 #: frontend/src/components/FileUploaderView.vue:49
 msgid "Delete Attachment"
-msgstr ""
+msgstr "Hapus Lampiran"
 
 #: frontend/src/components/FormView.vue:224
 msgid "Delete {0}"
-msgstr ""
+msgstr "Hapus {0}"
 
 #. Name of a DocType
 #: hrms/hr/doctype/department_approver/department_approver.json
@@ -2555,7 +2559,7 @@ msgstr ""
 
 #: frontend/src/views/AppSettings.vue:40
 msgid "Disabling Push Notifications..."
-msgstr ""
+msgstr "Menonaktifkan Notifikasi Push..."
 
 #. Label of the do_not_include_in_accounts (Check) field in DocType 'Salary
 #. Component'
@@ -2584,7 +2588,7 @@ msgstr ""
 
 #: frontend/src/components/RequestActionSheet.vue:292
 msgid "Document {0} failed!"
-msgstr ""
+msgstr "Dokumen {0} gagal!"
 
 #. Option for the 'Travel Type' (Select) field in DocType 'Travel Request'
 #: hrms/hr/doctype/travel_request/travel_request.json
@@ -2721,11 +2725,11 @@ msgstr ""
 
 #: frontend/src/components/ExpensesTable.vue:213
 msgid "Edit Expense Item"
-msgstr ""
+msgstr "Ubah Item Biaya"
 
 #: frontend/src/components/ExpenseTaxesTable.vue:221
 msgid "Edit Expense Tax"
-msgstr ""
+msgstr "Ubah Pajak Biaya"
 
 #. Label of the effective_from (Date) field in DocType 'Leave Policy
 #. Assignment'
@@ -2770,7 +2774,7 @@ msgstr "Nomor A / C Karyawan"
 
 #: frontend/src/views/expense_claim/Dashboard.vue:35
 msgid "Employee Advance Balance"
-msgstr ""
+msgstr "Saldo Uang Muka Karyawan"
 
 #. Name of a report
 #. Label of a Link in the Expense Claims Workspace
@@ -2859,7 +2863,7 @@ msgstr "Lapor masuk karyawan"
 
 #: frontend/src/views/attendance/EmployeeCheckinList.vue:5
 msgid "Employee Checkin History"
-msgstr ""
+msgstr "Riwayat Lapor Masuk Karyawan"
 
 #. Name of a DocType
 #: hrms/payroll/doctype/employee_cost_center/employee_cost_center.json
@@ -2895,7 +2899,7 @@ msgstr ""
 #: hrms/payroll/doctype/employee_other_income/employee_other_income.json
 #: hrms/payroll/doctype/payroll_entry/payroll_entry.json
 msgid "Employee Details"
-msgstr ""
+msgstr "Detail Karyawan"
 
 #. Label of the employee_emails (Small Text) field in DocType 'Training Event'
 #. Label of the employee_emails (Small Text) field in DocType 'Training Result'
@@ -3410,7 +3414,7 @@ msgstr ""
 
 #: frontend/src/views/AppSettings.vue:25
 msgid "Enable Push Notifications"
-msgstr ""
+msgstr "Aktifkan Notifikasi Push"
 
 #. Description of the 'Apply for Public Holiday' (Check) field in DocType
 #. 'Overtime Type'
@@ -3432,7 +3436,7 @@ msgstr ""
 
 #: frontend/src/views/AppSettings.vue:40
 msgid "Enabling Push Notifications..."
-msgstr ""
+msgstr "Mengaktifkan Notifikasi Push..."
 
 #. Label of the encashment (Section Break) field in DocType 'Leave Type'
 #: hrms/hr/doctype/leave_type/leave_type.json
@@ -3466,7 +3470,7 @@ msgstr ""
 
 #: frontend/src/views/attendance/ShiftAssignmentForm.vue:75
 msgid "End Date cannot be before Start Date"
-msgstr ""
+msgstr "Tanggal Berakhir tidak boleh sebelum Tanggal Mulai"
 
 #: hrms/payroll/doctype/payroll_entry/payroll_entry.py:238
 msgid "End date: {0}"
@@ -3526,19 +3530,19 @@ msgstr ""
 
 #: frontend/src/components/FormField.vue:42
 msgid "Enter {0}"
-msgstr ""
+msgstr "Masukkan {0}"
 
 #: frontend/src/components/FormView.vue:543
 msgid "Error creating {0}"
-msgstr ""
+msgstr "Gagal membuat {0}"
 
 #: frontend/src/components/FormView.vue:592
 msgid "Error deleting {0}"
-msgstr ""
+msgstr "Gagal menghapus {0}"
 
 #: frontend/src/utils/commonUtils.js:46
 msgid "Error downloading PDF"
-msgstr ""
+msgstr "Gagal mengunduh PDF"
 
 #: hrms/payroll/doctype/salary_slip/salary_slip.py:1320
 msgid "Error in formula or condition"
@@ -3554,7 +3558,7 @@ msgstr ""
 
 #: frontend/src/components/FormView.vue:570
 msgid "Error updating {0}"
-msgstr ""
+msgstr "Gagal memperbarui {0}"
 
 #: hrms/payroll/doctype/salary_slip/salary_slip.py:2611
 msgid "Error while evaluating the {doctype} {doclink} at row {row_id}. <br><br> <b>Error:</b> {error} <br><br> <b>Hint:</b> {description}"
@@ -3838,7 +3842,7 @@ msgstr "Detail Klaim Biaya"
 
 #: frontend/src/components/ExpenseClaimSummary.vue:3
 msgid "Expense Claim Summary"
-msgstr ""
+msgstr "Ringkasan Klaim Biaya"
 
 #. Label of the expense_type (Link) field in DocType 'Expense Claim Detail'
 #. Name of a DocType
@@ -3873,7 +3877,7 @@ msgstr ""
 
 #: frontend/src/components/ExpensesTable.vue:211
 msgid "Expense Item"
-msgstr ""
+msgstr "Item Biaya"
 
 #. Label of the section_break_9 (Section Break) field in DocType 'Employee
 #. Benefit Claim'
@@ -3883,7 +3887,7 @@ msgstr ""
 
 #: frontend/src/components/ExpenseTaxesTable.vue:219
 msgid "Expense Tax"
-msgstr ""
+msgstr "Pajak Biaya"
 
 #. Label of the taxes (Table) field in DocType 'Expense Claim'
 #. Name of a DocType
@@ -3929,7 +3933,7 @@ msgstr ""
 #. Label of the explanation (Small Text) field in DocType 'Attendance Request'
 #: hrms/hr/doctype/attendance_request/attendance_request.json
 msgid "Explanation"
-msgstr ""
+msgstr "Penjelasan"
 
 #: hrms/public/js/hierarchy_chart/hierarchy_chart_desktop.js:137
 msgid "Exporting..."
@@ -4070,7 +4074,7 @@ msgstr ""
 
 #: frontend/src/components/FilePreviewModal.vue:4
 msgid "File Preview"
-msgstr ""
+msgstr "Pratinjau File"
 
 #: hrms/hr/doctype/leave_application/leave_application.js:99
 #: hrms/hr/doctype/leave_encashment/leave_encashment.js:50
@@ -4237,7 +4241,7 @@ msgstr ""
 
 #: frontend/src/components/BaseLayout.vue:9
 msgid "Frappe HR"
-msgstr ""
+msgstr "Frappe HR"
 
 #. Label of the from_amount (Currency) field in DocType 'Taxable Salary Slab'
 #: hrms/payroll/doctype/taxable_salary_slab/taxable_salary_slab.json
@@ -4381,11 +4385,11 @@ msgstr ""
 
 #: frontend/src/components/InstallPrompt.vue:8
 msgid "Get the app on your device for easy access & a better experience!"
-msgstr ""
+msgstr "Pasang aplikasi di perangkat Anda untuk akses mudah & pengalaman lebih baik!"
 
 #: frontend/src/components/InstallPrompt.vue:41
 msgid "Get the app on your iPhone for easy access & a better experience"
-msgstr ""
+msgstr "Pasang aplikasi di iPhone Anda untuk akses mudah & pengalaman lebih baik"
 
 #. Option for the 'Meal Preference' (Select) field in DocType 'Travel
 #. Itinerary'
@@ -4395,11 +4399,11 @@ msgstr ""
 
 #: frontend/src/views/InvalidEmployee.vue:12
 msgid "Go to Login"
-msgstr ""
+msgstr "Ke Halaman Login"
 
 #: frontend/src/views/Login.vue:70
 msgid "Go to Reset Password page"
-msgstr ""
+msgstr "Ke Halaman Reset Password"
 
 #. Label of the goal_completion (Percent) field in DocType 'Appraisal KRA'
 #: hrms/hr/doctype/appraisal_kra/appraisal_kra.json
@@ -4589,7 +4593,7 @@ msgstr ""
 #: hrms/hr/doctype/employee_attendance_tool/employee_attendance_tool.json
 #: hrms/hr/doctype/leave_application/leave_application.json
 msgid "Half Day"
-msgstr ""
+msgstr "Setengah Hari"
 
 #. Label of the half_day_date (Date) field in DocType 'Attendance Request'
 #. Label of the half_day_date (Date) field in DocType 'Compensatory Leave
@@ -4656,7 +4660,7 @@ msgstr ""
 
 #: frontend/src/components/CheckInPanel.vue:4
 msgid "Hey, {0} 👋"
-msgstr ""
+msgstr "Hai, {0} 👋"
 
 #: hrms/hr/dashboard_chart_source/hiring_vs_attrition_count/hiring_vs_attrition_count.py:55
 msgid "Hiring Count"
@@ -4903,7 +4907,7 @@ msgstr ""
 #. Label of the include_holidays (Check) field in DocType 'Attendance Request'
 #: hrms/hr/doctype/attendance_request/attendance_request.json
 msgid "Include Holidays"
-msgstr ""
+msgstr "Termasuk Hari Libur"
 
 #. Label of the include_holidays_in_total_working_days (Check) field in DocType
 #. 'Payroll Settings'
@@ -5022,12 +5026,12 @@ msgstr ""
 
 #: frontend/src/components/InstallPrompt.vue:13
 msgid "Install"
-msgstr ""
+msgstr "Pasang"
 
 #: frontend/src/components/InstallPrompt.vue:5
 #: frontend/src/components/InstallPrompt.vue:28
 msgid "Install Frappe HR"
-msgstr ""
+msgstr "Pasang Frappe HR"
 
 #: hrms/hr/doctype/leave_application/leave_application.py:432
 msgid "Insufficient Balance"
@@ -5616,7 +5620,7 @@ msgstr ""
 
 #: frontend/src/components/CheckInPanel.vue:9
 msgid "Last {0} was at {1}"
-msgstr ""
+msgstr "Terakhir {0} pada {1}"
 
 #: hrms/hr/report/shift_attendance/shift_attendance.py:180
 msgid "Late Entries"
@@ -5651,7 +5655,7 @@ msgstr ""
 
 #: frontend/src/components/CheckInPanel.vue:131
 msgid "Latitude: {0}°"
-msgstr ""
+msgstr "Lintang: {0}°"
 
 #. Option for the 'Calculate Payroll Working Days Based On' (Select) field in
 #. DocType 'Payroll Settings'
@@ -5725,7 +5729,7 @@ msgstr ""
 #: hrms/hr/doctype/overtime_slip/overtime_slip.json hrms/setup.py:146
 #: hrms/setup.py:248
 msgid "Leave Approver"
-msgstr ""
+msgstr "Penyetuju Cuti"
 
 #. Label of the leave_approver_mandatory_in_leave_application (Check) field in
 #. DocType 'HR Settings'
@@ -5815,7 +5819,7 @@ msgstr ""
 
 #: frontend/src/views/leave/List.vue:5
 msgid "Leave History"
-msgstr ""
+msgstr "Riwayat Cuti"
 
 #. Name of a report
 #: hrms/hr/report/leave_ledger/leave_ledger.json
@@ -5938,7 +5942,7 @@ msgstr ""
 #: hrms/hr/workspace/leaves/leaves.json
 #: hrms/payroll/doctype/salary_slip_leave/salary_slip_leave.json
 msgid "Leave Type"
-msgstr "Cuti Type"
+msgstr "Tipe Cuti"
 
 #. Label of the leave_type_name (Data) field in DocType 'Leave Type'
 #: hrms/hr/doctype/leave_type/leave_type.json
@@ -6037,11 +6041,11 @@ msgstr ""
 #: hrms/hr/workspace/overview/overview.json
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
 msgid "Leaves"
-msgstr "Daun-daun"
+msgstr "Cuti"
 
 #: frontend/src/views/leave/Dashboard.vue:2
 msgid "Leaves & Holidays"
-msgstr ""
+msgstr "Cuti & Hari Libur"
 
 #. Label of the leaves_after_adjustment (Float) field in DocType 'Leave
 #. Adjustment'
@@ -6131,7 +6135,7 @@ msgstr ""
 
 #: frontend/src/components/CheckInPanel.vue:145
 msgid "Locating..."
-msgstr ""
+msgstr "Melacak Lokasi..."
 
 #. Label of the device_id (Data) field in DocType 'Employee Checkin'
 #: hrms/hr/doctype/employee_checkin/employee_checkin.json
@@ -6145,7 +6149,7 @@ msgstr ""
 
 #: frontend/src/views/Profile.vue:107
 msgid "Log Out"
-msgstr ""
+msgstr "Keluar"
 
 #. Label of the log_type (Select) field in DocType 'Employee Checkin'
 #: frontend/src/views/attendance/EmployeeCheckinList.vue:25
@@ -6159,15 +6163,15 @@ msgstr "Jenis Log diperlukan untuk lapor masuk yang jatuh di shift: {0}."
 
 #: frontend/src/views/InvalidEmployee.vue:7
 msgid "Login Failed"
-msgstr ""
+msgstr "Login Gagal"
 
 #: frontend/src/views/Login.vue:8
 msgid "Login to Frappe HR"
-msgstr ""
+msgstr "Masuk ke Frappe HR"
 
 #: frontend/src/components/CheckInPanel.vue:132
 msgid "Longitude: {0}°"
-msgstr ""
+msgstr "Bujur: {0}°"
 
 #. Label of the lower_range (Currency) field in DocType 'Job Applicant'
 #. Label of the lower_range (Currency) field in DocType 'Job Opening'
@@ -6512,19 +6516,19 @@ msgstr ""
 
 #: frontend/src/views/employee_advance/List.vue:19
 msgid "My Advances"
-msgstr ""
+msgstr "Uang Muka Saya"
 
 #: frontend/src/views/expense_claim/List.vue:19
 msgid "My Claims"
-msgstr ""
+msgstr "Klaim Saya"
 
 #: frontend/src/views/leave/List.vue:19
 msgid "My Leaves"
-msgstr ""
+msgstr "Cuti Saya"
 
 #: frontend/src/components/RequestPanel.vue:36
 msgid "My Requests"
-msgstr ""
+msgstr "Permintaan Saya"
 
 #: hrms/payroll/doctype/salary_slip/salary_slip.py:1306
 #: hrms/payroll/doctype/salary_slip/salary_slip.py:2527
@@ -6574,11 +6578,11 @@ msgstr ""
 
 #: frontend/src/components/ExpensesTable.vue:213
 msgid "New Expense Item"
-msgstr ""
+msgstr "Item Biaya Baru"
 
 #: frontend/src/components/ExpenseTaxesTable.vue:221
 msgid "New Expense Tax"
-msgstr ""
+msgstr "Pajak Biaya Baru"
 
 #: hrms/public/js/templates/performance_feedback.html:26
 msgid "New Feedback"
@@ -6684,7 +6688,7 @@ msgstr "Tidak ada biaya tambahan yang ditambahkan"
 
 #: frontend/src/components/ExpenseAdvancesTable.vue:63
 msgid "No advances found"
-msgstr ""
+msgstr "Tidak ada uang muka"
 
 #: hrms/payroll/doctype/gratuity/gratuity.py:281
 msgid "No applicable Earning component found in last salary slip for Gratuity Rule: {0}"
@@ -6749,7 +6753,7 @@ msgstr ""
 
 #: frontend/src/components/ExpensesTable.vue:64
 msgid "No expenses added"
-msgstr ""
+msgstr "Belum ada biaya ditambahkan"
 
 #: hrms/public/js/templates/feedback_history.html:55
 msgid "No feedback has been received yet"
@@ -6790,7 +6794,7 @@ msgstr "Tidak ada slip gaji yang ditemukan untuk memenuhi kriteria yang dipilih 
 
 #: frontend/src/views/salary_slip/Dashboard.vue:50
 msgid "No salary slips found"
-msgstr ""
+msgstr "Tidak ada slip gaji"
 
 #: hrms/payroll/doctype/arrear/arrear.py:136
 msgid "No salary slips found for the selected employee from {0}"
@@ -6798,7 +6802,7 @@ msgstr ""
 
 #: frontend/src/components/ExpenseTaxesTable.vue:56
 msgid "No taxes added"
-msgstr ""
+msgstr "Belum ada pajak ditambahkan"
 
 #: hrms/hr/doctype/employee_checkin/employee_checkin.js:51
 msgid "No valid shift found for log time"
@@ -7574,11 +7578,11 @@ msgstr ""
 
 #: frontend/src/components/FormView.vue:291
 msgid "Permanently cancel {0}"
-msgstr ""
+msgstr "Batalkan {0} secara permanen"
 
 #: frontend/src/components/FormView.vue:260
 msgid "Permanently submit {0}"
-msgstr ""
+msgstr "Ajukan {0} secara permanen"
 
 #: hrms/setup.py:387
 msgid "Piecework"
@@ -8045,7 +8049,7 @@ msgstr ""
 #. Advance'
 #: hrms/hr/doctype/employee_advance/employee_advance.json
 msgid "Purpose & Amount"
-msgstr ""
+msgstr "Tujuan & Jumlah"
 
 #. Name of a DocType
 #. Label of the purpose_of_travel (Data) field in DocType 'Purpose of Travel'
@@ -8059,15 +8063,15 @@ msgstr "Tujuan Perjalanan"
 
 #: frontend/src/views/AppSettings.vue:128
 msgid "Push Notification permission denied"
-msgstr ""
+msgstr "Izin Notifikasi Push ditolak"
 
 #: frontend/src/views/AppSettings.vue:96
 msgid "Push notifications disabled"
-msgstr ""
+msgstr "Notifikasi Push dinonaktifkan"
 
 #: frontend/src/views/AppSettings.vue:80
 msgid "Push notifications have been disabled on your site"
-msgstr ""
+msgstr "Notifikasi Push telah dinonaktifkan di situs Anda"
 
 #. Label of the questionnaire_email_sent (Check) field in DocType 'Exit
 #. Interview'
@@ -8089,7 +8093,7 @@ msgstr ""
 
 #: frontend/src/components/QuickLinks.vue:3 frontend/src/views/Home.vue:6
 msgid "Quick Links"
-msgstr ""
+msgstr "Tautan Cepat"
 
 #. Description of the 'Checkin Radius' (Int) field in DocType 'Shift Location'
 #: hrms/hr/doctype/shift_location/shift_location.json
@@ -8141,19 +8145,19 @@ msgstr ""
 
 #: frontend/src/views/attendance/Dashboard.vue:14
 msgid "Recent Attendance Requests"
-msgstr ""
+msgstr "Permintaan Absensi Terbaru"
 
 #: frontend/src/views/expense_claim/Dashboard.vue:23
 msgid "Recent Expenses"
-msgstr ""
+msgstr "Biaya Terbaru"
 
 #: frontend/src/views/leave/Dashboard.vue:21
 msgid "Recent Leaves"
-msgstr ""
+msgstr "Cuti Terbaru"
 
 #: frontend/src/views/attendance/Dashboard.vue:40
 msgid "Recent Shift Requests"
-msgstr ""
+msgstr "Permintaan Shift Terbaru"
 
 #. Description of the 'Automatically update Last Sync of Checkin' (Check) field
 #. in DocType 'Shift Type'
@@ -8314,7 +8318,7 @@ msgstr "Bayar Dari Gaji hanya dapat dipilih untuk pinjaman berjangka"
 #. 'Employee Advance'
 #: hrms/hr/doctype/employee_advance/employee_advance.json
 msgid "Repay Unclaimed Amount from Salary"
-msgstr ""
+msgstr "Bayar Kembali Jumlah yang Tidak Diklaim dari Gaji"
 
 #. Label of the repeat_on_days (Table) field in DocType 'Shift Schedule'
 #: hrms/hr/doctype/shift_schedule/shift_schedule.json
@@ -8336,25 +8340,25 @@ msgstr ""
 
 #: frontend/src/views/Home.vue:32 frontend/src/views/attendance/Dashboard.vue:9
 msgid "Request Attendance"
-msgstr ""
+msgstr "Ajukan Kehadiran"
 
 #: frontend/src/views/Home.vue:42
 msgid "Request Leave"
-msgstr ""
+msgstr "Ajukan Cuti"
 
 #: frontend/src/views/leave/Dashboard.vue:17
 msgid "Request a Leave"
-msgstr ""
+msgstr "Ajukan Cuti"
 
 #: frontend/src/views/Home.vue:37
 #: frontend/src/views/attendance/Dashboard.vue:35
 msgid "Request a Shift"
-msgstr ""
+msgstr "Ajukan Shift"
 
 #: frontend/src/components/EmployeeAdvanceBalance.vue:21
 #: frontend/src/views/Home.vue:52
 msgid "Request an Advance"
-msgstr ""
+msgstr "Ajukan Uang Muka"
 
 #. Label of the requested_by (Link) field in DocType 'Job Requisition'
 #. Label of the section_break_7 (Section Break) field in DocType 'Job
@@ -8662,7 +8666,7 @@ msgstr ""
 
 #: frontend/src/views/Profile.vue:200
 msgid "Salary Information"
-msgstr ""
+msgstr "Informasi Gaji"
 
 #. Label of the salary_per (Select) field in DocType 'Job Opening'
 #: hrms/hr/doctype/job_opening/job_opening.json
@@ -8790,7 +8794,7 @@ msgstr ""
 
 #: frontend/src/views/salary_slip/Dashboard.vue:2
 msgid "Salary Slips"
-msgstr ""
+msgstr "Slip Gaji"
 
 #. Label of the salary_slips_created (Check) field in DocType 'Payroll Entry'
 #: hrms/payroll/doctype/payroll_entry/payroll_entry.json
@@ -8974,7 +8978,7 @@ msgstr ""
 
 #: frontend/src/views/salary_slip/Dashboard.vue:23
 msgid "Select Payroll Period"
-msgstr ""
+msgstr "Pilih Periode Penggajian"
 
 #: hrms/hr/employee_property_update.js:109
 msgid "Select Property"
@@ -9222,7 +9226,7 @@ msgstr ""
 
 #: frontend/src/components/ExpenseAdvancesTable.vue:4
 msgid "Settle against Advances"
-msgstr ""
+msgstr "Selesaikan dengan Uang Muka"
 
 #: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:51
 msgid "Settle all Payables and Receivables before submission"
@@ -9271,7 +9275,7 @@ msgstr ""
 
 #: frontend/src/views/attendance/ShiftAssignmentList.vue:5
 msgid "Shift Assignment History"
-msgstr ""
+msgstr "Riwayat Penugasan Shift"
 
 #. Name of a DocType
 #. Label of a Link in the Shift & Attendance Workspace
@@ -9841,19 +9845,19 @@ msgstr ""
 
 #: frontend/src/views/employee_advance/List.vue:19
 msgid "Team Advances"
-msgstr ""
+msgstr "Uang Muka Tim"
 
 #: frontend/src/views/expense_claim/List.vue:19
 msgid "Team Claims"
-msgstr ""
+msgstr "Klaim Tim"
 
 #: frontend/src/views/leave/List.vue:19
 msgid "Team Leaves"
-msgstr ""
+msgstr "Cuti Tim"
 
 #: frontend/src/components/RequestPanel.vue:36
 msgid "Team Requests"
-msgstr ""
+msgstr "Permintaan Tim"
 
 #: hrms/hr/page/team_updates/team_updates.js:4
 msgid "Team Updates"
@@ -10699,7 +10703,7 @@ msgstr ""
 
 #: frontend/src/components/Holidays.vue:4
 msgid "Upcoming Holidays"
-msgstr ""
+msgstr "Hari Libur Mendatang"
 
 #: hrms/controllers/employee_reminders.py:69
 msgid "Upcoming Holidays Reminder"
@@ -10707,11 +10711,11 @@ msgstr ""
 
 #: frontend/src/views/attendance/Dashboard.vue:23
 msgid "Upcoming Shifts"
-msgstr ""
+msgstr "Shift Mendatang"
 
 #: frontend/src/components/ExpensesTable.vue:123
 msgid "Update Expense"
-msgstr ""
+msgstr "Perbarui Biaya"
 
 #: hrms/hr/doctype/interview/interview.py:71
 msgid "Update Job Applicant"
@@ -10735,7 +10739,7 @@ msgstr ""
 
 #: frontend/src/components/ExpenseTaxesTable.vue:118
 msgid "Update Tax"
-msgstr ""
+msgstr "Perbarui Pajak"
 
 #: hrms/hr/doctype/attendance_request/attendance_request.py:115
 msgid "Updated status from {0} to {1} for date {2} in the attendance record {3}"
@@ -10767,12 +10771,12 @@ msgstr ""
 
 #: frontend/src/components/FileUploaderView.vue:11
 msgid "Upload images or documents"
-msgstr ""
+msgstr "Unggah gambar atau dokumen"
 
 #: frontend/src/components/FormView.vue:124
 #: frontend/src/components/FormView.vue:163
 msgid "Uploading..."
-msgstr ""
+msgstr "Mengunggah..."
 
 #. Label of the upper_range (Currency) field in DocType 'Job Applicant'
 #. Label of the upper_range (Currency) field in DocType 'Job Opening'
@@ -10885,11 +10889,11 @@ msgstr ""
 
 #: frontend/src/components/LeaveBalance.vue:14
 msgid "View Leave History"
-msgstr ""
+msgstr "Lihat Riwayat Cuti"
 
 #: frontend/src/views/Home.vue:57
 msgid "View Salary Slips"
-msgstr ""
+msgstr "Lihat Slip Gaji"
 
 #. Option for the 'Roster Color' (Select) field in DocType 'Shift Type'
 #: hrms/hr/doctype/shift_type/shift_type.json
@@ -11133,27 +11137,27 @@ msgstr ""
 
 #: frontend/src/components/EmployeeAdvanceBalance.vue:26
 msgid "You have no advances"
-msgstr ""
+msgstr "Anda tidak memiliki uang muka"
 
 #: frontend/src/components/LeaveBalance.vue:42
 msgid "You have no leaves allocated"
-msgstr ""
+msgstr "Anda tidak memiliki cuti yang dialokasikan"
 
 #: frontend/src/views/Notifications.vue:91
 msgid "You have no notifications"
-msgstr ""
+msgstr "Anda tidak memiliki notifikasi"
 
 #: frontend/src/components/RequestList.vue:31
 msgid "You have no requests"
-msgstr ""
+msgstr "Anda tidak memiliki permintaan"
 
 #: frontend/src/components/Holidays.vue:32
 msgid "You have no upcoming holidays"
-msgstr ""
+msgstr "Anda tidak memiliki hari libur mendatang"
 
 #: frontend/src/views/attendance/Dashboard.vue:29
 msgid "You have no upcoming shifts"
-msgstr ""
+msgstr "Anda tidak memiliki shift mendatang"
 
 #: hrms/overrides/employee_master.py:83
 msgid "You may add additional details, if any, and submit the offer."
@@ -11313,16 +11317,16 @@ msgstr ""
 
 #: frontend/src/components/FormView.vue:528
 msgid "{0} created successfully!"
-msgstr ""
+msgstr "{0} berhasil dibuat!"
 
 #: frontend/src/components/FormView.vue:583
 msgid "{0} deleted successfully!"
-msgstr ""
+msgstr "{0} berhasil dihapus!"
 
 #: frontend/src/components/CheckInPanel.vue:186
 #: frontend/src/components/RequestActionSheet.vue:290
 msgid "{0} failed!"
-msgstr ""
+msgstr "{0} gagal!"
 
 #: hrms/payroll/doctype/additional_salary/additional_salary.py:175
 msgid "{0} has {1} enabled"
@@ -11371,11 +11375,11 @@ msgstr ""
 
 #: frontend/src/components/CheckInPanel.vue:174
 msgid "{0} successful!"
-msgstr ""
+msgstr "{0} berhasil!"
 
 #: frontend/src/components/RequestActionSheet.vue:280
 msgid "{0} successfully!"
-msgstr ""
+msgstr "{0} berhasil!"
 
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.js:261
 msgid "{0} to {1} employee(s)?"
@@ -11383,7 +11387,7 @@ msgstr ""
 
 #: frontend/src/components/FormView.vue:561
 msgid "{0} updated successfully!"
-msgstr ""
+msgstr "{0} berhasil diperbarui!"
 
 #: hrms/hr/doctype/staffing_plan/staffing_plan.py:129
 msgid "{0} vacancies and {1} budget for {2} already planned for subsidiary companies of {3}. You can only plan for upto {4} vacancies and and budget {5} as per staffing plan {6} for parent company {3}."
@@ -11447,3 +11451,151 @@ msgstr ""
 msgid "{} {} open for this position."
 msgstr ""
 
+#: frontend/src/components/BottomTabs.vue:43
+msgid "Home"
+msgstr "Rumah"
+
+#: frontend/src/components/BottomTabs.vue:63
+msgid "Salary"
+msgstr "Gaji"
+
+#: frontend/src/components/BottomTabs.vue:58
+msgid "Expenses"
+msgstr "Biaya"
+
+#: frontend/src/components/CheckInPanel.vue:12
+#: frontend/src/components/RequestList.vue:27
+#: frontend/src/views/expense_claim/Dashboard.vue:41
+msgid "View List"
+msgstr "Lihat Daftar"
+
+#: frontend/src/views/attendance/AttendanceRequestForm.vue:93
+#: frontend/src/views/attendance/ShiftRequestForm.vue:90
+#: frontend/src/views/leave/Form.vue:179
+msgid "To Date cannot be before From Date"
+msgstr "Tanggal Akhir tidak boleh sebelum Tanggal Awal"
+
+#: hrms/hr/doctype/leave_application/leave_application.json
+msgid "Cuti Type"
+msgstr "Tipe Cuti"
+
+#: hrms/hr/doctype/leave_application/leave_application.json
+msgid "Pilih Cuti Type"
+msgstr "Pilih Tipe Cuti"
+
+#: hrms/hr/doctype/leave_application/leave_application.json
+msgid "Dari Tanggal"
+msgstr "Dari Tanggal"
+
+#: hrms/hr/doctype/leave_application/leave_application.json
+msgid "Untuk Tanggal"
+msgstr "Sampai Tanggal"
+
+#: hrms/hr/doctype/leave_application/leave_application.json
+msgid "Setengah Hari"
+msgstr "Setengah Hari"
+
+#: hrms/hr/doctype/leave_application/leave_application.json
+msgid "Alasan"
+msgstr "Alasan"
+
+#: hrms/hr/doctype/leave_application/leave_application.json
+msgid "Enter Alasan"
+msgstr "Masukkan Alasan"
+
+#: hrms/hr/doctype/leave_application/leave_application.json
+msgid "Pilih Leave Approver"
+msgstr "Pilih Penyetuju Cuti"
+
+#: hrms/hr/doctype/leave_application/leave_application.json
+msgid "Lampiran"
+msgstr "Lampiran"
+
+#: frontend/src/components/FormView.vue
+msgid "Simpan"
+msgstr "Simpan"
+
+#: hrms/hr/doctype/attendance_request/attendance_request.json
+msgid "Pilih Tipe Shift"
+msgstr "Pilih Tipe Shift"
+
+#: hrms/hr/doctype/attendance_request/attendance_request.json
+msgid "Pilih Alasan"
+msgstr "Pilih Alasan"
+
+#: hrms/hr/doctype/attendance_request/attendance_request.json
+msgid "Enter Explanation"
+msgstr "Masukkan Penjelasan"
+
+#: hrms/hr/doctype/employee_advance/employee_advance.json
+msgid "Tanggal Posting"
+msgstr "Tanggal Posting"
+
+#: hrms/hr/doctype/employee_advance/employee_advance.json
+msgid "Mata uang"
+msgstr "Mata Uang"
+
+#: hrms/hr/doctype/employee_advance/employee_advance.json
+msgid "Pilih Mata uang"
+msgstr "Pilih Mata Uang"
+
+#: hrms/hr/doctype/employee_advance/employee_advance.json
+msgid "Tujuan"
+msgstr "Tujuan"
+
+#: hrms/hr/doctype/employee_advance/employee_advance.json
+msgid "Enter Tujuan"
+msgstr "Masukkan Tujuan"
+
+#: hrms/hr/doctype/employee_advance/employee_advance.json
+msgid "Jumlah Uang Muka"
+msgstr "Jumlah Uang Muka"
+
+#: hrms/hr/doctype/employee_advance/employee_advance.json
+msgid "Akuntansi"
+msgstr "Akuntansi"
+
+#: hrms/hr/doctype/employee_advance/employee_advance.json
+msgid "Advance Account"
+msgstr "Akun Uang Muka"
+
+#: hrms/hr/doctype/employee_advance/employee_advance.json
+msgid "Pilih Akun"
+msgstr "Pilih Akun"
+
+#: hrms/hr/doctype/employee_advance/employee_advance.json
+msgid "Cara Pembayaran"
+msgstr "Cara Pembayaran"
+
+#: hrms/hr/doctype/employee_advance/employee_advance.json
+msgid "Pilih Cara Pembayaran"
+msgstr "Pilih Cara Pembayaran"
+
+#: hrms/hr/doctype/employee_advance/employee_advance.json
+msgid "New Employee Advance"
+msgstr "Uang Muka Karyawan Baru"
+
+
+#. Label for Employee Number field
+msgid "Employee Number"
+msgstr "Nomor Karyawan"
+
+#. Label for Date of Birth field
+msgid "Date of Birth"
+msgstr "Tanggal Lahir"
+
+#. Label for Date of Joining field
+msgid "Date of Joining"
+msgstr "Tanggal Bergabung"
+
+#. Label for Blood Group field
+msgid "Blood Group"
+msgstr "Golongan Darah"
+
+#. Option for Gender field
+msgid "Male"
+msgstr "Laki-laki"
+
+#. Option for Gender field
+msgid "Female"
+msgstr "Perempuan"

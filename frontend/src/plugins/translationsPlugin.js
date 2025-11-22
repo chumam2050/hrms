@@ -14,8 +14,30 @@ function makeTranslationFunction() {
 			return;
 		}
 
+		// Get user's preferred language from various sources
+		let userLang = window.frappe?.boot?.lang;
+		
+		// If not in boot, try to get from user session
+		if (!userLang) {
+			try {
+				// Try to fetch current user data to get language preference
+				const userResponse = await fetch('/api/method/frappe.client.get_value?doctype=User&filters={"name":"' + getCookie('user_id') + '"}&fieldname=["language"]');
+				const userData = await userResponse.json();
+				if (userData?.message?.language) {
+					userLang = userData.message.language;
+				}
+			} catch (error) {
+				console.log("Could not fetch user language preference");
+			}
+		}
+		
+		// Fallback to navigator language if still not found
+		if (!userLang) {
+			userLang = navigator.language;
+		}
+
 		const url = new URL("/api/method/frappe.translate.load_all_translations", location.origin);
-		url.searchParams.append("lang", window.frappe?.boot?.lang ?? navigator.language);
+		url.searchParams.append("lang", userLang);
 		url.searchParams.append("hash", window.frappe?.boot?.translations_hash || window._version_number || Math.random()); // for cache busting
 		// url.searchParams.append("app", "hrms");
 
@@ -25,6 +47,15 @@ function makeTranslationFunction() {
 		} catch (error) {
 			console.error("Failed to fetch translations:", error)
 		}
+	}
+	
+	function getCookie(name) {
+		const cookies = document.cookie.split('; ');
+		for (let cookie of cookies) {
+			const [key, value] = cookie.split('=');
+			if (key === name) return decodeURIComponent(value);
+		}
+		return null;
 	}
 
 	function translate(txt, replace, context = null) {
@@ -70,6 +101,7 @@ export const translationsPlugin = {
 	async isReady() {
 		await load();
 	},
+	reload: load, // expose reload function
 	install(/** @type {import('vue').App} */ app, options) {
 		const __ = translate;
 		// app.mixin({ methods: { __ } })

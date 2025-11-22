@@ -69,12 +69,30 @@
 						</div>
 
 						<!-- Settings -->
-						<div
-							class="flex flex-col gap-5 my-4 w-full"
-							v-if="allowPushNotifications"
-						>
+						<div class="flex flex-col gap-5 my-4 w-full">
 							<div class="flex flex-col bg-white rounded">
+								<!-- Language Selector -->
+								<div
+									class="flex flex-row cursor-pointer flex-start p-4 items-center justify-between border-b"
+									@click="openLanguageModal"
+								>
+									<div class="flex flex-row items-center gap-3 grow">
+										<FeatherIcon
+											name="globe"
+											class="h-5 w-5 text-gray-500"
+										/>
+										<div class="text-base font-normal text-gray-800">
+											{{ __("Language") }}
+										</div>
+									</div>
+									<FeatherIcon
+										name="chevron-right"
+										class="h-5 w-5 text-gray-500"
+									/>
+								</div>
+								<!-- Settings (only show if push notifications are enabled) -->
 								<router-link
+									v-if="allowPushNotifications"
 									:to="{ name: 'Settings' }"
 									class="flex flex-row cursor-pointer flex-start p-4 items-center justify-between border-b"
 								>
@@ -132,6 +150,16 @@
 					"
 				/>
 			</ion-modal>
+
+			<ion-modal
+				ref="languageModal"
+				:is-open="isLanguageModalOpen"
+				@didDismiss="closeLanguageModal"
+				:initial-breakpoint="1"
+				:breakpoints="[0, 1]"
+			>
+				<LanguageSelector @close="closeLanguageModal" />
+			</ion-modal>
 		</ion-content>
 	</ion-page>
 </template>
@@ -146,6 +174,7 @@ import { showErrorAlert } from "@/utils/dialogs"
 import { formatCurrency } from "@/utils/formatters"
 
 import ProfileInfoModal from "@/components/ProfileInfoModal.vue"
+import LanguageSelector from "@/components/LanguageSelector.vue"
 
 import { arePushNotificationsEnabled } from "@/data/notifications"
 
@@ -216,6 +245,8 @@ const profileLinks = [
 const isInfoModalOpen = ref(false)
 const selectedItem = ref(null)
 
+const isLanguageModalOpen = ref(false)
+
 const allowPushNotifications = computed(
 	() =>
 		window.frappe?.boot.push_relay_server_url &&
@@ -230,6 +261,14 @@ const openInfoModal = async (request) => {
 const closeInfoModal = async (_request) => {
 	isInfoModalOpen.value = false
 	selectedItem.value = null
+}
+
+const openLanguageModal = async () => {
+	isLanguageModalOpen.value = true
+}
+
+const closeLanguageModal = async () => {
+	isLanguageModalOpen.value = false
 }
 
 const employeeDoc = createDocumentResource({
