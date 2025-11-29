@@ -26,6 +26,11 @@ const routes = [
 				component: () => import("@/views/Home.vue"),
 			},
 			{
+				path: "/employee-checkins/new",
+				name: "EmployeeCheckinPage",
+				component: () => import("@/views/attendance/EmployeeCheckinPage.vue"),
+			},
+			{
 				path: "/dashboard/attendance",
 				name: "AttendanceDashboard",
 				component: () => import("@/views/attendance/Dashboard.vue"),
