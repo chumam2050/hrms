@@ -18,16 +18,29 @@
 							type="text"
 							autocomplete="username"
 						/>
-						<Input
-							:label="__('Password')"
-							type="password"
-							placeholder="••••••"
-							v-model="password"
-							autocomplete="current-password"
-						/>
+						<div class="relative">
+							<TextInput
+								:label="__('Password')"
+								:type="showPassword ? 'text' : 'password'"
+								placeholder="••••••"
+								v-model="password"
+								autocomplete="current-password"
+								class="pr-12"
+							>
+								<template #suffix>
+									<FeatherIcon
+										class="w-6"
+										:name="showPassword ? 'eye' : 'eye-off'"
+										:aria-pressed="showPassword.toString()"
+										:aria-label="showPassword ? __('Hide password') : __('Show password')"
+										@click.prevent="showPassword = !showPassword"
+									/>
+								</template>
+							</TextInput>
+						</div>
 						<ErrorMessage :message="errorMessage" />
 						<Button
-							:loading="session.login.loading"
+							:loading="isLoggingIn || session.login.loading"
 							variant="solid"
 							class="disabled:bg-gray-700 disabled:text-white !mt-6"
 						>
@@ -107,13 +120,16 @@
 <script setup>
 import { IonPage, IonContent } from "@ionic/vue"
 import { inject, reactive, ref } from "vue"
-import { Input, Button, ErrorMessage, Dialog, createResource } from "frappe-ui"
+import { Input, FeatherIcon, TextInput, Button, ErrorMessage, Dialog, createResource } from "frappe-ui"
 
 import FrappeHRLogo from "@/components/icons/FrappeHRLogo.vue"
 
 const email = ref(null)
 const password = ref(null)
+const showPassword = ref(false)
 const errorMessage = ref("")
+// local flag to indicate login button loading state so we show progress immediately
+const isLoggingIn = ref(false)
 
 const resetPassword = reactive({
 	showDialog: false,
@@ -135,7 +151,12 @@ async function submit(e) {
 		if (otp.showDialog) {
 			response = await session.otp(otp.tmp_id, otp.code)
 		} else {
-			response = await session.login(email.value, password.value)
+			isLoggingIn.value = true
+			try {
+				response = await session.login(email.value, password.value)
+			} finally {
+				isLoggingIn.value = false
+			}
 		}
 
 		if (response.message === "Password Reset") {
