@@ -31,8 +31,8 @@
                 {{ locationStatus }}
                 </span>
 
-                <div class="rounded border-4 translate-z-0 block overflow-hidden w-full h-170">
-                <iframe
+                <div v-if="latitude !== null && longitude !== null" class="rounded border-4 translate-z-0 block overflow-hidden w-full h-170">
+                  <iframe
                     width="100%"
                     height="170"
                     frameborder="0"
@@ -41,8 +41,22 @@
                     marginwidth="0"
                     style="border: 0"
                     :src="`https://maps.google.com/maps?q=${latitude},${longitude}&hl=en&z=15&amp;output=embed`"
-                >
-                </iframe>
+                  />
+                </div>
+
+                <div v-else class="w-full h-40 flex flex-col items-center justify-center gap-2">
+                  <div class="text-sm text-gray-500">{{ __("Location not available") }}</div>
+                  <div v-if="locationLoading" class="text-xs text-gray-400">{{ __("Trying to get your location...") }}</div>
+                  <div v-if="locationDenied" class="text-xs text-red-500">{{ __("Location permission denied — please enable location access and retry") }}</div>
+                  <Button
+                    variant="outline"
+                    class="w-40 py-2 text-sm"
+                    :loading="locationLoading"
+                    :disabled="locationLoading"
+                    @click="fetchLocation"
+                  >
+                    {{ __("Retry Location") }}
+                  </Button>
                 </div>
             </template>
 
@@ -88,7 +102,7 @@
 <script setup>
 import { IonPage } from "@ionic/vue"
 import { createResource, createListResource, toast, FeatherIcon } from "frappe-ui"
-import { computed, inject, ref, onMounted, onBeforeUnmount } from "vue"
+import { computed, inject, ref, watch, onMounted, onBeforeUnmount } from "vue"
 import { useRouter, useRoute } from "vue-router"
 
 import { formatTimestamp } from "@/utils/formatters"
@@ -113,9 +127,11 @@ const pageTitle = computed(() => {
 // router available for navigation (back/redirect)
 
 const checkinTimestamp = ref(null)
-const latitude = ref(0)
-const longitude = ref(0)
+const latitude = ref(null)
+const longitude = ref(null)
 const locationStatus = ref("")
+const locationDenied = ref(false)
+const locationLoading = ref(false)
 const cameraInput = ref(null)
 const photoFile = ref(null)
 const photoPreview = ref(null)
@@ -150,6 +166,10 @@ function handleLocationSuccess(position) {
   latitude.value = position.coords.latitude
   longitude.value = position.coords.longitude
 
+  // clear flags
+  locationDenied.value = false
+  locationLoading.value = false
+
   locationStatus.value = [
     __("Latitude: {0}°", [Number(latitude.value).toFixed(5)]),
     __("Longitude: {0}°", [Number(longitude.value).toFixed(5)]),
@@ -157,16 +177,34 @@ function handleLocationSuccess(position) {
 }
 
 function handleLocationError(error) {
+  locationLoading.value = false
   locationStatus.value = "Unable to retrieve your location"
-  if (error) locationStatus.value += `: ERROR(${error.code}): ${error.message}`
+  if (error) {
+    locationStatus.value += `: ERROR(${error.code}): ${error.message}`
+    // permission denied
+    if (error.code === 1) {
+      locationDenied.value = true
+      toast({
+        title: __('Location permission denied'),
+        text: __('Please allow location access in your browser or device settings then retry.'),
+        icon: 'alert-circle',
+        position: 'bottom-center',
+        iconClasses: 'text-red-500',
+      })
+    }
+  }
 }
 
 const fetchLocation = () => {
   if (!navigator.geolocation) {
     locationStatus.value = __("Geolocation is not supported by your current browser")
+    locationDenied.value = true
   } else {
     locationStatus.value = __("Locating...")
-    navigator.geolocation.getCurrentPosition(handleLocationSuccess, handleLocationError)
+    locationDenied.value = false
+    locationLoading.value = true
+    // Request a high accuracy position with a reasonable timeout
+    navigator.geolocation.getCurrentPosition(handleLocationSuccess, handleLocationError, { enableHighAccuracy: true, timeout: 10000 })
   }
 }
 
@@ -175,6 +213,7 @@ const handleEmployeeCheckin = () => {
 
   if (settings.data?.allow_geolocation_tracking) {
     fetchLocation()
+    console.log("here")
   }
 }
 
@@ -234,6 +273,20 @@ const submitLog = (logType) => {
   const actionLabel = logType === 'IN' ? __('Check-in') : __('Check-out')
 
   const doSubmit = async () => {
+    // If the system requires geolocation for checkin, ensure we have coordinates
+    if (settings.data?.allow_geolocation_tracking) {
+      if (locationLoading.value) {
+        toast({ title: __('Please wait'), text: __('Getting current location, please try again in a moment.'), icon: 'alert-circle', position: 'bottom-center', iconClasses: 'text-gray-500' })
+        return
+      }
+
+      if (latitude.value === null || longitude.value === null) {
+      const suggestion = locationDenied.value ? __('Please allow location access and retry.') : __('Tap Retry to try again.')
+      toast({ title: __("Location required"), text: __("Your current location is required to check-in. {0}", [suggestion]), icon: 'alert-circle', position: 'bottom-center', iconClasses: 'text-red-500' })
+      return
+      }
+    }
+
     if (settings.data?.require_checkin_selfie && !photoFile.value) {
       toast({ title: __("Error"), text: __("Please capture a selfie before checking in"), icon: 'alert-circle', position: 'bottom-center', iconClasses: 'text-red-500' })
       return
@@ -286,6 +339,19 @@ onMounted(() => {
   // Prepare timestamp and location
   handleEmployeeCheckin()
 })
+
+// If settings were not loaded at mount, fetch location when the setting becomes available
+watch(
+  () => settings.data?.allow_geolocation_tracking,
+  (allowed) => {
+    if (allowed) {
+      // ensure we have an initial timestamp and request location
+      checkinTimestamp.value = checkinTimestamp.value || dayjs().format("YYYY-MM-DD HH:mm:ss")
+      fetchLocation()
+    }
+  },
+  { immediate: true }
+)
 
 onBeforeUnmount(() => {
   socket.emit("doctype_unsubscribe", DOCTYPE)
