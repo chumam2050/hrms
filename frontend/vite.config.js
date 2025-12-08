@@ -65,7 +65,7 @@ export default defineConfig({
 	build: {
 		outDir: "../hrms/public/frontend",
 		emptyOutDir: true,
-		target: "es2015",
+		target: ["es2015", "chrome63", "firefox67", "safari12", "edge79"],
 		commonjsOptions: {
 			include: [/tailwind.config.js/, /node_modules/],
 		},

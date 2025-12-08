@@ -19,6 +19,11 @@ import { IonicVue } from "@ionic/vue"
 import { session } from "@/data/session"
 import { userResource } from "@/data/user"
 import { employeeResource } from "@/data/employee"
+import { applyBrowserFixes, logBrowserInfo } from "./utils/browserCompat"
+
+// Apply browser-specific fixes early
+applyBrowserFixes()
+logBrowserInfo()
 
 import dayjs from "@/utils/dayjs"
 import getIonicConfig from "@/utils/ionicConfig"
@@ -108,12 +113,13 @@ router.isReady().then(async () => {
 	app.mount("#app")
 })
 
-router.beforeEach(async (to, _, next) => {
+router.beforeEach(async (to, from, next) => {
 	let isLoggedIn = session.isLoggedIn
 
 	try {
 		if (isLoggedIn) await userResource.reload()
 	} catch (error) {
+		console.error("Error reloading user resource:", error)
 		isLoggedIn = false
 	}
 
@@ -122,25 +128,31 @@ router.beforeEach(async (to, _, next) => {
 		if (to.path === "/update-password") {
 			return next(false)
 		} else if (to.name !== "Login") {
-			next({ name: "Login" })
+			return next({ name: "Login" })
 		}
+		return next()
 	}
 
 	if (isLoggedIn && to.name !== "InvalidEmployee") {
-		await employeeResource.promise
-		// user should be an employee to access the app
-		// since all views are employee specific
-		if (
-			!employeeResource?.data ||
-			employeeResource?.data?.user_id !== userResource.data.name
-		) {
-			next({ name: "InvalidEmployee" })
-		} else if (to.name === "Login") {
-			next({ name: "Home" })
-		} else {
-			next()
+		try {
+			await employeeResource.promise
+			// user should be an employee to access the app
+			// since all views are employee specific
+			if (
+				!employeeResource?.data ||
+				employeeResource?.data?.user_id !== userResource.data.name
+			) {
+				return next({ name: "InvalidEmployee" })
+			} else if (to.name === "Login") {
+				return next({ name: "Home" })
+			} else {
+				return next()
+			}
+		} catch (error) {
+			console.error("Error loading employee data:", error)
+			return next({ name: "InvalidEmployee" })
 		}
 	} else {
-		next()
+		return next()
 	}
 })

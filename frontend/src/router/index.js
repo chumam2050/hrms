@@ -87,6 +87,39 @@ const routes = [
 const router = createRouter({
 	history: createWebHistory("/hrms"),
 	routes,
+	// Add scrollBehavior for better UX
+	scrollBehavior(to, from, savedPosition) {
+		if (savedPosition) {
+			return savedPosition
+		} else {
+			return { top: 0 }
+		}
+	},
+	// Add strict mode for better route matching
+	strict: true,
+	// Add sensitive mode for case-sensitive routes
+	sensitive: false,
+})
+
+// Add global error handler for router
+router.onError((error) => {
+	console.error('Router navigation error:', error)
+	
+	// Fallback navigation for critical errors
+	if (error.message.includes('Navigation cancelled') || 
+		error.message.includes('redirected')) {
+		// These are usually not critical, just log them
+		return
+	}
+	
+	// For other errors, try to navigate to home or login
+	try {
+		const currentUser = sessionStorage.getItem('user_id')
+		const fallbackUrl = currentUser && currentUser !== 'Guest' ? '/hrms' : '/hrms/login'
+		window.location.href = fallbackUrl
+	} catch (fallbackError) {
+		console.error('Fallback navigation failed:', fallbackError)
+	}
 })
 
 export default router

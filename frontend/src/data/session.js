@@ -4,6 +4,7 @@ import { userResource } from "./user"
 import { employeeResource } from "./employee"
 import router from "@/router"
 import { translationsPlugin } from "@/plugins/translationsPlugin"
+import { navigateToHome, navigateToLogin } from "@/utils/navigation"
 
 export function sessionUser() {
 	let cookies = new URLSearchParams(document.cookie.split("; ").join("&"))
@@ -16,23 +17,30 @@ export function sessionUser() {
 
 async function handleLogin(response) {
 	if (response.message === "Logged In") {
-		await userResource.reload()
-		employeeResource.reload()
+		try {
+			await userResource.reload()
+			await employeeResource.reload()
 
-		session.user = sessionUser()
-		
-		// Reload translations with user's language preference
-		await translationsPlugin.reload()
-		
-		// Check if user has a different language preference
-		const userLang = userResource.data?.language
-		const currentLang = document.documentElement.lang || 'en'
-		
-		if (userLang && userLang !== currentLang && userLang !== 'en') {
-			// User has different language, need to reload to apply it
-			window.location.href = '/'
-		} else {
-			router.replace({ path: "/" })
+			session.user = sessionUser()
+			
+			// Reload translations with user's language preference
+			await translationsPlugin.reload()
+			
+			// Check if user has a different language preference
+			const userLang = userResource.data?.language
+			const currentLang = document.documentElement.lang || 'en'
+			
+			if (userLang && userLang !== currentLang && userLang !== 'en') {
+				// User has different language, need to reload to apply it
+				window.location.href = '/hrms'
+			} else {
+				// Use safe navigation utility
+				await navigateToHome()
+			}
+		} catch (error) {
+			console.error("Error during login redirect:", error)
+			// Fallback to window.location for problematic browsers
+			window.location.href = '/hrms'
 		}
 	}
 }
@@ -51,12 +59,19 @@ export const session = reactive({
 	logout: createResource({
 		url: "logout",
 		onSuccess() {
-			userResource.reset()
-			employeeResource.reset()
+			try {
+				userResource.reset()
+				employeeResource.reset()
 
-			session.user = sessionUser()
-			router.replace({ name: "Login" })
-			window.location.reload()
+				session.user = sessionUser()
+				
+				// Use window.location for logout to ensure clean state
+				window.location.href = '/hrms/login'
+			} catch (error) {
+				console.error("Error during logout:", error)
+				// Fallback
+				window.location.href = '/login'
+			}
 		},
 	}),
 	user: sessionUser(),

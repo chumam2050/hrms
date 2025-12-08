@@ -172,6 +172,7 @@ import WorkflowActionSheet from "@/components/WorkflowActionSheet.vue"
 
 import { getCompanyCurrency } from "@/data/currencies"
 import { formatCurrency } from "@/utils/formatters"
+import { navigateTo } from "@/utils/navigation"
 
 import useWorkflow from "@/composables/workflow"
 
@@ -326,12 +327,27 @@ const updateDocumentStatus = ({ status = "", docstatus = 0 }) => {
 	)
 }
 
-const openFormView = () => {
-	modalController.dismiss()
-	router.push({
-		name: `${props.modelValue.doctype.replace(/\s+/g, "")}DetailView`,
-		params: { id: props.modelValue.name },
-	})
+const openFormView = async () => {
+	try {
+		await modalController.dismiss()
+		
+		const routeName = `${props.modelValue.doctype.replace(/\s+/g, "")}DetailView`
+		const routeParams = { id: props.modelValue.name }
+		
+		// Use safe navigation utility
+		await navigateTo({
+			name: routeName,
+			params: routeParams,
+		}, {
+			fallbackUrl: `/app/Form/${props.modelValue.doctype}/${props.modelValue.name}`
+		})
+	} catch (error) {
+		console.error("Error navigating to form view:", error)
+		
+		// Final fallback
+		const fallbackRoute = `/app/Form/${props.modelValue.doctype}/${props.modelValue.name}`
+		window.location.href = fallbackRoute
+	}
 }
 
 onMounted(() => {
