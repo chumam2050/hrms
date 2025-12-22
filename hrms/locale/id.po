@@ -356,17 +356,17 @@ msgstr "A {0} ada antara {1} dan {2} ("
 #: hrms/hr/report/monthly_attendance_sheet/monthly_attendance_sheet.py:732
 #: hrms/payroll/doctype/payroll_settings/payroll_settings.json
 msgid "Absent"
-msgstr "Absen"
+msgstr "Tidak Hadir"
 
 #. Label of the absent_days (Float) field in DocType 'Salary Slip'
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
 #: hrms/payroll/report/salary_register/salary_register.py:185
 msgid "Absent Days"
-msgstr "Hari Absen"
+msgstr "Hari Tidak Hadir"
 
 #: hrms/hr/report/shift_attendance/shift_attendance.py:174
 msgid "Absent Records"
-msgstr "Catatan Absen"
+msgstr "Catatan Ketidakhadiran"
 
 #: hrms/payroll/report/salary_payments_via_ecs/salary_payments_via_ecs.py:56
 msgid "Account No"
@@ -3295,15 +3295,15 @@ msgstr "Karyawan records are created using the selected option"
 
 #: hrms/hr/doctype/shift_type/shift_type.py:244
 msgid "Employee was marked Absent due to missing Employee Checkins."
-msgstr "Karyawan was marked Absent due to missing Karyawan Checkins."
+msgstr "Karyawan ditandai sebagai Tidak Hadir karena tidak ditemukan catatan check-in."
 
 #: hrms/hr/doctype/employee_checkin/employee_checkin.py:248
 msgid "Employee was marked Absent for not meeting the working hours threshold."
-msgstr "Karyawan was marked Absent for not meeting the working hours threshold."
+msgstr "Karyawan ditandai sebagai Tidak Hadir karena tidak memenuhi ambang jam kerja."
 
 #: hrms/hr/doctype/shift_type/shift_type.py:373
 msgid "Employee was marked Absent for other half due to missing Employee Checkins."
-msgstr "Karyawan was marked Absent for other half due to missing Karyawan Checkins."
+msgstr "Karyawan ditandai sebagai Tidak Hadir untuk paruh hari lainnya karena tidak ditemukan catatan check-in."
 
 #: hrms/hr/doctype/overtime_slip/overtime_slip.py:456
 msgid "Employee {0} : {1}"
@@ -4059,7 +4059,7 @@ msgstr "Feedback already submitted for the Interview {0}. Please cancel the prev
 
 #: hrms/hr/doctype/training_feedback/training_feedback.py:31
 msgid "Feedback cannot be recorded for an absent Employee."
-msgstr "Feedback cannot be recorded for an absent Karyawan."
+msgstr "Umpan balik tidak dapat dicatat untuk karyawan yang tidak hadir."
 
 #: hrms/public/js/performance/performance_feedback.js:120
 msgid "Feedback {0} added successfully"
@@ -7914,11 +7914,11 @@ msgstr "Preferred Area for Lodging"
 #: hrms/hr/report/monthly_attendance_sheet/monthly_attendance_sheet.py:733
 #: hrms/payroll/doctype/payroll_settings/payroll_settings.json
 msgid "Present"
-msgstr "Present"
+msgstr "Hadir"
 
 #: hrms/hr/report/shift_attendance/shift_attendance.py:162
 msgid "Present Records"
-msgstr "Present Records"
+msgstr "Catatan Kehadiran"
 
 #. Label of the prevent_self_expense_approval (Check) field in DocType 'HR
 #. Settings'
@@ -10149,7 +10149,7 @@ msgstr "Today {0} completed {1} year(s) at our Perusahaan! 🎉"
 
 #: hrms/hr/report/monthly_attendance_sheet/monthly_attendance_sheet.py:149
 msgid "Total Absent"
-msgstr "Jumlah Absen"
+msgstr "Total Tidak Hadir"
 
 #: hrms/payroll/report/accrued_earnings_report/accrued_earnings_report.py:46
 msgid "Total Accrued"
@@ -11068,7 +11068,7 @@ msgstr "Working Hours Calculation Based On"
 #. 'Shift Type'
 #: hrms/hr/doctype/shift_type/shift_type.json
 msgid "Working Hours Threshold for Absent"
-msgstr "Working Hours Threshold for Absent"
+msgstr "Ambang jam kerja untuk menandai ketidakhadiran"
 
 #. Label of the working_hours_threshold_for_half_day (Float) field in DocType
 #. 'Shift Type'
@@ -11080,7 +11080,7 @@ msgstr "Working Hours Threshold for Half Day"
 #. DocType 'Shift Type'
 #: hrms/hr/doctype/shift_type/shift_type.json
 msgid "Working hours below which Absent is marked. (Zero to disable)"
-msgstr "Working hours below which Absent is marked. (Zero to disable)"
+msgstr "Jam kerja di bawah nilai ini akan menandai karyawan sebagai Tidak Hadir. (Nilai 0 untuk menonaktifkan)"
 
 #. Description of the 'Working Hours Threshold for Half Day' (Float) field in
 #. DocType 'Shift Type'
@@ -11129,7 +11129,7 @@ msgstr "Anda tidak berwenang untuk menyetujui cuti di Blok Tanggal"
 
 #: hrms/hr/doctype/compensatory_leave_request/compensatory_leave_request.py:58
 msgid "You are not present all day(s) between compensatory leave request days"
-msgstr "Anda tidak hadir sepanjang hari di antara hari-hari pembayaran cuti kompensasi"
+msgstr "Anda tidak hadir sepanjang hari pada rentang hari permintaan cuti kompensasi"
 
 #: hrms/payroll/doctype/gratuity_rule/gratuity_rule.py:24
 msgid "You can not define multiple slabs if you have a slab with no lower and upper limits."
@@ -11194,7 +11194,7 @@ msgstr "You must be within {0} meters of your shift location to check in."
 
 #: hrms/hr/doctype/compensatory_leave_request/compensatory_leave_request.py:52
 msgid "You were only present for Half Day on {}. Cannot apply for a full day compensatory leave"
-msgstr "You were only present for Half Day on {}. Cannot apply for a full day compensatory leave"
+msgstr "Anda hanya hadir setengah hari pada {}. Tidak dapat mengajukan cuti kompensasi penuh."
 
 #: hrms/hr/doctype/interview/interview.py:104
 msgid "Your Interview session is rescheduled from {0} {1} - {2} to {3} {4} - {5}"
