@@ -6,7 +6,7 @@
  "hidden": 0,
  "icon": "accounting",
  "icon_type": "Link",
- "idx": 0,
+ "idx": 4,
  "label": "Payroll",
  "link_to": "Payroll",
  "link_type": "Workspace",
