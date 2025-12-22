@@ -327,12 +327,12 @@ msgstr "<table class='table table-bordered'><tr><th>{0}</th><th>{1}</th></tr>"
 
 #: hrms/hr/doctype/job_requisition/job_requisition.py:30
 msgid "A Job Requisition for {0} requested by {1} already exists: {2}"
-msgstr "A Job Requisition for {0} requested by {1} already exists: {2}"
+msgstr "Permintaan lowongan untuk {0} yang diminta oleh {1} sudah ada: {2}"
 
 #: hrms/controllers/employee_reminders.py:123
 #: hrms/controllers/employee_reminders.py:216
 msgid "A friendly reminder of an important date for our team."
-msgstr "A friendly reminder of an important date for our team."
+msgstr "Pengingat untuk tanggal penting tim."
 
 #: hrms/hr/utils.py:248
 #: hrms/payroll/doctype/payroll_period/payroll_period.py:49
@@ -408,7 +408,7 @@ msgstr "Akrual"
 #: hrms/payroll/doctype/arrear/arrear.json
 #: hrms/payroll/doctype/payroll_correction/payroll_correction.json
 msgid "Accrual Arrears"
-msgstr "Accrual Arrears"
+msgstr "Tunggakan Akrual"
 
 #. Label of the accrual_component (Check) field in DocType 'Salary Component'
 #. Label of the accrual_component (Check) field in DocType 'Salary Detail'
@@ -436,7 +436,7 @@ msgstr "Entri Jurnal Akrual untuk gaji dari {0} ke {1}"
 #. Option for the 'Payout Method' (Select) field in DocType 'Salary Component'
 #: hrms/payroll/doctype/salary_component/salary_component.json
 msgid "Accrue and payout at end of payroll period"
-msgstr "Accrue and payout at end of payroll period"
+msgstr "Ditangguhkan dan dibayarkan pada akhir periode penggajian"
 
 #. Option for the 'Payout Method' (Select) field in DocType 'Salary Component'
 #: hrms/payroll/doctype/salary_component/salary_component.json
@@ -446,7 +446,7 @@ msgstr "Accrue per cycle, pay only on claim"
 #. Label of the accrued_benefits (Table) field in DocType 'Salary Slip'
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
 msgid "Accrued Benefits"
-msgstr "Manfaat Terakumulasi"
+msgstr "Manfaat yang terakumulasi"
 
 #. Name of a report
 #: hrms/payroll/report/accrued_earnings_report/accrued_earnings_report.json
@@ -622,7 +622,7 @@ msgstr "Filter Lanjutan"
 
 #: hrms/hr/doctype/goal/goal_tree.js:215
 msgid "All Goals"
-msgstr "All Sasaran"
+msgstr "Semua Sasaran"
 
 #: hrms/hr/doctype/job_opening/job_opening.py:102
 msgid "All Jobs"
@@ -648,12 +648,12 @@ msgstr "Alokasikan Cuti"
 
 #: hrms/hr/doctype/leave_control_panel/leave_control_panel.js:192
 msgid "Allocate leaves to {0} employee(s)?"
-msgstr "Alokasikan cuti ke {0} karyawan?"
+msgstr "Alokasikan cuti kepada {0} karyawan?"
 
 #. Label of the allocate_on_day (Select) field in DocType 'Leave Type'
 #: hrms/hr/doctype/leave_type/leave_type.json
 msgid "Allocate on Day"
-msgstr "Alokasikan on Day"
+msgstr "Alokasikan pada hari"
 
 #. Label of the allocated_leaves (Float) field in DocType 'Leave Adjustment'
 #: hrms/hr/doctype/leave_adjustment/leave_adjustment.json
@@ -664,7 +664,7 @@ msgstr "Cuti Yang Dialokasikan"
 #. Label of the allocated_via (Select) field in DocType 'Earned Leave Schedule'
 #: hrms/hr/doctype/earned_leave_schedule/earned_leave_schedule.json
 msgid "Allocated Via"
-msgstr "Dialokasikan Melalui"
+msgstr "Dialokasikan melalui"
 
 #: hrms/hr/doctype/leave_control_panel/leave_control_panel.js:205
 msgid "Allocating Leave"
@@ -673,7 +673,7 @@ msgstr "Allocating Cuti"
 #. Label of the allocation_date (Date) field in DocType 'Earned Leave Schedule'
 #: hrms/hr/doctype/earned_leave_schedule/earned_leave_schedule.json
 msgid "Allocation Date"
-msgstr "Alokasi Tanggal"
+msgstr "Tanggal Alokasi"
 
 #. Label of the section_break_etvg (Section Break) field in DocType 'Leave
 #. Adjustment'
@@ -907,7 +907,7 @@ msgstr "Nama Pelamar"
 #. Label of the applicant_rating (Rating) field in DocType 'Job Applicant'
 #: hrms/hr/doctype/job_applicant/job_applicant.json
 msgid "Applicant Rating"
-msgstr "Applicant Rating"
+msgstr "Penilaian Pelamar"
 
 #. Description of a DocType
 #: hrms/hr/doctype/job_applicant/job_applicant.json
@@ -963,12 +963,12 @@ msgstr "Terapkan Sekarang"
 #. 'Overtime Type'
 #: hrms/hr/doctype/overtime_type/overtime_type.json
 msgid "Apply for Public Holiday"
-msgstr "Ajukan untuk Hari Libur"
+msgstr "Ajukan Cuti Hari Libur"
 
 #. Label of the applicable_for_weekend (Check) field in DocType 'Overtime Type'
 #: hrms/hr/doctype/overtime_type/overtime_type.json
 msgid "Apply for Weekend"
-msgstr "Ajukan untuk Akhir Pekan"
+msgstr "Ajukan Cuti Akhir Pekan"
 
 #. Label of the appointment_date (Date) field in DocType 'Appointment Letter'
 #: hrms/hr/doctype/appointment_letter/appointment_letter.json
@@ -1226,15 +1226,15 @@ msgstr "Tetapkan Shift"
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.js:114
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.json
 msgid "Assign Shift Schedule"
-msgstr "Tetapkan Shift Schedule"
+msgstr "Tetapkan Jadwal Shift"
 
 #: hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.js:53
 msgid "Assign Structure"
-msgstr "Tetapkan Structure"
+msgstr "Tetapkan Struktur"
 
 #: hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.js:298
 msgid "Assigning Salary Structure"
-msgstr "Assigning Salary Structure"
+msgstr "Menetapkan Struktur Penggajian"
 
 #: hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.py:113
 msgid "Assigning Structure..."
@@ -1309,7 +1309,7 @@ msgstr "Kalender Kehadiran"
 #. Label of a chart in the Shift & Attendance Workspace
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
 msgid "Attendance Count"
-msgstr "Jumlah Absensi"
+msgstr "Jumlah Kehadiran"
 
 #. Label of the attendance_date (Date) field in DocType 'Attendance'
 #: hrms/hr/doctype/attendance/attendance.json
@@ -1320,7 +1320,7 @@ msgstr "Tanggal Kehadiran"
 #. Label of the att_fr_date (Date) field in DocType 'Upload Attendance'
 #: hrms/hr/doctype/upload_attendance/upload_attendance.json
 msgid "Attendance From Date"
-msgstr "Absensi Dari Tanggal"
+msgstr "Kehadiran Dari Tanggal"
 
 #: hrms/hr/doctype/upload_attendance/upload_attendance.js:20
 msgid "Attendance From Date and Attendance To Date is mandatory"
@@ -1362,11 +1362,11 @@ msgstr "Absensi Pengaturan"
 #. Label of the att_to_date (Date) field in DocType 'Upload Attendance'
 #: hrms/hr/doctype/upload_attendance/upload_attendance.json
 msgid "Attendance To Date"
-msgstr "Absensi Sampai Tanggal"
+msgstr "Kehadiran Sampai Tanggal"
 
 #: hrms/hr/doctype/attendance_request/attendance_request.py:121
 msgid "Attendance Updated"
-msgstr "Absensi Diperbarui"
+msgstr "Kehadiran Diperbarui"
 
 #: hrms/hr/doctype/attendance_request/attendance_request.js:19
 msgid "Attendance Warnings"
@@ -1414,7 +1414,7 @@ msgstr "Absensi is pending for these employees between the selected payroll date
 
 #: hrms/hr/doctype/employee_attendance_tool/employee_attendance_tool.js:291
 msgid "Attendance marked successfully"
-msgstr "Absensi berhasil ditandai"
+msgstr "Kehadiran berhasil dicatat"
 
 #: hrms/hr/doctype/attendance_request/attendance_request.py:140
 msgid "Attendance not submitted for {0} as it is a Holiday."
@@ -1917,7 +1917,7 @@ msgstr "Choose the date on which you want to create these components as arrears.
 #. Claim'
 #: hrms/payroll/doctype/employee_benefit_claim/employee_benefit_claim.json
 msgid "Claim Benefit For"
-msgstr "Klaim Benefit For"
+msgstr "Klaim Manfaat Untuk"
 
 #: frontend/src/views/Home.vue:47
 #: frontend/src/views/expense_claim/Dashboard.vue:17
@@ -1951,7 +1951,7 @@ msgstr "Telah Diklaim amount of employee {0} should be greater than 0"
 #: hrms/hr/workspace/expense_claims/expense_claims.json
 #: hrms/overrides/dashboard_overrides.py:84
 msgid "Claims"
-msgstr "Claims"
+msgstr "Klaim"
 
 #. Option for the 'Status' (Select) field in DocType 'Interview'
 #. Option for the 'Result' (Select) field in DocType 'Interview Feedback'
@@ -2005,7 +2005,7 @@ msgstr "Informasi Kontak"
 #: hrms/hr/workspace/leaves/leaves.json
 #: hrms/hr/workspace/overview/overview.json
 msgid "Compensatory Leave Request"
-msgstr "Permintaan Tinggalkan Kompensasi"
+msgstr "Permintaan Cuti Kompensasi"
 
 #: hrms/setup.py:349 hrms/setup.py:350
 msgid "Compensatory Off"
@@ -3898,7 +3898,7 @@ msgstr "Klaim Biaya"
 #. Label of the expense_date (Date) field in DocType 'Expense Claim Detail'
 #: hrms/hr/doctype/expense_claim_detail/expense_claim_detail.json
 msgid "Expense Date"
-msgstr "Tanggal Biaya"
+msgstr "Tanggal Pengeluaran"
 
 #: frontend/src/components/ExpensesTable.vue:211
 msgid "Expense Item"
@@ -7429,7 +7429,7 @@ msgstr "Koreksi Penggajian"
 #. Name of a DocType
 #: hrms/payroll/doctype/payroll_correction_child/payroll_correction_child.json
 msgid "Payroll Correction Child"
-msgstr "Koreksi Penggajian Anak"
+msgstr "Item Koreksi Penggajian"
 
 #: hrms/setup.py:111 hrms/setup.py:274
 msgid "Payroll Cost Center"
