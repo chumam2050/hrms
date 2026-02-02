@@ -13,9 +13,10 @@
  "logo_url": "/assets/hrms/icons/desktop_icons/hr.svg",
  "modified": "2025-11-19 13:24:52.123619",
  "modified_by": "Administrator",
- "name": "HR",
+ "name": "People",
  "owner": "Administrator",
  "parent_icon": "Frappe HR",
+ "restrict_removal": 0,
  "roles": [],
  "sidebar": "",
  "standard": 1

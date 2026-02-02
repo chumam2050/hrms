@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: frappe\n"
 "Report-Msgid-Bugs-To: contact@frappe.io\n"
-"POT-Creation-Date: 2025-11-15 17:12+0000\n"
-"PO-Revision-Date: 2025-11-16 12:41\n"
+"POT-Creation-Date: 2026-01-25 09:37+0000\n"
+"PO-Revision-Date: 2026-01-27 23:19\n"
 "Last-Translator: contact@frappe.io\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -313,6 +313,9 @@ msgstr "<span class=\"h4\"><b>Master &amp; Transaksi</b></span>"
 
 #. Header text in the Salary Payout Workspace
 #: hrms/payroll/workspace/salary_payout/salary_payout.json
+
+#. Header text in the Payroll Workspace
+#: hrms/payroll/workspace/payroll/payroll.json
 msgid "<span class=\"h4\"><b>Transactions &amp; Reports</b></span>"
 msgstr "<span class=\"h4\"><b>Transaksi &amp; Laporan</b></span>"
 
@@ -386,10 +389,10 @@ msgstr "Akun {0} does not match with Perusahaan {1}"
 msgid "Accounting & Payment"
 msgstr "Akuntansi & Pembayaran"
 
-#. Label of a Card Break in the Expense Claims Workspace
-#. Label of a Card Break in the Salary Payout Workspace
-#: hrms/hr/workspace/expense_claims/expense_claims.json
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#. Label of a Card Break in the Expenses Workspace
+#. Label of a Card Break in the Payroll Workspace
+#: hrms/hr/workspace/expenses/expenses.json
+#: hrms/payroll/workspace/payroll/payroll.json
 msgid "Accounting Reports"
 msgstr "Laporan Akuntansi"
 
@@ -429,7 +432,7 @@ msgstr "Komponen Akrual hanya dapat diatur untuk Komponen Gaji Manfaat Fleksibel
 msgid "Accrual Component must be set for Flexible Benefit Salary Components with accrual payout methods."
 msgstr "Komponen Akrual harus ditetapkan untuk Komponen Gaji Manfaat Fleksibel dengan metode pembayaran akrual."
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:624
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:627
 msgid "Accrual Journal Entry for salaries from {0} to {1}"
 msgstr "Entri Jurnal Akrual untuk gaji dari {0} ke {1}"
 
@@ -485,7 +488,7 @@ msgstr "Hari yang Dapat Diuangkan Aktual"
 msgid "Actual Overtime Duration"
 msgstr "Durasi Lembur Aktual"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:419
+#: hrms/hr/doctype/leave_application/leave_application.py:452
 msgid "Actual balances aren't available because the leave application spans over different leave allocations. You can still apply for leaves which would be compensated during the next allocation."
 msgstr "Saldo aktual tidak tersedia karena pengajuan cuti mencakup alokasi cuti yang berbeda. Anda masih dapat mengajukan cuti yang akan dikompensasi pada alokasi berikutnya."
 
@@ -528,7 +531,7 @@ msgstr "Tambahkan cuti yang tidak digunakan dari alokasi sebelumnya"
 msgid "Add unused leaves from previous leave period's allocation to this allocation"
 msgstr "Tambahkan cuti tidak terpakai dari alokasi periode cuti sebelumnya ke alokasi ini"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:1593
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:1597
 msgid "Added tax components from the Salary Component master as the salary structure didn't have any tax component."
 msgstr "Menambahkan komponen pajak dari master Komponen Gaji karena struktur gaji tidak memiliki komponen pajak."
 
@@ -552,15 +555,13 @@ msgid "Additional PF"
 msgstr "PF tambahan"
 
 #. Label of the additional_salary (Link) field in DocType 'Leave Encashment'
-#. Label of a Link in the Expense Claims Workspace
+#. Label of a Link in the Expenses Workspace
 #. Name of a DocType
-#. Label of a Link in the Salary Payout Workspace
-#. Label of a shortcut in the Tax & Benefits Workspace
+#. Label of a Link in the Payroll Workspace
 #: hrms/hr/doctype/leave_encashment/leave_encashment.json
-#: hrms/hr/workspace/expense_claims/expense_claims.json
+#: hrms/hr/workspace/expenses/expenses.json
 #: hrms/payroll/doctype/additional_salary/additional_salary.json
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
-#: hrms/payroll/workspace/tax_&_benefits/tax_&_benefits.json
+#: hrms/payroll/workspace/payroll/payroll.json
 msgid "Additional Salary"
 msgstr "Gaji Tambahan"
 
@@ -569,15 +570,15 @@ msgstr "Gaji Tambahan"
 msgid "Additional Salary "
 msgstr "Gaji Tambahan "
 
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:116
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:145
 msgid "Additional Salary for referral bonus can only be created against Employee Referral with status {0}"
 msgstr "Gaji Tambahan untuk bonus rujukan hanya dapat dibuat untuk Rujukan Karyawan dengan status {0}"
 
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:151
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:180
 msgid "Additional Salary for this salary component with {0} enabled already exists for this date"
 msgstr "Gaji Tambahan untuk komponen gaji ini dengan {0} diaktifkan sudah ada untuk tanggal ini"
 
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:68
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:97
 msgid "Additional Salary: {0} already exist for Salary Component: {1} for period {2} and {3}"
 msgstr "Gaji Tambahan: {0} sudah ada untuk Komponen Gaji: {1} untuk periode {2} dan {3}"
 
@@ -608,6 +609,24 @@ msgstr "Uang Muka"
 msgid "Advance Account is mandatory. Please set the <a href=\"/app/company/{0}#default_employee_advance_account\" target=\"_blank\">Default Employee Advance Account</a> in the Company record {0} and submit this document."
 msgstr "Akun Uang Muka wajib diisi. Silakan atur <a href=\"/app/company/{0}#default_employee_advance_account\" target=\"_blank\">Akun Uang Muka Karyawan Default</a> di catatan Perusahaan {0} dan kirim dokumen ini."
 
+#: hrms/hr/doctype/employee_advance/employee_advance.py:52
+msgid "Advance Account Required"
+msgstr ""
+
+#: hrms/hr/doctype/employee_advance/employee_advance.py:56
+msgid "Advance Account is mandatory. Please set the {0} in the Company {1} and submit this document."
+msgstr ""
+
+#: hrms/hr/doctype/employee_advance/employee_advance.py:96
+msgid "Advance Account {} currency should be same as Salary Currency of Employee {}. Please select same currency Advance Account"
+msgstr ""
+
+#. Label of the base_advance_paid (Currency) field in DocType 'Expense Claim
+#. Advance'
+#: hrms/hr/doctype/expense_claim_advance/expense_claim_advance.json
+msgid "Advance Paid (Company Currency)"
+msgstr ""
+
 #. Label of the advanced_filters_section (Section Break) field in DocType
 #. 'Leave Control Panel'
 #. Label of the advanced_filters_section (Section Break) field in DocType
@@ -620,6 +639,10 @@ msgstr "Akun Uang Muka wajib diisi. Silakan atur <a href=\"/app/company/{0}#defa
 msgid "Advanced Filters"
 msgstr "Filter Lanjutan"
 
+#: hrms/hr/doctype/expense_claim/expense_claim.py:422
+msgid "All Exchange Gain/Loss amount of {0} has been booked through {1}"
+msgstr ""
+
 #: hrms/hr/doctype/goal/goal_tree.js:215
 msgid "All Goals"
 msgstr "Semua Sasaran"
@@ -628,7 +651,7 @@ msgstr "Semua Sasaran"
 msgid "All Jobs"
 msgstr "Semua Pekerjaan"
 
-#: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:66
+#: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:70
 msgid "All allocated assets should be returned before submission"
 msgstr "Semua aset yang dialokasikan harus dikembalikan sebelum pengajuan"
 
@@ -654,6 +677,12 @@ msgstr "Alokasikan cuti kepada {0} karyawan?"
 #: hrms/hr/doctype/leave_type/leave_type.json
 msgid "Allocate on Day"
 msgstr "Alokasikan pada hari"
+
+#. Label of the base_allocated_amount (Currency) field in DocType 'Expense
+#. Claim Advance'
+#: hrms/hr/doctype/expense_claim_advance/expense_claim_advance.json
+msgid "Allocated Amount (Company Currency)"
+msgstr ""
 
 #. Label of the allocated_leaves (Float) field in DocType 'Leave Adjustment'
 #: hrms/hr/doctype/leave_adjustment/leave_adjustment.json
@@ -694,11 +723,11 @@ msgstr "Alokasi melebihi batas maksimum yang diizinkan {0} untuk jenis cuti {1}"
 msgid "Allocation to Adjust"
 msgstr "Alokasi yang Akan Disesuaikan"
 
-#: hrms/hr/utils.py:435
+#: hrms/hr/utils.py:438
 msgid "Allocation was skipped due to exceeding annual allocation set in leave policy"
 msgstr "Alokasi diabaikan karena melebihi alokasi tahunan yang ditetapkan dalam kebijakan cuti"
 
-#: hrms/hr/utils.py:425
+#: hrms/hr/utils.py:428
 msgid "Allocation was skipped due to maximum leave allocation limit set in leave type. Please increase the limit and retry failed allocation."
 msgstr "Alokasi diabaikan karena batas maksimum alokasi cuti pada jenis cuti. Silakan tingkatkan batas dan coba kembali alokasi yang gagal."
 
@@ -827,6 +856,8 @@ msgstr "Jumlah yang dijadwalkan untuk pemotongan melalui gaji"
 msgid "Amount should not be less than zero"
 msgstr "Jumlah tidak boleh kurang dari nol"
 
+#. Description of the 'Paid Amount (Company Currency)' (Currency) field in
+#. DocType 'Employee Advance'
 #. Description of the 'Paid Amount' (Currency) field in DocType 'Employee
 #. Advance'
 #: hrms/hr/doctype/employee_advance/employee_advance.json
@@ -851,7 +882,7 @@ msgstr "Alokasi Tahunan"
 msgid "Annual Allocation Exceeded"
 msgstr "Alokasi Tahunan Terlampaui"
 
-#: hrms/setup.py:397
+#: hrms/setup.py:404
 msgid "Annual Salary"
 msgstr "Gaji tahunan"
 
@@ -927,11 +958,11 @@ msgstr "Lamaran"
 msgid "Application Status"
 msgstr "Status aplikasi"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:207
+#: hrms/hr/doctype/leave_application/leave_application.py:224
 msgid "Application period cannot be across two allocation records"
 msgstr "Periode aplikasi tidak boleh mencakup lebih dari satu catatan alokasi"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:204
+#: hrms/hr/doctype/leave_application/leave_application.py:221
 msgid "Application period cannot be outside leave allocation period"
 msgstr "Periode aplikasi tidak boleh berada di luar periode alokasi cuti"
 
@@ -1000,13 +1031,9 @@ msgstr "Isi Surat Pengangkatan"
 #. Name of a DocType
 #. Label of the appraisal (Link) field in DocType 'Employee Performance
 #. Feedback'
-#. Label of a Card Break in the Performance Workspace
-#. Label of a Link in the Performance Workspace
-#. Label of a shortcut in the Performance Workspace
 #: hrms/hr/doctype/appraisal/appraisal.json
 #: hrms/hr/doctype/employee_performance_feedback/employee_performance_feedback.json
 #: hrms/hr/report/appraisal_overview/appraisal_overview.py:44
-#: hrms/hr/workspace/performance/performance.json
 msgid "Appraisal"
 msgstr "Penilaian"
 
@@ -1015,7 +1042,6 @@ msgstr "Penilaian"
 #. Label of the appraisal_cycle (Link) field in DocType 'Employee Performance
 #. Feedback'
 #. Label of the appraisal_cycle (Link) field in DocType 'Goal'
-#. Label of a Link in the Performance Workspace
 #: hrms/hr/doctype/appraisal/appraisal.json
 #: hrms/hr/doctype/appraisal_cycle/appraisal_cycle.json
 #: hrms/hr/doctype/employee_performance_feedback/employee_performance_feedback.json
@@ -1023,7 +1049,6 @@ msgstr "Penilaian"
 #: hrms/hr/doctype/goal/goal_tree.js:105
 #: hrms/hr/report/appraisal_overview/appraisal_overview.js:18
 #: hrms/hr/report/appraisal_overview/appraisal_overview.py:37
-#: hrms/hr/workspace/performance/performance.json
 msgid "Appraisal Cycle"
 msgstr "Siklus Penilaian"
 
@@ -1043,7 +1068,7 @@ msgid "Appraisal Linking"
 msgstr "Appraisal Linking"
 
 #. Name of a report
-#. Label of a Link in the Performance Workspace
+#. Label of a chart in the Performance Workspace
 #: hrms/hr/report/appraisal_overview/appraisal_overview.json
 #: hrms/hr/workspace/performance/performance.json
 msgid "Appraisal Overview"
@@ -1052,11 +1077,9 @@ msgstr "Ringkasan Penilaian Kinerja"
 #. Label of the appraisal_template (Link) field in DocType 'Appraisal'
 #. Name of a DocType
 #. Label of the appraisal_template (Link) field in DocType 'Appraisee'
-#. Label of a Link in the Performance Workspace
 #: hrms/hr/doctype/appraisal/appraisal.json
 #: hrms/hr/doctype/appraisal_template/appraisal_template.json
-#: hrms/hr/doctype/appraisee/appraisee.json
-#: hrms/hr/workspace/performance/performance.json hrms/setup.py:162
+#: hrms/hr/doctype/appraisee/appraisee.json hrms/setup.py:162
 msgid "Appraisal Template"
 msgstr "Template Penilaian"
 
@@ -1099,7 +1122,7 @@ msgstr "Appraisee"
 msgid "Appraisees: {0}"
 msgstr "Appraisees: {0}"
 
-#: hrms/setup.py:389
+#: hrms/setup.py:396
 msgid "Apprentice"
 msgstr "Magang"
 
@@ -1115,7 +1138,7 @@ msgstr "Persetujuan"
 msgid "Approval Status"
 msgstr "Status Persetujuan"
 
-#: hrms/hr/doctype/expense_claim/expense_claim.py:138
+#: hrms/hr/doctype/expense_claim/expense_claim.py:148
 msgid "Approval Status must be 'Approved' or 'Rejected'"
 msgstr "Status Persetujuan harus 'Disetujui' atau 'Ditolak'"
 
@@ -1202,7 +1225,7 @@ msgstr "Arrival Datetime"
 msgid "As per your assigned Salary Structure you cannot apply for benefits"
 msgstr "Sesuai dengan Struktur Gaji yang ditugaskan, Anda tidak dapat mengajukan permohonan untuk tunjangan"
 
-#: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:97
+#: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:101
 msgid "Asset Recovery Cost for {0}: {1}"
 msgstr "Asset Recovery Biaya for {0}: {1}"
 
@@ -1244,11 +1267,20 @@ msgstr "Assigning Structure..."
 msgid "Assigning Structures..."
 msgstr "Menetapkan Struktur..."
 
+#. Label of the from_date (Date) field in DocType 'Holiday List Assignment'
+#: hrms/hr/doctype/holiday_list_assignment/holiday_list_assignment.json
+msgid "Assignment Starts From"
+msgstr ""
+
 #. Label of the assignment_based_on (Select) field in DocType 'Leave Policy
 #. Assignment'
 #: hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment.json
 msgid "Assignment based on"
 msgstr "Assignment based on"
+
+#: hrms/hr/doctype/holiday_list_assignment/holiday_list_assignment.py:48
+msgid "Assignment start date cannot be outside holiday list dates"
+msgstr ""
 
 #: hrms/hr/doctype/job_requisition/job_requisition.js:50
 #: hrms/hr/doctype/job_requisition/job_requisition.js:74
@@ -1267,7 +1299,7 @@ msgstr "Associated Document"
 msgid "Associated Document Type"
 msgstr "Tipe Dokumen Terkait"
 
-#: hrms/hr/doctype/exit_interview/exit_interview.py:105
+#: hrms/hr/doctype/exit_interview/exit_interview.py:108
 msgid "At least one interview has to be selected."
 msgstr "Silakan pilih setidaknya satu wawancara."
 
@@ -1284,17 +1316,16 @@ msgstr "Dicoba"
 
 #. Name of a DocType
 #. Label of the attendance (Select) field in DocType 'Training Event Employee'
-#. Label of a Card Break in the Overview Workspace
-#. Label of a Link in the Overview Workspace
+#. Label of a Card Break in the People Workspace
+#. Label of a Link in the People Workspace
 #. Label of a Card Break in the Shift & Attendance Workspace
 #. Label of a Link in the Shift & Attendance Workspace
-#. Label of a shortcut in the Shift & Attendance Workspace
 #. Option for the 'Calculate Payroll Working Days Based On' (Select) field in
 #. DocType 'Payroll Settings'
 #: frontend/src/components/BottomTabs.vue:48
 #: hrms/hr/doctype/attendance/attendance.json
 #: hrms/hr/doctype/training_event_employee/training_event_employee.json
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/workspace/people/people.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
 #: hrms/overrides/dashboard_overrides.py:10
 #: hrms/payroll/doctype/payroll_settings/payroll_settings.json
@@ -1339,12 +1370,12 @@ msgstr "Kehadiran Ditandai"
 
 #. Label of the attendance_request (Link) field in DocType 'Attendance'
 #. Name of a DocType
-#. Label of a Link in the Overview Workspace
+#. Label of a Link in the People Workspace
 #. Label of a Link in the Shift & Attendance Workspace
 #: hrms/hr/doctype/attendance/attendance.js:18
 #: hrms/hr/doctype/attendance/attendance.json
 #: hrms/hr/doctype/attendance_request/attendance_request.json
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/workspace/people/people.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
 msgid "Attendance Request"
 msgstr "Permintaan Kehadiran"
@@ -1388,7 +1419,7 @@ msgstr "Absensi untuk karyawan {0} sudah ditandai untuk shift yang tumpang tindi
 msgid "Attendance for employee {0} is already marked for the date {1}: {2}"
 msgstr "Absensi untuk karyawan {0} sudah ditandai untuk tanggal {1}: {2}"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:584
+#: hrms/hr/doctype/leave_application/leave_application.py:617
 msgid "Attendance for employee {0} is already marked for the following dates: {1}"
 msgstr "Absensi untuk karyawan {0} sudah ditandai untuk tanggal-tanggal berikut: {1}"
 
@@ -1399,10 +1430,6 @@ msgstr "Absensi untuk tanggal berikut akan dilewati atau ditimpa saat pengajuan"
 #: hrms/hr/doctype/attendance/attendance_list.js:102
 msgid "Attendance from {0} to {1} has already been marked for the Employee {2}"
 msgstr "Absensi dari {0} hingga {1} sudah ditandai untuk Karyawan {2}"
-
-#: hrms/hr/doctype/shift_type/shift_type.js:34
-msgid "Attendance has been marked as per employee check-ins"
-msgstr "Kehadiran telah ditandai sesuai dengan check-in karyawan"
 
 #: hrms/public/js/templates/employees_with_unmarked_attendance.html:36
 msgid "Attendance has been marked for all the employees between the selected payroll dates."
@@ -1466,7 +1493,7 @@ msgstr "Pencairan Cuti Otomatis"
 msgid "Automated Based on Goal Progress"
 msgstr "Automated Based on Sasaran Progress"
 
-#: hrms/hr/utils.py:479
+#: hrms/hr/utils.py:482
 msgid "Automatic Leave Allocation has failed for the following Earned Leaves: {0}. Please check {1} for more details."
 msgstr "Alokasi cuti otomatis gagal untuk Cuti Terakumulasi berikut: {0}. Silakan periksa {1} untuk rincian lebih lanjut."
 
@@ -1528,18 +1555,18 @@ msgstr "Avg Utilization (Billed Only)"
 msgid "Awaiting Response"
 msgstr "Awaiting Response"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:167
+#: hrms/hr/doctype/leave_application/leave_application.py:184
 msgid "Backdated Leave Application is restricted. Please set the {} in {}"
 msgstr "Pengajuan cuti mundur dibatasi. Silakan atur {} di {}"
 
-#: hrms/hr/doctype/expense_claim/expense_claim.js:156
+#: hrms/hr/doctype/expense_claim/expense_claim.js:285
 msgid "Bank Entries"
 msgstr "Entri Bank"
 
 #. Name of a report
-#. Label of a Link in the Salary Payout Workspace
+#. Label of a Link in the Payroll Workspace
 #: hrms/payroll/report/bank_remittance/bank_remittance.json
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#: hrms/payroll/workspace/payroll/payroll.json
 msgid "Bank Remittance"
 msgstr "Remitansi Bank"
 
@@ -1552,8 +1579,8 @@ msgstr "Dasar"
 #. Label of the section_break_7 (Section Break) field in DocType 'Salary
 #. Structure Assignment'
 #: hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.json
-msgid "Base & Variable"
-msgstr "Base & Variable"
+msgid "Base, Variable & Leave Encashment"
+msgstr "Base, Variable & Leave Encashment"
 
 #. Label of the begin_check_in_before_shift_start_time (Int) field in DocType
 #. 'Shift Type'
@@ -1676,7 +1703,7 @@ msgstr "Bonus Payment Tanggal"
 msgid "Bonus Payment Date cannot be a past date"
 msgstr "Tanggal Pembayaran Bonus tidak bisa menjadi tanggal yang lalu"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:230
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:233
 msgid "Branch: {0}"
 msgstr "Cabang: {0}"
 
@@ -1689,10 +1716,10 @@ msgid "Bulk Leave Policy Assignment"
 msgstr "Penetapan Kebijakan Cuti Massal"
 
 #. Name of a DocType
-#. Label of a Link in the Salary Payout Workspace
+#. Label of a Link in the Payroll Workspace
 #: hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.json
 #: hrms/payroll/doctype/salary_structure/salary_structure_list.js:3
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#: hrms/payroll/workspace/payroll/payroll.json
 msgid "Bulk Salary Structure Assignment"
 msgstr "Penetapan Struktur Gaji Massal"
 
@@ -1730,11 +1757,11 @@ msgstr "Calculate Daftar gaji Working Days Based On"
 msgid "Calculated in days"
 msgstr "Calculated in days"
 
-#: hrms/setup.py:325
+#: hrms/setup.py:332
 msgid "Calls"
 msgstr "Panggilan"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:146
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:149
 msgid "Cancellation Queued"
 msgstr "Pembatalan Dimasukkan ke Antrian"
 
@@ -1786,7 +1813,7 @@ msgstr "Tidak dapat membuat Pelamar Pekerjaan untuk Lowongan yang ditutup"
 msgid "Cannot create or change transactions against an Appraisal Cycle with status {0}."
 msgstr "Tidak dapat membuat atau mengubah transaksi untuk Siklus Penilaian dengan status {0}."
 
-#: hrms/hr/doctype/leave_application/leave_application.py:601
+#: hrms/hr/doctype/leave_application/leave_application.py:634
 msgid "Cannot find active Leave Period"
 msgstr "Tidak dapat menemukan Periode Keluar aktif"
 
@@ -1820,7 +1847,7 @@ msgstr "Carry Forward"
 msgid "Carry Forwarded Leaves"
 msgstr "Carry Forwarded Cuti"
 
-#: hrms/setup.py:340 hrms/setup.py:341
+#: hrms/setup.py:347 hrms/setup.py:348
 msgid "Casual Leave"
 msgstr "Santai Cuti"
 
@@ -1849,7 +1876,7 @@ msgstr "Mengubah KRA pada tujuan induk ini akan menyelaraskan semua tujuan anak 
 msgid "Check <a href='/app/List/Error Log?reference_doctype={0}'>{1}</a> for more details"
 msgstr "Periksa <a href='/app/List/Error Log?reference_doctype={0}'>{1}</a> untuk detail lebih lanjut"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1534
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1537
 msgid "Check Error Log {0} for more details."
 msgstr "Periksa Log Kesalahan {0} untuk detail lebih lanjut."
 
@@ -1866,8 +1893,8 @@ msgstr "Absen Keluar"
 msgid "Check Vacancies On Job Offer Creation"
 msgstr "Periksa ketersediaan lowongan saat membuat Penawaran Kerja"
 
-#: hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment.py:448
-#: hrms/hr/utils.py:932
+#: hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment.py:467
+#: hrms/hr/utils.py:935
 msgid "Check {0} for more details"
 msgstr "Check {0} for more details"
 
@@ -1947,8 +1974,8 @@ msgstr "Jumlah yang diklaim oleh karyawan {0} melebihi jumlah maksimum yang berh
 msgid "Claimed amount of employee {0} should be greater than 0"
 msgstr "Jumlah yang diklaim oleh karyawan {0} harus lebih besar dari 0"
 
-#. Label of a Card Break in the Expense Claims Workspace
-#: hrms/hr/workspace/expense_claims/expense_claims.json
+#. Label of a Card Break in the Expenses Workspace
+#: hrms/hr/workspace/expenses/expenses.json
 #: hrms/overrides/dashboard_overrides.py:84
 msgid "Claims"
 msgstr "Klaim"
@@ -1999,15 +2026,14 @@ msgstr "Informasi Kontak"
 #. Name of a DocType
 #. Label of the compensatory_request (Link) field in DocType 'Leave Allocation'
 #. Label of a Link in the Leaves Workspace
-#. Label of a Link in the Overview Workspace
+#. Label of a Link in the People Workspace
 #: hrms/hr/doctype/compensatory_leave_request/compensatory_leave_request.json
 #: hrms/hr/doctype/leave_allocation/leave_allocation.json
-#: hrms/hr/workspace/leaves/leaves.json
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/workspace/leaves/leaves.json hrms/hr/workspace/people/people.json
 msgid "Compensatory Leave Request"
 msgstr "Permintaan Cuti Kompensasi"
 
-#: hrms/setup.py:349 hrms/setup.py:350
+#: hrms/setup.py:356 hrms/setup.py:357
 msgid "Compensatory Off"
 msgstr "Kompensasi Off"
 
@@ -2093,7 +2119,7 @@ msgstr "Nomor Kontak"
 msgid "Copy of Invitation/Announcement"
 msgstr "Copy of Invitation/Announcement"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1597
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1600
 msgid "Could not submit some Salary Slips: {}"
 msgstr "Gagal mengirim beberapa Slip Gaji: {}"
 
@@ -2193,7 +2219,7 @@ msgstr "Membuat Penilaian Kinerja"
 msgid "Creating Payment Entries......"
 msgstr "Membuat Entri Pembayaran ......"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1557
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1560
 msgid "Creating Salary Slips..."
 msgstr "Menciptakan Slip Gaji ..."
 
@@ -2205,7 +2231,7 @@ msgstr "Creating {0}..."
 msgid "Creation Date"
 msgstr "Creation Tanggal"
 
-#: hrms/hr/utils.py:941
+#: hrms/hr/utils.py:944
 msgid "Creation Failed"
 msgstr "Pembuatan Gagal"
 
@@ -2312,24 +2338,23 @@ msgid "Cycles"
 msgstr "Cycles"
 
 #. Name of a DocType
-#. Label of a Card Break in the Employee Lifecycle Workspace
-#. Label of a Link in the Employee Lifecycle Workspace
+#. Label of a Card Break in the Tenure Workspace
+#. Label of a Link in the Tenure Workspace
 #: hrms/hr/doctype/daily_work_summary/daily_work_summary.json
 #: hrms/hr/doctype/daily_work_summary_group/daily_work_summary_group.js:7
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
+#: hrms/hr/workspace/tenure/tenure.json
 msgid "Daily Work Summary"
 msgstr "Ringkasan Pekerjaan sehari-hari"
 
 #. Label of the daily_work_summary_group (Link) field in DocType 'Daily Work
 #. Summary'
 #. Name of a DocType
-#. Label of a Link in the Employee Lifecycle Workspace
-#. Label of a Link in the Overview Workspace
+#. Label of a Link in the People Workspace
+#. Label of a Link in the Tenure Workspace
 #: hrms/hr/doctype/daily_work_summary/daily_work_summary.json
 #: hrms/hr/doctype/daily_work_summary_group/daily_work_summary_group.json
 #: hrms/hr/page/team_updates/team_updates.js:12
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/workspace/people/people.json hrms/hr/workspace/tenure/tenure.json
 msgid "Daily Work Summary Group"
 msgstr "Kelompok Ringkasan Pekerjaan Harian"
 
@@ -2339,11 +2364,10 @@ msgid "Daily Work Summary Group User"
 msgstr "Pengguna Grup Ringkasan Pekerjaan Harian"
 
 #. Name of a report
-#. Label of a Link in the Employee Lifecycle Workspace
-#. Label of a Link in the Overview Workspace
+#. Label of a Link in the People Workspace
+#. Label of a Link in the Tenure Workspace
 #: hrms/hr/report/daily_work_summary_replies/daily_work_summary_replies.json
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/workspace/people/people.json hrms/hr/workspace/tenure/tenure.json
 msgid "Daily Work Summary Replies"
 msgstr "Ringkasan Ringkasan Pekerjaan Harian"
 
@@ -2443,12 +2467,12 @@ msgstr "Deduksi"
 msgid "Deduction Arrears"
 msgstr "Deduction Arrears"
 
-#. Label of a Card Break in the Salary Payout Workspace
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#. Label of a Card Break in the Payroll Workspace
+#: hrms/payroll/workspace/payroll/payroll.json
 msgid "Deduction Reports"
 msgstr "Deduction Laporan"
 
-#: hrms/hr/doctype/employee_advance/employee_advance.js:91
+#: hrms/hr/doctype/employee_advance/employee_advance.js:84
 msgid "Deduction from Salary"
 msgstr "Potongan dari Gaji"
 
@@ -2522,11 +2546,11 @@ msgstr "Persetujuan Departemen"
 msgid "Department Wise Openings"
 msgstr "Lowongan Per Departemen"
 
-#: hrms/hr/doctype/expense_claim/expense_claim.py:101
+#: hrms/hr/doctype/expense_claim/expense_claim.py:107
 msgid "Department {0} does not belong to company: {1}"
 msgstr "Departemen {0} tidak termasuk dalam perusahaan {1}"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:232
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:235
 msgid "Department: {0}"
 msgstr "Department: {0}"
 
@@ -2559,7 +2583,7 @@ msgstr "Deskripsi Lowongan Pekerjaan"
 msgid "Designation Skill"
 msgstr "Keterampilan Penunjukan"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:234
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:237
 msgid "Designation: {0}"
 msgstr "Designation: {0}"
 
@@ -2620,6 +2644,10 @@ msgstr "Dokumen {0} gagal!"
 msgid "Domestic"
 msgstr "Domestic"
 
+#: hrms/hr/doctype/holiday_list_assignment/holiday_list_assignment.py:39
+msgid "Duplicate Assignment"
+msgstr ""
+
 #: hrms/hr/doctype/attendance/attendance.py:77
 msgid "Duplicate Attendance"
 msgstr "Duplicate Absensi"
@@ -2636,7 +2664,7 @@ msgstr "Permintaan Lowongan Duplikat"
 msgid "Duplicate Leave Adjustment"
 msgstr "Duplicate Cuti Adjustment"
 
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:158
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:187
 msgid "Duplicate Overwritten Salary"
 msgstr "Duplikasi Gaji yang Ditimpa"
 
@@ -2644,7 +2672,7 @@ msgstr "Duplikasi Gaji yang Ditimpa"
 msgid "Duplicate Salary Withholding"
 msgstr "Duplikasi Pemotongan Gaji"
 
-#: hrms/public/js/utils/index.js:208
+#: hrms/public/js/utils/index.js:210
 msgid "ERROR({0}): {1}"
 msgstr "ERROR({0}): {1}"
 
@@ -2728,7 +2756,7 @@ msgstr "Earning Arrears"
 msgid "Earning Component"
 msgstr "Earning Component"
 
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:112
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:141
 msgid "Earning Salary Component is required for Employee Referral Bonus."
 msgstr "Komponen Gaji bertipe Earning diperlukan untuk Bonus Rujukan Karyawan."
 
@@ -2797,25 +2825,29 @@ msgstr "Mengirim slip gaji ke Karyawan berdasarkan alamat email yang dipilih pad
 msgid "Employee A/C Number"
 msgstr "Nomor A / C Karyawan"
 
+#: hrms/patches/v16_0/create_custom_field_for_employee_advance_in_employee_master.py:11
+#: hrms/setup.py:267
+msgid "Employee Advance Account"
+msgstr ""
+
 #: frontend/src/views/expense_claim/Dashboard.vue:35
 msgid "Employee Advance Balance"
 msgstr "Saldo Uang Muka Karyawan"
 
 #. Name of a report
-#. Label of a Link in the Expense Claims Workspace
-#. Label of a Link in the Overview Workspace
+#. Label of a Link in the Expenses Workspace
+#. Label of a Link in the People Workspace
 #: hrms/hr/report/employee_advance_summary/employee_advance_summary.json
-#: hrms/hr/workspace/expense_claims/expense_claims.json
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/workspace/expenses/expenses.json
+#: hrms/hr/workspace/people/people.json
 msgid "Employee Advance Summary"
 msgstr "Ringkasan Uang Muka Karyawan"
 
 #. Name of a report
-#. Label of a Link in the Employee Lifecycle Workspace
-#. Label of a Link in the Overview Workspace
+#. Label of a Link in the People Workspace
+#. Label of a Link in the Tenure Workspace
 #: hrms/hr/report/employee_analytics/employee_analytics.json
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/workspace/people/people.json hrms/hr/workspace/tenure/tenure.json
 msgid "Employee Analytics"
 msgstr "Analitik Karyawan"
 
@@ -2858,16 +2890,15 @@ msgstr "Karyawan Benefit Ledger"
 #. Label of the employee_benefits_section (Section Break) field in DocType
 #. 'Salary Structure Assignment'
 #: hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.json
-#: hrms/setup.py:399
+#: hrms/setup.py:406
 msgid "Employee Benefits"
 msgstr "Manfaat Karyawan"
 
 #. Name of a report
-#. Label of a Link in the Employee Lifecycle Workspace
-#. Label of a Link in the Overview Workspace
+#. Label of a Link in the People Workspace
+#. Label of a Link in the Tenure Workspace
 #: hrms/hr/report/employee_birthday/employee_birthday.json
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/workspace/people/people.json hrms/hr/workspace/tenure/tenure.json
 msgid "Employee Birthday"
 msgstr "Ulang Tahun Karyawan"
 
@@ -2877,11 +2908,10 @@ msgid "Employee Boarding Activity"
 msgstr "Aktivitas Boarding Karyawan"
 
 #. Name of a DocType
-#. Label of a Link in the Overview Workspace
+#. Label of a Link in the People Workspace
 #. Label of a Link in the Shift & Attendance Workspace
-#. Label of a shortcut in the Shift & Attendance Workspace
 #: hrms/hr/doctype/employee_checkin/employee_checkin.json
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/workspace/people/people.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
 msgid "Employee Checkin"
 msgstr "Lapor masuk karyawan"
@@ -2889,6 +2919,12 @@ msgstr "Lapor masuk karyawan"
 #: frontend/src/views/attendance/EmployeeCheckinList.vue:5
 msgid "Employee Checkin History"
 msgstr "Riwayat Lapor Masuk Karyawan"
+
+#. Label of the employee_company (Link) field in DocType 'Holiday List
+#. Assignment'
+#: hrms/hr/doctype/holiday_list_assignment/holiday_list_assignment.json
+msgid "Employee Company"
+msgstr ""
 
 #. Name of a DocType
 #: hrms/payroll/doctype/employee_cost_center/employee_cost_center.json
@@ -2933,25 +2969,22 @@ msgstr "Detail Karyawan"
 msgid "Employee Emails"
 msgstr "Karyawan Emails"
 
-#. Label of the employee_exit_section (Section Break) field in DocType 'HR
-#. Settings'
+#. Label of the employee_exit_settings_section (Section Break) field in DocType
+#. 'HR Settings'
 #: hrms/hr/doctype/hr_settings/hr_settings.json
 msgid "Employee Exit Settings"
 msgstr "Karyawan Exit Pengaturan"
 
 #. Name of a report
-#. Label of a Link in the Employee Lifecycle Workspace
-#. Label of a Link in the Overview Workspace
+#. Label of a Link in the People Workspace
+#. Label of a Link in the Tenure Workspace
 #: hrms/hr/report/employee_exits/employee_exits.json
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/workspace/people/people.json hrms/hr/workspace/tenure/tenure.json
 msgid "Employee Exits"
 msgstr "Keluar Karyawan"
 
 #. Name of a DocType
-#. Label of a Link in the Performance Workspace
 #: hrms/hr/doctype/employee_feedback_criteria/employee_feedback_criteria.json
-#: hrms/hr/workspace/performance/performance.json
 msgid "Employee Feedback Criteria"
 msgstr "Kriteria Umpan Balik Karyawan"
 
@@ -2971,7 +3004,7 @@ msgstr "Skor Umpan Balik Karyawan"
 #. Template'
 #. Label of the employee_grade (Link) field in DocType 'Leave Control Panel'
 #. Label of the grade (Link) field in DocType 'Shift Assignment Tool'
-#. Label of a Link in the Overview Workspace
+#. Label of a Link in the People Workspace
 #. Label of the grade (Link) field in DocType 'Bulk Salary Structure
 #. Assignment'
 #: hrms/hr/doctype/employee_attendance_tool/employee_attendance_tool.json
@@ -2982,16 +3015,15 @@ msgstr "Skor Umpan Balik Karyawan"
 #: hrms/hr/doctype/employee_separation_template/employee_separation_template.json
 #: hrms/hr/doctype/leave_control_panel/leave_control_panel.json
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.json
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/workspace/people/people.json
 #: hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.json
 msgid "Employee Grade"
 msgstr "Kelas Karyawan"
 
 #. Name of a DocType
-#. Label of a Link in the Employee Lifecycle Workspace
-#. Label of a shortcut in the Employee Lifecycle Workspace
+#. Label of a Link in the Tenure Workspace
 #: hrms/hr/doctype/employee_grievance/employee_grievance.json
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
+#: hrms/hr/workspace/tenure/tenure.json
 msgid "Employee Grievance"
 msgstr "Karyawan Grievance"
 
@@ -3013,9 +3045,9 @@ msgid "Employee Image"
 msgstr "Karyawan Image"
 
 #. Name of a DocType
-#. Label of a Link in the Salary Payout Workspace
+#. Label of a Link in the Payroll Workspace
 #: hrms/payroll/doctype/employee_incentive/employee_incentive.json
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#: hrms/payroll/workspace/payroll/payroll.json
 msgid "Employee Incentive"
 msgstr "Insentif Karyawan"
 
@@ -3025,11 +3057,10 @@ msgid "Employee Info"
 msgstr "Karyawan Info"
 
 #. Name of a report
-#. Label of a Link in the Employee Lifecycle Workspace
-#. Label of a Link in the Overview Workspace
+#. Label of a Link in the People Workspace
+#. Label of a Link in the Tenure Workspace
 #: hrms/hr/report/employee_information/employee_information.json
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/workspace/people/people.json hrms/hr/workspace/tenure/tenure.json
 msgid "Employee Information"
 msgstr "Informasi Karyawan"
 
@@ -3040,19 +3071,17 @@ msgstr "Karyawan Journey"
 
 #. Name of a report
 #. Label of a Link in the Leaves Workspace
-#. Label of a Link in the Overview Workspace
+#. Label of a Link in the People Workspace
 #: hrms/hr/report/employee_leave_balance/employee_leave_balance.json
-#: hrms/hr/workspace/leaves/leaves.json
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/workspace/leaves/leaves.json hrms/hr/workspace/people/people.json
 msgid "Employee Leave Balance"
 msgstr "Saldo Cuti Karyawan"
 
 #. Name of a report
 #. Label of a Link in the Leaves Workspace
-#. Label of a Link in the Overview Workspace
+#. Label of a Link in the People Workspace
 #: hrms/hr/report/employee_leave_balance_summary/employee_leave_balance_summary.json
-#: hrms/hr/workspace/leaves/leaves.json
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/workspace/leaves/leaves.json hrms/hr/workspace/people/people.json
 msgid "Employee Leave Balance Summary"
 msgstr "Ringkasan Saldo Cuti Karyawan"
 
@@ -3071,20 +3100,19 @@ msgid "Employee Naming By"
 msgstr "Karyawan Naming By"
 
 #. Name of a DocType
-#. Label of a Link in the Employee Lifecycle Workspace
-#. Label of a shortcut in the Employee Lifecycle Workspace
+#. Label of a Link in the Tenure Workspace
 #: hrms/hr/doctype/employee_onboarding/employee_onboarding.json
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
+#: hrms/hr/workspace/tenure/tenure.json
 msgid "Employee Onboarding"
 msgstr "Onboarding Karyawan"
 
 #. Label of the employee_onboarding_template (Link) field in DocType 'Employee
 #. Onboarding'
 #. Name of a DocType
-#. Label of a Link in the Employee Lifecycle Workspace
+#. Label of a Link in the Tenure Workspace
 #: hrms/hr/doctype/employee_onboarding/employee_onboarding.json
 #: hrms/hr/doctype/employee_onboarding_template/employee_onboarding_template.json
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
+#: hrms/hr/workspace/tenure/tenure.json
 msgid "Employee Onboarding Template"
 msgstr "Template Onboarding Karyawan"
 
@@ -3098,19 +3126,12 @@ msgid "Employee Other Income"
 msgstr "Pendapatan Karyawan Lainnya"
 
 #. Name of a DocType
-#. Label of a Link in the Performance Workspace
-#. Label of a shortcut in the Performance Workspace
 #: hrms/hr/doctype/employee_performance_feedback/employee_performance_feedback.json
-#: hrms/hr/workspace/performance/performance.json
 msgid "Employee Performance Feedback"
 msgstr "Umpan Balik Kinerja Karyawan"
 
 #. Name of a DocType
-#. Label of a Link in the Employee Lifecycle Workspace
-#. Label of a Link in the Performance Workspace
 #: hrms/hr/doctype/employee_promotion/employee_promotion.json
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
-#: hrms/hr/workspace/performance/performance.json
 msgid "Employee Promotion"
 msgstr "Promosi Karyawan"
 
@@ -3135,11 +3156,15 @@ msgstr "Sejarah Kekayaan Karyawan"
 #: hrms/hr/doctype/employee_referral/employee_referral.json
 #: hrms/hr/doctype/job_applicant/job_applicant.json
 #: hrms/hr/doctype/job_requisition/job_requisition.js:18
-#: hrms/hr/workspace/recruitment/recruitment.json hrms/setup.py:393
+#: hrms/hr/workspace/recruitment/recruitment.json hrms/setup.py:400
 msgid "Employee Referral"
 msgstr "Rujukan karyawan"
 
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:108
+#: hrms/hr/doctype/employee_referral/employee_referral.py:26
+msgid "Employee Referral {0} already exists for email: {1}"
+msgstr ""
+
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:137
 msgid "Employee Referral {0} is not applicable for referral bonus."
 msgstr "Rujukan Karyawan {0} tidak memenuhi syarat untuk bonus rujukan."
 
@@ -3159,24 +3184,19 @@ msgid "Employee Retained"
 msgstr "Karyawan Retained"
 
 #. Name of a DocType
-#. Label of a Link in the Employee Lifecycle Workspace
-#. Label of a shortcut in the Employee Lifecycle Workspace
 #: hrms/hr/doctype/employee_separation/employee_separation.json
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
 msgid "Employee Separation"
 msgstr "Pemisahan Karyawan"
 
 #. Label of the employee_separation_template (Link) field in DocType 'Employee
 #. Separation'
 #. Name of a DocType
-#. Label of a Link in the Employee Lifecycle Workspace
 #: hrms/hr/doctype/employee_separation/employee_separation.json
 #: hrms/hr/doctype/employee_separation_template/employee_separation_template.json
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
 msgid "Employee Separation Template"
 msgstr "Template Pemisahan Karyawan"
 
-#. Label of the employee_settings (Section Break) field in DocType 'HR
+#. Label of the employee_settings_section (Section Break) field in DocType 'HR
 #. Settings'
 #: hrms/hr/doctype/hr_settings/hr_settings.json
 msgid "Employee Settings"
@@ -3188,9 +3208,9 @@ msgid "Employee Skill"
 msgstr "Keterampilan Karyawan"
 
 #. Name of a DocType
-#. Label of a Link in the Employee Lifecycle Workspace
+#. Label of a Link in the Tenure Workspace
 #: hrms/hr/doctype/employee_skill_map/employee_skill_map.json
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
+#: hrms/hr/workspace/tenure/tenure.json
 msgid "Employee Skill Map"
 msgstr "Peta Keterampilan Karyawan"
 
@@ -3216,7 +3236,6 @@ msgstr "Kategori Pembebasan Pajak Karyawan"
 
 #. Name of a DocType
 #. Label of a Link in the Tax & Benefits Workspace
-#. Label of a shortcut in the Tax & Benefits Workspace
 #: hrms/payroll/doctype/employee_tax_exemption_declaration/employee_tax_exemption_declaration.json
 #: hrms/payroll/workspace/tax_&_benefits/tax_&_benefits.json
 msgid "Employee Tax Exemption Declaration"
@@ -3252,9 +3271,7 @@ msgid "Employee Training"
 msgstr "Pelatihan Karyawan"
 
 #. Name of a DocType
-#. Label of a Link in the Employee Lifecycle Workspace
 #: hrms/hr/doctype/employee_transfer/employee_transfer.json
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
 msgid "Employee Transfer"
 msgstr "Transfer Karyawan"
 
@@ -3273,8 +3290,8 @@ msgstr "Karyawan Transfer Details"
 msgid "Employee Transfer cannot be submitted before Transfer Date"
 msgstr "Transfer Karyawan tidak dapat diajukan sebelum Tanggal Transfer"
 
-#: hrms/hr/doctype/employee_advance/employee_advance.py:73
-#: hrms/hr/doctype/employee_advance/employee_advance.py:133
+#: hrms/hr/doctype/employee_advance/employee_advance.py:86
+#: hrms/hr/doctype/employee_advance/employee_advance.py:156
 msgid "Employee advance account {0} should be of type {1}."
 msgstr "Akun uang muka Karyawan {0} harus bertipe {1}."
 
@@ -3293,7 +3310,7 @@ msgstr "Karyawan name"
 msgid "Employee records are created using the selected option"
 msgstr "Catatan Karyawan dibuat menggunakan opsi yang dipilih."
 
-#: hrms/hr/doctype/shift_type/shift_type.py:244
+#: hrms/hr/doctype/shift_type/shift_type.py:285
 msgid "Employee was marked Absent due to missing Employee Checkins."
 msgstr "Karyawan ditandai sebagai Tidak Hadir karena tidak ditemukan catatan check-in."
 
@@ -3301,7 +3318,7 @@ msgstr "Karyawan ditandai sebagai Tidak Hadir karena tidak ditemukan catatan che
 msgid "Employee was marked Absent for not meeting the working hours threshold."
 msgstr "Karyawan ditandai sebagai Tidak Hadir karena tidak memenuhi ambang jam kerja."
 
-#: hrms/hr/doctype/shift_type/shift_type.py:373
+#: hrms/hr/doctype/shift_type/shift_type.py:414
 msgid "Employee was marked Absent for other half due to missing Employee Checkins."
 msgstr "Karyawan ditandai sebagai Tidak Hadir untuk paruh hari lainnya karena tidak ditemukan catatan check-in."
 
@@ -3321,11 +3338,11 @@ msgstr "Karyawan {0} sudah memiliki Penugasan Shift aktif {1}: {2} yang tumpang 
 msgid "Employee {0} already submitted an application {1} for the payroll period {2}"
 msgstr "Karyawan {0} sudah mengajukan permohonan {1} untuk periode penggajian {2}"
 
-#: hrms/hr/doctype/shift_request/shift_request.py:125
+#: hrms/hr/doctype/shift_request/shift_request.py:128
 msgid "Employee {0} has already applied for Shift {1}: {2} that overlaps within this period"
 msgstr "Karyawan {0} telah mengajukan Shift {1}: {2} yang tumpang tindih dalam periode ini"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:473
+#: hrms/hr/doctype/leave_application/leave_application.py:506
 msgid "Employee {0} has already applied for {1} between {2} and {3} : {4}"
 msgstr "Karyawan {0} telah mengajukan {1} antara {2} dan {3}: {4}"
 
@@ -3349,7 +3366,7 @@ msgstr "Karyawan {0} tidak ditemukan sebagai peserta acara pelatihan."
 msgid "Employee {0} on Half day on {1}"
 msgstr "Karyawan {0} bekerja setengah hari pada {1}"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:644
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:648
 msgid "Employee {0} relieved on {1} must be set as 'Left'"
 msgstr "Karyawan {0} yang diberhentikan pada {1} harus ditetapkan sebagai 'Keluar'"
 
@@ -3367,8 +3384,8 @@ msgstr "Karyawan {0} harus menyelesaikan minimal {1} tahun masa kerja untuk mene
 msgid "Employees HTML"
 msgstr "Karyawan HTML"
 
-#. Label of a Link in the Overview Workspace
-#: hrms/hr/workspace/overview/overview.json
+#. Label of a Link in the People Workspace
+#: hrms/hr/workspace/people/people.json
 msgid "Employees Working on a Holiday"
 msgstr "Karyawan Bekerja pada Hari Libur"
 
@@ -3381,6 +3398,16 @@ msgstr "Karyawan tidak dapat memberikan umpan balik kepada dirinya sendiri. Guna
 #: hrms/hr/doctype/employee_attendance_tool/employee_attendance_tool.json
 msgid "Employees on Half Day HTML"
 msgstr "Karyawan Setengah Hari HTML"
+
+#. Label of a number card in the Leaves Workspace
+#: hrms/hr/workspace/leaves/leaves.json
+msgid "Employees on leave this month"
+msgstr ""
+
+#. Label of a number card in the Leaves Workspace
+#: hrms/hr/workspace/leaves/leaves.json
+msgid "Employees on leave today"
+msgstr ""
 
 #: hrms/hr/doctype/hr_settings/hr_settings.py:81
 msgid "Employees will miss holiday reminders from {} until {}. <br> Do you want to proceed with this change?"
@@ -3408,6 +3435,7 @@ msgstr "Karyawan yang bekerja pada hari libur"
 #. Name of a DocType
 #. Label of the employee_type_name (Data) field in DocType 'Employment Type'
 #. Label of the employment_type (Link) field in DocType 'Job Opening'
+#. Label of the employment_type (Link) field in DocType 'Job Opening Template'
 #. Label of the employment_type (Link) field in DocType 'Leave Control Panel'
 #. Label of the employment_type (Link) field in DocType 'Shift Assignment Tool'
 #. Label of the employment_type (Link) field in DocType 'Bulk Salary Structure
@@ -3415,6 +3443,7 @@ msgstr "Karyawan yang bekerja pada hari libur"
 #: hrms/hr/doctype/employee_attendance_tool/employee_attendance_tool.json
 #: hrms/hr/doctype/employment_type/employment_type.json
 #: hrms/hr/doctype/job_opening/job_opening.json
+#: hrms/hr/doctype/job_opening_template/job_opening_template.json
 #: hrms/hr/doctype/leave_control_panel/leave_control_panel.json
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.json
 #: hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.json
@@ -3497,7 +3526,7 @@ msgstr "Enkripsi Slip Gaji di Email"
 msgid "End Date cannot be before Start Date"
 msgstr "Tanggal Berakhir tidak boleh sebelum Tanggal Mulai"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:238
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:241
 msgid "End date: {0}"
 msgstr "End date: {0}"
 
@@ -3569,11 +3598,11 @@ msgstr "Gagal menghapus {0}"
 msgid "Error downloading PDF"
 msgstr "Gagal mengunduh PDF"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:1320
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:1324
 msgid "Error in formula or condition"
 msgstr "Kesalahan pada formula atau kondisi"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:2532
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:2539
 msgid "Error in formula or condition: {0} in Income Tax Slab"
 msgstr "Kesalahan pada formula atau kondisi: {0} di Slab Pajak Penghasilan"
 
@@ -3585,7 +3614,7 @@ msgstr "Kesalahan pada beberapa baris"
 msgid "Error updating {0}"
 msgstr "Gagal memperbarui {0}"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:2611
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:2618
 msgid "Error while evaluating the {doctype} {doclink} at row {row_id}. <br><br> <b>Error:</b> {error} <br><br> <b>Hint:</b> {description}"
 msgstr "Kesalahan saat mengevaluasi {doctype} {doclink} pada baris {row_id}. <br><br> <b>Kesalahan:</b> {error} <br><br> <b>Petunjuk:</b> {description}"
 
@@ -3678,6 +3707,12 @@ msgstr "Exam"
 msgid "Exchange Rate cannot be zero."
 msgstr "Kurs tidak boleh nol."
 
+#. Description of the 'Exchange Rate' (Float) field in DocType 'Expense Claim
+#. Advance'
+#: hrms/hr/doctype/expense_claim_advance/expense_claim_advance.json
+msgid "Exchange rate of Payment Entry against Employee Advance"
+msgstr ""
+
 #: hrms/hr/doctype/attendance/attendance_list.js:85
 msgid "Exclude Holidays"
 msgstr "Exclude Holidays"
@@ -3745,10 +3780,8 @@ msgid "Exit Details"
 msgstr "Exit Details"
 
 #. Name of a DocType
-#. Label of a Link in the Employee Lifecycle Workspace
 #: hrms/hr/doctype/exit_interview/exit_interview.json
 #: hrms/hr/report/employee_exits/employee_exits.py:39
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
 msgid "Exit Interview"
 msgstr "Wawancara Keluar"
 
@@ -3769,14 +3802,14 @@ msgstr "Wawancara Keluar {0} sudah ada untuk Karyawan: {1}"
 #. Label of the exit_questionnaire_section (Section Break) field in DocType
 #. 'Exit Interview'
 #: hrms/hr/doctype/exit_interview/exit_interview.json
-#: hrms/hr/doctype/exit_interview/exit_interview.py:140
+#: hrms/hr/doctype/exit_interview/exit_interview.py:143
 msgid "Exit Questionnaire"
 msgstr "Exit Questionnaire"
 
-#: hrms/hr/doctype/exit_interview/test_exit_interview.py:108
-#: hrms/hr/doctype/exit_interview/test_exit_interview.py:118
-#: hrms/hr/doctype/exit_interview/test_exit_interview.py:120 hrms/setup.py:474
-#: hrms/setup.py:476 hrms/setup.py:497
+#: hrms/hr/doctype/exit_interview/test_exit_interview.py:116
+#: hrms/hr/doctype/exit_interview/test_exit_interview.py:126
+#: hrms/hr/doctype/exit_interview/test_exit_interview.py:128 hrms/setup.py:481
+#: hrms/setup.py:483 hrms/setup.py:504
 msgid "Exit Questionnaire Notification"
 msgstr "Notifikasi Kuesioner Keluar"
 
@@ -3792,13 +3825,13 @@ msgstr "Kuesioner Keluar Tertunda"
 
 #. Label of the exit_questionnaire_web_form (Link) field in DocType 'HR
 #. Settings'
-#: hrms/hr/doctype/exit_interview/exit_interview.py:121
+#: hrms/hr/doctype/exit_interview/exit_interview.py:124
 #: hrms/hr/doctype/hr_settings/hr_settings.json
 msgid "Exit Questionnaire Web Form"
 msgstr "Exit Questionnaire Web Form"
 
-#. Label of a quick_list in the Employee Lifecycle Workspace
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
+#. Label of a quick_list in the Tenure Workspace
+#: hrms/hr/workspace/tenure/tenure.json
 msgid "Exits (This Month)"
 msgstr "Exits (This Month)"
 
@@ -3872,11 +3905,11 @@ msgstr "Ringkasan Klaim Biaya"
 #. Label of the expense_type (Link) field in DocType 'Expense Claim Detail'
 #. Name of a DocType
 #. Label of the expense_type (Data) field in DocType 'Expense Claim Type'
-#. Label of a Link in the Expense Claims Workspace
-#: hrms/hr/doctype/expense_claim/expense_claim.py:525
+#. Label of a Link in the Expenses Workspace
+#: hrms/hr/doctype/expense_claim/expense_claim.py:685
 #: hrms/hr/doctype/expense_claim_detail/expense_claim_detail.json
 #: hrms/hr/doctype/expense_claim_type/expense_claim_type.json
-#: hrms/hr/workspace/expense_claims/expense_claims.json
+#: hrms/hr/workspace/expenses/expenses.json
 msgid "Expense Claim Type"
 msgstr "Tipe Beban Klaim"
 
@@ -3888,10 +3921,9 @@ msgstr "Beban Klaim untuk Kendaraan Log {0}"
 msgid "Expense Claim {0} already exists for the Vehicle Log"
 msgstr "Beban Klaim {0} sudah ada untuk Kendaraan Log"
 
-#. Name of a Workspace
-#. Label of a chart in the Expense Claims Workspace
+#. Label of a chart in the Expenses Workspace
 #: frontend/src/views/expense_claim/Dashboard.vue:2
-#: hrms/hr/workspace/expense_claims/expense_claims.json
+#: hrms/hr/workspace/expenses/expenses.json
 msgid "Expense Claims"
 msgstr "Klaim Biaya"
 
@@ -3932,6 +3964,12 @@ msgstr "Biaya Type"
 msgid "Expenses & Advances"
 msgstr "Biaya & Advances"
 
+#. Label of the expenses_settings_section (Section Break) field in DocType 'HR
+#. Settings'
+#: hrms/hr/doctype/hr_settings/hr_settings.json
+msgid "Expenses Settings"
+msgstr ""
+
 #: hrms/hr/doctype/leave_allocation/leave_allocation.js:42
 msgid "Expire Allocation"
 msgstr "Kedaluwarsa Alokasi"
@@ -3964,7 +4002,7 @@ msgstr "Penjelasan"
 msgid "Exporting..."
 msgstr "Mengekspor..."
 
-#: hrms/hr/utils.py:929
+#: hrms/hr/utils.py:932
 msgid "Failed to create/submit {0} for employees:"
 msgstr "Gagal membuat/mengirim {0} untuk karyawan:"
 
@@ -3984,11 +4022,11 @@ msgstr "Gagal mengirim notifikasi penjadwalan ulang wawancara. Silakan konfigura
 msgid "Failed to setup defaults for country {0}."
 msgstr "Gagal mengatur default untuk negara {0}."
 
-#: hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment.py:445
+#: hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment.py:464
 msgid "Failed to submit some leave policy assignments:"
 msgstr "Gagal mengirim beberapa penetapan kebijakan cuti:"
 
-#: hrms/hr/doctype/interview/interview.py:205
+#: hrms/hr/doctype/interview/interview.py:208
 msgid "Failed to update the Job Applicant status"
 msgstr "Gagal memperbarui status Pelamar Pekerjaan"
 
@@ -4008,7 +4046,7 @@ msgstr "Failure Details"
 msgid "Failure Reason"
 msgstr "Failure Reason"
 
-#: hrms/hr/utils.py:478
+#: hrms/hr/utils.py:481
 msgid "Failure of Automatic Allocation of Earned Leaves"
 msgstr "Gagalnya Alokasi Otomatis Cuti yang Diperoleh"
 
@@ -4158,7 +4196,7 @@ msgstr "First Day"
 msgid "First Name "
 msgstr "First Name"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1517
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1520
 msgid "Fiscal Year {0} not found"
 msgstr "Tahun fiskal {0} tidak ditemukan"
 
@@ -4168,8 +4206,8 @@ msgstr "Tahun fiskal {0} tidak ditemukan"
 msgid "Fixed Hourly Rate"
 msgstr "Fixed Hourly Rate"
 
-#. Label of a Card Break in the Expense Claims Workspace
-#: hrms/hr/workspace/expense_claims/expense_claims.json
+#. Label of a Card Break in the Expenses Workspace
+#: hrms/hr/workspace/expenses/expenses.json
 msgid "Fleet Management"
 msgstr "Fleet Management"
 
@@ -4212,7 +4250,7 @@ msgstr "Proses FnF Tertunda"
 msgid "Follow via Email"
 msgstr "Tindak Lanjut melalui Email"
 
-#: hrms/setup.py:326
+#: hrms/setup.py:333
 msgid "Food"
 msgstr "Makanan"
 
@@ -4297,7 +4335,7 @@ msgstr "Dari Tanggal {0} tidak boleh sebelum karyawan bergabung Tanggal {1}"
 msgid "From date can not be less than employee's joining date"
 msgstr "Dari tanggal tidak boleh kurang dari tanggal bergabung karyawan"
 
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:89
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:118
 msgid "From date can not be less than employee's joining date."
 msgstr "Dari tanggal tidak boleh kurang dari tanggal bergabung dengan karyawan."
 
@@ -4349,7 +4387,7 @@ msgstr "Full and Final Asset"
 msgid "Full and Final Outstanding Statement"
 msgstr "Full and Final Outstanding Statement"
 
-#: hrms/setup.py:382
+#: hrms/setup.py:389
 msgid "Full-time"
 msgstr "Full-time"
 
@@ -4374,7 +4412,12 @@ msgstr "Pajak Penghasilan Masa Depan"
 msgid "Future dates not allowed"
 msgstr "Tanggal mendatang tidak diizinkan"
 
-#: hrms/public/js/utils/index.js:186 hrms/public/js/utils/index.js:212
+#. Label of the gain_loss_account (Link) field in DocType 'Expense Claim'
+#: hrms/hr/doctype/expense_claim/expense_claim.json
+msgid "Gain Loss Account"
+msgstr ""
+
+#: hrms/public/js/utils/index.js:186 hrms/public/js/utils/index.js:214
 msgid "Geolocation Error"
 msgstr "Kesalahan Geolokasi"
 
@@ -4512,8 +4555,8 @@ msgstr "Aturan Gratifikasi"
 msgid "Gratuity Rule Slab"
 msgstr "Slab Aturan Gratifikasi"
 
-#. Label of a Card Break in the Employee Lifecycle Workspace
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
+#. Label of a Card Break in the Tenure Workspace
+#: hrms/hr/workspace/tenure/tenure.json
 msgid "Grievance"
 msgstr "Keluhan"
 
@@ -4537,10 +4580,10 @@ msgstr "Detail Keluhan"
 
 #. Label of the grievance_type (Link) field in DocType 'Employee Grievance'
 #. Name of a DocType
-#. Label of a Link in the Employee Lifecycle Workspace
+#. Label of a Link in the Tenure Workspace
 #: hrms/hr/doctype/employee_grievance/employee_grievance.json
 #: hrms/hr/doctype/grievance_type/grievance_type.json
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
+#: hrms/hr/workspace/tenure/tenure.json
 msgid "Grievance Type"
 msgstr "Jenis Keluhan"
 
@@ -4577,7 +4620,7 @@ msgstr "Gaji Kotor Tahun hingga Saat Ini (Mata Uang Perusahaan)"
 msgid "Group goal's progress is auto-calculated based on the child goals."
 msgstr "Kemajuan tujuan grup dihitung otomatis berdasarkan tujuan anak."
 
-#: hrms/setup.py:315
+#: hrms/setup.py:322
 msgid "HR"
 msgstr "HR"
 
@@ -4595,10 +4638,10 @@ msgid "HR Dashboard"
 msgstr "Dasbor HR"
 
 #. Name of a DocType
-#. Label of a Link in the Overview Workspace
+#. Label of a Link in the People Workspace
 #: hrms/hr/doctype/hr_settings/hr_settings.json
-#: hrms/hr/doctype/leave_application/leave_application.py:169
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/doctype/leave_application/leave_application.py:186
+#: hrms/hr/workspace/people/people.json
 msgid "HR Settings"
 msgstr "Pengaturan Sumber Daya Manusia"
 
@@ -4634,7 +4677,7 @@ msgstr "Tanggal Setengah Hari"
 msgid "Half Day Date is mandatory"
 msgstr "Setengah Hari Tanggal adalah wajib"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:191
+#: hrms/hr/doctype/leave_application/leave_application.py:208
 msgid "Half Day Date should be between From Date and To Date"
 msgstr "Tanggal Setengah Hari harus di antara Tanggal Mulai dan Tanggal Akhir"
 
@@ -4697,10 +4740,36 @@ msgstr "Hiring Count"
 msgid "Hiring Settings"
 msgstr "Hiring Pengaturan"
 
+#. Name of a DocType
+#: hrms/hr/doctype/holiday_list_assignment/holiday_list_assignment.json
+msgid "Holiday List Assignment"
+msgstr ""
+
+#: hrms/hr/doctype/holiday_list_assignment/holiday_list_assignment.py:33
+msgid "Holiday List Assignment for {0} already exists for date {1}: {2}"
+msgstr ""
+
+#. Label of the holiday_list_end (Date) field in DocType 'Holiday List
+#. Assignment'
+#: hrms/hr/doctype/holiday_list_assignment/holiday_list_assignment.json
+msgid "Holiday List End"
+msgstr ""
+
+#. Label of the holiday_list_start (Date) field in DocType 'Holiday List
+#. Assignment'
+#: hrms/hr/doctype/holiday_list_assignment/holiday_list_assignment.json
+msgid "Holiday List Start"
+msgstr ""
+
 #. Label of the optional_holiday_list (Link) field in DocType 'Leave Period'
 #: hrms/hr/doctype/leave_period/leave_period.json
 msgid "Holiday List for Optional Leave"
 msgstr "Holiday List for Optional Cuti"
+
+#. Label of a number card in the Leaves Workspace
+#: hrms/hr/workspace/leaves/leaves.json
+msgid "Holidays in this month"
+msgstr ""
 
 #: hrms/controllers/employee_reminders.py:65
 msgid "Holidays this Month."
@@ -4909,7 +4978,7 @@ msgstr "Import Absensi"
 msgid "In Time"
 msgstr "Pada waktunya"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:140
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:143
 msgid "In case of any error during this background process, the system will add a comment about the error on this Payroll Entry and revert to the Submitted status"
 msgstr "Jika terjadi kesalahan selama proses latar belakang ini, sistem akan menambahkan komentar tentang kesalahan tersebut pada Entri Daftar Gaji ini dan mengembalikannya ke status Diajukan."
 
@@ -4966,11 +5035,10 @@ msgid "Income Tax Component"
 msgstr "Komponen Pajak Penghasilan"
 
 #. Name of a report
-#. Label of a Link in the Salary Payout Workspace
+#. Label of a Link in the Payroll Workspace
 #. Label of a Link in the Tax & Benefits Workspace
-#. Label of a shortcut in the Tax & Benefits Workspace
 #: hrms/payroll/report/income_tax_computation/income_tax_computation.json
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#: hrms/payroll/workspace/payroll/payroll.json
 #: hrms/payroll/workspace/tax_&_benefits/tax_&_benefits.json
 msgid "Income Tax Computation"
 msgstr "Perhitungan Pajak Penghasilan"
@@ -4982,10 +5050,10 @@ msgid "Income Tax Deducted Till Date"
 msgstr "Pajak Penghasilan Dipotong Hingga Tanggal"
 
 #. Name of a report
-#. Label of a Link in the Salary Payout Workspace
+#. Label of a Link in the Payroll Workspace
 #. Label of a Link in the Tax & Benefits Workspace
 #: hrms/payroll/report/income_tax_deductions/income_tax_deductions.json
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#: hrms/payroll/workspace/payroll/payroll.json
 #: hrms/payroll/workspace/tax_&_benefits/tax_&_benefits.json
 msgid "Income Tax Deductions"
 msgstr "Pemotongan Pajak Pendapatan"
@@ -4995,14 +5063,14 @@ msgstr "Pemotongan Pajak Pendapatan"
 #. Name of a DocType
 #. Label of the income_tax_slab (Link) field in DocType 'Salary Structure
 #. Assignment'
-#. Label of a Link in the Salary Payout Workspace
+#. Label of a Link in the Payroll Workspace
 #. Label of a Link in the Tax & Benefits Workspace
 #: hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.json
 #: hrms/payroll/doctype/income_tax_slab/income_tax_slab.json
 #: hrms/payroll/doctype/salary_structure/salary_structure.js:142
 #: hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.json
 #: hrms/payroll/report/income_tax_computation/income_tax_computation.py:623
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#: hrms/payroll/workspace/payroll/payroll.json
 #: hrms/payroll/workspace/tax_&_benefits/tax_&_benefits.json
 msgid "Income Tax Slab"
 msgstr "Slab Pajak Penghasilan"
@@ -5016,15 +5084,15 @@ msgstr "Pajak Penghasilan Slab Biaya Lain"
 msgid "Income Tax Slab is mandatory since the Salary Structure {0} has a tax component {1}"
 msgstr "Slab Pajak Penghasilan wajib karena Struktur Gaji {0} memiliki komponen pajak {1}"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:1869
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:1873
 msgid "Income Tax Slab must be effective on or before Payroll Period Start Date: {0}"
 msgstr "Lembaran Pajak Pendapatan harus berlaku pada atau sebelum Tanggal Mulai Periode Penggajian: {0}"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:1857
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:1861
 msgid "Income Tax Slab not set in Salary Structure Assignment: {0}"
 msgstr "Lembaran Pajak Pendapatan tidak disetel dalam Penetapan Struktur Gaji: {0}"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:1865
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:1869
 msgid "Income Tax Slab: {0} is disabled"
 msgstr "Lembaran Pajak Penghasilan: {0} dinonaktifkan"
 
@@ -5058,11 +5126,11 @@ msgstr "Pasang"
 msgid "Install Frappe HR"
 msgstr "Pasang Frappe HR"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:432
+#: hrms/hr/doctype/leave_application/leave_application.py:465
 msgid "Insufficient Balance"
 msgstr "Insufficient Saldo"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:430
+#: hrms/hr/doctype/leave_application/leave_application.py:463
 msgid "Insufficient leave balance for Leave Type {0}"
 msgstr "Insufficient leave balance for Cuti Type {0}"
 
@@ -5077,7 +5145,7 @@ msgstr "Interest Jumlah"
 msgid "Interest Income Account"
 msgstr "Interest Income Akun"
 
-#: hrms/setup.py:388
+#: hrms/setup.py:395
 msgid "Intern"
 msgstr "Menginternir"
 
@@ -5121,15 +5189,15 @@ msgstr "Ringkasan Wawancara"
 msgid "Interview Feedback"
 msgstr "Umpan Balik Wawancara"
 
-#: hrms/hr/doctype/interview/test_interview.py:300
-#: hrms/hr/doctype/interview/test_interview.py:309
-#: hrms/hr/doctype/interview/test_interview.py:311
-#: hrms/hr/doctype/interview/test_interview.py:318 hrms/setup.py:460
-#: hrms/setup.py:462 hrms/setup.py:495
+#: hrms/hr/doctype/interview/test_interview.py:312
+#: hrms/hr/doctype/interview/test_interview.py:321
+#: hrms/hr/doctype/interview/test_interview.py:323
+#: hrms/hr/doctype/interview/test_interview.py:330 hrms/setup.py:467
+#: hrms/setup.py:469 hrms/setup.py:502
 msgid "Interview Feedback Reminder"
 msgstr "Pengingat Umpan Balik Wawancara"
 
-#: hrms/hr/doctype/interview/interview.py:340
+#: hrms/hr/doctype/interview/interview.py:343
 msgid "Interview Feedback {0} submitted successfully"
 msgstr "Umpan Balik Wawancara {0} berhasil dikirim"
 
@@ -5137,11 +5205,11 @@ msgstr "Umpan Balik Wawancara {0} berhasil dikirim"
 msgid "Interview Not Rescheduled"
 msgstr "Wawancara Tidak Dijadwal Ulang"
 
-#: hrms/hr/doctype/interview/test_interview.py:284
-#: hrms/hr/doctype/interview/test_interview.py:293
-#: hrms/hr/doctype/interview/test_interview.py:295
-#: hrms/hr/doctype/interview/test_interview.py:317 hrms/setup.py:448
-#: hrms/setup.py:450 hrms/setup.py:491
+#: hrms/hr/doctype/interview/test_interview.py:296
+#: hrms/hr/doctype/interview/test_interview.py:305
+#: hrms/hr/doctype/interview/test_interview.py:307
+#: hrms/hr/doctype/interview/test_interview.py:329 hrms/setup.py:455
+#: hrms/setup.py:457 hrms/setup.py:498
 msgid "Interview Reminder"
 msgstr "Pengingat Wawancara"
 
@@ -5245,7 +5313,7 @@ msgstr "Wawancara (Minggu Ini)"
 msgid "Invalid Accrual Component"
 msgstr "Invalid Accrual Component"
 
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:182
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:211
 msgid "Invalid Additional Salary"
 msgstr "Gaji Tambahan Tidak Valid"
 
@@ -5261,7 +5329,7 @@ msgstr "Invalid Benefit Amounts"
 msgid "Invalid Dates"
 msgstr "Invalid Dates"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:2643
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:2650
 msgid "Invalid LWP Days Reversed"
 msgstr "Invalid LWP Days Reversed"
 
@@ -5273,12 +5341,12 @@ msgstr "Invalid Cuti Ledger Entry"
 msgid "Invalid Payroll Payable Account. The account currency must be {0} or {1}"
 msgstr "Akun Payroll Payable tidak valid. Mata uang akun harus {0} atau {1}."
 
-#: hrms/hr/doctype/shift_type/shift_type.py:39
-#: hrms/hr/doctype/shift_type/shift_type.py:48
+#: hrms/hr/doctype/shift_type/shift_type.py:49
+#: hrms/hr/doctype/shift_type/shift_type.py:58
 msgid "Invalid Shift Times"
 msgstr "Waktu Shift Tidak Valid"
 
-#: hrms/hr/doctype/expense_claim/expense_claim.py:651
+#: hrms/hr/doctype/expense_claim/expense_claim.py:926
 msgid "Invalid parameters provided. Please pass the required arguments."
 msgstr "Parameter tidak valid diberikan. Silakan berikan argumen yang diperlukan."
 
@@ -5416,7 +5484,6 @@ msgstr "Jan"
 #. Name of a DocType
 #. Label of the job_applicant (Link) field in DocType 'Job Offer'
 #. Label of a Link in the Recruitment Workspace
-#. Label of a shortcut in the Recruitment Workspace
 #: hrms/hr/doctype/appointment_letter/appointment_letter.json
 #: hrms/hr/doctype/employee_onboarding/employee_onboarding.json
 #: hrms/hr/doctype/interview/interview.json
@@ -5433,7 +5500,7 @@ msgstr "Pelamar Pekerjaan"
 msgid "Job Applicant Source"
 msgstr "Sumber Pemohon Pekerjaan"
 
-#: hrms/hr/doctype/employee_referral/employee_referral.py:51
+#: hrms/hr/doctype/employee_referral/employee_referral.py:70
 msgid "Job Applicant {0} created successfully."
 msgstr "Pelamar Pekerjaan {0} berhasil dibuat."
 
@@ -5454,14 +5521,13 @@ msgstr "Rute Lamaran Pekerjaan"
 #. Label of the job_description_tab (Tab Break) field in DocType 'Job
 #. Requisition'
 #. Label of the description (Text Editor) field in DocType 'Job Requisition'
-#: hrms/hr/doctype/job_requisition/job_requisition.json hrms/setup.py:403
+#: hrms/hr/doctype/job_requisition/job_requisition.json hrms/setup.py:410
 msgid "Job Description"
 msgstr "Deskripsi Bidang Kerja"
 
 #. Label of the job_offer (Link) field in DocType 'Employee Onboarding'
 #. Name of a DocType
 #. Label of a Link in the Recruitment Workspace
-#. Label of a shortcut in the Recruitment Workspace
 #: hrms/hr/doctype/employee_onboarding/employee_onboarding.json
 #: hrms/hr/doctype/job_applicant/job_applicant.js:38
 #: hrms/hr/doctype/job_applicant/job_applicant.js:48
@@ -5501,7 +5567,6 @@ msgstr "Tawaran Pekerjaan: {0} sudah untuk Pelamar Kerja: {1}"
 #. Name of a DocType
 #. Label of a field in the job-application Web Form
 #. Label of a Link in the Recruitment Workspace
-#. Label of a shortcut in the Recruitment Workspace
 #: hrms/hr/doctype/interview/interview.json
 #: hrms/hr/doctype/job_applicant/job_applicant.json
 #: hrms/hr/doctype/job_opening/job_opening.json
@@ -5515,6 +5580,13 @@ msgstr "Lowongan Pekerjaan"
 #: hrms/hr/doctype/job_requisition/job_requisition.py:51
 msgid "Job Opening Associated"
 msgstr "Lowongan Terkait"
+
+#. Label of the job_opening_template (Link) field in DocType 'Job Opening'
+#. Name of a DocType
+#: hrms/hr/doctype/job_opening/job_opening.json
+#: hrms/hr/doctype/job_opening_template/job_opening_template.json
+msgid "Job Opening Template"
+msgstr ""
 
 #: hrms/www/jobs/index.html:2 hrms/www/jobs/index.html:5
 msgid "Job Openings"
@@ -5572,11 +5644,10 @@ msgstr "Juni"
 #. Goal'
 #. Label of the kra (Link) field in DocType 'Goal'
 #. Name of a DocType
-#. Label of a Link in the Performance Workspace
 #: hrms/hr/doctype/appraisal_kra/appraisal_kra.json
 #: hrms/hr/doctype/appraisal_template_goal/appraisal_template_goal.json
 #: hrms/hr/doctype/goal/goal.json hrms/hr/doctype/goal/goal_tree.js:134
-#: hrms/hr/doctype/kra/kra.json hrms/hr/workspace/performance/performance.json
+#: hrms/hr/doctype/kra/kra.json
 msgid "KRA"
 msgstr "KRA"
 
@@ -5618,7 +5689,7 @@ msgstr "Key Responsibility Area"
 msgid "Key Result Area"
 msgstr "Key Result Area"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:2640
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:2647
 msgid "LWP Days Reversed ({0}) does not match actual Payroll Corrections total ({1}) for employee {2} from {3} to {4}"
 msgstr "Jumlah hari LWP yang dibalik ({0}) tidak cocok dengan total koreksi penggajian ({1}) untuk karyawan {2} dari {3} hingga {4}"
 
@@ -5704,7 +5775,6 @@ msgstr "Penyesuaian cuti untuk alokasi ini sudah ada: {0}. Silakan ubah penyesua
 #. Name of a DocType
 #. Label of the leave_allocation (Link) field in DocType 'Leave Encashment'
 #. Label of a Link in the Leaves Workspace
-#. Label of a shortcut in the Leaves Workspace
 #: hrms/hr/doctype/compensatory_leave_request/compensatory_leave_request.json
 #: hrms/hr/doctype/leave_allocation/leave_allocation.json
 #: hrms/hr/doctype/leave_encashment/leave_encashment.json
@@ -5725,20 +5795,18 @@ msgstr "Cuti Allocations"
 #. Label of the leave_application (Link) field in DocType 'Attendance'
 #. Name of a DocType
 #. Label of a Link in the Leaves Workspace
-#. Label of a shortcut in the Leaves Workspace
-#. Label of a Link in the Overview Workspace
+#. Label of a Link in the People Workspace
 #: hrms/hr/doctype/attendance/attendance.json
 #: hrms/hr/doctype/leave_application/leave_application.json
-#: hrms/hr/workspace/leaves/leaves.json
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/workspace/leaves/leaves.json hrms/hr/workspace/people/people.json
 msgid "Leave Application"
 msgstr "Aplikasi Cuti"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:754
+#: hrms/hr/doctype/leave_application/leave_application.py:787
 msgid "Leave Application period cannot be across two non-consecutive leave allocations {0} and {1}."
 msgstr "Periode aplikasi cuti tidak boleh melintasi dua alokasi cuti yang tidak berurutan {0} dan {1}."
 
-#: hrms/setup.py:425 hrms/setup.py:427 hrms/setup.py:487
+#: hrms/setup.py:432 hrms/setup.py:434 hrms/setup.py:494
 msgid "Leave Approval Notification"
 msgstr "Tinggalkan Pemberitahuan Persetujuan"
 
@@ -5813,7 +5881,7 @@ msgstr "Cuti Block List Dates"
 msgid "Leave Block List Name"
 msgstr "Cuti Block List Name"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:1365
+#: hrms/hr/doctype/leave_application/leave_application.py:1388
 msgid "Leave Blocked"
 msgstr "Cuti Diblokir"
 
@@ -5838,7 +5906,10 @@ msgstr "Tinggalkan Pencairan"
 
 #. Label of the leave_encashment_amount_per_day (Currency) field in DocType
 #. 'Salary Structure'
+#. Label of the leave_encashment_amount_per_day (Currency) field in DocType
+#. 'Salary Structure Assignment'
 #: hrms/payroll/doctype/salary_structure/salary_structure.json
+#: hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.json
 msgid "Leave Encashment Amount Per Day"
 msgstr "Cuti Encashment Jumlah Per Day"
 
@@ -5924,7 +5995,13 @@ msgstr "Cuti Policy Details"
 msgid "Leave Policy: {0} already assigned for Employee {1} for period {2} to {3}"
 msgstr "Kebijakan Cuti: {0} sudah ditetapkan untuk Karyawan {1} untuk periode {2} hingga {3}."
 
-#: hrms/setup.py:434 hrms/setup.py:436 hrms/setup.py:488
+#. Label of the leave_settings_section (Section Break) field in DocType 'HR
+#. Settings'
+#: hrms/hr/doctype/hr_settings/hr_settings.json
+msgid "Leave Settings"
+msgstr ""
+
+#: hrms/setup.py:441 hrms/setup.py:443 hrms/setup.py:495
 msgid "Leave Status Notification"
 msgstr "Tinggalkan Pemberitahuan Status"
 
@@ -6000,14 +6077,18 @@ msgstr "Tinggalkan Jenis {0} tidak dapat dicampuri"
 
 #. Label of the leave_without_pay (Float) field in DocType 'Salary Slip'
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
-#: hrms/payroll/report/salary_register/salary_register.py:179 hrms/setup.py:374
-#: hrms/setup.py:375
+#: hrms/payroll/report/salary_register/salary_register.py:179 hrms/setup.py:381
+#: hrms/setup.py:382
 msgid "Leave Without Pay"
 msgstr "Cuti Tanpa Bayar"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:509
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:513
 msgid "Leave Without Pay does not match with approved {} records"
 msgstr "Leave Without Pay tidak cocok dengan catatan {} yang disetujui"
+
+#: hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment.py:130
+msgid "Leave allocation is skipped for {0}, because number of leaves to be allocated is 0."
+msgstr ""
 
 #: hrms/hr/doctype/leave_ledger_entry/leave_ledger_entry.py:54
 msgid "Leave allocation {0} is linked with the Leave Application {1}"
@@ -6031,11 +6112,11 @@ msgstr "Aplikasi cuti dikaitkan dengan alokasi cuti {0}. Aplikasi cuti tidak dap
 msgid "Leave cannot be allocated before {0}, as leave balance has already been carry-forwarded in the future leave allocation record {1}"
 msgstr "Cuti tidak dapat dialokasikan sebelum {0}, saldo cuti sudah pernah membawa-diteruskan dalam catatan alokasi cuti masa depan {1}"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:245
+#: hrms/hr/doctype/leave_application/leave_application.py:262
 msgid "Leave cannot be applied/cancelled before {0}, as leave balance has already been carry-forwarded in the future leave allocation record {1}"
 msgstr "Cuti tidak dapat diterapkan / dibatalkan sebelum {0}, saldo cuti sudah pernah membawa-diteruskan dalam catatan alokasi cuti masa depan {1}"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:500
+#: hrms/hr/doctype/leave_application/leave_application.py:533
 msgid "Leave of type {0} cannot be longer than {1}."
 msgstr "Cuti jenis {0} tidak boleh lebih lama dari {1}."
 
@@ -6052,18 +6133,19 @@ msgstr "Cuti(s) Pending Approval"
 msgid "Leave(s) Taken"
 msgstr "Cuti(s) Taken"
 
+#. Label of the leaves_tab (Tab Break) field in DocType 'HR Settings'
 #. Label of the leaves (Float) field in DocType 'Leave Ledger Entry'
 #. Name of a Workspace
-#. Label of a Card Break in the Overview Workspace
+#. Label of a Card Break in the People Workspace
 #. Label of the leave_details_section (Tab Break) field in DocType 'Salary
 #. Slip'
 #: frontend/src/components/BottomTabs.vue:53
+#: hrms/hr/doctype/hr_settings/hr_settings.json
 #: hrms/hr/doctype/leave_ledger_entry/leave_ledger_entry.json
 #: hrms/hr/doctype/leave_policy/leave_policy_dashboard.py:8
 #: hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment_dashboard.py:8
 #: hrms/hr/report/leave_ledger/leave_ledger.py:59
-#: hrms/hr/workspace/leaves/leaves.json
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/workspace/leaves/leaves.json hrms/hr/workspace/people/people.json
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
 msgid "Leaves"
 msgstr "Cuti"
@@ -6096,7 +6178,7 @@ msgstr "Cuti Pending Approval"
 msgid "Leaves for the Leave Type {0} won't be carry-forwarded since carry-forwarding is disabled."
 msgstr "Cuti untuk Jenis Cuti {0} tidak akan dibawa ke periode berikutnya karena fitur carry-forward dinonaktifkan."
 
-#: hrms/setup.py:405
+#: hrms/setup.py:412
 msgid "Leaves per Year"
 msgstr "cuti per Tahun"
 
@@ -6145,7 +6227,7 @@ msgstr "Loan Akun"
 msgid "Loan Product"
 msgstr "Loan Product"
 
-#: hrms/payroll/report/salary_register/salary_register.py:233 hrms/setup.py:765
+#: hrms/payroll/report/salary_register/salary_register.py:233 hrms/setup.py:772
 msgid "Loan Repayment"
 msgstr "Loan Repayment"
 
@@ -6154,7 +6236,7 @@ msgstr "Loan Repayment"
 msgid "Loan Repayment Entry"
 msgstr "Loan Repayment Entry"
 
-#: hrms/hr/utils.py:816
+#: hrms/hr/utils.py:819
 msgid "Loan cannot be repayed from salary for Employee {0} because salary is processed in currency {1}"
 msgstr "Pinjaman tidak dapat dilunasi dari gaji untuk karyawan {0} karena gaji diproses dalam mata uang {1}"
 
@@ -6281,7 +6363,7 @@ msgstr "Tandai kehadiran sebagai {0} untuk {1} pada tanggal terpilih?"
 msgid "Mark attendance based on 'Employee Checkin' for Employees assigned to this shift."
 msgstr "Mark attendance based on 'Karyawan Checkin' for Karyawan assigned to this shift."
 
-#: hrms/hr/doctype/shift_type/shift_type.py:88
+#: hrms/hr/doctype/shift_type/shift_type.py:98
 msgid "Mark attendance for existing check-in/out logs before changing shift settings"
 msgstr "Tandai absensi untuk log check-in/out yang ada sebelum mengubah pengaturan shift"
 
@@ -6380,7 +6462,7 @@ msgstr "Maximum Carry Forwarded Cuti"
 msgid "Maximum Consecutive Leaves Allowed"
 msgstr "Maksimum hari cuti berturut-turut yang diizinkan"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:510
+#: hrms/hr/doctype/leave_application/leave_application.py:543
 msgid "Maximum Consecutive Leaves Exceeded"
 msgstr "Maximum Consecutive Cuti Exceeded"
 
@@ -6442,7 +6524,7 @@ msgstr "Mei"
 msgid "Meal Preference"
 msgstr "Meal Preference"
 
-#: hrms/setup.py:327
+#: hrms/setup.py:334
 msgid "Medical"
 msgstr "Medis"
 
@@ -6469,7 +6551,7 @@ msgstr "Minimum Year for Gratuity"
 msgid "Minimum working days required since Date of Joining to apply for this leave"
 msgstr "Jumlah hari kerja minimum sejak tanggal bergabung untuk dapat mengajukan cuti ini"
 
-#: hrms/hr/doctype/employee_advance/employee_advance.py:47
+#: hrms/hr/doctype/employee_advance/employee_advance.py:64
 msgid "Missing Advance Account"
 msgstr "Missing Advance Akun"
 
@@ -6481,7 +6563,7 @@ msgstr "Missing Mandatory Field"
 msgid "Missing Opening Entries"
 msgstr "Missing Opening Entries"
 
-#: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:44
+#: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:48
 msgid "Missing Relieving Date"
 msgstr "Missing Relieving Tanggal"
 
@@ -6489,7 +6571,7 @@ msgstr "Missing Relieving Tanggal"
 msgid "Missing Salary Components"
 msgstr "Komponen Gaji yang Hilang"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:1860
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:1864
 msgid "Missing Tax Slab"
 msgstr "Missing Tax Slab"
 
@@ -6498,7 +6580,7 @@ msgstr "Missing Tax Slab"
 msgid "Mode of Travel"
 msgstr "Mode of Travel"
 
-#: hrms/hr/doctype/expense_claim/expense_claim.py:312
+#: hrms/hr/doctype/expense_claim/expense_claim.py:439
 msgid "Mode of payment is required to make a payment"
 msgstr "Cara pembayaran yang diperlukan untuk melakukan pembayaran"
 
@@ -6513,10 +6595,10 @@ msgid "Month To Date(Company Currency)"
 msgstr "Month To Tanggal(Perusahaan Currency)"
 
 #. Name of a report
-#. Label of a Link in the Overview Workspace
+#. Label of a Link in the People Workspace
 #. Label of a Link in the Shift & Attendance Workspace
 #: hrms/hr/report/monthly_attendance_sheet/monthly_attendance_sheet.json
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/workspace/people/people.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
 msgid "Monthly Attendance Sheet"
 msgstr "Lembar Kehadiran Bulanan"
@@ -6525,7 +6607,7 @@ msgstr "Lembar Kehadiran Bulanan"
 msgid "More than one selection for {0} not allowed"
 msgstr "Lebih dari satu pilihan untuk {0} tidak diizinkan"
 
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:285
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:314
 msgid "Multiple Additional Salaries with overwrite property exist for Salary Component {0} between {1} and {2}."
 msgstr "Terdapat beberapa Tambahan Gaji dengan properti timpa untuk Komponen Gaji {0} antara {1} dan {2}."
 
@@ -6555,8 +6637,8 @@ msgstr "Cuti Saya"
 msgid "My Requests"
 msgstr "Permintaan Saya"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:1306
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:2527
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:1310
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:2534
 msgid "Name error"
 msgstr "Kesalahan nama"
 
@@ -6613,8 +6695,8 @@ msgstr "Pajak Biaya Baru"
 msgid "New Feedback"
 msgstr "New Feedback"
 
-#. Label of a quick_list in the Employee Lifecycle Workspace
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
+#. Label of a quick_list in the Tenure Workspace
+#: hrms/hr/workspace/tenure/tenure.json
 msgid "New Hires (This Month)"
 msgstr "New Hires (This Month)"
 
@@ -6639,6 +6721,10 @@ msgstr "New Cuti Allocated (In Days)"
 msgid "New shift assignments will be created after this date."
 msgstr "Penugasan shift baru akan dibuat setelah tanggal ini."
 
+#: hrms/hr/doctype/employee_advance/employee_advance.py:392
+msgid "No Bank/Cash Account found for currency {0}. Please create one under company {1}."
+msgstr ""
+
 #: hrms/payroll/doctype/salary_structure/salary_structure.py:218
 msgid "No Employee Found"
 msgstr "Tidak Ada Karyawan yang Ditemukan"
@@ -6647,7 +6733,7 @@ msgstr "Tidak Ada Karyawan yang Ditemukan"
 msgid "No Employee found for the given employee field value. '{}': {}"
 msgstr "Karyawan tidak ditemukan untuk nilai bidang karyawan yang diberikan. &#39;{}&#39;: {}"
 
-#: hrms/hr/doctype/appraisal_cycle/appraisal_cycle.py:111 hrms/hr/utils.py:919
+#: hrms/hr/doctype/appraisal_cycle/appraisal_cycle.py:111 hrms/hr/utils.py:922
 msgid "No Employees Selected"
 msgstr "Tidak ada karyawan yang dipilih"
 
@@ -6675,7 +6761,7 @@ msgstr "Tidak ditemukan Slip Gaji dengan {0} untuk karyawan {1} pada periode pen
 msgid "No Salary Structure Assignment found for employee {0} on date {1}"
 msgstr "Tidak ditemukan Penugasan Struktur Gaji untuk Karyawan {0} pada tanggal {1}"
 
-#: hrms/payroll/doctype/salary_withholding/salary_withholding.py:116
+#: hrms/payroll/doctype/salary_withholding/salary_withholding.py:119
 msgid "No Salary Structure Assignment found for employee {0} on or before {1}"
 msgstr "Tidak ditemukan Penugasan Struktur Gaji untuk Karyawan {0} pada atau sebelum {1}"
 
@@ -6683,7 +6769,7 @@ msgstr "Tidak ditemukan Penugasan Struktur Gaji untuk Karyawan {0} pada atau seb
 msgid "No Salary Structure assigned to Employee {0} on the given date {1}"
 msgstr "No Salary Structure assigned to Karyawan {0} on the given date {1}"
 
-#: hrms/payroll/doctype/salary_component/salary_component.js:109
+#: hrms/payroll/doctype/salary_component/salary_component.js:115
 msgid "No Salary Structures"
 msgstr "Tidak ada Struktur Gaji"
 
@@ -6703,7 +6789,7 @@ msgstr "Tidak ditemukan Penugasan Struktur Gaji aktif untuk Karyawan {0} dengan 
 msgid "No active employee found associated with the email ID {0}. Try logging in with your employee email ID or contact your HR manager for access."
 msgstr "Tidak ada Karyawan aktif yang terkait dengan email ID {0}. Coba masuk menggunakan email Karyawan Anda atau hubungi manajer HR untuk akses."
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:435
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:439
 msgid "No active or default Salary Structure found for employee {0} for the given dates"
 msgstr "Tidak ada yang aktif atau gaji standar Struktur ditemukan untuk karyawan {0} untuk tanggal tertentu"
 
@@ -6760,11 +6846,11 @@ msgstr "Tidak ada catatan absensi untuk dibuat"
 msgid "No changes found in timings."
 msgstr "Tidak ada perubahan waktu yang ditemukan."
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:239
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:242
 msgid "No employees found"
 msgstr "Tidak ditemukan karyawan"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:222
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:225
 msgid "No employees found for the mentioned criteria:<br>Company: {0}<br> Currency: {1}<br>Payroll Payable Account: {2}"
 msgstr "Tidak ada karyawan yang ditemukan untuk kriteria yang disebutkan:<br>Perusahaan: {0}<br> Mata Uang: {1}<br>Akun Pembayaran Gaji: {2}"
 
@@ -6813,7 +6899,7 @@ msgstr "Jumlah Posisi"
 msgid "No replies from"
 msgstr "Tidak ada balasan dari"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1583
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1586
 msgid "No salary slip found to submit for the above selected criteria OR salary slip already submitted"
 msgstr "Tidak ada slip gaji yang ditemukan untuk memenuhi kriteria yang dipilih di atas ATAU slip gaji yang telah diajukan"
 
@@ -6880,7 +6966,7 @@ msgstr "Catatan: Shift tidak akan ditimpa pada catatan kehadiran yang sudah ada.
 msgid "Note: Total allocated leaves {0} shouldn't be less than already approved leaves {1} for the period"
 msgstr "Catatan: Total alokasi cuti {0} tidak boleh kurang dari cuti yang telah disetujui {1} untuk periode tersebut."
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:2169
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:2173
 msgid "Note: Your salary slip is password protected, the password to unlock the PDF is of the format {0}."
 msgstr "Catatan: Slip gaji Anda dilindungi kata sandi; kata sandi untuk membuka PDF memiliki format {0}."
 
@@ -6888,11 +6974,11 @@ msgstr "Catatan: Slip gaji Anda dilindungi kata sandi; kata sandi untuk membuka 
 msgid "Nothing to change"
 msgstr "Tidak ada yang berubah"
 
-#: hrms/setup.py:406
+#: hrms/setup.py:413
 msgid "Notice Period"
 msgstr "Masa Pemberitahuan"
 
-#: hrms/hr/doctype/exit_interview/exit_interview.py:122
+#: hrms/hr/doctype/exit_interview/exit_interview.py:125
 msgid "Notification Template"
 msgstr "Template Notifikasi"
 
@@ -7008,8 +7094,8 @@ msgstr "On Duty"
 msgid "On Leave"
 msgstr "On Cuti"
 
-#. Label of a Card Break in the Employee Lifecycle Workspace
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
+#. Label of a Card Break in the Tenure Workspace
+#: hrms/hr/workspace/tenure/tenure.json
 msgid "Onboarding"
 msgstr "Orientasi Karyawan"
 
@@ -7025,7 +7111,7 @@ msgstr "Kegiatan Orientasi Karyawan"
 msgid "Onboarding Begins On"
 msgstr "Orientasi Dimulai Pada"
 
-#: hrms/hr/doctype/shift_request/shift_request.py:92
+#: hrms/hr/doctype/shift_request/shift_request.py:95
 msgid "Only Approvers can Approve this Request."
 msgstr "Hanya Pemberi Persetujuan yang dapat Menyetujui Permintaan ini."
 
@@ -7037,7 +7123,7 @@ msgstr "Hanya dokumen yang Selesai yang dapat diajukan"
 msgid "Only Employee Grievance with status {0} or {1} can be submitted"
 msgstr "Hanya Pengaduan Karyawan dengan status {0} atau {1} yang dapat diajukan"
 
-#: hrms/hr/doctype/interview/interview.py:322
+#: hrms/hr/doctype/interview/interview.py:325
 msgid "Only Interviewer Are allowed to submit Interview Feedback"
 msgstr "Hanya pewawancara yang diperbolehkan mengirimkan umpan balik wawancara"
 
@@ -7045,7 +7131,7 @@ msgstr "Hanya pewawancara yang diperbolehkan mengirimkan umpan balik wawancara"
 msgid "Only Interviews with Cleared or Rejected status can be submitted."
 msgstr "Hanya wawancara dengan status 'Dinyatakan Lulus' atau 'Ditolak' yang dapat diajukan."
 
-#: hrms/hr/doctype/leave_application/leave_application.py:103
+#: hrms/hr/doctype/leave_application/leave_application.py:104
 msgid "Only Leave Applications with status 'Approved' and 'Rejected' can be submitted"
 msgstr "Hanya Tinggalkan Aplikasi status &#39;Disetujui&#39; dan &#39;Ditolak&#39; dapat disampaikan"
 
@@ -7061,7 +7147,7 @@ msgstr "Hanya alokasi yang kedaluwarsa yang dapat dibatalkan"
 msgid "Only interviewers can submit feedback"
 msgstr "Hanya pewawancara yang dapat mengirimkan umpan balik"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:175
+#: hrms/hr/doctype/leave_application/leave_application.py:192
 msgid "Only users with the {0} role can create backdated leave applications"
 msgstr "Hanya pengguna dengan peran {0} yang diizinkan membuat Permohonan Cuti bertanggal mundur."
 
@@ -7087,7 +7173,7 @@ msgstr "Buka Sekarang"
 msgid "Opening closed."
 msgstr "Lowongan ditutup."
 
-#: hrms/hr/doctype/leave_application/leave_application.py:607
+#: hrms/hr/doctype/leave_application/leave_application.py:640
 msgid "Optional Holiday List not set for leave period {0}"
 msgstr "Daftar Holiday Opsional tidak ditetapkan untuk periode cuti {0}"
 
@@ -7105,18 +7191,14 @@ msgstr "Organizational Chart"
 msgid "Other Taxes and Charges"
 msgstr "Other Taxes and Charges"
 
-#: hrms/setup.py:328
-msgid "Others"
-msgstr "Lainnya"
-
 #. Label of the out_time (Datetime) field in DocType 'Attendance'
 #: hrms/hr/doctype/attendance/attendance.json
 #: hrms/hr/report/shift_attendance/shift_attendance.py:73
 msgid "Out Time"
 msgstr "Waktu Keluar"
 
-#. Label of a chart in the Salary Payout Workspace
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#. Label of a chart in the Payroll Workspace
+#: hrms/payroll/workspace/payroll/payroll.json
 msgid "Outgoing Salary"
 msgstr "Gaji Keluar"
 
@@ -7136,7 +7218,7 @@ msgstr "Overlapping Absensi Request"
 msgid "Overlapping Shift Attendance"
 msgstr "Overlapping Shift Absensi"
 
-#: hrms/hr/doctype/shift_request/shift_request.py:133
+#: hrms/hr/doctype/shift_request/shift_request.py:136
 msgid "Overlapping Shift Requests"
 msgstr "Overlapping Shift Requests"
 
@@ -7219,11 +7301,11 @@ msgstr "Slip lembur dikirim"
 msgid "Overtime Slip created for {0} employee(s)"
 msgstr "Slip lembur dibuat untuk {0} karyawan"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1244
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1247
 msgid "Overtime Slip creation is queued. It may take a few minutes"
 msgstr "Pembuatan Slip Lembur telah masuk antrian. Proses ini mungkin memerlukan beberapa menit"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1268
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1271
 msgid "Overtime Slip submission is queued. It may take a few minutes"
 msgstr "Pengiriman Slip Lembur telah masuk antrian. Proses ini mungkin memerlukan beberapa menit"
 
@@ -7265,10 +7347,14 @@ msgstr "Penghasilan lembur akan dibukukan pada komponen gaji ini untuk pembayara
 #. Label of the overwrite_salary_structure_amount (Check) field in DocType
 #. 'Additional Salary'
 #: hrms/payroll/doctype/additional_salary/additional_salary.json
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:153
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:181
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:182
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:210
 msgid "Overwrite Salary Structure Amount"
 msgstr "Timpa Jumlah Struktur Gaji"
+
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:71
+msgid "Overwrite Salary Structure Amount is disabled as the Salary Component: {0} not part of the Salary Structure: {1}"
+msgstr ""
 
 #: hrms/payroll/report/income_tax_deductions/income_tax_deductions.py:41
 msgid "PAN Number"
@@ -7302,7 +7388,7 @@ msgstr "Dibayar melalui Slip Gaji"
 msgid "Parent Goal"
 msgstr "Parent Sasaran"
 
-#: hrms/setup.py:383
+#: hrms/setup.py:390
 msgid "Part-time"
 msgstr "Part-time"
 
@@ -7347,7 +7433,7 @@ msgstr "Bayar melalui Entri Pembayaran"
 msgid "Pay via Salary Slip"
 msgstr "Bayar melalui Slip Gaji"
 
-#: hrms/hr/doctype/expense_claim/expense_claim.py:127
+#: hrms/hr/doctype/expense_claim/expense_claim.py:137
 msgid "Payable Account is mandatory to submit an Expense Claim"
 msgstr "Akun Hutang wajib diisi untuk mengajukan Klaim Biaya."
 
@@ -7387,7 +7473,7 @@ msgstr "Perhitungan Hari Pembayaran didasarkan pada Pengaturan Daftar Gaji ini."
 msgid "Payment and Accounting"
 msgstr "Payment and Accounting"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1094
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1097
 msgid "Payment of {0} from {1} to {2}"
 msgstr "Pembayaran {0} dari {1} ke {2}"
 
@@ -7409,11 +7495,12 @@ msgid "Payout Unclaimed Amount in Final Payroll Cycle"
 msgstr "Payout Unclaimed Jumlah in Final Daftar gaji Cycle"
 
 #. Label of the payroll (Section Break) field in DocType 'Leave Encashment'
-#. Label of a Card Break in the Salary Payout Workspace
+#. Name of a Workspace
+#. Label of a Card Break in the Payroll Workspace
 #: hrms/hr/doctype/leave_encashment/leave_encashment.json
 #: hrms/overrides/dashboard_overrides.py:37
 #: hrms/overrides/dashboard_overrides.py:77
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#: hrms/payroll/workspace/payroll/payroll.json
 msgid "Payroll"
 msgstr "Daftar gaji"
 
@@ -7431,7 +7518,7 @@ msgstr "Koreksi Penggajian"
 msgid "Payroll Correction Child"
 msgstr "Item Koreksi Penggajian"
 
-#: hrms/setup.py:111 hrms/setup.py:274
+#: hrms/setup.py:111 hrms/setup.py:281
 msgid "Payroll Cost Center"
 msgstr "Pusat Biaya Penggajian"
 
@@ -7466,7 +7553,7 @@ msgstr "Daftar gaji Tanggal"
 msgid "Payroll Employee Detail"
 msgstr "Daftar gaji karyawan"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:138
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:141
 msgid "Payroll Entry cancellation is queued. It may take a few minutes"
 msgstr "Pembatalan Entri Daftar gaji telah dimasukkan ke antrian. Mungkin membutuhkan beberapa menit."
 
@@ -7500,7 +7587,7 @@ msgstr "Nomor Penggajian"
 #: hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.json
 #: hrms/payroll/doctype/payroll_entry/payroll_entry.json
 #: hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.json
-#: hrms/setup.py:838
+#: hrms/setup.py:845
 msgid "Payroll Payable Account"
 msgstr "Daftar gaji Payable Akun"
 
@@ -7516,7 +7603,7 @@ msgstr "Daftar gaji Payable Akun"
 #. Proof Submission'
 #. Label of the payroll_period (Link) field in DocType 'Payroll Correction'
 #. Name of a DocType
-#. Label of a Link in the Salary Payout Workspace
+#. Label of a Link in the Payroll Workspace
 #: frontend/src/views/salary_slip/Dashboard.vue:21
 #: hrms/payroll/doctype/arrear/arrear.json
 #: hrms/payroll/doctype/employee_benefit_application/employee_benefit_application.json
@@ -7528,7 +7615,7 @@ msgstr "Daftar gaji Payable Akun"
 #: hrms/payroll/doctype/payroll_period/payroll_period.json
 #: hrms/payroll/report/accrued_earnings_report/accrued_earnings_report.js:62
 #: hrms/payroll/report/income_tax_computation/income_tax_computation.js:18
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#: hrms/payroll/workspace/payroll/payroll.json
 msgid "Payroll Period"
 msgstr "Periode Penggajian"
 
@@ -7544,23 +7631,23 @@ msgstr "Tanggal Periode Penggajian"
 msgid "Payroll Periods"
 msgstr "Daftar gaji Periods"
 
-#. Label of a Card Break in the Salary Payout Workspace
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#. Label of a Card Break in the Payroll Workspace
+#: hrms/payroll/workspace/payroll/payroll.json
 msgid "Payroll Reports"
 msgstr "Daftar gaji Laporan"
 
-#. Label of a Link in the Overview Workspace
+#. Label of a Link in the People Workspace
 #. Name of a DocType
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/workspace/people/people.json
 #: hrms/payroll/doctype/payroll_settings/payroll_settings.json
 msgid "Payroll Settings"
 msgstr "Pengaturan Payroll"
 
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:95
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:124
 msgid "Payroll date can not be greater than employee's relieving date."
 msgstr "Tanggal penggajian tidak bisa lebih besar dari tanggal pembebasan karyawan."
 
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:87
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:116
 msgid "Payroll date can not be less than employee's joining date."
 msgstr "Tanggal penggajian tidak boleh kurang dari tanggal bergabung dengan karyawan."
 
@@ -7574,7 +7661,7 @@ msgstr "Tanggal Daftar Gaji tidak boleh di masa lalu. Hal ini untuk memastikan b
 msgid "Pending (unpaid) amount from previous advances"
 msgstr "Jumlah yang tertunda (belum dibayar) dari uang muka sebelumnya"
 
-#: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:69
+#: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:73
 msgid "Pending Asset Returns"
 msgstr "Pengembalian Aset Tertunda"
 
@@ -7589,6 +7676,11 @@ msgstr "Wawancara Tertunda"
 #: hrms/hr/report/employee_exits/employee_exits.py:233
 msgid "Pending Questionnaires"
 msgstr "Kuesioner Tertunda"
+
+#. Name of a Workspace
+#: hrms/hr/workspace/people/people.json
+msgid "People"
+msgstr ""
 
 #. Label of the percent_deduction (Percent) field in DocType 'Taxable Salary
 #. Slab'
@@ -7609,7 +7701,7 @@ msgstr "Batalkan {0} secara permanen"
 msgid "Permanently submit {0}"
 msgstr "Ajukan {0} secara permanen"
 
-#: hrms/setup.py:387
+#: hrms/setup.py:394
 msgid "Piecework"
 msgstr "Pekerjaan yg dibayar menurut hasil yg dikerjakan"
 
@@ -7626,7 +7718,11 @@ msgstr "Silakan aktifkan Absensi Otomatis dan selesaikan pengaturannya terlebih 
 msgid "Please Select Company First"
 msgstr "Silakan pilih Perusahaan terlebih dahulu"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:832
+#: hrms/utils/holiday_list.py:93
+msgid "Please assign Holiday List for Employee {0} or their company {1} through {2}"
+msgstr ""
+
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:836
 msgid "Please assign a Salary Structure for Employee {0} applicable from or before {1} first"
 msgstr "Silakan tetapkan Struktur Gaji untuk karyawan {0} yang berlaku dari atau sebelum {1} terlebih dahulu"
 
@@ -7658,15 +7754,15 @@ msgstr "Silakan masukkan nama"
 msgid "Please fill in Employee, Posting Date, and Company before fetching overtime details."
 msgstr "Silakan isi karyawan, tanggal posting, dan perusahaan sebelum mengambil rincian lembur."
 
-#: hrms/hr/doctype/shift_type/shift_type.py:49
+#: hrms/hr/doctype/shift_type/shift_type.py:59
 msgid "Please reduce {0} to avoid shift time overlapping with itself"
 msgstr "Silakan kurangi {0} untuk menghindari waktu shift yang saling tumpang tindih"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:2158
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:2162
 msgid "Please see attachment"
 msgstr "Silakan lihat lampiran"
 
-#: hrms/hr/doctype/staffing_plan/staffing_plan.py:224
+#: hrms/hr/doctype/staffing_plan/staffing_plan.py:225
 msgid "Please select Company and Designation"
 msgstr "Silakan pilih Perusahaan dan Penunjukan"
 
@@ -7716,7 +7812,7 @@ msgstr "Silakan pilih file csv"
 msgid "Please select a date."
 msgstr "Silakan pilih tanggal."
 
-#: hrms/hr/utils.py:807
+#: hrms/hr/utils.py:810
 msgid "Please select an Applicant"
 msgstr "Silakan pilih Pelamar"
 
@@ -7724,7 +7820,7 @@ msgstr "Silakan pilih Pelamar"
 msgid "Please select at least one Shift Request to perform this action."
 msgstr "Silakan pilih setidaknya satu Permintaan Shift untuk melakukan tindakan ini."
 
-#: hrms/hr/utils.py:918
+#: hrms/hr/utils.py:921
 msgid "Please select at least one employee to perform this action."
 msgstr "Silakan pilih setidaknya satu karyawan untuk melakukan tindakan ini."
 
@@ -7781,7 +7877,7 @@ msgstr "Silakan atur komponen Basic dan HRA di Perusahaan {0}"
 msgid "Please set Earning Component for Leave type: {0}."
 msgstr "Silakan atur Komponen Penghasilan untuk jenis cuti: {0}."
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:493
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:497
 msgid "Please set Payroll based on in Payroll settings"
 msgstr "Harap setel Penggajian berdasarkan dalam pengaturan Penggajian"
 
@@ -7799,23 +7895,27 @@ msgstr "Silakan atur Akun Kas Default di pengaturan Perusahaan"
 msgid "Please set a date range less than 90 days."
 msgstr "Silakan tetapkan rentang tanggal kurang dari 90 hari."
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:354
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:357
 msgid "Please set account in Salary Component {0}"
 msgstr "Silakan atur akun pada Komponen Gaji {0}"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:662
+#: hrms/hr/doctype/leave_application/leave_application.py:695
 msgid "Please set default template for Leave Approval Notification in HR Settings."
 msgstr "Silakan mengatur template default untuk Meninggalkan Pemberitahuan Persetujuan di Pengaturan HR."
 
-#: hrms/hr/doctype/leave_application/leave_application.py:637
+#: hrms/hr/doctype/leave_application/leave_application.py:670
 msgid "Please set default template for Leave Status Notification in HR Settings."
 msgstr "Silakan mengatur template default untuk Pemberitahuan Status Cuti di Pengaturan HR."
+
+#: hrms/hr/doctype/employee_advance/employee_advance.py:48
+msgid "Please set the Advance Account {0} or in {1}"
+msgstr ""
 
 #: hrms/hr/doctype/appraisal_cycle/appraisal_cycle.py:137
 msgid "Please set the Appraisal Template for all the {0} or select the template in the Employees table below."
 msgstr "Silakan atur Template Penilaian untuk semua {0} atau pilih template di tabel Karyawan di bawah."
 
-#: hrms/hr/doctype/expense_claim/expense_claim.js:363
+#: hrms/hr/doctype/expense_claim/expense_claim.js:521
 msgid "Please set the Company"
 msgstr "Harap atur Perusahaan"
 
@@ -7836,11 +7936,11 @@ msgstr "Silakan atur rentang tanggal."
 msgid "Please set the relieving date for employee {0}"
 msgstr "Silakan atur tanggal pengakhiran untuk karyawan {0}"
 
-#: hrms/hr/doctype/exit_interview/exit_interview.py:120
+#: hrms/hr/doctype/exit_interview/exit_interview.py:123
 msgid "Please set {0} and {1} in {2}."
 msgstr "Silakan atur {0} dan {1} di {2}."
 
-#: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:40
+#: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:44
 msgid "Please set {0} for Employee {1}"
 msgstr "Silakan atur {0} untuk karyawan {1}"
 
@@ -7865,7 +7965,7 @@ msgstr "Silakan atur seri penomoran untuk Kehadiran melalui Pengaturan&gt; Seri 
 msgid "Please share your feedback to the training by clicking on 'Training Feedback' and then 'New'"
 msgstr "Silakan bagikan umpan balik Anda ke pelatihan dengan mengklik &#39;Feedback Training&#39; dan kemudian &#39;New&#39;"
 
-#: hrms/hr/doctype/interview/interview.py:191
+#: hrms/hr/doctype/interview/interview.py:194
 msgid "Please specify the job applicant to be updated."
 msgstr "Silakan tentukan pelamar yang akan diperbarui."
 
@@ -7947,15 +8047,15 @@ msgstr "Jumlah Pokok"
 msgid "Printed On {0}"
 msgstr "Printed On {0}"
 
-#: hrms/setup.py:366 hrms/setup.py:367
+#: hrms/setup.py:373 hrms/setup.py:374
 msgid "Privilege Leave"
 msgstr "Privilege Cuti"
 
-#: hrms/setup.py:384
+#: hrms/setup.py:391
 msgid "Probation"
 msgstr "Percobaan"
 
-#: hrms/setup.py:398
+#: hrms/setup.py:405
 msgid "Probationary Period"
 msgstr "Masa percobaan"
 
@@ -7967,7 +8067,7 @@ msgstr "Process Absensi After"
 #. Label of the process_payroll_accounting_entry_based_on_employee (Check)
 #. field in DocType 'Payroll Settings'
 #: hrms/payroll/doctype/payroll_settings/payroll_settings.json
-#: hrms/setup.py:849
+#: hrms/setup.py:856
 msgid "Process Payroll Accounting Entry based on Employee"
 msgstr "Process Daftar gaji Accounting Entry based on Karyawan"
 
@@ -8005,9 +8105,9 @@ msgid "Processing of Shift Requests has been queued. It may take a few minutes."
 msgstr "Pemrosesan Permintaan Shift telah dimasukkan ke antrian. Mungkin membutuhkan beberapa menit."
 
 #. Name of a report
-#. Label of a Link in the Salary Payout Workspace
+#. Label of a Link in the Payroll Workspace
 #: hrms/payroll/report/professional_tax_deductions/professional_tax_deductions.json
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#: hrms/payroll/workspace/payroll/payroll.json
 msgid "Professional Tax Deductions"
 msgstr "Pemotongan Pajak Profesional"
 
@@ -8042,9 +8142,9 @@ msgid "Property already added"
 msgstr "Properti sudah ditambahkan"
 
 #. Name of a report
-#. Label of a Link in the Salary Payout Workspace
+#. Label of a Link in the Payroll Workspace
 #: hrms/payroll/report/provident_fund_deductions/provident_fund_deductions.json
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#: hrms/payroll/workspace/payroll/payroll.json
 msgid "Provident Fund Deductions"
 msgstr "Pemotongan Dana Provident"
 
@@ -8079,10 +8179,10 @@ msgstr "Tujuan & Jumlah"
 #. Name of a DocType
 #. Label of the purpose_of_travel (Data) field in DocType 'Purpose of Travel'
 #. Label of the purpose_of_travel (Link) field in DocType 'Travel Request'
-#. Label of a Link in the Expense Claims Workspace
+#. Label of a Link in the Expenses Workspace
 #: hrms/hr/doctype/purpose_of_travel/purpose_of_travel.json
 #: hrms/hr/doctype/travel_request/travel_request.json
-#: hrms/hr/workspace/expense_claims/expense_claims.json
+#: hrms/hr/workspace/expenses/expenses.json
 msgid "Purpose of Travel"
 msgstr "Tujuan Perjalanan"
 
@@ -8195,16 +8295,18 @@ msgstr "Direkomendasikan untuk satu perangkat biometrik / check-in melalui aplik
 msgid "Recover Cost"
 msgstr "Recover Biaya"
 
+#. Label of the recruitment_tab (Tab Break) field in DocType 'HR Settings'
 #. Name of a Workspace
+#: hrms/hr/doctype/hr_settings/hr_settings.json
 #: hrms/hr/workspace/recruitment/recruitment.json
 msgid "Recruitment"
 msgstr "Recruitment"
 
 #. Name of a report
-#. Label of a Link in the Overview Workspace
+#. Label of a Link in the People Workspace
 #. Label of a Link in the Recruitment Workspace
 #: hrms/hr/report/recruitment_analytics/recruitment_analytics.json
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/workspace/people/people.json
 #: hrms/hr/workspace/recruitment/recruitment.json
 msgid "Recruitment Analytics"
 msgstr "Analitik Rekrutmen"
@@ -8224,8 +8326,8 @@ msgid "Reduction is more than {0}'s available leave balance {1} for leave type {
 msgstr "Pengurangan lebih besar dari saldo cuti yang tersedia {1} untuk Karyawan {0} pada jenis cuti {2}."
 
 #: hrms/hr/doctype/leave_allocation/leave_allocation.py:371
-#: hrms/hr/doctype/leave_application/leave_application.py:504
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:155
+#: hrms/hr/doctype/leave_application/leave_application.py:537
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:184
 #: hrms/payroll/doctype/payroll_entry/payroll_entry.py:101
 msgid "Reference: {0}"
 msgstr "Reference: {0}"
@@ -8331,11 +8433,11 @@ msgstr "Hapus jika Bernilai Nol"
 msgid "Rented Car"
 msgstr "Rented Car"
 
-#: hrms/setup.py:822 hrms/setup.py:831
+#: hrms/setup.py:829 hrms/setup.py:838
 msgid "Repay From Salary"
 msgstr "Potong dari Gaji"
 
-#: hrms/hr/utils.py:822
+#: hrms/hr/utils.py:825
 msgid "Repay From Salary can be selected only for term loans"
 msgstr "Bayar Dari Gaji hanya dapat dipilih untuk pinjaman berjangka"
 
@@ -8416,7 +8518,7 @@ msgstr "Required for Karyawan Creation"
 msgid "Reschedule Interview"
 msgstr "Jadwalkan Ulang Wawancara"
 
-#: hrms/setup.py:404
+#: hrms/setup.py:411
 msgid "Responsibilities"
 msgstr "Tanggung jawab"
 
@@ -8450,9 +8552,9 @@ msgid "Retained"
 msgstr "Retained"
 
 #. Name of a DocType
-#. Label of a Link in the Salary Payout Workspace
+#. Label of a Link in the Payroll Workspace
 #: hrms/payroll/doctype/retention_bonus/retention_bonus.json
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#: hrms/payroll/workspace/payroll/payroll.json
 msgid "Retention Bonus"
 msgstr "Bonus Retensi"
 
@@ -8480,7 +8582,7 @@ msgstr "Retry Successful"
 msgid "Retrying allocations"
 msgstr "Retrying allocations"
 
-#: hrms/hr/doctype/employee_advance/employee_advance.py:178
+#: hrms/hr/doctype/employee_advance/employee_advance.py:202
 msgid "Return amount cannot be greater than unclaimed amount"
 msgstr "Jumlah pengembalian tidak boleh lebih besar dari jumlah yang belum diklaim."
 
@@ -8508,13 +8610,11 @@ msgstr "Revised CTC"
 #. Label of the role_allowed_to_create_backdated_leave_application (Link) field
 #. in DocType 'HR Settings'
 #: hrms/hr/doctype/hr_settings/hr_settings.json
-#: hrms/hr/doctype/leave_application/leave_application.py:168
+#: hrms/hr/doctype/leave_application/leave_application.py:185
 msgid "Role Allowed to Create Backdated Leave Application"
 msgstr "Peran yang Diizinkan untuk Membuat Permohonan Cuti Tanggal Mundur"
 
-#. Label of a shortcut in the Shift & Attendance Workspace
-#: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
-#: hrms/public/js/utils/index.js:250 hrms/public/js/utils/index.js:271
+#: hrms/public/js/utils/index.js:252 hrms/public/js/utils/index.js:273
 msgid "Roster"
 msgstr "Roster"
 
@@ -8563,15 +8663,15 @@ msgstr "Baris #{0}: Komponen {1} memiliki opsi {2} dan {3} yang diaktifkan."
 msgid "Row #{0}: Timesheet amount will overwrite the Earning component amount for the Salary Component {1}"
 msgstr "Baris #{0}: Jumlah timesheet akan menimpa jumlah komponen Penghasilan untuk Komponen Gaji {1}"
 
-#: hrms/hr/doctype/expense_claim/expense_claim.py:626
+#: hrms/hr/doctype/expense_claim/expense_claim.py:901
 msgid "Row No {0}: Amount cannot be greater than the Outstanding Amount against Expense Claim {1}. Outstanding Amount is {2}"
 msgstr "Row No {0}: Jumlah cannot be greater than the Outstanding Jumlah against Biaya Klaim {1}. Outstanding Jumlah is {2}"
 
-#: hrms/hr/doctype/expense_claim/expense_claim.py:375
+#: hrms/hr/doctype/expense_claim/expense_claim.py:503
 msgid "Row {0}# Allocated amount {1} cannot be greater than unclaimed amount {2}"
 msgstr "Baris {0} # Jumlah alokasi {1} tidak boleh lebih besar dari jumlah yang tidak diklaim {2}"
 
-#: hrms/hr/doctype/leave_encashment/leave_encashment.py:270
+#: hrms/hr/doctype/leave_encashment/leave_encashment.py:288
 msgid "Row {0}# Paid Amount cannot be greater than Encashment amount"
 msgstr "Baris {0}: Jumlah yang dibayar tidak boleh lebih besar dari jumlah Pengencashan."
 
@@ -8579,7 +8679,7 @@ msgstr "Baris {0}: Jumlah yang dibayar tidak boleh lebih besar dari jumlah Penge
 msgid "Row {0}# Paid Amount cannot be greater than Total amount"
 msgstr "Baris {0}: Jumlah yang dibayar tidak boleh lebih besar dari jumlah total."
 
-#: hrms/hr/doctype/employee_advance/employee_advance.py:170
+#: hrms/hr/doctype/employee_advance/employee_advance.py:194
 msgid "Row {0}# Paid Amount cannot be greater than requested advance amount"
 msgstr "Baris {0} # Jumlah yang Dibayar tidak boleh lebih besar dari jumlah uang muka yang diminta"
 
@@ -8595,11 +8695,11 @@ msgstr "Baris {0}: Skor Sasaran tidak boleh lebih besar dari {1}"
 msgid "Row {0}: Paid amount {1} is greater than pending accrued amount {2} against loan {3}"
 msgstr "Baris {0}: Jumlah yang dibayar {1} lebih besar daripada jumlah terakumulasi yang tertunda {2} pada pinjaman {3}."
 
-#: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:61
+#: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:65
 msgid "Row {0}: {1}"
 msgstr "Row {0}: {1}"
 
-#: hrms/hr/doctype/expense_claim/expense_claim.py:305
+#: hrms/hr/doctype/expense_claim/expense_claim.py:432
 msgid "Row {0}: {1} is required in the expenses table to book an expense claim."
 msgstr "Baris {0}: {1} harus ada di tabel pengeluaran untuk memesan klaim pengeluaran."
 
@@ -8615,7 +8715,7 @@ msgstr "Baris {0}: {1} harus ada di tabel pengeluaran untuk memesan klaim pengel
 #. Label of the salary_component (Link) field in DocType 'Retention Bonus'
 #. Name of a DocType
 #. Label of the salary_component (Link) field in DocType 'Salary Structure'
-#. Label of a Link in the Salary Payout Workspace
+#. Label of a Link in the Payroll Workspace
 #: hrms/hr/doctype/overtime_salary_component/overtime_salary_component.json
 #: hrms/payroll/doctype/additional_salary/additional_salary.json
 #: hrms/payroll/doctype/employee_benefit_ledger/employee_benefit_ledger.json
@@ -8627,7 +8727,7 @@ msgstr "Baris {0}: {1} harus ada di tabel pengeluaran untuk memesan klaim pengel
 #: hrms/payroll/doctype/salary_structure/salary_structure.json
 #: hrms/payroll/report/accrued_earnings_report/accrued_earnings_report.js:77
 #: hrms/payroll/report/accrued_earnings_report/accrued_earnings_report.py:33
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#: hrms/payroll/workspace/payroll/payroll.json
 #: hrms/public/js/utils/payroll_utils.js:23
 msgid "Salary Component"
 msgstr "Komponen gaji"
@@ -8664,7 +8764,7 @@ msgstr "Komponen Gaji untuk penggajian berbasis timesheet."
 msgid "Salary Component {0} cannot be selected more than once in Employee Benefits"
 msgstr "Komponen Gaji {0} tidak dapat dipilih lebih dari sekali dalam Manfaat Karyawan"
 
-#: hrms/payroll/doctype/salary_component/salary_component.js:107
+#: hrms/payroll/doctype/salary_component/salary_component.js:113
 msgid "Salary Component {0} is currently not used in any Salary Structure."
 msgstr "Komponen Gaji {0} saat ini tidak digunakan di Struktur Gaji manapun."
 
@@ -8699,16 +8799,16 @@ msgid "Salary Paid Per"
 msgstr "Gaji Dibayar Per"
 
 #. Name of a report
-#. Label of a Link in the Salary Payout Workspace
+#. Label of a Link in the Payroll Workspace
 #: hrms/payroll/report/salary_payments_based_on_payment_mode/salary_payments_based_on_payment_mode.json
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#: hrms/payroll/workspace/payroll/payroll.json
 msgid "Salary Payments Based On Payment Mode"
 msgstr "Pembayaran Gaji Berdasarkan Mode Pembayaran"
 
 #. Name of a report
-#. Label of a Link in the Salary Payout Workspace
+#. Label of a Link in the Payroll Workspace
 #: hrms/payroll/report/salary_payments_via_ecs/salary_payments_via_ecs.json
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#: hrms/payroll/workspace/payroll/payroll.json
 msgid "Salary Payments via ECS"
 msgstr "Pembayaran Gaji melalui ECS"
 
@@ -8722,10 +8822,9 @@ msgid "Salary Range"
 msgstr "Rentang Gaji"
 
 #. Name of a report
-#. Label of a Link in the Salary Payout Workspace
-#. Label of a shortcut in the Salary Payout Workspace
+#. Label of a Link in the Payroll Workspace
 #: hrms/payroll/report/salary_register/salary_register.json
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#: hrms/payroll/workspace/payroll/payroll.json
 msgid "Salary Register"
 msgstr "Register Gaji"
 
@@ -8735,14 +8834,13 @@ msgstr "Register Gaji"
 #. Label of the column_break_rnoq (Section Break) field in DocType 'Payroll
 #. Settings'
 #. Name of a DocType
-#. Label of a Link in the Salary Payout Workspace
-#. Label of a shortcut in the Salary Payout Workspace
+#. Label of a Link in the Payroll Workspace
 #: hrms/hr/doctype/leave_application/leave_application.json
 #: hrms/hr/doctype/overtime_slip/overtime_slip.json
 #: hrms/payroll/doctype/employee_benefit_ledger/employee_benefit_ledger.json
 #: hrms/payroll/doctype/payroll_settings/payroll_settings.json
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
-#: hrms/payroll/workspace/salary_payout/salary_payout.json hrms/setup.py:302
+#: hrms/payroll/workspace/payroll/payroll.json hrms/setup.py:309
 msgid "Salary Slip"
 msgstr "Slip Gaji"
 
@@ -8789,7 +8887,7 @@ msgstr "Daftar Absen Slip Gaji"
 msgid "Salary Slip already exists for {0} for the given dates"
 msgstr "Slip Gaji sudah ada untuk {0} pada tanggal yang diberikan"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:287
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:290
 msgid "Salary Slip creation is queued. It may take a few minutes"
 msgstr "Pembuatan Slip Gaji telah masuk antrian. Proses ini mungkin memerlukan beberapa menit"
 
@@ -8805,11 +8903,11 @@ msgstr "Slip Gaji karyawan {0} sudah dibuat untuk periode ini"
 msgid "Salary Slip of employee {0} already created for time sheet {1}"
 msgstr "Slip Gaji karyawan {0} sudah dibuat untuk daftar absen {1}"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:332
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:335
 msgid "Salary Slip submission is queued. It may take a few minutes"
 msgstr "Pengiriman Slip Gaji telah masuk antrian. Proses ini mungkin memerlukan beberapa menit"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1522
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1525
 msgid "Salary Slip {0} failed for Payroll Entry {1}"
 msgstr "Slip Gaji {0} gagal untuk Entri Penggajian {1}"
 
@@ -8831,11 +8929,11 @@ msgstr "Slip Gaji Dibuat"
 msgid "Salary Slips Submitted"
 msgstr "Slip Gaji Dikirim"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1564
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1567
 msgid "Salary Slips already exist for employees {}, and will not be processed by this payroll."
 msgstr "Slip gaji sudah ada untuk karyawan {}, dan tidak akan diproses dalam penggajian ini."
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1589
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1592
 msgid "Salary Slips submitted for period from {0} to {1}"
 msgstr "Slip Gaji dikirim untuk periode dari {0} sampai {1}"
 
@@ -8846,22 +8944,22 @@ msgstr "Slip Gaji dikirim untuk periode dari {0} sampai {1}"
 #. Name of a DocType
 #. Label of the salary_structure (Link) field in DocType 'Salary Structure
 #. Assignment'
-#. Label of a Link in the Salary Payout Workspace
+#. Label of a Link in the Payroll Workspace
 #: hrms/payroll/doctype/arrear/arrear.json
 #: hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.json
 #: hrms/payroll/doctype/salary_component/salary_component.js:31
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
 #: hrms/payroll/doctype/salary_structure/salary_structure.json
 #: hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.json
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#: hrms/payroll/workspace/payroll/payroll.json
 msgid "Salary Structure"
 msgstr "Struktur Gaji"
 
 #. Name of a DocType
-#. Label of a Link in the Salary Payout Workspace
+#. Label of a Link in the Payroll Workspace
 #: hrms/payroll/doctype/income_tax_slab/income_tax_slab.js:8
 #: hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.json
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#: hrms/payroll/workspace/payroll/payroll.json
 msgid "Salary Structure Assignment"
 msgstr "Penetapan Struktur Gaji"
 
@@ -8877,7 +8975,7 @@ msgstr "Penugasan Struktur Gaji untuk Karyawan sudah ada"
 msgid "Salary Structure Assignment not found for employee {0} on date {1}"
 msgstr "Tidak ditemukan Penetapan Struktur Gaji untuk karyawan {0} pada tanggal {1}"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:438
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:442
 msgid "Salary Structure Missing"
 msgstr "Struktur Gaji Hilang"
 
@@ -8893,16 +8991,16 @@ msgstr "Struktur Gaji tidak ditetapkan untuk karyawan {0} pada tanggal {1}"
 msgid "Salary Structure {0} does not belong to company {1}"
 msgstr "Struktur Gaji {0} tidak terdaftar untuk perusahaan {1}"
 
-#: hrms/payroll/doctype/salary_component/salary_component.js:144
+#: hrms/payroll/doctype/salary_component/salary_component.js:150
 msgid "Salary Structures updated successfully"
 msgstr "Struktur Gaji berhasil diperbarui"
 
 #. Label of the salary_withholding (Link) field in DocType 'Salary Slip'
 #. Name of a DocType
-#. Label of a Link in the Salary Payout Workspace
+#. Label of a Link in the Payroll Workspace
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
 #: hrms/payroll/doctype/salary_withholding/salary_withholding.json
-#: hrms/payroll/workspace/salary_payout/salary_payout.json
+#: hrms/payroll/workspace/payroll/payroll.json
 msgid "Salary Withholding"
 msgstr "Pemotongan Gaji"
 
@@ -8917,7 +9015,7 @@ msgstr "Siklus Pemotongan Gaji"
 msgid "Salary Withholding {0} already exists for employee {1} for the selected period"
 msgstr "Potongan Gaji {0} sudah ada untuk karyawan {1} pada periode yang dipilih"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:345
+#: hrms/hr/doctype/leave_application/leave_application.py:378
 msgid "Salary already processed for period between {0} and {1}, Leave application period cannot be between this date range."
 msgstr "Gaji sudah diproses untuk periode antara {0} dan {1}, Tinggalkan periode aplikasi tidak dapat antara rentang tanggal ini."
 
@@ -8937,18 +9035,24 @@ msgstr "Komponen Gaji tipe Provident Fund, Additional Provident Fund, atau Pinja
 msgid "Salary components should be part of the Salary Structure."
 msgstr "Komponen gaji harus merupakan bagian dari Struktur Gaji."
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:2707
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:2714
 msgid "Salary slip emails have been enqueued for sending. Check {0} for status."
 msgstr "Email slip gaji telah masuk antrian untuk dikirim. Periksa {0} untuk status."
 
 #. Label of the sanctioned_amount (Currency) field in DocType 'Expense Claim
 #. Detail'
 #: hrms/hr/doctype/expense_claim_detail/expense_claim_detail.json
-#: hrms/hr/report/unpaid_expense_claim/unpaid_expense_claim.py:21
+#: hrms/hr/report/unpaid_expense_claim/unpaid_expense_claim.py:22
 msgid "Sanctioned Amount"
 msgstr "Sanctioned Jumlah"
 
-#: hrms/hr/doctype/expense_claim/expense_claim.py:396
+#. Label of the base_sanctioned_amount (Currency) field in DocType 'Expense
+#. Claim Detail'
+#: hrms/hr/doctype/expense_claim_detail/expense_claim_detail.json
+msgid "Sanctioned Amount (Company Currency)"
+msgstr ""
+
+#: hrms/hr/doctype/expense_claim/expense_claim.py:527
 msgid "Sanctioned Amount cannot be greater than Claim Amount in Row {0}."
 msgstr "Sanksi Jumlah tidak dapat lebih besar dari Klaim Jumlah dalam Row {0}."
 
@@ -8997,7 +9101,7 @@ msgstr "Pilih Bulan untuk Pembalikan LWP"
 msgid "Select Payment Account to make Bank Entry"
 msgstr "Pilih Akun Pembayaran untuk membuat Entri Bank"
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1727
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1730
 msgid "Select Payroll Frequency."
 msgstr "Pilih Frekuensi Penggajian."
 
@@ -9024,7 +9128,7 @@ msgstr "Pilih Syarat dan Ketentuan"
 msgid "Select Users"
 msgstr "Pilih Pengguna"
 
-#: hrms/hr/doctype/expense_claim/expense_claim.js:406
+#: hrms/hr/doctype/expense_claim/expense_claim.js:566
 msgid "Select an employee to get the employee advance."
 msgstr "Pilih karyawan untuk mendapatkan uang muka karyawan."
 
@@ -9032,7 +9136,7 @@ msgstr "Pilih karyawan untuk mendapatkan uang muka karyawan."
 msgid "Select the Employee for which you want to allocate leaves."
 msgstr "Pilih karyawan yang ingin Anda alokasikan cutinya."
 
-#: hrms/hr/doctype/leave_application/leave_application.js:300
+#: hrms/hr/doctype/leave_application/leave_application.js:304
 msgid "Select the Employee."
 msgstr "Pilih karyawan."
 
@@ -9048,7 +9152,7 @@ msgstr "Pilih tanggal setelahnya Alokasi Cuti ini akan kedaluwarsa."
 msgid "Select the date from which this Leave Allocation will be valid."
 msgstr "Pilih tanggal mulai berlakunya Alokasi Cuti ini."
 
-#: hrms/hr/doctype/leave_application/leave_application.js:317
+#: hrms/hr/doctype/leave_application/leave_application.js:321
 msgid "Select the end date for your Leave Application."
 msgstr "Pilih tanggal akhir untuk pengajuan cuti Anda."
 
@@ -9058,7 +9162,7 @@ msgstr "Pilih tanggal akhir untuk pengajuan cuti Anda."
 msgid "Select the salary components whose total will be used from the salary slip to calculate the hourly overtime rate."
 msgstr "Pilih komponen gaji yang jumlahnya akan digunakan dari slip gaji untuk menghitung tarif lembur per jam."
 
-#: hrms/hr/doctype/leave_application/leave_application.js:312
+#: hrms/hr/doctype/leave_application/leave_application.js:316
 msgid "Select the start date for your Leave Application."
 msgstr "Pilih tanggal mulai untuk pengajuan cuti Anda."
 
@@ -9068,11 +9172,11 @@ msgstr "Pilih tanggal mulai untuk pengajuan cuti Anda."
 msgid "Select this if you want shift assignments to be automatically created indefinitely."
 msgstr "Pilih ini jika Anda ingin penugasan shift dibuat secara otomatis tanpa batas waktu."
 
-#: hrms/hr/doctype/leave_application/leave_application.js:305
+#: hrms/hr/doctype/leave_application/leave_application.js:309
 msgid "Select type of leave the employee wants to apply for, like Sick Leave, Privilege Leave, Casual Leave, etc."
 msgstr "Pilih jenis cuti yang ingin diajukan karyawan, seperti Cuti Sakit, Cuti Hak, Cuti Santai, dll."
 
-#: hrms/hr/doctype/leave_application/leave_application.js:327
+#: hrms/hr/doctype/leave_application/leave_application.js:331
 msgid "Select your Leave Approver i.e. the person who approves or rejects your leaves."
 msgstr "Pilih pemberi persetujuan cuti Anda, yaitu orang yang menyetujui atau menolak cuti Anda."
 
@@ -9100,11 +9204,11 @@ msgstr "Self Score"
 msgid "Self-Study"
 msgstr "Self-Study"
 
-#: hrms/hr/doctype/expense_claim/expense_claim.py:115
+#: hrms/hr/doctype/expense_claim/expense_claim.py:121
 msgid "Self-approval for Expense Claims is not allowed"
 msgstr "Self-approval for Biaya Claims is not allowed"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:844
+#: hrms/hr/doctype/leave_application/leave_application.py:877
 msgid "Self-approval for leaves is not allowed"
 msgstr "Persetujuan diri untuk cuti tidak diperbolehkan"
 
@@ -9148,11 +9252,11 @@ msgstr "Kirim Notifikasi Cuti"
 msgid "Sender Copy"
 msgstr "Sender Copy"
 
-#: hrms/hr/doctype/exit_interview/exit_interview.py:136
+#: hrms/hr/doctype/exit_interview/exit_interview.py:139
 msgid "Sending Failed due to missing email information for employee(s): {1}"
 msgstr "Pengiriman gagal karena informasi email hilang untuk karyawan: {1}"
 
-#: hrms/hr/doctype/exit_interview/exit_interview.py:132
+#: hrms/hr/doctype/exit_interview/exit_interview.py:135
 msgid "Sent Successfully: {0}"
 msgstr "Sent Successfully: {0}"
 
@@ -9200,7 +9304,7 @@ msgstr "Set Assignment Details"
 msgid "Set Leave Details"
 msgstr "Set Cuti Details"
 
-#: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:75
+#: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:79
 msgid "Set Relieving Date for Employee: {0}"
 msgstr "Set Relieving Tanggal for Karyawan: {0}"
 
@@ -9222,7 +9326,7 @@ msgstr "Tetapkan saldo awal untuk penghasilan dan pajak dari pemberi kerja sebel
 msgid "Set optional filters to fetch employees in the appraisee list"
 msgstr "Atur filter opsional untuk mengambil karyawan di daftar penilaian"
 
-#: hrms/hr/doctype/expense_claim/expense_claim.py:524
+#: hrms/hr/doctype/expense_claim/expense_claim.py:684
 msgid "Set the default account for the {0} {1}"
 msgstr "Setel akun bawaan untuk {0} {1}"
 
@@ -9245,7 +9349,7 @@ msgstr "Tetapkan status ke {0} jika diperlukan."
 msgid "Set {0} for selected employees"
 msgstr "Tetapkan {0} untuk karyawan terpilih"
 
-#: hrms/hr/doctype/exit_interview/exit_interview.py:125
+#: hrms/hr/doctype/exit_interview/exit_interview.py:128
 msgid "Settings Missing"
 msgstr "Pengaturan Missing"
 
@@ -9253,11 +9357,11 @@ msgstr "Pengaturan Missing"
 msgid "Settle against Advances"
 msgstr "Selesaikan dengan Uang Muka"
 
-#: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:51
+#: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:55
 msgid "Settle all Payables and Receivables before submission"
 msgstr "Settle all Payables and Receivables before submission"
 
-#: hrms/hr/utils.py:770
+#: hrms/hr/utils.py:773
 msgid "Shared document with the user {0} with 'Submit' permission"
 msgstr "Dokumen dibagikan dengan pengguna {0} dengan izin 'Submit'"
 
@@ -9265,6 +9369,7 @@ msgstr "Dokumen dibagikan dengan pengguna {0} dengan izin 'Submit'"
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
 msgid "Shift & Attendance"
 msgstr "Shift & Absensi"
+msgstr "Shift & Kehadiran"
 
 #. Label of the shift_actual_end (Datetime) field in DocType 'Employee Checkin'
 #: hrms/hr/doctype/employee_checkin/employee_checkin.json
@@ -9306,7 +9411,7 @@ msgstr "Riwayat Penugasan Shift"
 #. Label of a Link in the Shift & Attendance Workspace
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
-#: hrms/public/js/utils/index.js:238 hrms/public/js/utils/index.js:260
+#: hrms/public/js/utils/index.js:240 hrms/public/js/utils/index.js:262
 msgid "Shift Assignment Tool"
 msgstr "Shift Assignment Tool"
 
@@ -9360,7 +9465,6 @@ msgstr "Shift Location"
 #. Label of the shift_request (Link) field in DocType 'Shift Assignment'
 #. Name of a DocType
 #. Label of a Link in the Shift & Attendance Workspace
-#. Label of a shortcut in the Shift & Attendance Workspace
 #: hrms/hr/doctype/shift_assignment/shift_assignment.json
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.js:220
 #: hrms/hr/doctype/shift_request/shift_request.json
@@ -9438,8 +9542,8 @@ msgstr "Shift Status"
 msgid "Shift Timings"
 msgstr "Shift Timings"
 
-#: hrms/public/js/utils/index.js:246 hrms/public/js/utils/index.js:254
-#: hrms/public/js/utils/index.js:268 hrms/public/js/utils/index.js:275
+#: hrms/public/js/utils/index.js:248 hrms/public/js/utils/index.js:256
+#: hrms/public/js/utils/index.js:270 hrms/public/js/utils/index.js:277
 msgid "Shift Tools"
 msgstr "Shift Tools"
 
@@ -9464,6 +9568,12 @@ msgstr "Shift Tools"
 msgid "Shift Type"
 msgstr "Tipe Shift"
 
+#. Label of the shift_and_attendance_tab (Tab Break) field in DocType 'HR
+#. Settings'
+#: hrms/hr/doctype/hr_settings/hr_settings.json
+msgid "Shift and Attendance"
+msgstr ""
+
 #: hrms/hr/doctype/shift_schedule_assignment/shift_schedule_assignment.py:21
 msgid "Shift assignments for {0} after {1} are already created. Please change {2} date to a date later than {3} {4}"
 msgstr "Penugasan shift untuk {0} setelah {1} telah dibuat. Silakan ubah tanggal {2} ke tanggal yang lebih dari {3} {4}"
@@ -9475,7 +9585,7 @@ msgstr "Shift berhasil diperbarui menjadi {0}."
 #. Label of a Card Break in the Shift & Attendance Workspace
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
 msgid "Shifts"
-msgstr "Shifts"
+msgstr "Shift"
 
 #: hrms/hr/doctype/job_offer/job_offer.js:51
 msgid "Show Employee"
@@ -9501,7 +9611,7 @@ msgstr "Slip acara Gaji"
 msgid "Showing"
 msgstr "Showing"
 
-#: hrms/setup.py:358 hrms/setup.py:359
+#: hrms/setup.py:365 hrms/setup.py:366
 msgid "Sick Leave"
 msgstr "Cuti sakit"
 
@@ -9588,7 +9698,7 @@ msgstr "Rencana Kepegawaian"
 msgid "Staffing Plan Detail"
 msgstr "Detail Rencana Penetapan Staf"
 
-#: hrms/hr/doctype/staffing_plan/staffing_plan.py:72
+#: hrms/hr/doctype/staffing_plan/staffing_plan.py:71
 msgid "Staffing Plan {0} already exist for designation {1}"
 msgstr "Rencana Kepegawaian {0} sudah ada untuk penunjukan {1}"
 
@@ -9618,7 +9728,7 @@ msgstr "Standard Tax Exemption Jumlah"
 msgid "Standard Working Hours"
 msgstr "Jam Kerja Standar"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:1796
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:1800
 msgid "Start and end dates not in a valid Payroll Period, cannot calculate {0}."
 msgstr "Tanggal mulai dan akhir tidak dalam Periode Penggajian yang valid, tidak dapat menghitung {0}."
 
@@ -9630,11 +9740,11 @@ msgstr "Tanggal mulai tidak boleh lebih besar dari tanggal akhir"
 msgid "Start date cannot be greater than end date."
 msgstr "Start date cannot be greater than end date."
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:236
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:239
 msgid "Start date: {0}"
 msgstr "Start date: {0}"
 
-#: hrms/hr/doctype/shift_type/shift_type.py:40
+#: hrms/hr/doctype/shift_type/shift_type.py:50
 msgid "Start time and end time cannot be same."
 msgstr "Waktu mulai dan waktu akhir tidak boleh sama."
 
@@ -9654,7 +9764,7 @@ msgstr "Statistical Component"
 msgid "Status for Other Half"
 msgstr "Status for Other Half"
 
-#: hrms/setup.py:401
+#: hrms/setup.py:408
 msgid "Stock Options"
 msgstr "Opsi Persediaan"
 
@@ -9680,7 +9790,7 @@ msgstr "Struktur telah ditetapkan dengan sukses"
 msgid "Submission Date"
 msgstr "Submission Tanggal"
 
-#: hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment.py:456
+#: hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment.py:475
 msgid "Submission Failed"
 msgstr "Pengiriman Gagal"
 
@@ -9728,15 +9838,15 @@ msgstr "Diajukan melalui Entri Daftar Gaji"
 msgid "Submitting Salary Slips and creating Journal Entry..."
 msgstr "Mengirimkan Slip Gaji dan membuat Entri Jurnal ..."
 
-#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1644
+#: hrms/payroll/doctype/payroll_entry/payroll_entry.py:1647
 msgid "Submitting Salary Slips..."
 msgstr "Mengirimkan Slip Gaji ..."
 
-#: hrms/hr/doctype/staffing_plan/staffing_plan.py:162
+#: hrms/hr/doctype/staffing_plan/staffing_plan.py:161
 msgid "Subsidiary companies have already planned for {1} vacancies at a budget of {2}. Staffing Plan for {0} should allocate more vacancies and budget for {3} than planned for its subsidiary companies"
 msgstr "Subsidiary companies have already planned for {1} vacancies at a budget of {2}. Staffing Plan for {0} should allocate more vacancies and budget for {3} than planned for its subsidiary companies"
 
-#: hrms/hr/utils.py:946
+#: hrms/hr/utils.py:949
 msgid "Successfully created {0} for employees:"
 msgstr "Berhasil membuat {0} untuk karyawan:"
 
@@ -9758,15 +9868,15 @@ msgstr "Sum of benefit amounts {0} exceeds maximum limit of {1}"
 msgid "Summarized View"
 msgstr "Tampilan Ringkas"
 
-#: hrms/payroll/doctype/salary_component/salary_component.js:93
+#: hrms/payroll/doctype/salary_component/salary_component.js:99
 msgid "Sync {0}"
 msgstr "Sync {0}"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:1313
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:1317
 msgid "Syntax error"
 msgstr "Syntax error"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:2530
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:2537
 msgid "Syntax error in condition: {0} in Income Tax Slab"
 msgstr "Syntax error in condition: {0} in Income Tax Slab"
 
@@ -9888,6 +9998,13 @@ msgstr "Permintaan Tim"
 msgid "Team Updates"
 msgstr "Pembaruan Tim"
 
+#. Label of the tenure_tab (Tab Break) field in DocType 'HR Settings'
+#. Name of a Workspace
+#: hrms/hr/doctype/hr_settings/hr_settings.json
+#: hrms/hr/workspace/tenure/tenure.json
+msgid "Tenure"
+msgstr ""
+
 #. Success message of the job-application Web Form
 #: hrms/hr/web_form/job_application/job_application.json
 msgid "Thank you for applying."
@@ -9908,7 +10025,7 @@ msgstr "The date on which Salary Component with Jumlah will contribute for Earni
 msgid "The day of the month when leaves should be allocated"
 msgstr "The day of the month when leaves should be allocated"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:388
+#: hrms/hr/doctype/leave_application/leave_application.py:421
 msgid "The day(s) on which you are applying for leave are holidays. You need not apply for leave."
 msgstr "Hari (s) yang Anda lamar cuti adalah hari libur. Anda tidak perlu mengajukan cuti."
 
@@ -9967,7 +10084,7 @@ msgstr "The time before the shift start time during which Karyawan Check-in is c
 msgid "Theory"
 msgstr "Theory"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:490
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:494
 msgid "There are more holidays than working days this month."
 msgstr "Ada lebih dari hari kerja libur bulan ini."
 
@@ -9979,7 +10096,7 @@ msgstr "Tidak ada perbedaan tunggakan antara komponen struktur gaji yang ada dan
 msgid "There are no vacancies under staffing plan {0}"
 msgstr "Tidak ada lowongan di bawah rencana kepegawaian {0}"
 
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:42
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:53
 #: hrms/payroll/doctype/employee_incentive/employee_incentive.py:20
 #: hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.py:207
 msgid "There is no Salary Structure assigned to {0}. First assign a Salary Stucture."
@@ -10010,15 +10127,15 @@ msgstr "This compensatory leave will be applicable from {0}."
 msgid "This employee already has a log with the same timestamp.{0}"
 msgstr "Karyawan ini sudah memiliki log dengan stempel waktu yang sama. {0}"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:1321
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:1325
 msgid "This error can be due to invalid formula or condition."
 msgstr "Kesalahan ini dapat disebabkan oleh formula atau kondisi yang tidak valid."
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:1314
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:1318
 msgid "This error can be due to invalid syntax."
 msgstr "Kesalahan ini dapat disebabkan oleh sintaks yang tidak valid."
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:1307
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:1311
 msgid "This error can be due to missing or deleted field."
 msgstr "Kesalahan ini dapat disebabkan oleh field yang hilang atau dihapus."
 
@@ -10038,7 +10155,7 @@ msgstr "Hal ini didasarkan pada kehadiran Karyawan ini"
 msgid "This method is only meant for developer mode"
 msgstr "Metode ini hanya untuk mode pengembang"
 
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:168
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:197
 msgid "This will overwrite the tax component {0} in the salary slip and tax won't be calculated based on the Income Tax Slabs"
 msgstr "Ini akan menimpa komponen pajak {0} di slip gaji dan pajak tidak akan dihitung berdasarkan Slab Pajak Penghasilan."
 
@@ -10097,7 +10214,7 @@ msgstr "To User"
 msgid "To allow this, enable {0} under {1}."
 msgstr "To allow this, enable {0} under {1}."
 
-#: hrms/hr/doctype/leave_application/leave_application.js:322
+#: hrms/hr/doctype/leave_application/leave_application.js:326
 msgid "To apply for a Half Day check 'Half Day' and select the Half Day Date"
 msgstr "To apply for a Half Day check 'Half Day' and select the Half Day Tanggal"
 
@@ -10105,7 +10222,7 @@ msgstr "To apply for a Half Day check 'Half Day' and select the Half Day Tanggal
 msgid "To date can not be equal or less than from date"
 msgstr "Hingga saat ini tidak bisa sama atau kurang dari dari tanggal"
 
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:93
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:122
 msgid "To date can not be greater than employee's relieving date."
 msgstr "Sampai saat ini tidak bisa lebih besar dari tanggal pembebasan karyawan."
 
@@ -10118,11 +10235,11 @@ msgid "To date can not greater than employee's relieving date"
 msgstr "Hingga saat ini tidak dapat lebih besar dari tanggal pelepasan karyawan"
 
 #: hrms/hr/doctype/leave_allocation/leave_allocation.py:180
-#: hrms/hr/doctype/leave_application/leave_application.py:181
+#: hrms/hr/doctype/leave_application/leave_application.py:198
 msgid "To date cannot be before from date"
 msgstr "To date cannot be before from date"
 
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:179
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:208
 msgid "To overwrite the salary component amount for a tax component, please enable {0}"
 msgstr "Untuk menimpa jumlah komponen gaji untuk komponen pajak, silakan aktifkan {0}"
 
@@ -10139,7 +10256,7 @@ msgstr "To(Year) year can not be less than From(year)"
 msgid "Today is {0}'s birthday 🎉"
 msgstr "Today is {0}'s birthday 🎉"
 
-#: hrms/controllers/employee_reminders.py:259
+#: hrms/controllers/employee_reminders.py:261
 msgid "Today {0} at our Company! 🎉"
 msgstr "Today {0} at our Perusahaan! 🎉"
 
@@ -10166,6 +10283,12 @@ msgstr "Total Actual Jumlah"
 #: hrms/hr/doctype/expense_claim/expense_claim.json
 msgid "Total Advance Amount"
 msgstr "Total Advance Jumlah"
+
+#. Label of the base_total_advance_amount (Currency) field in DocType 'Expense
+#. Claim'
+#: hrms/hr/doctype/expense_claim/expense_claim.json
+msgid "Total Advance Amount (Company Currency)"
+msgstr ""
 
 #. Label of the total_allocated_leaves (Float) field in DocType 'Salary Slip
 #. Leave'
@@ -10199,6 +10322,12 @@ msgstr "Total Asset Recovery Biaya"
 #: hrms/hr/doctype/expense_claim/expense_claim.json
 msgid "Total Claimed Amount"
 msgstr "Total Telah Diklaim Jumlah"
+
+#. Label of the base_total_claimed_amount (Currency) field in DocType 'Expense
+#. Claim'
+#: hrms/hr/doctype/expense_claim/expense_claim.json
+msgid "Total Claimed Amount (Company Currency)"
+msgstr ""
 
 #. Label of the lwp_days (Float) field in DocType 'Payroll Correction'
 #: hrms/payroll/doctype/payroll_correction/payroll_correction.json
@@ -10251,6 +10380,12 @@ msgstr "Total Estimated Budget"
 msgid "Total Estimated Cost"
 msgstr "Total Estimated Biaya"
 
+#. Label of the total_exchange_gain_loss (Currency) field in DocType 'Expense
+#. Claim'
+#: hrms/hr/doctype/expense_claim/expense_claim.json
+msgid "Total Exchange Gain/Loss"
+msgstr ""
+
 #. Label of the total_exemption_amount (Currency) field in DocType 'Employee
 #. Tax Exemption Declaration'
 #. Label of the exemption_amount (Currency) field in DocType 'Employee Tax
@@ -10260,11 +10395,11 @@ msgstr "Total Estimated Biaya"
 msgid "Total Exemption Amount"
 msgstr "Jumlah Total Pembebasan"
 
-#: hrms/setup.py:292
+#: hrms/setup.py:299
 msgid "Total Expense Claim (via Expense Claim)"
 msgstr "Total Biaya Klaim (melalui Klaim Biaya)"
 
-#: hrms/setup.py:283
+#: hrms/setup.py:290
 msgid "Total Expense Claim (via Expense Claims)"
 msgstr "Total Biaya Klaim (melalui Klaim Biaya)"
 
@@ -10287,7 +10422,7 @@ msgstr "Total Hours (T)"
 msgid "Total Income Tax"
 msgstr "Total Income Tax"
 
-#: hrms/setup.py:795
+#: hrms/setup.py:802
 msgid "Total Interest Amount"
 msgstr "Total Interest Jumlah"
 
@@ -10320,7 +10455,7 @@ msgstr "Total Cuti Allocated"
 msgid "Total Leaves Encashed"
 msgstr "Total Cuti Encashed"
 
-#: hrms/setup.py:809
+#: hrms/setup.py:816
 msgid "Total Loan Repayment"
 msgstr "Total Loan Repayment"
 
@@ -10357,7 +10492,7 @@ msgstr "Total Payout"
 msgid "Total Present"
 msgstr "Total Hadir"
 
-#: hrms/setup.py:786
+#: hrms/setup.py:793
 msgid "Total Principal Amount"
 msgstr "Total Principal Jumlah"
 
@@ -10377,6 +10512,12 @@ msgstr "Total Resignations"
 msgid "Total Sanctioned Amount"
 msgstr "Total Sanctioned Jumlah"
 
+#. Label of the base_total_sanctioned_amount (Currency) field in DocType
+#. 'Expense Claim'
+#: hrms/hr/doctype/expense_claim/expense_claim.json
+msgid "Total Sanctioned Amount (Company Currency)"
+msgstr ""
+
 #. Label of the total_score (Float) field in DocType 'Employee Performance
 #. Feedback'
 #: hrms/hr/doctype/employee_performance_feedback/employee_performance_feedback.json
@@ -10388,7 +10529,7 @@ msgstr "Total Score"
 msgid "Total Self Score"
 msgstr "Total Self Score"
 
-#: hrms/hr/doctype/expense_claim/expense_claim.py:390
+#: hrms/hr/doctype/expense_claim/expense_claim.py:521
 msgid "Total advance amount cannot be greater than total sanctioned amount"
 msgstr "Jumlah uang muka tidak boleh lebih besar dari jumlah sanksi"
 
@@ -10474,9 +10615,9 @@ msgid "Trainer Name"
 msgstr "Trainer Name"
 
 #. Label of the training (Link) field in DocType 'Employee Training'
-#. Label of a Card Break in the Employee Lifecycle Workspace
+#. Label of a Card Break in the Tenure Workspace
 #: hrms/hr/doctype/employee_training/employee_training.json
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
+#: hrms/hr/workspace/tenure/tenure.json
 #: hrms/overrides/dashboard_overrides.py:49
 msgid "Training"
 msgstr "Latihan"
@@ -10489,13 +10630,13 @@ msgstr "Training Tanggal"
 #. Name of a DocType
 #. Label of the training_event (Link) field in DocType 'Training Feedback'
 #. Label of the training_event (Link) field in DocType 'Training Result'
-#. Label of a Link in the Employee Lifecycle Workspace
+#. Label of a Link in the Tenure Workspace
 #: hrms/hr/doctype/training_event/training_event.json
 #: hrms/hr/doctype/training_feedback/training_feedback.json
 #: hrms/hr/doctype/training_feedback/training_feedback.py:14
 #: hrms/hr/doctype/training_result/training_result.json
 #: hrms/hr/doctype/training_result/training_result.py:16
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
+#: hrms/hr/workspace/tenure/tenure.json
 #: hrms/templates/emails/training_event.html:1
 msgid "Training Event"
 msgstr "pelatihan Kegiatan"
@@ -10514,28 +10655,28 @@ msgid "Training Events"
 msgstr "Acara Pelatihan"
 
 #. Name of a DocType
-#. Label of a Link in the Employee Lifecycle Workspace
+#. Label of a Link in the Tenure Workspace
 #: hrms/hr/doctype/training_event/training_event.js:16
 #: hrms/hr/doctype/training_feedback/training_feedback.json
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
+#: hrms/hr/workspace/tenure/tenure.json
 msgid "Training Feedback"
 msgstr "pelatihan Masukan"
 
 #. Label of the training_program (Link) field in DocType 'Training Event'
 #. Name of a DocType
 #. Label of the training_program (Data) field in DocType 'Training Program'
-#. Label of a Link in the Employee Lifecycle Workspace
+#. Label of a Link in the Tenure Workspace
 #: hrms/hr/doctype/training_event/training_event.json
 #: hrms/hr/doctype/training_program/training_program.json
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
+#: hrms/hr/workspace/tenure/tenure.json
 msgid "Training Program"
 msgstr "Program pelatihan"
 
 #. Name of a DocType
-#. Label of a Link in the Employee Lifecycle Workspace
+#. Label of a Link in the Tenure Workspace
 #: hrms/hr/doctype/training_event/training_event.js:10
 #: hrms/hr/doctype/training_result/training_result.json
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
+#: hrms/hr/workspace/tenure/tenure.json
 msgid "Training Result"
 msgstr "pelatihan Hasil"
 
@@ -10551,12 +10692,12 @@ msgstr "Pelatihan Hasil Karyawan"
 msgid "Trainings"
 msgstr "Trainings"
 
-#. Label of a quick_list in the Employee Lifecycle Workspace
-#: hrms/hr/workspace/employee_lifecycle/employee_lifecycle.json
+#. Label of a quick_list in the Tenure Workspace
+#: hrms/hr/workspace/tenure/tenure.json
 msgid "Trainings (This Week)"
 msgstr "Trainings (This Week)"
 
-#: hrms/hr/utils.py:793
+#: hrms/hr/utils.py:796
 msgid "Transactions cannot be created for an Inactive Employee {0}."
 msgstr "Transactions cannot be created for an Inactive Karyawan {0}."
 
@@ -10565,8 +10706,8 @@ msgstr "Transactions cannot be created for an Inactive Karyawan {0}."
 msgid "Transfer Date"
 msgstr "Transfer Tanggal"
 
-#. Label of a Card Break in the Expense Claims Workspace
-#: hrms/hr/workspace/expense_claims/expense_claims.json hrms/setup.py:329
+#. Label of a Card Break in the Expenses Workspace
+#: hrms/hr/workspace/expenses/expenses.json hrms/setup.py:336
 msgid "Travel"
 msgstr "Perjalanan"
 
@@ -10595,11 +10736,11 @@ msgid "Travel Itinerary"
 msgstr "Rencana perjalanan"
 
 #. Name of a DocType
-#. Label of a Link in the Expense Claims Workspace
-#. Label of a Link in the Overview Workspace
+#. Label of a Link in the Expenses Workspace
+#. Label of a Link in the People Workspace
 #: hrms/hr/doctype/travel_request/travel_request.json
-#: hrms/hr/workspace/expense_claims/expense_claims.json
-#: hrms/hr/workspace/overview/overview.json
+#: hrms/hr/workspace/expenses/expenses.json
+#: hrms/hr/workspace/people/people.json
 msgid "Travel Request"
 msgstr "Permintaan perjalanan"
 
@@ -10624,7 +10765,7 @@ msgstr "Travel Type"
 msgid "Type of Proof"
 msgstr "Jenis Bukti"
 
-#: hrms/public/js/utils/index.js:206
+#: hrms/public/js/utils/index.js:208
 msgid "Unable to retrieve your location"
 msgstr "Unable to retrieve your location"
 
@@ -10638,6 +10779,12 @@ msgstr "Unarchive"
 #: hrms/hr/doctype/expense_claim_advance/expense_claim_advance.json
 msgid "Unclaimed Amount"
 msgstr "Unclaimed Jumlah"
+
+#. Label of the base_unclaimed_amount (Currency) field in DocType 'Expense
+#. Claim Advance'
+#: hrms/hr/doctype/expense_claim_advance/expense_claim_advance.json
+msgid "Unclaimed Amount (Company Currency)"
+msgstr ""
 
 #. Option for the 'Status' (Select) field in DocType 'Interview'
 #: hrms/hr/doctype/interview/interview.json
@@ -10662,7 +10809,7 @@ msgstr "Unlinked logs"
 msgid "Unmarked Attendance for days"
 msgstr "Kehadiran tanpa tanda selama berhari-hari"
 
-#: hrms/hr/doctype/shift_type/shift_type.py:87
+#: hrms/hr/doctype/shift_type/shift_type.py:97
 msgid "Unmarked Check-in Logs Found"
 msgstr "Unmarked Check-in Logs Found"
 
@@ -10693,9 +10840,9 @@ msgid "Unpaid Accrual"
 msgstr "Unpaid Accrual"
 
 #. Name of a report
-#. Label of a Link in the Expense Claims Workspace
+#. Label of a Link in the Expenses Workspace
 #: hrms/hr/report/unpaid_expense_claim/unpaid_expense_claim.json
-#: hrms/hr/workspace/expense_claims/expense_claims.json
+#: hrms/hr/workspace/expenses/expenses.json
 msgid "Unpaid Expense Claim"
 msgstr "Tunggakan Beban Klaim"
 
@@ -10705,7 +10852,7 @@ msgstr "Tunggakan Beban Klaim"
 msgid "Unsettled"
 msgstr "Unsettled"
 
-#: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:52
+#: hrms/hr/doctype/full_and_final_statement/full_and_final_statement.py:56
 msgid "Unsettled Transactions"
 msgstr "Unsettled Transactions"
 
@@ -10754,7 +10901,7 @@ msgstr "Update Progress"
 msgid "Update Response"
 msgstr "Perbarui Tanggapan"
 
-#: hrms/payroll/doctype/salary_component/salary_component.js:114
+#: hrms/payroll/doctype/salary_component/salary_component.js:120
 msgid "Update Salary Structures"
 msgstr "Perbarui Struktur Gaji"
 
@@ -10770,7 +10917,7 @@ msgstr "Perbarui Pajak"
 msgid "Updated status from {0} to {1} for date {2} in the attendance record {3}"
 msgstr "Updated status from {0} to {1} for date {2} in the attendance record {3}"
 
-#: hrms/hr/doctype/interview/interview.py:198
+#: hrms/hr/doctype/interview/interview.py:201
 msgid "Updated the Job Applicant status to {0}"
 msgstr "Status Pelamar Pekerjaan diperbarui menjadi {0}"
 
@@ -10865,7 +11012,7 @@ msgstr "Variabel"
 #. 'Salary Component'
 #. Label of the variable_based_on_taxable_salary (Check) field in DocType
 #. 'Salary Detail'
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:177
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:206
 #: hrms/payroll/doctype/salary_component/salary_component.json
 #: hrms/payroll/doctype/salary_detail/salary_detail.json
 msgid "Variable Based On Taxable Salary"
@@ -10878,20 +11025,20 @@ msgid "Vegetarian"
 msgstr "Vegetarian"
 
 #. Name of a report
-#. Label of a Link in the Expense Claims Workspace
+#. Label of a Link in the Expenses Workspace
 #: hrms/hr/doctype/vehicle_log/vehicle_log.py:51
 #: hrms/hr/report/vehicle_expenses/vehicle_expenses.json
-#: hrms/hr/workspace/expense_claims/expense_claims.json
+#: hrms/hr/workspace/expenses/expenses.json
 msgid "Vehicle Expenses"
 msgstr "Vehicle Biaya"
 
 #. Label of the vehicle_log (Link) field in DocType 'Expense Claim'
 #. Name of a DocType
-#. Label of a Link in the Expense Claims Workspace
+#. Label of a Link in the Expenses Workspace
 #: hrms/hr/doctype/expense_claim/expense_claim.json
 #: hrms/hr/doctype/vehicle_log/vehicle_log.json
 #: hrms/hr/report/vehicle_expenses/vehicle_expenses.py:37
-#: hrms/hr/workspace/expense_claims/expense_claims.json
+#: hrms/hr/workspace/expenses/expenses.json
 msgid "Vehicle Log"
 msgstr "kendaraan Log"
 
@@ -10901,9 +11048,9 @@ msgid "Vehicle Service"
 msgstr "Layanan kendaraan"
 
 #. Name of a DocType
-#. Label of a Link in the Expense Claims Workspace
+#. Label of a Link in the Expenses Workspace
 #: hrms/hr/doctype/vehicle_service_item/vehicle_service_item.json
-#: hrms/hr/workspace/expense_claims/expense_claims.json
+#: hrms/hr/workspace/expenses/expenses.json
 msgid "Vehicle Service Item"
 msgstr "Vehicle Service Item"
 
@@ -10929,15 +11076,15 @@ msgstr "Violet"
 msgid "WARNING: Loan Management module has been separated from ERPNext."
 msgstr "WARNING: Loan Management module has been separated from ERPNext."
 
-#: hrms/hr/doctype/leave_application/leave_application.py:415
+#: hrms/hr/doctype/leave_application/leave_application.py:448
 msgid "Warning: Insufficient leave balance for Leave Type {0} in this allocation."
 msgstr "Warning: Insufficient leave balance for Cuti Type {0} in this allocation."
 
-#: hrms/hr/doctype/leave_application/leave_application.py:423
+#: hrms/hr/doctype/leave_application/leave_application.py:456
 msgid "Warning: Insufficient leave balance for Leave Type {0}."
 msgstr "Warning: Insufficient leave balance for Cuti Type {0}."
 
-#: hrms/hr/doctype/leave_application/leave_application.py:361
+#: hrms/hr/doctype/leave_application/leave_application.py:394
 msgid "Warning: Leave application contains following block dates"
 msgstr "Peringatan: Cuti aplikasi berisi tanggal blok berikut"
 
@@ -10945,7 +11092,7 @@ msgstr "Peringatan: Cuti aplikasi berisi tanggal blok berikut"
 msgid "Warning: {0} already has an active Shift Assignment {1} for some/all of these dates."
 msgstr "Peringatan: {0} sudah memiliki Penugasan Shift aktif {1} untuk beberapa/semua tanggal ini."
 
-#: hrms/setup.py:391
+#: hrms/setup.py:398
 msgid "Website Listing"
 msgstr "Daftar Situs Web"
 
@@ -10996,8 +11143,8 @@ msgstr "Withheld"
 msgid "Work Anniversaries "
 msgstr "Work Anniversaries"
 
-#: hrms/controllers/employee_reminders.py:272
-#: hrms/controllers/employee_reminders.py:279
+#: hrms/controllers/employee_reminders.py:278
+#: hrms/controllers/employee_reminders.py:285
 msgid "Work Anniversary Reminder"
 msgstr "Work Anniversary Reminder"
 
@@ -11123,7 +11270,7 @@ msgstr "Yearly Benefit"
 msgid "Yes, Proceed"
 msgstr "Yes, Proceed"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:371
+#: hrms/hr/doctype/leave_application/leave_application.py:404
 msgid "You are not authorized to approve leaves on Block Dates"
 msgstr "Anda tidak berwenang untuk menyetujui cuti di Blok Tanggal"
 
@@ -11135,11 +11282,11 @@ msgstr "Anda tidak hadir sepanjang hari pada rentang hari permintaan cuti kompen
 msgid "You can not define multiple slabs if you have a slab with no lower and upper limits."
 msgstr "Anda tidak dapat mendefinisikan beberapa slab jika ada slab yang tidak memiliki batas bawah dan atas."
 
-#: hrms/hr/doctype/shift_request/shift_request.py:79
+#: hrms/hr/doctype/shift_request/shift_request.py:82
 msgid "You can not request for your Default Shift: {0}"
 msgstr "Anda tidak dapat meminta Shift Default Anda: {0}"
 
-#: hrms/hr/doctype/staffing_plan/staffing_plan.py:95
+#: hrms/hr/doctype/staffing_plan/staffing_plan.py:94
 msgid "You can only plan for upto {0} vacancies and budget {1} for {2} as per staffing plan {3} for parent company {4}."
 msgstr "Anda hanya dapat merencanakan hingga {0} lowongan dan anggaran {1} untuk {2} sesuai rencana staf {3} untuk perusahaan induk {4}."
 
@@ -11228,6 +11375,10 @@ msgstr "buat/kirim"
 msgid "created"
 msgstr "dibuat"
 
+#: hrms/hr/doctype/employee_advance/employee_advance.py:49
+msgid "here"
+msgstr "di sini"
+
 #: frontend/src/views/Login.vue:16
 msgid "johndoe@mail.com"
 msgstr "johndoe@mail.com"
@@ -11273,9 +11424,17 @@ msgstr "diajukan"
 msgid "via Salary Component sync"
 msgstr "melalui sinkronisasi Komponen Gaji"
 
+#: hrms/controllers/employee_reminders.py:265
+msgid "year"
+msgstr "tahun"
+
+#: hrms/controllers/employee_reminders.py:265
+msgid "years"
+msgstr ""
+
 #: hrms/controllers/employee_reminders.py:120
-#: hrms/controllers/employee_reminders.py:253
-#: hrms/controllers/employee_reminders.py:258
+#: hrms/controllers/employee_reminders.py:254
+#: hrms/controllers/employee_reminders.py:260
 msgid "{0} & {1}"
 msgstr "{0} & {1}"
 
@@ -11287,7 +11446,7 @@ msgstr "{0} & {1} more"
 msgid "{0} : {1}"
 msgstr "{0} : {1}"
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:2526
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:2533
 msgid "{0} <br> This error can be due to missing or deleted field."
 msgstr "{0} <br> Kesalahan ini dapat disebabkan oleh field yang hilang atau dihapus."
 
@@ -11295,7 +11454,7 @@ msgstr "{0} <br> Kesalahan ini dapat disebabkan oleh field yang hilang atau diha
 msgid "{0} Appraisal(s) are not submitted yet"
 msgstr "{0} Penilaian belum diajukan"
 
-#: hrms/public/js/utils/index.js:229
+#: hrms/public/js/utils/index.js:231
 msgid "{0} Field"
 msgstr "{0} Field"
 
@@ -11327,7 +11486,7 @@ msgstr "{0} sudah ada untuk karyawan {1} dan periode {2}"
 msgid "{0} already has an active Shift Assignment {1} for some/all of these dates."
 msgstr "{0} already has an active Shift Assignment {1} for some/all of these dates."
 
-#: hrms/hr/doctype/leave_application/leave_application.py:152
+#: hrms/hr/doctype/leave_application/leave_application.py:169
 msgid "{0} applicable after {1} working days"
 msgstr "{0} berlaku setelah {1} hari kerja"
 
@@ -11339,6 +11498,8 @@ msgstr "{0} balance"
 #: hrms/controllers/employee_reminders.py:253
 msgid "{0} completed {1} year(s)"
 msgstr "{0} completed {1} year(s)"
+msgid "{0} completed {1} {2}"
+msgstr ""
 
 #: frontend/src/components/FormView.vue:528
 msgid "{0} created successfully!"
@@ -11353,11 +11514,11 @@ msgstr "{0} berhasil dihapus!"
 msgid "{0} failed!"
 msgstr "{0} gagal!"
 
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:175
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:204
 msgid "{0} has {1} enabled"
 msgstr "{0} has {1} enabled"
 
-#: hrms/payroll/doctype/additional_salary/additional_salary.py:187
+#: hrms/payroll/doctype/additional_salary/additional_salary.py:216
 msgid "{0} is an Accrual Component and this will be recorded as a payout in Employee Benefits Ledger"
 msgstr "{0} is an Accrual Component and this will be recorded as a payout in Karyawan Benefits Ledger"
 
@@ -11373,7 +11534,7 @@ msgstr "{0} is not a holiday."
 msgid "{0} is not allowed to submit Interview Feedback for the Interview: {1}"
 msgstr "{0} tidak diizinkan mengirimkan umpan balik untuk Wawancara: {1}"}]}{
 
-#: hrms/hr/doctype/leave_application/leave_application.py:615
+#: hrms/hr/doctype/leave_application/leave_application.py:648
 msgid "{0} is not in Optional Holiday List"
 msgstr "{0} tidak ada dalam Daftar Holiday Opsional"
 
@@ -11414,11 +11575,11 @@ msgstr "{0} sampai {1} karyawan?"
 msgid "{0} updated successfully!"
 msgstr "{0} berhasil diperbarui!"
 
-#: hrms/hr/doctype/staffing_plan/staffing_plan.py:129
+#: hrms/hr/doctype/staffing_plan/staffing_plan.py:128
 msgid "{0} vacancies and {1} budget for {2} already planned for subsidiary companies of {3}. You can only plan for upto {4} vacancies and and budget {5} as per staffing plan {6} for parent company {3}."
 msgstr "{0} lowongan dan anggaran {1} untuk {2} telah direncanakan untuk anak perusahaan dari {3}. Anda hanya dapat merencanakan hingga {4} lowongan dan anggaran {5} sesuai rencana staf {6} untuk perusahaan induk {3}."
 
-#: hrms/payroll/doctype/salary_component/salary_component.js:124
+#: hrms/payroll/doctype/salary_component/salary_component.js:130
 msgid "{0} will be updated for the following Salary Structures: {1}."
 msgstr "{0} akan diperbarui untuk Struktur Gaji berikut: {1}."
 
@@ -11426,15 +11587,15 @@ msgstr "{0} akan diperbarui untuk Struktur Gaji berikut: {1}."
 msgid "{0} {1} {2}?"
 msgstr "{0} {1} {2}?"
 
-#: hrms/hr/utils.py:451
+#: hrms/hr/utils.py:454
 msgid "{0}. Check error log for more details."
 msgstr "{0}. Periksa log kesalahan untuk detail lebih lanjut."
 
-#: hrms/payroll/doctype/salary_slip/salary_slip.py:2190
+#: hrms/payroll/doctype/salary_slip/salary_slip.py:2194
 msgid "{0}: Employee email not found, hence email not sent"
 msgstr "{0}: email Karyawan tidak ditemukan, maka email tidak dikirim"
 
-#: hrms/hr/doctype/leave_application/leave_application.py:70
+#: hrms/hr/doctype/leave_application/leave_application.py:71
 msgid "{0}: From {0} of type {1}"
 msgstr "{0}: Dari {0} tipe {1}"
 
