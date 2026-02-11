@@ -116,11 +116,15 @@ router.isReady().then(async () => {
 router.beforeEach(async (to, from, next) => {
 	let isLoggedIn = session.isLoggedIn
 
-	try {
-		if (isLoggedIn) await userResource.reload()
-	} catch (error) {
-		console.error("Error reloading user resource:", error)
-		isLoggedIn = false
+	// Only reload user resource if we're not coming from a fresh login
+	// to avoid race conditions with the login flow
+	if (isLoggedIn && from.name !== "Login") {
+		try {
+			await userResource.reload()
+		} catch (error) {
+			console.error("Error reloading user resource:", error)
+			isLoggedIn = false
+		}
 	}
 
 	if (!isLoggedIn) {
@@ -134,6 +138,11 @@ router.beforeEach(async (to, from, next) => {
 	}
 
 	if (isLoggedIn && to.name !== "InvalidEmployee") {
+		// If user is logged in and trying to access login page, redirect to home
+		if (to.name === "Login") {
+			return next({ name: "Home" })
+		}
+
 		try {
 			await employeeResource.promise
 			// user should be an employee to access the app
@@ -143,8 +152,6 @@ router.beforeEach(async (to, from, next) => {
 				employeeResource?.data?.user_id !== userResource.data.name
 			) {
 				return next({ name: "InvalidEmployee" })
-			} else if (to.name === "Login") {
-				return next({ name: "Home" })
 			} else {
 				return next()
 			}

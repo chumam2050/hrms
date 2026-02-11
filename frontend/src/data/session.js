@@ -48,12 +48,12 @@ async function handleLogin(response) {
 export const session = reactive({
 	login: async (email, password) => {
 		const response = await call("login", { usr: email, pwd: password })
-		handleLogin(response)
+		await handleLogin(response)
 		return response
 	},
 	otp: async (tmp_id, otp) => {
 		const response = await call("login", { tmp_id, otp })
-		handleLogin(response)
+		await handleLogin(response)
 		return response
 	},
 	logout: createResource({
