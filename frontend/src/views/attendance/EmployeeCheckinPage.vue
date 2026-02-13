@@ -103,6 +103,46 @@
                 </template>
             </Button>
         </div>
+
+        <!-- Upload Progress Overlay -->
+        <div v-if="uploadingPhoto && uploadProgress >= 0" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div class="bg-white rounded-lg p-6 shadow-xl flex flex-col items-center gap-4 min-w-[280px]">
+            <!-- Circular Progress -->
+            <div class="relative w-24 h-24">
+              <svg class="transform -rotate-90 w-24 h-24">
+                <circle
+                  cx="48"
+                  cy="48"
+                  r="40"
+                  stroke="#e5e7eb"
+                  stroke-width="8"
+                  fill="none"
+                />
+                <circle
+                  cx="48"
+                  cy="48"
+                  r="40"
+                  stroke="#3b82f6"
+                  stroke-width="8"
+                  fill="none"
+                  :stroke-dasharray="circumference"
+                  :stroke-dashoffset="circumference - (uploadProgress / 100) * circumference"
+                  class="transition-all duration-300"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <span class="text-xl font-bold text-gray-700">{{ Math.round(uploadProgress) }}%</span>
+              </div>
+            </div>
+            
+            <!-- Status Text -->
+            <div class="text-center">
+              <p class="text-base font-medium text-gray-900">{{ __("Uploading Photo") }}</p>
+              <p class="text-sm text-gray-500 mt-1">{{ __("Please wait...") }}</p>
+            </div>
+          </div>
+        </div>
     </ion-content>
   </ion-page>
 </template>
@@ -146,6 +186,8 @@ const photoFile = ref(null)
 const photoPreview = ref(null)
 const photoUrl = ref(null)
 const uploadingPhoto = ref(false)
+const uploadProgress = ref(-1)
+const circumference = 2 * Math.PI * 40 // For circular progress (radius = 40)
 const settings = createResource({
   url: "hrms.api.get_hr_settings",
   auto: true,
@@ -281,52 +323,66 @@ const removePhoto = () => {
 
 const uploadPhoto = async () => {
   if (!photoFile.value) return null
+  
   uploadingPhoto.value = true
+  uploadProgress.value = 0
 
-  try {
+  return new Promise((resolve, reject) => {
     const formData = new FormData()
     formData.append('file', photoFile.value)
     formData.append('is_private', 0)
     formData.append('folder', 'Home/Attachments')
 
-    // Add timeout for upload (60 seconds for mobile networks)
-    const controller = new AbortController()
-    const timeoutId = setTimeout(() => controller.abort(), 60000)
+    const xhr = new XMLHttpRequest()
 
-    const response = await fetch('/api/method/upload_file', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'X-Frappe-CSRF-Token': window.csrf_token
-      },
-      body: formData,
-      signal: controller.signal
+    // Track upload progress
+    xhr.upload.addEventListener('progress', (e) => {
+      if (e.lengthComputable) {
+        uploadProgress.value = (e.loaded / e.total) * 100
+      }
     })
 
-    clearTimeout(timeoutId)
+    // Handle successful upload
+    xhr.addEventListener('load', () => {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        try {
+          const data = JSON.parse(xhr.responseText)
+          photoUrl.value = data.message.file_url
+          console.log('Photo uploaded successfully:', data.message.file_url)
+          uploadProgress.value = 100
+          resolve(data.message.file_url)
+        } catch (error) {
+          console.error('Failed to parse response:', error)
+          uploadingPhoto.value = false
+          uploadProgress.value = -1
+          toast({
+            title: __("Upload Failed"),
+            text: __("Invalid response from server"),
+            icon: 'alert-circle',
+            position: 'bottom-center',
+            iconClasses: 'text-red-500'
+          })
+          resolve(null)
+        }
+      } else {
+        uploadingPhoto.value = false
+        uploadProgress.value = -1
+        toast({
+          title: __("Upload Failed"),
+          text: __("Upload failed with status {0}", [xhr.status]),
+          icon: 'alert-circle',
+          position: 'bottom-center',
+          iconClasses: 'text-red-500'
+        })
+        resolve(null)
+      }
+    })
 
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => null)
-      throw new Error(errorData?.message || `Upload failed with status ${response.status}`)
-    }
-
-    const data = await response.json()
-    photoUrl.value = data.message.file_url
-    console.log('Photo uploaded successfully:', data.message.file_url)
-    return data.message.file_url
-  } catch (error) {
-    console.error('Photo upload error:', error)
-    
-    // Handle specific error types
-    if (error.name === 'AbortError') {
-      toast({
-        title: __("Upload Timeout"),
-        text: __("Photo upload took too long. Please check your internet connection and try again."),
-        icon: 'alert-circle',
-        position: 'bottom-center',
-        iconClasses: 'text-red-500'
-      })
-    } else if (error.message?.includes('NetworkError') || error.message?.includes('Failed to fetch')) {
+    // Handle network errors
+    xhr.addEventListener('error', () => {
+      console.error('Photo upload error: Network error')
+      uploadingPhoto.value = false
+      uploadProgress.value = -1
       toast({
         title: __("Network Error"),
         text: __("Unable to upload photo. Please check your internet connection."),
@@ -334,19 +390,38 @@ const uploadPhoto = async () => {
         position: 'bottom-center',
         iconClasses: 'text-red-500'
       })
-    } else {
+      resolve(null)
+    })
+
+    // Handle timeout
+    xhr.addEventListener('timeout', () => {
+      console.error('Photo upload error: Timeout')
+      uploadingPhoto.value = false
+      uploadProgress.value = -1
       toast({
-        title: __("Upload Failed"),
-        text: error.message || __("Failed to upload photo. Please try again."),
+        title: __("Upload Timeout"),
+        text: __("Photo upload took too long. Please check your internet connection and try again."),
         icon: 'alert-circle',
         position: 'bottom-center',
         iconClasses: 'text-red-500'
       })
-    }
-    return null
-  } finally {
-    uploadingPhoto.value = false
-  }
+      resolve(null)
+    })
+
+    // Handle abort
+    xhr.addEventListener('abort', () => {
+      uploadingPhoto.value = false
+      uploadProgress.value = -1
+      resolve(null)
+    })
+
+    // Configure and send request
+    xhr.open('POST', '/api/method/upload_file')
+    xhr.setRequestHeader('Accept', 'application/json')
+    xhr.setRequestHeader('X-Frappe-CSRF-Token', window.csrf_token)
+    xhr.timeout = 60000 // 60 seconds timeout
+    xhr.send(formData)
+  })
 }
 
 const submitLog = (logType) => {
@@ -379,22 +454,20 @@ const submitLog = (logType) => {
 
     let checkinPhotoUrl = null
     if (photoFile.value) {
-      // Show upload progress toast
-      toast({
-        title: __('Uploading Photo'),
-        text: __('Please wait while your photo is being uploaded...'),
-        icon: 'upload',
-        position: 'bottom-center',
-        iconClasses: 'text-blue-500'
-      })
-      
+      // Upload photo with progress indicator
       checkinPhotoUrl = await uploadPhoto()
+      
+      // Reset upload state
+      uploadingPhoto.value = false
+      uploadProgress.value = -1
+      
       if (!checkinPhotoUrl && photoFile.value) {
         // Upload failed and user was already notified via toast in uploadPhoto
         return
       }
     }
 
+    // Submit checkin
     checkins.insert.submit({
       employee: employee.data.name,
       log_type: logType,
@@ -406,15 +479,27 @@ const submitLog = (logType) => {
       onSuccess() {
         // Reset local state
         removePhoto()
-        toast({ title: __('Success'), text: __('{0} successful!', [actionLabel]), icon: 'check-circle', position: 'bottom-center', iconClasses: 'text-green-500' })
+        
+        // Show success message
+        toast({ 
+          title: __('Success'), 
+          text: __('{0} successful!', [actionLabel]), 
+          icon: 'check-circle', 
+          position: 'bottom-center', 
+          iconClasses: 'text-green-500' 
+        })
+        
         // notify other parts of the app (Home / CheckInPanel) that checkin succeeded
         try {
           window.dispatchEvent(new CustomEvent('hrms:checkin-succeeded', { detail: { action: logType } }))
         } catch (e) {
           /* noop */
         }
-        // Redirect back to Home page
-        router.replace({ name: 'Home' })
+        
+        // Delay redirect to let user see success message
+        setTimeout(() => {
+          router.replace({ name: 'Home' })
+        }, 1000)
       },
       onError(error) {
         let messages = error.messages || []
