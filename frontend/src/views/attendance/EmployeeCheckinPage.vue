@@ -92,7 +92,15 @@
             </div>
 
             <Button :loading="checkins.insert.loading || uploadingPhoto" variant="solid" class="w-full py-5 text-sm disabled:bg-gray-700" @click="submitLog(nextAction.action)">
-                {{ __("Confirm {0}", [nextAction.label]) }}
+                <template v-if="uploadingPhoto">
+                  {{ __("Uploading Photo...") }}
+                </template>
+                <template v-else-if="checkins.insert.loading">
+                  {{ __("Submitting...") }}
+                </template>
+                <template v-else>
+                  {{ __("Confirm {0}", [nextAction.label]) }}
+                </template>
             </Button>
         </div>
     </ion-content>
@@ -106,6 +114,7 @@ import { computed, inject, ref, watch, onMounted, onBeforeUnmount } from "vue"
 import { useRouter, useRoute } from "vue-router"
 
 import { formatTimestamp } from "@/utils/formatters"
+import { compressImage, formatFileSize } from "@/utils/imageCompression"
 
 const DOCTYPE = "Employee Checkin"
 
@@ -220,9 +229,42 @@ const handleEmployeeCheckin = () => {
 // Camera functions
 const triggerCamera = () => cameraInput.value.click()
 
-const handlePhotoCapture = (event) => {
+const handlePhotoCapture = async (event) => {
   const file = event.target.files[0]
-  if (file) {
+  if (!file) return
+
+  try {
+    // Show original file size
+    console.log(`Original photo size: ${formatFileSize(file.size)}`)
+
+    // Compress image for faster upload (especially on mobile)
+    const compressedFile = await compressImage(file, {
+      maxWidth: 1024,
+      maxHeight: 1024,
+      quality: 0.8,
+      mimeType: 'image/jpeg'
+    })
+
+    photoFile.value = compressedFile
+
+    // Show preview
+    const reader = new FileReader()
+    reader.onload = (e) => photoPreview.value = e.target.result
+    reader.readAsDataURL(compressedFile)
+
+    // Show success message for large files
+    if (file.size > 1024 * 1024) { // > 1MB
+      toast({
+        title: __('Photo Optimized'),
+        text: __('Photo compressed for faster upload'),
+        icon: 'check-circle',
+        position: 'bottom-center',
+        iconClasses: 'text-green-500'
+      })
+    }
+  } catch (error) {
+    console.error('Photo compression error:', error)
+    // Fall back to original file if compression fails
     photoFile.value = file
     const reader = new FileReader()
     reader.onload = (e) => photoPreview.value = e.target.result
@@ -247,22 +289,60 @@ const uploadPhoto = async () => {
     formData.append('is_private', 0)
     formData.append('folder', 'Home/Attachments')
 
+    // Add timeout for upload (60 seconds for mobile networks)
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), 60000)
+
     const response = await fetch('/api/method/upload_file', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
         'X-Frappe-CSRF-Token': window.csrf_token
       },
-      body: formData
+      body: formData,
+      signal: controller.signal
     })
 
-    if (!response.ok) throw new Error('Upload failed')
+    clearTimeout(timeoutId)
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => null)
+      throw new Error(errorData?.message || `Upload failed with status ${response.status}`)
+    }
+
     const data = await response.json()
     photoUrl.value = data.message.file_url
+    console.log('Photo uploaded successfully:', data.message.file_url)
     return data.message.file_url
   } catch (error) {
     console.error('Photo upload error:', error)
-    toast({ title: __("Error"), text: __("Failed to upload photo"), icon: 'alert-circle', position: 'bottom-center', iconClasses: 'text-red-500' })
+    
+    // Handle specific error types
+    if (error.name === 'AbortError') {
+      toast({
+        title: __("Upload Timeout"),
+        text: __("Photo upload took too long. Please check your internet connection and try again."),
+        icon: 'alert-circle',
+        position: 'bottom-center',
+        iconClasses: 'text-red-500'
+      })
+    } else if (error.message?.includes('NetworkError') || error.message?.includes('Failed to fetch')) {
+      toast({
+        title: __("Network Error"),
+        text: __("Unable to upload photo. Please check your internet connection."),
+        icon: 'alert-circle',
+        position: 'bottom-center',
+        iconClasses: 'text-red-500'
+      })
+    } else {
+      toast({
+        title: __("Upload Failed"),
+        text: error.message || __("Failed to upload photo. Please try again."),
+        icon: 'alert-circle',
+        position: 'bottom-center',
+        iconClasses: 'text-red-500'
+      })
+    }
     return null
   } finally {
     uploadingPhoto.value = false
@@ -273,6 +353,11 @@ const submitLog = (logType) => {
   const actionLabel = logType === 'IN' ? __('Check-in') : __('Check-out')
 
   const doSubmit = async () => {
+    // Prevent multiple submissions
+    if (uploadingPhoto.value || checkins.insert.loading) {
+      return
+    }
+
     // If the system requires geolocation for checkin, ensure we have coordinates
     if (settings.data?.allow_geolocation_tracking) {
       if (locationLoading.value) {
@@ -294,8 +379,20 @@ const submitLog = (logType) => {
 
     let checkinPhotoUrl = null
     if (photoFile.value) {
+      // Show upload progress toast
+      toast({
+        title: __('Uploading Photo'),
+        text: __('Please wait while your photo is being uploaded...'),
+        icon: 'upload',
+        position: 'bottom-center',
+        iconClasses: 'text-blue-500'
+      })
+      
       checkinPhotoUrl = await uploadPhoto()
-      if (!checkinPhotoUrl && photoFile.value) return
+      if (!checkinPhotoUrl && photoFile.value) {
+        // Upload failed and user was already notified via toast in uploadPhoto
+        return
+      }
     }
 
     checkins.insert.submit({
