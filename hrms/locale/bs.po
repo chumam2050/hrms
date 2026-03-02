@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: frappe\n"
 "Report-Msgid-Bugs-To: contact@frappe.io\n"
-"POT-Creation-Date: 2026-02-01 09:43+0000\n"
-"PO-Revision-Date: 2026-02-03 00:52\n"
+"POT-Creation-Date: 2026-02-22 09:43+0000\n"
+"PO-Revision-Date: 2026-02-25 06:46\n"
 "Last-Translator: contact@frappe.io\n"
 "Language-Team: Bosnian\n"
 "MIME-Version: 1.0\n"
@@ -359,7 +359,7 @@ msgstr "Odsutan"
 msgid "Absent Days"
 msgstr "Dani Odsutnosti"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:174
+#: hrms/hr/report/shift_attendance/shift_attendance.py:178
 msgid "Absent Records"
 msgstr "Zapisi o Odsustvu"
 
@@ -444,7 +444,9 @@ msgid "Accrued Benefits"
 msgstr "Nagomilane Beneficije"
 
 #. Name of a report
+#. Label of a Workspace Sidebar Item
 #: hrms/payroll/report/accrued_earnings_report/accrued_earnings_report.json
+#: hrms/workspace_sidebar/tax_&_benefits.json
 msgid "Accrued Earnings Report"
 msgstr "Izvještaj Nagomilane Zarade"
 
@@ -550,10 +552,12 @@ msgstr "Dodatni Penzioni Fond"
 #. Label of a Link in the Expenses Workspace
 #. Name of a DocType
 #. Label of a Link in the Payroll Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/leave_encashment/leave_encashment.json
 #: hrms/hr/workspace/expenses/expenses.json
 #: hrms/payroll/doctype/additional_salary/additional_salary.json
 #: hrms/payroll/workspace/payroll/payroll.json
+#: hrms/workspace_sidebar/payroll.json
 msgid "Additional Salary"
 msgstr "Dodatna Plata"
 
@@ -608,12 +612,6 @@ msgstr "Predujamni račun je obavezan. Postavi {0} u {1} i podnesi ovaj dokument
 #: hrms/hr/doctype/employee_advance/employee_advance.py:99
 msgid "Advance Account {} currency should be same as Salary Currency of Employee {}. Please select same currency Advance Account"
 msgstr "Valuta Računa Predujma {} treba biti ista kao valuta plaće {}. Odaberi istu valutu Računa Predujma"
-
-#. Label of the base_advance_paid (Currency) field in DocType 'Expense Claim
-#. Advance'
-#: hrms/hr/doctype/expense_claim_advance/expense_claim_advance.json
-msgid "Advance Paid (Company Currency)"
-msgstr "Plaćen Predujam (Valuta Poduzeća)"
 
 #. Label of the advanced_filters_section (Section Break) field in DocType
 #. 'Leave Control Panel'
@@ -996,8 +994,10 @@ msgstr "Datum Imenovanja"
 
 #. Name of a DocType
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/appointment_letter/appointment_letter.json
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Appointment Letter"
 msgstr "Pismo Imenovanja"
 
@@ -1005,9 +1005,11 @@ msgstr "Pismo Imenovanja"
 #. 'Appointment Letter'
 #. Name of a DocType
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/appointment_letter/appointment_letter.json
 #: hrms/hr/doctype/appointment_letter_template/appointment_letter_template.json
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Appointment Letter Template"
 msgstr "Šablon Pisma Imenovanja"
 
@@ -1019,9 +1021,11 @@ msgstr "Sadržaj pisma o Imenovanju"
 #. Name of a DocType
 #. Label of the appraisal (Link) field in DocType 'Employee Performance
 #. Feedback'
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/appraisal/appraisal.json
 #: hrms/hr/doctype/employee_performance_feedback/employee_performance_feedback.json
 #: hrms/hr/report/appraisal_overview/appraisal_overview.py:44
+#: hrms/workspace_sidebar/performance.json
 msgid "Appraisal"
 msgstr "Procjena"
 
@@ -1030,6 +1034,7 @@ msgstr "Procjena"
 #. Label of the appraisal_cycle (Link) field in DocType 'Employee Performance
 #. Feedback'
 #. Label of the appraisal_cycle (Link) field in DocType 'Goal'
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/appraisal/appraisal.json
 #: hrms/hr/doctype/appraisal_cycle/appraisal_cycle.json
 #: hrms/hr/doctype/employee_performance_feedback/employee_performance_feedback.json
@@ -1037,6 +1042,7 @@ msgstr "Procjena"
 #: hrms/hr/doctype/goal/goal_tree.js:105
 #: hrms/hr/report/appraisal_overview/appraisal_overview.js:18
 #: hrms/hr/report/appraisal_overview/appraisal_overview.py:37
+#: hrms/workspace_sidebar/performance.json
 msgid "Appraisal Cycle"
 msgstr "Ciklus Procjene"
 
@@ -1057,17 +1063,21 @@ msgstr "Povezivanje Procjene"
 
 #. Name of a report
 #. Label of a chart in the Performance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/report/appraisal_overview/appraisal_overview.json
 #: hrms/hr/workspace/performance/performance.json
+#: hrms/workspace_sidebar/performance.json
 msgid "Appraisal Overview"
 msgstr "Pregled Procjene"
 
 #. Label of the appraisal_template (Link) field in DocType 'Appraisal'
 #. Name of a DocType
 #. Label of the appraisal_template (Link) field in DocType 'Appraisee'
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/appraisal/appraisal.json
 #: hrms/hr/doctype/appraisal_template/appraisal_template.json
 #: hrms/hr/doctype/appraisee/appraisee.json hrms/setup.py:162
+#: hrms/workspace_sidebar/performance.json
 msgid "Appraisal Template"
 msgstr "Šablon Procjene"
 
@@ -1332,7 +1342,7 @@ msgstr "Broj Prisustva"
 
 #. Label of the attendance_date (Date) field in DocType 'Attendance'
 #: hrms/hr/doctype/attendance/attendance.json
-#: hrms/hr/report/shift_attendance/shift_attendance.py:43
+#: hrms/hr/report/shift_attendance/shift_attendance.py:46
 msgid "Attendance Date"
 msgstr "Datum Prisustva"
 
@@ -1345,7 +1355,7 @@ msgstr "Prisustvo od Datuma"
 msgid "Attendance From Date and Attendance To Date is mandatory"
 msgstr "Prisustvo od datuma i prisustvo do datuma je obavezno"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:123
+#: hrms/hr/report/shift_attendance/shift_attendance.py:126
 msgid "Attendance ID"
 msgstr "ID Prisustva"
 
@@ -1360,11 +1370,13 @@ msgstr "Prisustvo Obilježeno"
 #. Name of a DocType
 #. Label of a Link in the People Workspace
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/attendance/attendance.js:18
 #: hrms/hr/doctype/attendance/attendance.json
 #: hrms/hr/doctype/attendance_request/attendance_request.json
 #: hrms/hr/workspace/people/people.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Attendance Request"
 msgstr "Zahtjev za Prisustvo"
 
@@ -1391,7 +1403,7 @@ msgstr "Prisustvo Ažurirano"
 msgid "Attendance Warnings"
 msgstr "Upozorenja Prisustvu"
 
-#: hrms/hr/doctype/attendance/attendance.py:60
+#: hrms/hr/doctype/attendance/attendance.py:63
 msgid "Attendance date {0} can not be less than employee {1}'s joining date: {2}"
 msgstr "Datum Prisustva {0} ne može biti prije od datuma pridruživanja {1}: {2}"
 
@@ -1399,11 +1411,11 @@ msgstr "Datum Prisustva {0} ne može biti prije od datuma pridruživanja {1}: {2
 msgid "Attendance for all the employees under this criteria has been marked already."
 msgstr "Prisustvo za sav personal po ovom kriterijumu je već navedeno."
 
-#: hrms/hr/doctype/attendance/attendance.py:118
+#: hrms/hr/doctype/attendance/attendance.py:121
 msgid "Attendance for employee {0} is already marked for an overlapping shift {1}: {2}"
 msgstr "Prisustvo za {0} je već navedeno za preklapajuću smjenu {1}: {2}"
 
-#: hrms/hr/doctype/attendance/attendance.py:72
+#: hrms/hr/doctype/attendance/attendance.py:75
 msgid "Attendance for employee {0} is already marked for the date {1}: {2}"
 msgstr "Prisustvo za {0} je već navedeno za datum {1}: {2}"
 
@@ -1547,7 +1559,7 @@ msgstr "Čeka se Odgovor"
 msgid "Backdated Leave Application is restricted. Please set the {} in {}"
 msgstr "Zahtjev za Odsustvo sa zastarjelim datumom je ograničena. Postavi {} u {}"
 
-#: hrms/hr/doctype/expense_claim/expense_claim.js:285
+#: hrms/hr/doctype/expense_claim/expense_claim.js:286
 msgid "Bank Entries"
 msgstr "Bankovni Unosi"
 
@@ -1588,6 +1600,16 @@ msgstr "Beneficija"
 #: hrms/payroll/doctype/employee_benefit_detail/employee_benefit_detail.json
 msgid "Benefit Amount"
 msgstr "Iznos Beneficija"
+
+#. Label of a Workspace Sidebar Item
+#: hrms/workspace_sidebar/tax_&_benefits.json
+msgid "Benefit Application"
+msgstr "Zahtjev za Beneficije"
+
+#. Label of a Workspace Sidebar Item
+#: hrms/workspace_sidebar/tax_&_benefits.json
+msgid "Benefit Claim"
+msgstr "Zahtjev za Naknadu"
 
 #. Label of the employee_benefit_details_section (Section Break) field in
 #. DocType 'Employee Benefit Ledger'
@@ -1670,6 +1692,11 @@ msgstr "Blokiraj Dane"
 #: hrms/hr/doctype/leave_block_list/leave_block_list.json
 msgid "Block Holidays on important days."
 msgstr "Blokiraj Praznike na važne dane."
+
+#. Label of the boarding_status (Select) field in DocType 'Employee Onboarding'
+#: hrms/hr/doctype/employee_onboarding/employee_onboarding.json
+msgid "Boarding Status"
+msgstr "Status Introdukcije"
 
 #. Label of the bonus_section (Section Break) field in DocType 'Retention
 #. Bonus'
@@ -1769,11 +1796,11 @@ msgstr "Nije moguće dodijeliti više odsustava zbog maksimalnog ograničenja do
 msgid "Cannot allocate more leaves due to maximum leaves allowed limit of {0} in {1} leave type."
 msgstr "Nije moguće dodijeliti više odsutva zbog maksimalnog dozvoljenog odsustva od {0} u tipu odsustva {1}."
 
-#: hrms/api/roster.py:139
+#: hrms/api/roster.py:134
 msgid "Cannot break shift after end date"
 msgstr "Nije moguće prekinuti smjenu nakon datuma završetka"
 
-#: hrms/api/roster.py:141
+#: hrms/api/roster.py:136
 msgid "Cannot break shift before start date"
 msgstr "Nije moguće prekinuti smjenu prije datuma početka"
 
@@ -1805,7 +1832,7 @@ msgstr "Nije moguće kreirati ili mijenjati transakcije prema Ciklusu Ocjenjivan
 msgid "Cannot find active Leave Period"
 msgstr "Nije moguće pronaći aktivni Period Odsustva"
 
-#: hrms/hr/doctype/attendance/attendance.py:152
+#: hrms/hr/doctype/attendance/attendance.py:155
 msgid "Cannot mark attendance for an Inactive employee {0}"
 msgstr "Nije moguće navesti prisustvo za neaktivan personal {0}"
 
@@ -1952,7 +1979,7 @@ msgstr "Zatraženo"
 #. Label of the claimed_amount (Currency) field in DocType 'Employee Benefit
 #. Claim'
 #: hrms/hr/doctype/employee_advance/employee_advance.json
-#: hrms/hr/report/employee_advance_summary/employee_advance_summary.py:77
+#: hrms/hr/report/employee_advance_summary/employee_advance_summary.py:80
 #: hrms/payroll/doctype/employee_benefit_claim/employee_benefit_claim.json
 msgid "Claimed Amount"
 msgstr "Zahtjevani Iznos"
@@ -2635,7 +2662,7 @@ msgstr "Domaći"
 msgid "Duplicate Assignment"
 msgstr "Dupliciraj Dodjelu"
 
-#: hrms/hr/doctype/attendance/attendance.py:77
+#: hrms/hr/doctype/attendance/attendance.py:80
 msgid "Duplicate Attendance"
 msgstr "Duplicirano Prisustvo"
 
@@ -2671,7 +2698,7 @@ msgstr "GREŠKA({0}): {1}"
 msgid "Early Exit"
 msgstr "Rana Odjava"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:91
+#: hrms/hr/report/shift_attendance/shift_attendance.py:94
 msgid "Early Exit By"
 msgstr "Rana Odjava do"
 
@@ -2680,7 +2707,7 @@ msgstr "Rana Odjava do"
 msgid "Early Exit Grace Period"
 msgstr "Period Odgode Ranog Izlaza"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:186
+#: hrms/hr/report/shift_attendance/shift_attendance.py:190
 msgid "Early Exits"
 msgstr "Rane Odjave"
 
@@ -2833,15 +2860,19 @@ msgstr "Sažetak Predujma"
 #. Name of a report
 #. Label of a Link in the People Workspace
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/report/employee_analytics/employee_analytics.json
 #: hrms/hr/workspace/people/people.json hrms/hr/workspace/tenure/tenure.json
+#: hrms/workspace_sidebar/tenure.json
 msgid "Employee Analytics"
 msgstr "Analiza"
 
 #. Name of a DocType
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_attendance_tool/employee_attendance_tool.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Employee Attendance Tool"
 msgstr "Alat Prisustva"
 
@@ -2884,8 +2915,10 @@ msgstr "Beneficije"
 #. Name of a report
 #. Label of a Link in the People Workspace
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/report/employee_birthday/employee_birthday.json
 #: hrms/hr/workspace/people/people.json hrms/hr/workspace/tenure/tenure.json
+#: hrms/workspace_sidebar/tenure.json
 msgid "Employee Birthday"
 msgstr "Rođendan"
 
@@ -2897,9 +2930,11 @@ msgstr "Introdukcijske Aktivnosti"
 #. Name of a DocType
 #. Label of a Link in the People Workspace
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_checkin/employee_checkin.json
 #: hrms/hr/workspace/people/people.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Employee Checkin"
 msgstr "Prijava"
 
@@ -2965,13 +3000,17 @@ msgstr "Postavke Otkaza"
 #. Name of a report
 #. Label of a Link in the People Workspace
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/report/employee_exits/employee_exits.json
 #: hrms/hr/workspace/people/people.json hrms/hr/workspace/tenure/tenure.json
+#: hrms/workspace_sidebar/tenure.json
 msgid "Employee Exits"
 msgstr "Otkazi"
 
 #. Name of a DocType
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_feedback_criteria/employee_feedback_criteria.json
+#: hrms/workspace_sidebar/performance.json
 msgid "Employee Feedback Criteria"
 msgstr "Kriterijumi Povratnih Informacija"
 
@@ -2994,6 +3033,7 @@ msgstr "Ocjena Povratnih Informacija"
 #. Label of a Link in the People Workspace
 #. Label of the grade (Link) field in DocType 'Bulk Salary Structure
 #. Assignment'
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_attendance_tool/employee_attendance_tool.json
 #: hrms/hr/doctype/employee_grade/employee_grade.json
 #: hrms/hr/doctype/employee_onboarding/employee_onboarding.json
@@ -3004,13 +3044,15 @@ msgstr "Ocjena Povratnih Informacija"
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.json
 #: hrms/hr/workspace/people/people.json
 #: hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.json
+#: hrms/workspace_sidebar/people.json
 msgid "Employee Grade"
 msgstr "Kvalifikacija"
 
 #. Name of a DocType
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_grievance/employee_grievance.json
-#: hrms/hr/workspace/tenure/tenure.json
+#: hrms/hr/workspace/tenure/tenure.json hrms/workspace_sidebar/tenure.json
 msgid "Employee Grievance"
 msgstr "Žalba"
 
@@ -3018,6 +3060,11 @@ msgstr "Žalba"
 #: hrms/hr/doctype/employee_health_insurance/employee_health_insurance.json
 msgid "Employee Health Insurance"
 msgstr "Zdravstveno Osiguranje"
+
+#. Label of a Workspace Sidebar Item
+#: hrms/workspace_sidebar/shift_&_attendance.json
+msgid "Employee Hours Utilization"
+msgstr "Iskorištenost Sati Osoblja"
 
 #. Name of a report
 #. Label of a Link in the Shift & Attendance Workspace
@@ -3046,8 +3093,10 @@ msgstr "Informacija"
 #. Name of a report
 #. Label of a Link in the People Workspace
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/report/employee_information/employee_information.json
 #: hrms/hr/workspace/people/people.json hrms/hr/workspace/tenure/tenure.json
+#: hrms/workspace_sidebar/tenure.json
 msgid "Employee Information"
 msgstr "Informacija"
 
@@ -3078,8 +3127,9 @@ msgstr "Imenovanje na osnovu"
 
 #. Name of a DocType
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_onboarding/employee_onboarding.json
-#: hrms/hr/workspace/tenure/tenure.json
+#: hrms/hr/workspace/tenure/tenure.json hrms/workspace_sidebar/tenure.json
 msgid "Employee Onboarding"
 msgstr "Introdukcija"
 
@@ -3103,12 +3153,16 @@ msgid "Employee Other Income"
 msgstr "Ostali Prihodi"
 
 #. Name of a DocType
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_performance_feedback/employee_performance_feedback.json
+#: hrms/workspace_sidebar/performance.json
 msgid "Employee Performance Feedback"
 msgstr "Povratne informacije Efektiviteta"
 
 #. Name of a DocType
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_promotion/employee_promotion.json
+#: hrms/workspace_sidebar/performance.json
 msgid "Employee Promotion"
 msgstr "Unaprijeđenje"
 
@@ -3161,7 +3215,9 @@ msgid "Employee Retained"
 msgstr "Zadržan"
 
 #. Name of a DocType
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_separation/employee_separation.json
+#: hrms/workspace_sidebar/tenure.json
 msgid "Employee Separation"
 msgstr "Otkaz"
 
@@ -3186,8 +3242,9 @@ msgstr "Vještina"
 
 #. Name of a DocType
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_skill_map/employee_skill_map.json
-#: hrms/hr/workspace/tenure/tenure.json
+#: hrms/hr/workspace/tenure/tenure.json hrms/workspace_sidebar/tenure.json
 msgid "Employee Skill Map"
 msgstr "Mapa Vještina"
 
@@ -3327,11 +3384,11 @@ msgstr "{0} se već prijavio za {1} između {2} i {3} : {4}"
 msgid "Employee {0} has already claimed the benefit '{1}' for {2} ({3}).<br>To prevent overpayments, only one claim per benefit type is allowed in each payroll cycle."
 msgstr "Personal {0} je već zatražio/la beneficiju '{1}' za {2} ({3}).<br>Da bi se spriječile prekomjerne isplate, dozvoljen je samo jedan zahtjev po tipui beneficije u svakom ciklusu obračuna plata."
 
-#: hrms/hr/doctype/attendance/attendance.py:211
+#: hrms/hr/doctype/attendance/attendance.py:214
 msgid "Employee {0} is not active or does not exist"
 msgstr "{0} nije aktivan ili ne postoji"
 
-#: hrms/hr/doctype/attendance/attendance.py:187
+#: hrms/hr/doctype/attendance/attendance.py:190
 msgid "Employee {0} is on Leave on {1}"
 msgstr "{0} je odsutan {1}"
 
@@ -3339,7 +3396,7 @@ msgstr "{0} je odsutan {1}"
 msgid "Employee {0} not found in Training Event Participants."
 msgstr "{0} nije pronađen među učesnicima obuke."
 
-#: hrms/hr/doctype/attendance/attendance.py:180
+#: hrms/hr/doctype/attendance/attendance.py:183
 msgid "Employee {0} on Half day on {1}"
 msgstr "{0} na pola dana {1}"
 
@@ -3362,7 +3419,8 @@ msgid "Employees HTML"
 msgstr "HTML Personala"
 
 #. Label of a Link in the People Workspace
-#: hrms/hr/workspace/people/people.json
+#. Label of a Workspace Sidebar Item
+#: hrms/hr/workspace/people/people.json hrms/workspace_sidebar/leaves.json
 msgid "Employees Working on a Holiday"
 msgstr "Praznični Personal"
 
@@ -3660,6 +3718,11 @@ msgstr "Svi, čestitamo {0} rođendan."
 msgid "Exam"
 msgstr "Ispit"
 
+#. Label of a Workspace Sidebar Item
+#: hrms/workspace_sidebar/tax_&_benefits.json
+msgid "Excemption Submission Proof"
+msgstr "Dokaz Podnošenja Izuzeća"
+
 #. Description of the 'Exchange Rate' (Float) field in DocType 'Expense Claim
 #. Advance'
 #: hrms/hr/doctype/expense_claim_advance/expense_claim_advance.json
@@ -3692,10 +3755,17 @@ msgstr "Izuzeće"
 #. Exemption Declaration Category'
 #. Label of the exemption_category (Read Only) field in DocType 'Employee Tax
 #. Exemption Proof Submission Detail'
+#. Label of a Workspace Sidebar Item
 #: hrms/payroll/doctype/employee_tax_exemption_declaration_category/employee_tax_exemption_declaration_category.json
 #: hrms/payroll/doctype/employee_tax_exemption_proof_submission_detail/employee_tax_exemption_proof_submission_detail.json
+#: hrms/workspace_sidebar/tax_&_benefits.json
 msgid "Exemption Category"
 msgstr "Kategorija Izuzeća"
+
+#. Label of a Workspace Sidebar Item
+#: hrms/workspace_sidebar/tax_&_benefits.json
+msgid "Exemption Declaration"
+msgstr "Deklaracija Izuzeća"
 
 #. Label of the exemption_proofs_details_tab (Tab Break) field in DocType
 #. 'Employee Tax Exemption Proof Submission'
@@ -3859,10 +3929,12 @@ msgstr "Sažetak Potraživanja Troškova"
 #. Name of a DocType
 #. Label of the expense_type (Data) field in DocType 'Expense Claim Type'
 #. Label of a Link in the Expenses Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/expense_claim/expense_claim.py:685
 #: hrms/hr/doctype/expense_claim_detail/expense_claim_detail.json
 #: hrms/hr/doctype/expense_claim_type/expense_claim_type.json
 #: hrms/hr/workspace/expenses/expenses.json
+#: hrms/workspace_sidebar/expenses.json
 msgid "Expense Claim Type"
 msgstr "Tip Potraživanja Troškova"
 
@@ -3963,7 +4035,7 @@ msgstr "Nije uspjelo kreiranje/podnošenje {0} za:"
 msgid "Failed to delete defaults for country {0}."
 msgstr "Brisanje standard postavki za zemlju {0} nije uspjelo."
 
-#: hrms/api/__init__.py:769
+#: hrms/api/__init__.py:771
 msgid "Failed to download PDF: {0}"
 msgstr "Preuzimanje PDF-a nije uspjelo: {0}"
 
@@ -4255,7 +4327,8 @@ msgstr "Dio Dnevne Plate po odsustvu"
 msgid "Fractional Cost"
 msgstr "Djelimični Trošak"
 
-#: frontend/src/components/BaseLayout.vue:9
+#. Label of a Desktop Icon
+#: frontend/src/components/BaseLayout.vue:9 hrms/desktop_icon/frappe_hr.json
 msgid "Frappe HR"
 msgstr "Frappe HR"
 
@@ -4538,9 +4611,10 @@ msgstr "Detalji Žalbe"
 #. Label of the grievance_type (Link) field in DocType 'Employee Grievance'
 #. Name of a DocType
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_grievance/employee_grievance.json
 #: hrms/hr/doctype/grievance_type/grievance_type.json
-#: hrms/hr/workspace/tenure/tenure.json
+#: hrms/hr/workspace/tenure/tenure.json hrms/workspace_sidebar/tenure.json
 msgid "Grievance Type"
 msgstr "Tip Žalbe"
 
@@ -4643,7 +4717,7 @@ msgstr "Poludnevni datum bi trebao biti između Datuma Početka Rada i Datuma Za
 msgid "Half Day Marked Employee Header"
 msgstr "Poludnevni Personal Zaglavlje"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:168
+#: hrms/hr/report/shift_attendance/shift_attendance.py:172
 msgid "Half Day Records"
 msgstr "Poludnevni Zapisi"
 
@@ -4693,7 +4767,9 @@ msgid "Hiring Settings"
 msgstr "Postavke Zapošljavanja"
 
 #. Name of a DocType
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/holiday_list_assignment/holiday_list_assignment.json
+#: hrms/workspace_sidebar/leaves.json
 msgid "Holiday List Assignment"
 msgstr "Dodjela Liste Praznika"
 
@@ -4926,7 +5002,7 @@ msgstr "Import Prisustvo"
 
 #. Label of the in_time (Datetime) field in DocType 'Attendance'
 #: hrms/hr/doctype/attendance/attendance.json
-#: hrms/hr/report/shift_attendance/shift_attendance.py:67
+#: hrms/hr/report/shift_attendance/shift_attendance.py:70
 msgid "In Time"
 msgstr "U Vrijeme"
 
@@ -4954,6 +5030,10 @@ msgstr "Uključuje Podređena Poduzeća"
 #: hrms/hr/doctype/attendance_request/attendance_request.json
 msgid "Include Holidays"
 msgstr "Uključuje Praznike"
+
+#: hrms/hr/report/shift_attendance/shift_attendance.js:64
+msgid "Include Shift Attendance Without Checkins"
+msgstr "Uključi Prisustvo u smjeni bez Prijava"
 
 #. Label of the include_holidays_in_total_working_days (Check) field in DocType
 #. 'Payroll Settings'
@@ -4989,9 +5069,11 @@ msgstr "Komponenta Poreza na Platu"
 #. Name of a report
 #. Label of a Link in the Payroll Workspace
 #. Label of a Link in the Tax & Benefits Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/payroll/report/income_tax_computation/income_tax_computation.json
 #: hrms/payroll/workspace/payroll/payroll.json
 #: hrms/payroll/workspace/tax_&_benefits/tax_&_benefits.json
+#: hrms/workspace_sidebar/tax_&_benefits.json
 msgid "Income Tax Computation"
 msgstr "Obračun Poreza na Platu"
 
@@ -5004,9 +5086,12 @@ msgstr "Porez na Platu Odbijen do Datuma"
 #. Name of a report
 #. Label of a Link in the Payroll Workspace
 #. Label of a Link in the Tax & Benefits Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/payroll/report/income_tax_deductions/income_tax_deductions.json
 #: hrms/payroll/workspace/payroll/payroll.json
 #: hrms/payroll/workspace/tax_&_benefits/tax_&_benefits.json
+#: hrms/workspace_sidebar/payroll.json
+#: hrms/workspace_sidebar/tax_&_benefits.json
 msgid "Income Tax Deductions"
 msgstr "Odbici Poreza na Platu"
 
@@ -5017,6 +5102,7 @@ msgstr "Odbici Poreza na Platu"
 #. Assignment'
 #. Label of a Link in the Payroll Workspace
 #. Label of a Link in the Tax & Benefits Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.json
 #: hrms/payroll/doctype/income_tax_slab/income_tax_slab.json
 #: hrms/payroll/doctype/salary_structure/salary_structure.js:142
@@ -5024,6 +5110,7 @@ msgstr "Odbici Poreza na Platu"
 #: hrms/payroll/report/income_tax_computation/income_tax_computation.py:623
 #: hrms/payroll/workspace/payroll/payroll.json
 #: hrms/payroll/workspace/tax_&_benefits/tax_&_benefits.json
+#: hrms/workspace_sidebar/tax_&_benefits.json
 msgid "Income Tax Slab"
 msgstr "Tabela Poreza na Platu"
 
@@ -5114,11 +5201,13 @@ msgstr "Internet"
 #. Name of a DocType
 #. Label of the interview (Link) field in DocType 'Interview Feedback'
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/interview/interview.json
 #: hrms/hr/doctype/interview_feedback/interview_feedback.json
 #: hrms/hr/doctype/job_applicant/job_applicant.js:25
 #: hrms/hr/doctype/job_applicant/job_applicant_dashboard.html:7
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Interview"
 msgstr "Intervju"
 
@@ -5179,11 +5268,13 @@ msgstr "Intervju je uspješno ponovo zakazan"
 #. Label of the interview_round (Link) field in DocType 'Interview Feedback'
 #. Name of a DocType
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/interview/interview.json
 #: hrms/hr/doctype/interview_feedback/interview_feedback.json
 #: hrms/hr/doctype/interview_round/interview_round.json
 #: hrms/hr/doctype/job_applicant/job_applicant_dashboard.html:8
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Interview Round"
 msgstr "Intervju Runda"
 
@@ -5216,9 +5307,11 @@ msgstr "Sažetak Intervjua"
 #. Label of the interview_type (Link) field in DocType 'Interview Round'
 #. Name of a DocType
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/interview_round/interview_round.json
 #: hrms/hr/doctype/interview_type/interview_type.json
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Interview Type"
 msgstr "Tip Intervjua"
 
@@ -5436,6 +5529,7 @@ msgstr "Jan"
 #. Name of a DocType
 #. Label of the job_applicant (Link) field in DocType 'Job Offer'
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/appointment_letter/appointment_letter.json
 #: hrms/hr/doctype/employee_onboarding/employee_onboarding.json
 #: hrms/hr/doctype/interview/interview.json
@@ -5444,6 +5538,7 @@ msgstr "Jan"
 #: hrms/hr/doctype/job_offer/job_offer.json
 #: hrms/hr/report/recruitment_analytics/recruitment_analytics.py:38
 #: hrms/hr/workspace/recruitment/recruitment.json hrms/setup.py:193
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Job Applicant"
 msgstr "Kandidat za Posao"
 
@@ -5480,12 +5575,14 @@ msgstr "Opis Posla"
 #. Label of the job_offer (Link) field in DocType 'Employee Onboarding'
 #. Name of a DocType
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_onboarding/employee_onboarding.json
 #: hrms/hr/doctype/job_applicant/job_applicant.js:38
 #: hrms/hr/doctype/job_applicant/job_applicant.js:48
 #: hrms/hr/doctype/job_offer/job_offer.json
 #: hrms/hr/report/recruitment_analytics/recruitment_analytics.py:52
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Job Offer"
 msgstr "Ponuda za Posao"
 
@@ -5519,6 +5616,7 @@ msgstr "Ponuda za Posao: {0} je već za kandidata za posao: {1}"
 #. Name of a DocType
 #. Label of a field in the job-application Web Form
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/interview/interview.json
 #: hrms/hr/doctype/job_applicant/job_applicant.json
 #: hrms/hr/doctype/job_opening/job_opening.json
@@ -5526,6 +5624,7 @@ msgstr "Ponuda za Posao: {0} je već za kandidata za posao: {1}"
 #: hrms/hr/report/recruitment_analytics/recruitment_analytics.py:31
 #: hrms/hr/web_form/job_application/job_application.json
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Job Opening"
 msgstr "Otvoreno Radno Mjesto"
 
@@ -5551,9 +5650,11 @@ msgstr "Otvorena Radna Mjesta za naziv {0} su već otvorena ili je zapošljavanj
 #. Label of the job_requisition (Link) field in DocType 'Job Opening'
 #. Name of a DocType
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/job_opening/job_opening.json
 #: hrms/hr/doctype/job_requisition/job_requisition.json
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Job Requisition"
 msgstr "Zahtjev za Posao"
 
@@ -5596,10 +5697,11 @@ msgstr "Juni"
 #. Goal'
 #. Label of the kra (Link) field in DocType 'Goal'
 #. Name of a DocType
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/appraisal_kra/appraisal_kra.json
 #: hrms/hr/doctype/appraisal_template_goal/appraisal_template_goal.json
 #: hrms/hr/doctype/goal/goal.json hrms/hr/doctype/goal/goal_tree.js:134
-#: hrms/hr/doctype/kra/kra.json
+#: hrms/hr/doctype/kra/kra.json hrms/workspace_sidebar/performance.json
 msgid "KRA"
 msgstr "Ključno Polje Efektiviteta"
 
@@ -5670,7 +5772,7 @@ msgstr "Zadnja Sinhronizacija Prijave"
 msgid "Last {0} was at {1}"
 msgstr "Zadnja {0} je bila u {1}"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:180
+#: hrms/hr/report/shift_attendance/shift_attendance.py:184
 msgid "Late Entries"
 msgstr "Kasne Prijave"
 
@@ -5688,7 +5790,7 @@ msgstr "Kasna Prijava"
 msgid "Late Entry & Early Exit Settings for Auto Attendance"
 msgstr "Postavke Kasne Prijave i Rane Odjave za Automatsko Prisustvo"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:85
+#: hrms/hr/report/shift_attendance/shift_attendance.py:88
 msgid "Late Entry By"
 msgstr "Kasna Prijava od"
 
@@ -5727,10 +5829,11 @@ msgstr "Podešavanje odsustva za ovu dodjelu već postoji: {0}. Izmijeni postoje
 #. Name of a DocType
 #. Label of the leave_allocation (Link) field in DocType 'Leave Encashment'
 #. Label of a Link in the Leaves Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/compensatory_leave_request/compensatory_leave_request.json
 #: hrms/hr/doctype/leave_allocation/leave_allocation.json
 #: hrms/hr/doctype/leave_encashment/leave_encashment.json
-#: hrms/hr/workspace/leaves/leaves.json
+#: hrms/hr/workspace/leaves/leaves.json hrms/workspace_sidebar/leaves.json
 msgid "Leave Allocation"
 msgstr "Dodjela Odsustva"
 
@@ -5748,9 +5851,11 @@ msgstr "Dodjela Odsustva"
 #. Name of a DocType
 #. Label of a Link in the Leaves Workspace
 #. Label of a Link in the People Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/attendance/attendance.json
 #: hrms/hr/doctype/leave_application/leave_application.json
 #: hrms/hr/workspace/leaves/leaves.json hrms/hr/workspace/people/people.json
+#: hrms/workspace_sidebar/leaves.json
 msgid "Leave Application"
 msgstr "Zahtjev Odsustva"
 
@@ -5788,8 +5893,10 @@ msgid "Leave Approver Name"
 msgstr "Ime Odobravatelja Odsustva"
 
 #. Label of the leave_balance (Float) field in DocType 'Leave Encashment'
+#. Label of a Workspace Sidebar Item
 #: frontend/src/components/LeaveBalance.vue:4
 #: hrms/hr/doctype/leave_encashment/leave_encashment.json
+#: hrms/workspace_sidebar/leaves.json
 msgid "Leave Balance"
 msgstr "Stanje Odsustva"
 
@@ -5798,10 +5905,17 @@ msgstr "Stanje Odsustva"
 msgid "Leave Balance Before Application"
 msgstr "Stanje Osustva prije Zahtjeva"
 
+#. Label of a Workspace Sidebar Item
+#: hrms/workspace_sidebar/leaves.json
+msgid "Leave Balance Summary"
+msgstr "Sažetak Stanja Odsustva"
+
 #. Name of a DocType
 #. Label of a Link in the Leaves Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/leave_block_list/leave_block_list.json
 #: hrms/hr/workspace/leaves/leaves.json hrms/setup.py:125
+#: hrms/workspace_sidebar/leaves.json
 msgid "Leave Block List"
 msgstr "Listu Blokiranog Odsustva"
 
@@ -5839,8 +5953,9 @@ msgstr "Odsustvo Blokirano"
 
 #. Name of a DocType
 #. Label of a Link in the Leaves Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/leave_control_panel/leave_control_panel.json
-#: hrms/hr/workspace/leaves/leaves.json
+#: hrms/hr/workspace/leaves/leaves.json hrms/workspace_sidebar/leaves.json
 msgid "Leave Control Panel"
 msgstr "Kontrolni Panel Odsustva"
 
@@ -5851,8 +5966,9 @@ msgstr "Detalji Odsustva"
 
 #. Name of a DocType
 #. Label of a Link in the Leaves Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/leave_encashment/leave_encashment.json
-#: hrms/hr/workspace/leaves/leaves.json
+#: hrms/hr/workspace/leaves/leaves.json hrms/workspace_sidebar/leaves.json
 msgid "Leave Encashment"
 msgstr "Naplata Odsustva"
 
@@ -5894,12 +6010,13 @@ msgstr "Unosi Registra Odsustva Do Datuma mora biti nakon Od Datuma. Trenutno je
 #. Assignment'
 #. Label of the leave_period (Link) field in DocType 'Leave Policy Assignment'
 #. Label of a Link in the Leaves Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/leave_allocation/leave_allocation.json
 #: hrms/hr/doctype/leave_control_panel/leave_control_panel.json
 #: hrms/hr/doctype/leave_encashment/leave_encashment.json
 #: hrms/hr/doctype/leave_period/leave_period.json
 #: hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment.json
-#: hrms/hr/workspace/leaves/leaves.json
+#: hrms/hr/workspace/leaves/leaves.json hrms/workspace_sidebar/leaves.json
 msgid "Leave Period"
 msgstr "Period Odsustva"
 
@@ -5908,11 +6025,12 @@ msgstr "Period Odsustva"
 #. Name of a DocType
 #. Label of the leave_policy (Link) field in DocType 'Leave Policy Assignment'
 #. Label of a Link in the Leaves Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/leave_allocation/leave_allocation.json
 #: hrms/hr/doctype/leave_control_panel/leave_control_panel.json
 #: hrms/hr/doctype/leave_policy/leave_policy.json
 #: hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment.json
-#: hrms/hr/workspace/leaves/leaves.json
+#: hrms/hr/workspace/leaves/leaves.json hrms/workspace_sidebar/leaves.json
 msgid "Leave Policy"
 msgstr "Pravila Odsustva"
 
@@ -5922,10 +6040,11 @@ msgstr "Pravila Odsustva"
 #. Allocation'
 #. Name of a DocType
 #. Label of a Link in the Leaves Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/earned_leave_schedule/earned_leave_schedule.json
 #: hrms/hr/doctype/leave_allocation/leave_allocation.json
 #: hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment.json
-#: hrms/hr/workspace/leaves/leaves.json
+#: hrms/hr/workspace/leaves/leaves.json hrms/workspace_sidebar/leaves.json
 msgid "Leave Policy Assignment"
 msgstr "Dodjela Pravila Odsustva"
 
@@ -5976,6 +6095,7 @@ msgstr "Šablon Obavještenja Statusa Odsustva"
 #. Name of a DocType
 #. Label of a Link in the Leaves Workspace
 #. Label of the leave_type (Link) field in DocType 'Salary Slip Leave'
+#. Label of a Workspace Sidebar Item
 #: frontend/src/views/leave/List.vue:41
 #: hrms/hr/doctype/attendance/attendance.json
 #: hrms/hr/doctype/compensatory_leave_request/compensatory_leave_request.json
@@ -5995,6 +6115,7 @@ msgstr "Šablon Obavještenja Statusa Odsustva"
 #: hrms/hr/report/leave_ledger/leave_ledger.py:65
 #: hrms/hr/workspace/leaves/leaves.json
 #: hrms/payroll/doctype/salary_slip_leave/salary_slip_leave.json
+#: hrms/workspace_sidebar/leaves.json
 msgid "Leave Type"
 msgstr "Tip Odsustva"
 
@@ -6079,13 +6200,15 @@ msgstr "Odsustvo(a) na čekanju za Odobrenje"
 msgid "Leave(s) Taken"
 msgstr "Uzeto Odsustvo(a)"
 
+#. Label of a Desktop Icon
 #. Label of the leaves_tab (Tab Break) field in DocType 'HR Settings'
 #. Label of the leaves (Float) field in DocType 'Leave Ledger Entry'
 #. Name of a Workspace
 #. Label of a Card Break in the People Workspace
 #. Label of the leave_details_section (Tab Break) field in DocType 'Salary
 #. Slip'
-#: frontend/src/components/BottomTabs.vue:53
+#. Title of a Workspace Sidebar
+#: frontend/src/components/BottomTabs.vue:53 hrms/desktop_icon/leaves.json
 #: hrms/hr/doctype/hr_settings/hr_settings.json
 #: hrms/hr/doctype/leave_ledger_entry/leave_ledger_entry.json
 #: hrms/hr/doctype/leave_policy/leave_policy_dashboard.py:8
@@ -6093,6 +6216,7 @@ msgstr "Uzeto Odsustvo(a)"
 #: hrms/hr/report/leave_ledger/leave_ledger.py:59
 #: hrms/hr/workspace/leaves/leaves.json hrms/hr/workspace/people/people.json
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
+#: hrms/workspace_sidebar/leaves.json
 msgid "Leaves"
 msgstr "Odsustvo"
 
@@ -6543,9 +6667,11 @@ msgstr "Mjesec do Danas (Valuta Poduzeća)"
 #. Name of a report
 #. Label of a Link in the People Workspace
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/report/monthly_attendance_sheet/monthly_attendance_sheet.json
 #: hrms/hr/workspace/people/people.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Monthly Attendance Sheet"
 msgstr "Mjesečna Lista Prisustva"
 
@@ -6682,6 +6808,10 @@ msgstr "Nije pronađen personal za datu vrijednost polja '{}': {}"
 #: hrms/hr/doctype/appraisal_cycle/appraisal_cycle.py:111 hrms/hr/utils.py:924
 msgid "No Employees Selected"
 msgstr "Nema odabranog Personala"
+
+#: hrms/utils/holiday_list.py:107
+msgid "No Holiday List was found for Employee {0} or their company {1} for date {2}. Please assign through {3}"
+msgstr "Nije pronađena lista praznika za {0} ili za {1} za datum {2}. Dodijeli putem {3}"
 
 #: hrms/hr/doctype/job_applicant/job_applicant_dashboard.html:53
 msgid "No Interview has been scheduled."
@@ -6824,7 +6954,7 @@ msgstr "Nisu odabrani Artikli"
 msgid "No leave allocation found for {0} for {1} on given date."
 msgstr "Nije pronađena dodjela odsustva za {0} za {1} na dati datum."
 
-#: hrms/hr/doctype/attendance/attendance.py:197
+#: hrms/hr/doctype/attendance/attendance.py:200
 msgid "No leave record found for employee {0} on {1}"
 msgstr "Nije pronađen yapisnik Odsustva za personal {0} na {1}"
 
@@ -7131,7 +7261,9 @@ msgstr "Izborna Lista Praznika nije postavljena za period odsustva {0}"
 msgid "Optional Leaves are holidays that Employees can choose to avail from a list of holidays published by the company."
 msgstr "Neobavezno odsustvo su praznici koje personal može izabrati sa liste praznika koju objavljuje poduzeće."
 
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/page/organizational_chart/organizational_chart.js:4
+#: hrms/workspace_sidebar/people.json
 msgid "Organizational Chart"
 msgstr "Organizacijski Dijagram"
 
@@ -7143,7 +7275,7 @@ msgstr "Ostali Porezi i Naknade"
 
 #. Label of the out_time (Datetime) field in DocType 'Attendance'
 #: hrms/hr/doctype/attendance/attendance.json
-#: hrms/hr/report/shift_attendance/shift_attendance.py:73
+#: hrms/hr/report/shift_attendance/shift_attendance.py:76
 msgid "Out Time"
 msgstr "Vrijeme Ističe"
 
@@ -7164,7 +7296,7 @@ msgstr "Ukupna Prosječna Ocjena"
 msgid "Overlapping Attendance Request"
 msgstr "Preklapajući Zahtjev za Prisustvo"
 
-#: hrms/hr/doctype/attendance/attendance.py:123
+#: hrms/hr/doctype/attendance/attendance.py:126
 msgid "Overlapping Shift Attendance"
 msgstr "Preklapajuće Prisustvo Smjene"
 
@@ -7179,9 +7311,11 @@ msgstr "Preklapanje Smjena"
 #. Label of the overtime_section (Section Break) field in DocType 'Attendance'
 #. Label of the overtime_section (Section Break) field in DocType 'Shift Type'
 #. Label of a Card Break in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/attendance/attendance.json
 #: hrms/hr/doctype/shift_type/shift_type.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Overtime"
 msgstr "Prekovremeni Rad"
 
@@ -7217,8 +7351,10 @@ msgstr "Komponenta Plate za Prekovremeni Rad"
 
 #. Name of a DocType
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/overtime_slip/overtime_slip.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Overtime Slip"
 msgstr "Specifikacija Prekovremenog Rada"
 
@@ -7278,6 +7414,7 @@ msgstr "Specifikacija Prekovremenog Rada podnesene za {0}"
 #. Label of the overtime_type (Link) field in DocType 'Shift Assignment'
 #. Label of the overtime_type (Link) field in DocType 'Shift Type'
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/attendance/attendance.json
 #: hrms/hr/doctype/employee_checkin/employee_checkin.json
 #: hrms/hr/doctype/overtime_details/overtime_details.json
@@ -7285,6 +7422,7 @@ msgstr "Specifikacija Prekovremenog Rada podnesene za {0}"
 #: hrms/hr/doctype/shift_assignment/shift_assignment.json
 #: hrms/hr/doctype/shift_type/shift_type.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Overtime Type"
 msgstr "Tip Prekovremenog Rada"
 
@@ -7444,13 +7582,17 @@ msgstr "Način Isplate"
 msgid "Payout Unclaimed Amount in Final Payroll Cycle"
 msgstr "Isplati neisplaćeni iznos u posljednjem ciklusu obračuna plata"
 
+#. Label of a Desktop Icon
 #. Label of the payroll (Section Break) field in DocType 'Leave Encashment'
 #. Name of a Workspace
 #. Label of a Card Break in the Payroll Workspace
+#. Title of a Workspace Sidebar
+#: hrms/desktop_icon/payroll.json
 #: hrms/hr/doctype/leave_encashment/leave_encashment.json
 #: hrms/overrides/dashboard_overrides.py:37
 #: hrms/overrides/dashboard_overrides.py:77
 #: hrms/payroll/workspace/payroll/payroll.json
+#: hrms/workspace_sidebar/payroll.json
 msgid "Payroll"
 msgstr "Obračun Plata"
 
@@ -7626,8 +7768,11 @@ msgstr "Intervjui na Čekanju"
 msgid "Pending Questionnaires"
 msgstr "Upitnici na Čekanju"
 
+#. Label of a Desktop Icon
 #. Name of a Workspace
-#: hrms/hr/workspace/people/people.json
+#. Title of a Workspace Sidebar
+#: hrms/desktop_icon/people.json hrms/hr/workspace/people/people.json
+#: hrms/workspace_sidebar/people.json
 msgid "People"
 msgstr "Osoblje"
 
@@ -7637,8 +7782,12 @@ msgstr "Osoblje"
 msgid "Percent Deduction"
 msgstr "Postotak Odbitka"
 
+#. Label of a Desktop Icon
 #. Name of a Workspace
+#. Title of a Workspace Sidebar
+#: hrms/desktop_icon/performance.json
 #: hrms/hr/workspace/performance/performance.json
+#: hrms/workspace_sidebar/performance.json
 msgid "Performance"
 msgstr "Efektivitet"
 
@@ -7666,10 +7815,6 @@ msgstr "Omogući Automatsko Prisustvo i prvo dovršite podešavanje."
 #: hrms/payroll/doctype/retention_bonus/retention_bonus.js:8
 msgid "Please Select Company First"
 msgstr "Odaberi Poduzeće"
-
-#: hrms/utils/holiday_list.py:105
-msgid "Please assign Holiday List for Employee {0} or their company {1} through {2}"
-msgstr "Dodijeli Listu Praznika za {0} ili za {1} do {2}"
 
 #: hrms/payroll/doctype/salary_slip/salary_slip.py:836
 msgid "Please assign a Salary Structure for Employee {0} applicable from or before {1} first"
@@ -7757,7 +7902,7 @@ msgstr "Odaberi Poduzeće."
 msgid "Please select a csv file"
 msgstr "Odaberi csv datoteku"
 
-#: hrms/hr/doctype/attendance/attendance.py:348
+#: hrms/hr/doctype/attendance/attendance.py:352
 msgid "Please select a date."
 msgstr "Odaberi Datum."
 
@@ -7859,7 +8004,7 @@ msgstr "Postavite Predujamni Račun {0} ili u {1}"
 msgid "Please set the Appraisal Template for all the {0} or select the template in the Employees table below."
 msgstr "Postavi Šablon Ocjenjivanjaza sve {0} ili odaberi šablon u tabeli Personala ispod."
 
-#: hrms/hr/doctype/expense_claim/expense_claim.js:522
+#: hrms/hr/doctype/expense_claim/expense_claim.js:523
 msgid "Please set the Company"
 msgstr "Postavi Poduzeće"
 
@@ -7960,7 +8105,7 @@ msgstr "Preferirano područje za smještaj"
 msgid "Present"
 msgstr "Prisutan"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:162
+#: hrms/hr/report/shift_attendance/shift_attendance.py:166
 msgid "Present Records"
 msgstr "Trenutni Zapisi"
 
@@ -8050,8 +8195,10 @@ msgstr "Obrada Zahtjeva za Smjenu je stavljena u red za čekanja. Može potrajat
 
 #. Name of a report
 #. Label of a Link in the Payroll Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/payroll/report/professional_tax_deductions/professional_tax_deductions.json
 #: hrms/payroll/workspace/payroll/payroll.json
+#: hrms/workspace_sidebar/payroll.json
 msgid "Professional Tax Deductions"
 msgstr "Profesionalni Porezni Odbici"
 
@@ -8066,8 +8213,10 @@ msgstr "Profit"
 
 #. Name of a report
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/report/project_profitability/project_profitability.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Project Profitability"
 msgstr "Profitabilnost Projekta"
 
@@ -8119,9 +8268,11 @@ msgstr "Namjena & Iznos"
 #. Label of the purpose_of_travel (Data) field in DocType 'Purpose of Travel'
 #. Label of the purpose_of_travel (Link) field in DocType 'Travel Request'
 #. Label of a Link in the Expenses Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/purpose_of_travel/purpose_of_travel.json
 #: hrms/hr/doctype/travel_request/travel_request.json
 #: hrms/hr/workspace/expenses/expenses.json
+#: hrms/workspace_sidebar/expenses.json
 msgid "Purpose of Travel"
 msgstr "Razlog Putovanja"
 
@@ -8234,19 +8385,25 @@ msgstr "Preporučeno za jedan biometrijski uređaj / prijave putem mobilne aplik
 msgid "Recover Cost"
 msgstr "Povrat Troška"
 
+#. Label of a Desktop Icon
 #. Label of the recruitment_tab (Tab Break) field in DocType 'HR Settings'
 #. Name of a Workspace
+#. Title of a Workspace Sidebar
+#: hrms/desktop_icon/recruitment.json
 #: hrms/hr/doctype/hr_settings/hr_settings.json
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Recruitment"
 msgstr "Zapošljavanje"
 
 #. Name of a report
 #. Label of a Link in the People Workspace
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/report/recruitment_analytics/recruitment_analytics.json
 #: hrms/hr/workspace/people/people.json
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Recruitment Analytics"
 msgstr "Analiza Zapošljavanja"
 
@@ -8553,7 +8710,9 @@ msgstr "Revidirana Godisnja Plata"
 msgid "Role Allowed to Create Backdated Leave Application"
 msgstr "Uloga kojoj je dopušteno pravljenje Zahtjeva za Odsustvo sa zastarjelim datumom"
 
+#. Label of a Workspace Sidebar Item
 #: hrms/public/js/utils/index.js:252 hrms/public/js/utils/index.js:273
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Roster"
 msgstr "Raspored"
 
@@ -8655,6 +8814,7 @@ msgstr "Red {0}: {1} je obavezan u tabeli troškova za knjiženje potraživanja 
 #. Name of a DocType
 #. Label of the salary_component (Link) field in DocType 'Salary Structure'
 #. Label of a Link in the Payroll Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/overtime_salary_component/overtime_salary_component.json
 #: hrms/payroll/doctype/additional_salary/additional_salary.json
 #: hrms/payroll/doctype/employee_benefit_ledger/employee_benefit_ledger.json
@@ -8667,7 +8827,7 @@ msgstr "Red {0}: {1} je obavezan u tabeli troškova za knjiženje potraživanja 
 #: hrms/payroll/report/accrued_earnings_report/accrued_earnings_report.js:77
 #: hrms/payroll/report/accrued_earnings_report/accrued_earnings_report.py:33
 #: hrms/payroll/workspace/payroll/payroll.json
-#: hrms/public/js/utils/payroll_utils.js:23
+#: hrms/public/js/utils/payroll_utils.js:23 hrms/workspace_sidebar/payroll.json
 msgid "Salary Component"
 msgstr "Komponenta Plate"
 
@@ -8757,8 +8917,10 @@ msgstr "Raspon Plate"
 
 #. Name of a report
 #. Label of a Link in the Payroll Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/payroll/report/salary_register/salary_register.json
 #: hrms/payroll/workspace/payroll/payroll.json
+#: hrms/workspace_sidebar/payroll.json
 msgid "Salary Register"
 msgstr "Platni Registar"
 
@@ -8769,12 +8931,14 @@ msgstr "Platni Registar"
 #. Settings'
 #. Name of a DocType
 #. Label of a Link in the Payroll Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/leave_application/leave_application.json
 #: hrms/hr/doctype/overtime_slip/overtime_slip.json
 #: hrms/payroll/doctype/employee_benefit_ledger/employee_benefit_ledger.json
 #: hrms/payroll/doctype/payroll_settings/payroll_settings.json
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
 #: hrms/payroll/workspace/payroll/payroll.json hrms/setup.py:309
+#: hrms/workspace_sidebar/payroll.json
 msgid "Salary Slip"
 msgstr "Platna Lista"
 
@@ -8879,6 +9043,7 @@ msgstr "Platne Liste potvrđene za period od {0} do {1}"
 #. Label of the salary_structure (Link) field in DocType 'Salary Structure
 #. Assignment'
 #. Label of a Link in the Payroll Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/payroll/doctype/arrear/arrear.json
 #: hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.json
 #: hrms/payroll/doctype/salary_component/salary_component.js:31
@@ -8886,14 +9051,17 @@ msgstr "Platne Liste potvrđene za period od {0} do {1}"
 #: hrms/payroll/doctype/salary_structure/salary_structure.json
 #: hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.json
 #: hrms/payroll/workspace/payroll/payroll.json
+#: hrms/workspace_sidebar/payroll.json
 msgid "Salary Structure"
 msgstr "Struktura Plate"
 
 #. Name of a DocType
 #. Label of a Link in the Payroll Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/payroll/doctype/income_tax_slab/income_tax_slab.js:8
 #: hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.json
 #: hrms/payroll/workspace/payroll/payroll.json
+#: hrms/workspace_sidebar/payroll.json
 msgid "Salary Structure Assignment"
 msgstr "Dodjela Strukture Plata"
 
@@ -8932,9 +9100,11 @@ msgstr "Uspješno ažurirane Strukture Plata"
 #. Label of the salary_withholding (Link) field in DocType 'Salary Slip'
 #. Name of a DocType
 #. Label of a Link in the Payroll Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
 #: hrms/payroll/doctype/salary_withholding/salary_withholding.json
 #: hrms/payroll/workspace/payroll/payroll.json
+#: hrms/workspace_sidebar/payroll.json
 msgid "Salary Withholding"
 msgstr "Zadržavanje Plate"
 
@@ -9062,7 +9232,7 @@ msgstr "Odaberi Uslove i Odredbe"
 msgid "Select Users"
 msgstr "Odaberi Korisnike"
 
-#: hrms/hr/doctype/expense_claim/expense_claim.js:567
+#: hrms/hr/doctype/expense_claim/expense_claim.js:568
 msgid "Select an employee to get the employee advance."
 msgstr "Navedi Personal za koji preuzmete stanje predujma."
 
@@ -9299,8 +9469,12 @@ msgstr "Izmiri sve Obaveze i Potraživanja prije podnošenja"
 msgid "Shared document with the user {0} with 'Submit' permission"
 msgstr "Dokument je podijeljen s korisnikom {0} s dozvolom 'Podnesi'"
 
+#. Label of a Desktop Icon
 #. Name of a Workspace
+#. Title of a Workspace Sidebar
+#: hrms/desktop_icon/shift_&_attendance.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Shift & Attendance"
 msgstr "Smjena & Prisustvo"
 
@@ -9309,7 +9483,7 @@ msgstr "Smjena & Prisustvo"
 msgid "Shift Actual End"
 msgstr "Stvarni Kraj Smjene"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:117
+#: hrms/hr/report/shift_attendance/shift_attendance.py:120
 msgid "Shift Actual End Time"
 msgstr "Vrijeme Stvarnog Kraja Smjene"
 
@@ -9319,7 +9493,7 @@ msgstr "Vrijeme Stvarnog Kraja Smjene"
 msgid "Shift Actual Start"
 msgstr "Stvarni Početak Smjene"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:111
+#: hrms/hr/report/shift_attendance/shift_attendance.py:114
 msgid "Shift Actual Start Time"
 msgstr "Vrijeme Stvarnog Početka Smjene"
 
@@ -9358,8 +9532,10 @@ msgstr "Dodjele smjena kreirane za raspored između {0} i {1} putem pozadinskog 
 
 #. Name of a report
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/report/shift_attendance/shift_attendance.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Shift Attendance"
 msgstr "Prisustvo Smjene"
 
@@ -9377,7 +9553,7 @@ msgstr "Detalji Smjene"
 msgid "Shift End"
 msgstr "Kraj Smjene"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:61
+#: hrms/hr/report/shift_attendance/shift_attendance.py:64
 msgid "Shift End Time"
 msgstr "Vrijeme Kraja Smjene"
 
@@ -9387,21 +9563,25 @@ msgstr "Vrijeme Kraja Smjene"
 #. Label of the shift_location (Link) field in DocType 'Shift Schedule
 #. Assignment'
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/shift_assignment/shift_assignment.json
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.json
 #: hrms/hr/doctype/shift_location/shift_location.json
 #: hrms/hr/doctype/shift_schedule_assignment/shift_schedule_assignment.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Shift Location"
 msgstr "Lokacija Smjene"
 
 #. Label of the shift_request (Link) field in DocType 'Shift Assignment'
 #. Name of a DocType
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/shift_assignment/shift_assignment.json
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.js:220
 #: hrms/hr/doctype/shift_request/shift_request.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Shift Request"
 msgstr "Zahtjev za Smjenu"
 
@@ -9431,10 +9611,12 @@ msgstr "Zahtjevi Smjene koji počinju nakon ovog datuma bit će isključeni."
 #. Label of the shift_schedule (Link) field in DocType 'Shift Schedule
 #. Assignment'
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.json
 #: hrms/hr/doctype/shift_schedule/shift_schedule.json
 #: hrms/hr/doctype/shift_schedule_assignment/shift_schedule_assignment.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Shift Schedule"
 msgstr "Raspored Smjene"
 
@@ -9459,7 +9641,7 @@ msgstr "Postavke Smjene"
 msgid "Shift Start"
 msgstr "Početak Smjene"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:55
+#: hrms/hr/report/shift_attendance/shift_attendance.py:58
 msgid "Shift Start Time"
 msgstr "Vrijeme Početka Smjene"
 
@@ -9488,6 +9670,7 @@ msgstr "Alat Smjene"
 #. Label of the shift_type (Link) field in DocType 'Shift Schedule'
 #. Name of a DocType
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: frontend/src/views/attendance/ShiftAssignmentList.vue:24
 #: frontend/src/views/attendance/ShiftRequestList.vue:42
 #: hrms/hr/doctype/shift_assignment/shift_assignment.json
@@ -9498,6 +9681,7 @@ msgstr "Alat Smjene"
 #: hrms/hr/doctype/shift_type/shift_type.json
 #: hrms/hr/report/shift_attendance/shift_attendance.js:28
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Shift Type"
 msgstr "Tip Smjene"
 
@@ -9601,7 +9785,7 @@ msgstr "Preskače se Dodjela Strukture Plata za sljedeći personal, jer zapisi o
 msgid "Source and Rating"
 msgstr "Izvor i Ocjena"
 
-#: hrms/api/roster.py:100
+#: hrms/api/roster.py:95
 msgid "Source and target shifts cannot be the same"
 msgstr "Izvorna i Ciljna Smjena ne mogu biti iste"
 
@@ -9619,10 +9803,12 @@ msgstr "Detalji Zapošljavanja"
 #. Label of the staffing_plan (Link) field in DocType 'Job Opening'
 #. Name of a DocType
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/job_opening/job_opening.json
 #: hrms/hr/doctype/staffing_plan/staffing_plan.json
 #: hrms/hr/report/recruitment_analytics/recruitment_analytics.py:24
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Staffing Plan"
 msgstr "Plan Zapošljavanja"
 
@@ -9819,8 +10005,12 @@ msgstr "Sintaktička greška u stanju: {0} u tabeli poreza na platu"
 msgid "Take Exact Completed Years"
 msgstr "Uzmite Tačno Završene Godine"
 
+#. Label of a Desktop Icon
 #. Name of a Workspace
+#. Title of a Workspace Sidebar
+#: hrms/desktop_icon/tax_&_benefits.json
 #: hrms/payroll/workspace/tax_&_benefits/tax_&_benefits.json
+#: hrms/workspace_sidebar/tax_&_benefits.json
 msgid "Tax & Benefits"
 msgstr "Porez & Beneficije"
 
@@ -9931,10 +10121,12 @@ msgstr "Timski Zahtjevi"
 msgid "Team Updates"
 msgstr "Timska Ažuriranja"
 
+#. Label of a Desktop Icon
 #. Label of the tenure_tab (Tab Break) field in DocType 'HR Settings'
 #. Name of a Workspace
-#: hrms/hr/doctype/hr_settings/hr_settings.json
-#: hrms/hr/workspace/tenure/tenure.json
+#. Title of a Workspace Sidebar
+#: hrms/desktop_icon/tenure.json hrms/hr/doctype/hr_settings/hr_settings.json
+#: hrms/hr/workspace/tenure/tenure.json hrms/workspace_sidebar/tenure.json
 msgid "Tenure"
 msgstr "Zapošljenje"
 
@@ -10564,6 +10756,7 @@ msgstr "Datum Obuke"
 #. Label of the training_event (Link) field in DocType 'Training Feedback'
 #. Label of the training_event (Link) field in DocType 'Training Result'
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/training_event/training_event.json
 #: hrms/hr/doctype/training_feedback/training_feedback.json
 #: hrms/hr/doctype/training_feedback/training_feedback.py:14
@@ -10571,6 +10764,7 @@ msgstr "Datum Obuke"
 #: hrms/hr/doctype/training_result/training_result.py:16
 #: hrms/hr/workspace/tenure/tenure.json
 #: hrms/templates/emails/training_event.html:1
+#: hrms/workspace_sidebar/tenure.json
 msgid "Training Event"
 msgstr "Događaj Obuke"
 
@@ -10589,9 +10783,10 @@ msgstr "Događaji Obuke"
 
 #. Name of a DocType
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/training_event/training_event.js:16
 #: hrms/hr/doctype/training_feedback/training_feedback.json
-#: hrms/hr/workspace/tenure/tenure.json
+#: hrms/hr/workspace/tenure/tenure.json hrms/workspace_sidebar/tenure.json
 msgid "Training Feedback"
 msgstr "Povratna Informacija Obuke"
 
@@ -10599,17 +10794,19 @@ msgstr "Povratna Informacija Obuke"
 #. Name of a DocType
 #. Label of the training_program (Data) field in DocType 'Training Program'
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/training_event/training_event.json
 #: hrms/hr/doctype/training_program/training_program.json
-#: hrms/hr/workspace/tenure/tenure.json
+#: hrms/hr/workspace/tenure/tenure.json hrms/workspace_sidebar/tenure.json
 msgid "Training Program"
 msgstr "Program Obuke"
 
 #. Name of a DocType
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/training_event/training_event.js:10
 #: hrms/hr/doctype/training_result/training_result.json
-#: hrms/hr/workspace/tenure/tenure.json
+#: hrms/hr/workspace/tenure/tenure.json hrms/workspace_sidebar/tenure.json
 msgid "Training Result"
 msgstr "Rezultat Obuke"
 
@@ -10640,7 +10837,9 @@ msgid "Transfer Date"
 msgstr "Datum Transfera"
 
 #. Label of a Card Break in the Expenses Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/workspace/expenses/expenses.json hrms/setup.py:336
+#: hrms/workspace_sidebar/expenses.json
 msgid "Travel"
 msgstr "Putovanja"
 
@@ -10671,9 +10870,10 @@ msgstr "Plan Putovanja"
 #. Name of a DocType
 #. Label of a Link in the Expenses Workspace
 #. Label of a Link in the People Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/travel_request/travel_request.json
 #: hrms/hr/workspace/expenses/expenses.json
-#: hrms/hr/workspace/people/people.json
+#: hrms/hr/workspace/people/people.json hrms/workspace_sidebar/expenses.json
 msgid "Travel Request"
 msgstr "Putovni Zahtjev"
 
@@ -10724,11 +10924,11 @@ msgstr "Nezatraženi Iznos (Valuta Poduzeća)"
 msgid "Under Review"
 msgstr "Pod Recenzijom"
 
-#: hrms/hr/doctype/attendance/attendance.py:231
+#: hrms/hr/doctype/attendance/attendance.py:234
 msgid "Unlinked Attendance record from Employee Checkins: {}"
 msgstr "Prekini vezu zapisa Prisustva sa prijavama personala: {}"
 
-#: hrms/hr/doctype/attendance/attendance.py:234
+#: hrms/hr/doctype/attendance/attendance.py:237
 msgid "Unlinked logs"
 msgstr "Nepovezani Zapisi"
 
@@ -10768,8 +10968,10 @@ msgstr "Neplaćeno Nagomilano"
 
 #. Name of a report
 #. Label of a Link in the Expenses Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/report/unpaid_expense_claim/unpaid_expense_claim.json
 #: hrms/hr/workspace/expenses/expenses.json
+#: hrms/workspace_sidebar/expenses.json
 msgid "Unpaid Expense Claim"
 msgstr "Neplaćeno Potraživanje Troška"
 
@@ -10953,19 +11155,23 @@ msgstr "Vegetarijanac"
 
 #. Name of a report
 #. Label of a Link in the Expenses Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/vehicle_log/vehicle_log.py:51
 #: hrms/hr/report/vehicle_expenses/vehicle_expenses.json
 #: hrms/hr/workspace/expenses/expenses.json
+#: hrms/workspace_sidebar/expenses.json
 msgid "Vehicle Expenses"
 msgstr "Troškovi Vozila"
 
 #. Label of the vehicle_log (Link) field in DocType 'Expense Claim'
 #. Name of a DocType
 #. Label of a Link in the Expenses Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/expense_claim/expense_claim.json
 #: hrms/hr/doctype/vehicle_log/vehicle_log.json
 #: hrms/hr/report/vehicle_expenses/vehicle_expenses.py:37
 #: hrms/hr/workspace/expenses/expenses.json
+#: hrms/workspace_sidebar/expenses.json
 msgid "Vehicle Log"
 msgstr "Zapisnik Vozila"
 
@@ -11221,7 +11427,7 @@ msgstr "Možete planirati samo do {0} slobodnih radnih mjesta i budžet {1} za {
 msgid "You can only submit Leave Encashment for a valid encashment amount"
 msgstr "Možete poslati Naplatu Odsutva samo za važeći iznos unovčenja"
 
-#: hrms/api/__init__.py:726
+#: hrms/api/__init__.py:728
 msgid "You can only upload JPG, PNG, PDF, TXT or Microsoft documents."
 msgstr "Možete učitati samo JPG, PNG, PDF, TXT ili Microsoft dokumente."
 

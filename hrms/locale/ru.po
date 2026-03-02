@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: frappe\n"
 "Report-Msgid-Bugs-To: contact@frappe.io\n"
-"POT-Creation-Date: 2026-02-01 09:43+0000\n"
-"PO-Revision-Date: 2026-02-03 00:52\n"
+"POT-Creation-Date: 2026-02-22 09:43+0000\n"
+"PO-Revision-Date: 2026-02-23 06:20\n"
 "Last-Translator: contact@frappe.io\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -359,7 +359,7 @@ msgstr "Отсутствующий"
 msgid "Absent Days"
 msgstr "Дни отсутствия"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:174
+#: hrms/hr/report/shift_attendance/shift_attendance.py:178
 msgid "Absent Records"
 msgstr "Отсутствующие записи"
 
@@ -444,7 +444,9 @@ msgid "Accrued Benefits"
 msgstr "Накопленные бонусы"
 
 #. Name of a report
+#. Label of a Workspace Sidebar Item
 #: hrms/payroll/report/accrued_earnings_report/accrued_earnings_report.json
+#: hrms/workspace_sidebar/tax_&_benefits.json
 msgid "Accrued Earnings Report"
 msgstr "Отчет о накопленном доходе"
 
@@ -550,10 +552,12 @@ msgstr "Дополнительный PF"
 #. Label of a Link in the Expenses Workspace
 #. Name of a DocType
 #. Label of a Link in the Payroll Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/leave_encashment/leave_encashment.json
 #: hrms/hr/workspace/expenses/expenses.json
 #: hrms/payroll/doctype/additional_salary/additional_salary.json
 #: hrms/payroll/workspace/payroll/payroll.json
+#: hrms/workspace_sidebar/payroll.json
 msgid "Additional Salary"
 msgstr "Дополнительная зарплата"
 
@@ -608,12 +612,6 @@ msgstr ""
 #: hrms/hr/doctype/employee_advance/employee_advance.py:99
 msgid "Advance Account {} currency should be same as Salary Currency of Employee {}. Please select same currency Advance Account"
 msgstr "Валюта авансового счета {} должна совпадать с валютой зарплаты сотрудника {}. Выберите ту же валюту для авансового счета"
-
-#. Label of the base_advance_paid (Currency) field in DocType 'Expense Claim
-#. Advance'
-#: hrms/hr/doctype/expense_claim_advance/expense_claim_advance.json
-msgid "Advance Paid (Company Currency)"
-msgstr "Аванс оплачен (валюта компании)"
 
 #. Label of the advanced_filters_section (Section Break) field in DocType
 #. 'Leave Control Panel'
@@ -996,8 +994,10 @@ msgstr "Назначенная дата"
 
 #. Name of a DocType
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/appointment_letter/appointment_letter.json
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Appointment Letter"
 msgstr "Письмо о назначении"
 
@@ -1005,9 +1005,11 @@ msgstr "Письмо о назначении"
 #. 'Appointment Letter'
 #. Name of a DocType
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/appointment_letter/appointment_letter.json
 #: hrms/hr/doctype/appointment_letter_template/appointment_letter_template.json
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Appointment Letter Template"
 msgstr "Шаблон письма о назначении"
 
@@ -1019,9 +1021,11 @@ msgstr "Содержание письма о назначении"
 #. Name of a DocType
 #. Label of the appraisal (Link) field in DocType 'Employee Performance
 #. Feedback'
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/appraisal/appraisal.json
 #: hrms/hr/doctype/employee_performance_feedback/employee_performance_feedback.json
 #: hrms/hr/report/appraisal_overview/appraisal_overview.py:44
+#: hrms/workspace_sidebar/performance.json
 msgid "Appraisal"
 msgstr "Оценка"
 
@@ -1030,6 +1034,7 @@ msgstr "Оценка"
 #. Label of the appraisal_cycle (Link) field in DocType 'Employee Performance
 #. Feedback'
 #. Label of the appraisal_cycle (Link) field in DocType 'Goal'
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/appraisal/appraisal.json
 #: hrms/hr/doctype/appraisal_cycle/appraisal_cycle.json
 #: hrms/hr/doctype/employee_performance_feedback/employee_performance_feedback.json
@@ -1037,6 +1042,7 @@ msgstr "Оценка"
 #: hrms/hr/doctype/goal/goal_tree.js:105
 #: hrms/hr/report/appraisal_overview/appraisal_overview.js:18
 #: hrms/hr/report/appraisal_overview/appraisal_overview.py:37
+#: hrms/workspace_sidebar/performance.json
 msgid "Appraisal Cycle"
 msgstr "Цикл оценки"
 
@@ -1057,17 +1063,21 @@ msgstr "Связь оценки"
 
 #. Name of a report
 #. Label of a chart in the Performance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/report/appraisal_overview/appraisal_overview.json
 #: hrms/hr/workspace/performance/performance.json
+#: hrms/workspace_sidebar/performance.json
 msgid "Appraisal Overview"
 msgstr "Обзор оценки"
 
 #. Label of the appraisal_template (Link) field in DocType 'Appraisal'
 #. Name of a DocType
 #. Label of the appraisal_template (Link) field in DocType 'Appraisee'
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/appraisal/appraisal.json
 #: hrms/hr/doctype/appraisal_template/appraisal_template.json
 #: hrms/hr/doctype/appraisee/appraisee.json hrms/setup.py:162
+#: hrms/workspace_sidebar/performance.json
 msgid "Appraisal Template"
 msgstr "Шаблон оценки"
 
@@ -1332,7 +1342,7 @@ msgstr "Количество посещений"
 
 #. Label of the attendance_date (Date) field in DocType 'Attendance'
 #: hrms/hr/doctype/attendance/attendance.json
-#: hrms/hr/report/shift_attendance/shift_attendance.py:43
+#: hrms/hr/report/shift_attendance/shift_attendance.py:46
 msgid "Attendance Date"
 msgstr "Дата посещения"
 
@@ -1345,7 +1355,7 @@ msgstr "Дата посещения"
 msgid "Attendance From Date and Attendance To Date is mandatory"
 msgstr "Посещение с даты и по дату обязательно"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:123
+#: hrms/hr/report/shift_attendance/shift_attendance.py:126
 msgid "Attendance ID"
 msgstr "ID посещения"
 
@@ -1360,11 +1370,13 @@ msgstr "Посещаемость отмечена"
 #. Name of a DocType
 #. Label of a Link in the People Workspace
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/attendance/attendance.js:18
 #: hrms/hr/doctype/attendance/attendance.json
 #: hrms/hr/doctype/attendance_request/attendance_request.json
 #: hrms/hr/workspace/people/people.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Attendance Request"
 msgstr "Запрос на присутствие"
 
@@ -1391,7 +1403,7 @@ msgstr "Посещаемость обновлена"
 msgid "Attendance Warnings"
 msgstr "Предупреждения о посещаемости"
 
-#: hrms/hr/doctype/attendance/attendance.py:60
+#: hrms/hr/doctype/attendance/attendance.py:63
 msgid "Attendance date {0} can not be less than employee {1}'s joining date: {2}"
 msgstr "Дата посещения {0} не может быть меньше даты прихода сотрудника {1}: {2}"
 
@@ -1399,11 +1411,11 @@ msgstr "Дата посещения {0} не может быть меньше д
 msgid "Attendance for all the employees under this criteria has been marked already."
 msgstr "Посещаемость всех сотрудников по данному критерию уже отмечена."
 
-#: hrms/hr/doctype/attendance/attendance.py:118
+#: hrms/hr/doctype/attendance/attendance.py:121
 msgid "Attendance for employee {0} is already marked for an overlapping shift {1}: {2}"
 msgstr "Посещаемость сотрудника {0} уже отмечена для перекрывающейся смены {1}: {2}"
 
-#: hrms/hr/doctype/attendance/attendance.py:72
+#: hrms/hr/doctype/attendance/attendance.py:75
 msgid "Attendance for employee {0} is already marked for the date {1}: {2}"
 msgstr "Явка сотрудника {0} уже отмечена на дату {1}: {2}"
 
@@ -1547,7 +1559,7 @@ msgstr "Ожидание ответа"
 msgid "Backdated Leave Application is restricted. Please set the {} in {}"
 msgstr "Заявка на отпуск задним числом ограничена. Пожалуйста, установите {} в {}"
 
-#: hrms/hr/doctype/expense_claim/expense_claim.js:285
+#: hrms/hr/doctype/expense_claim/expense_claim.js:286
 msgid "Bank Entries"
 msgstr "Банковские записи"
 
@@ -1588,6 +1600,16 @@ msgstr "Льгота"
 #: hrms/payroll/doctype/employee_benefit_detail/employee_benefit_detail.json
 msgid "Benefit Amount"
 msgstr "Сумма пособия"
+
+#. Label of a Workspace Sidebar Item
+#: hrms/workspace_sidebar/tax_&_benefits.json
+msgid "Benefit Application"
+msgstr ""
+
+#. Label of a Workspace Sidebar Item
+#: hrms/workspace_sidebar/tax_&_benefits.json
+msgid "Benefit Claim"
+msgstr ""
 
 #. Label of the employee_benefit_details_section (Section Break) field in
 #. DocType 'Employee Benefit Ledger'
@@ -1670,6 +1692,11 @@ msgstr "Заблокированные дни"
 #: hrms/hr/doctype/leave_block_list/leave_block_list.json
 msgid "Block Holidays on important days."
 msgstr "Блокировать праздники в важные дни."
+
+#. Label of the boarding_status (Select) field in DocType 'Employee Onboarding'
+#: hrms/hr/doctype/employee_onboarding/employee_onboarding.json
+msgid "Boarding Status"
+msgstr ""
 
 #. Label of the bonus_section (Section Break) field in DocType 'Retention
 #. Bonus'
@@ -1769,11 +1796,11 @@ msgstr "Невозможно выделить больше отпусков из
 msgid "Cannot allocate more leaves due to maximum leaves allowed limit of {0} in {1} leave type."
 msgstr "Невозможно выделить больше листов из-за максимально допустимого количества листьев {0} в типе отпуска {1}."
 
-#: hrms/api/roster.py:139
+#: hrms/api/roster.py:134
 msgid "Cannot break shift after end date"
 msgstr "Невозможно прервать смену после даты окончания"
 
-#: hrms/api/roster.py:141
+#: hrms/api/roster.py:136
 msgid "Cannot break shift before start date"
 msgstr "Невозможно прервать смену до даты начала"
 
@@ -1805,7 +1832,7 @@ msgstr "Невозможно создать или изменить транза
 msgid "Cannot find active Leave Period"
 msgstr "Невозможно найти активный период отпуска"
 
-#: hrms/hr/doctype/attendance/attendance.py:152
+#: hrms/hr/doctype/attendance/attendance.py:155
 msgid "Cannot mark attendance for an Inactive employee {0}"
 msgstr "Невозможно отметить присутствие неактивного сотрудника {0}"
 
@@ -1952,7 +1979,7 @@ msgstr "Получено"
 #. Label of the claimed_amount (Currency) field in DocType 'Employee Benefit
 #. Claim'
 #: hrms/hr/doctype/employee_advance/employee_advance.json
-#: hrms/hr/report/employee_advance_summary/employee_advance_summary.py:77
+#: hrms/hr/report/employee_advance_summary/employee_advance_summary.py:80
 #: hrms/payroll/doctype/employee_benefit_claim/employee_benefit_claim.json
 msgid "Claimed Amount"
 msgstr "Заявленная сумма"
@@ -2635,7 +2662,7 @@ msgstr "Внутренний"
 msgid "Duplicate Assignment"
 msgstr ""
 
-#: hrms/hr/doctype/attendance/attendance.py:77
+#: hrms/hr/doctype/attendance/attendance.py:80
 msgid "Duplicate Attendance"
 msgstr "Дублировать отметку о посещаемости"
 
@@ -2671,7 +2698,7 @@ msgstr "ОШИБКА({0}): {1}"
 msgid "Early Exit"
 msgstr "Ранний выход"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:91
+#: hrms/hr/report/shift_attendance/shift_attendance.py:94
 msgid "Early Exit By"
 msgstr "Ранний выход от"
 
@@ -2680,7 +2707,7 @@ msgstr "Ранний выход от"
 msgid "Early Exit Grace Period"
 msgstr "Период раннего выхода"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:186
+#: hrms/hr/report/shift_attendance/shift_attendance.py:190
 msgid "Early Exits"
 msgstr "Ранние выходы"
 
@@ -2833,15 +2860,19 @@ msgstr "Итоги авансов сотрудника"
 #. Name of a report
 #. Label of a Link in the People Workspace
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/report/employee_analytics/employee_analytics.json
 #: hrms/hr/workspace/people/people.json hrms/hr/workspace/tenure/tenure.json
+#: hrms/workspace_sidebar/tenure.json
 msgid "Employee Analytics"
 msgstr "Аналитика сотрудников"
 
 #. Name of a DocType
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_attendance_tool/employee_attendance_tool.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Employee Attendance Tool"
 msgstr "Инструмент учета посещаемости сотрудников"
 
@@ -2884,8 +2915,10 @@ msgstr "Пособия для сотрудников"
 #. Name of a report
 #. Label of a Link in the People Workspace
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/report/employee_birthday/employee_birthday.json
 #: hrms/hr/workspace/people/people.json hrms/hr/workspace/tenure/tenure.json
+#: hrms/workspace_sidebar/tenure.json
 msgid "Employee Birthday"
 msgstr "День рождения сотрудника"
 
@@ -2897,9 +2930,11 @@ msgstr "Активности по адаптации сотрудников"
 #. Name of a DocType
 #. Label of a Link in the People Workspace
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_checkin/employee_checkin.json
 #: hrms/hr/workspace/people/people.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Employee Checkin"
 msgstr "Проверка сотрудников"
 
@@ -2965,13 +3000,17 @@ msgstr "Настройки увольнения сотрудников"
 #. Name of a report
 #. Label of a Link in the People Workspace
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/report/employee_exits/employee_exits.json
 #: hrms/hr/workspace/people/people.json hrms/hr/workspace/tenure/tenure.json
+#: hrms/workspace_sidebar/tenure.json
 msgid "Employee Exits"
 msgstr "Увольнения сотрудников"
 
 #. Name of a DocType
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_feedback_criteria/employee_feedback_criteria.json
+#: hrms/workspace_sidebar/performance.json
 msgid "Employee Feedback Criteria"
 msgstr "Критерии отзывов сотрудников"
 
@@ -2994,6 +3033,7 @@ msgstr "Рейтинг отзывов сотрудников"
 #. Label of a Link in the People Workspace
 #. Label of the grade (Link) field in DocType 'Bulk Salary Structure
 #. Assignment'
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_attendance_tool/employee_attendance_tool.json
 #: hrms/hr/doctype/employee_grade/employee_grade.json
 #: hrms/hr/doctype/employee_onboarding/employee_onboarding.json
@@ -3004,13 +3044,15 @@ msgstr "Рейтинг отзывов сотрудников"
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.json
 #: hrms/hr/workspace/people/people.json
 #: hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.json
+#: hrms/workspace_sidebar/people.json
 msgid "Employee Grade"
 msgstr "Грейд сотрудника"
 
 #. Name of a DocType
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_grievance/employee_grievance.json
-#: hrms/hr/workspace/tenure/tenure.json
+#: hrms/hr/workspace/tenure/tenure.json hrms/workspace_sidebar/tenure.json
 msgid "Employee Grievance"
 msgstr "Жалоба сотрудника"
 
@@ -3018,6 +3060,11 @@ msgstr "Жалоба сотрудника"
 #: hrms/hr/doctype/employee_health_insurance/employee_health_insurance.json
 msgid "Employee Health Insurance"
 msgstr "Медицинское страхование сотрудников"
+
+#. Label of a Workspace Sidebar Item
+#: hrms/workspace_sidebar/shift_&_attendance.json
+msgid "Employee Hours Utilization"
+msgstr ""
 
 #. Name of a report
 #. Label of a Link in the Shift & Attendance Workspace
@@ -3046,8 +3093,10 @@ msgstr "Инфо о сотруднике"
 #. Name of a report
 #. Label of a Link in the People Workspace
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/report/employee_information/employee_information.json
 #: hrms/hr/workspace/people/people.json hrms/hr/workspace/tenure/tenure.json
+#: hrms/workspace_sidebar/tenure.json
 msgid "Employee Information"
 msgstr "Информация о сотруднике"
 
@@ -3078,8 +3127,9 @@ msgstr "Именование сотрудника по"
 
 #. Name of a DocType
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_onboarding/employee_onboarding.json
-#: hrms/hr/workspace/tenure/tenure.json
+#: hrms/hr/workspace/tenure/tenure.json hrms/workspace_sidebar/tenure.json
 msgid "Employee Onboarding"
 msgstr "Адаптация сотрудников"
 
@@ -3103,12 +3153,16 @@ msgid "Employee Other Income"
 msgstr "Прочие доходы сотрудников"
 
 #. Name of a DocType
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_performance_feedback/employee_performance_feedback.json
+#: hrms/workspace_sidebar/performance.json
 msgid "Employee Performance Feedback"
 msgstr "Отзывы о работе сотрудников"
 
 #. Name of a DocType
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_promotion/employee_promotion.json
+#: hrms/workspace_sidebar/performance.json
 msgid "Employee Promotion"
 msgstr "Повышение сотрудника"
 
@@ -3161,7 +3215,9 @@ msgid "Employee Retained"
 msgstr "Сотрудник сохранен"
 
 #. Name of a DocType
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_separation/employee_separation.json
+#: hrms/workspace_sidebar/tenure.json
 msgid "Employee Separation"
 msgstr "Увольнение сотрудников"
 
@@ -3186,8 +3242,9 @@ msgstr "Навыки сотрудников"
 
 #. Name of a DocType
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_skill_map/employee_skill_map.json
-#: hrms/hr/workspace/tenure/tenure.json
+#: hrms/hr/workspace/tenure/tenure.json hrms/workspace_sidebar/tenure.json
 msgid "Employee Skill Map"
 msgstr "Карта навыков сотрудников"
 
@@ -3327,11 +3384,11 @@ msgstr "Сотрудник {0} уже подал заявку на {1} в пер
 msgid "Employee {0} has already claimed the benefit '{1}' for {2} ({3}).<br>To prevent overpayments, only one claim per benefit type is allowed in each payroll cycle."
 msgstr "Сотрудник {0} уже подал заявку на пособие '{1}' для {2} ({3}).<br>Во избежание переплат допускается только одно заявление на каждый тип пособия в каждом расчетном периоде."
 
-#: hrms/hr/doctype/attendance/attendance.py:211
+#: hrms/hr/doctype/attendance/attendance.py:214
 msgid "Employee {0} is not active or does not exist"
 msgstr "Сотрудник {0} не активен или не существует"
 
-#: hrms/hr/doctype/attendance/attendance.py:187
+#: hrms/hr/doctype/attendance/attendance.py:190
 msgid "Employee {0} is on Leave on {1}"
 msgstr "Сотрудник {0} в отпуске {1}"
 
@@ -3339,7 +3396,7 @@ msgstr "Сотрудник {0} в отпуске {1}"
 msgid "Employee {0} not found in Training Event Participants."
 msgstr "Сотрудник {0} не найден среди участников обучающего мероприятия."
 
-#: hrms/hr/doctype/attendance/attendance.py:180
+#: hrms/hr/doctype/attendance/attendance.py:183
 msgid "Employee {0} on Half day on {1}"
 msgstr "Сотрудник {0} на половине дня {1}"
 
@@ -3362,7 +3419,8 @@ msgid "Employees HTML"
 msgstr "Сотрудники HTML"
 
 #. Label of a Link in the People Workspace
-#: hrms/hr/workspace/people/people.json
+#. Label of a Workspace Sidebar Item
+#: hrms/hr/workspace/people/people.json hrms/workspace_sidebar/leaves.json
 msgid "Employees Working on a Holiday"
 msgstr "Сотрудники, работающие в праздничные дни"
 
@@ -3660,6 +3718,11 @@ msgstr "Давайте поздравим {0} с днем рождения."
 msgid "Exam"
 msgstr "Экзамен"
 
+#. Label of a Workspace Sidebar Item
+#: hrms/workspace_sidebar/tax_&_benefits.json
+msgid "Excemption Submission Proof"
+msgstr ""
+
 #. Description of the 'Exchange Rate' (Float) field in DocType 'Expense Claim
 #. Advance'
 #: hrms/hr/doctype/expense_claim_advance/expense_claim_advance.json
@@ -3692,10 +3755,17 @@ msgstr "Исключение"
 #. Exemption Declaration Category'
 #. Label of the exemption_category (Read Only) field in DocType 'Employee Tax
 #. Exemption Proof Submission Detail'
+#. Label of a Workspace Sidebar Item
 #: hrms/payroll/doctype/employee_tax_exemption_declaration_category/employee_tax_exemption_declaration_category.json
 #: hrms/payroll/doctype/employee_tax_exemption_proof_submission_detail/employee_tax_exemption_proof_submission_detail.json
+#: hrms/workspace_sidebar/tax_&_benefits.json
 msgid "Exemption Category"
 msgstr "Категория исключения"
+
+#. Label of a Workspace Sidebar Item
+#: hrms/workspace_sidebar/tax_&_benefits.json
+msgid "Exemption Declaration"
+msgstr ""
 
 #. Label of the exemption_proofs_details_tab (Tab Break) field in DocType
 #. 'Employee Tax Exemption Proof Submission'
@@ -3859,10 +3929,12 @@ msgstr "Итоги заявки на возмещение расходов"
 #. Name of a DocType
 #. Label of the expense_type (Data) field in DocType 'Expense Claim Type'
 #. Label of a Link in the Expenses Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/expense_claim/expense_claim.py:685
 #: hrms/hr/doctype/expense_claim_detail/expense_claim_detail.json
 #: hrms/hr/doctype/expense_claim_type/expense_claim_type.json
 #: hrms/hr/workspace/expenses/expenses.json
+#: hrms/workspace_sidebar/expenses.json
 msgid "Expense Claim Type"
 msgstr "Тип заявки на возмещение расходов"
 
@@ -3963,7 +4035,7 @@ msgstr "Не удалось создать/отправить {0} для сот�
 msgid "Failed to delete defaults for country {0}."
 msgstr "Не удалось удалить настройки по умолчанию для страны {0}."
 
-#: hrms/api/__init__.py:769
+#: hrms/api/__init__.py:771
 msgid "Failed to download PDF: {0}"
 msgstr "Не удалось загрузить PDF: {0}"
 
@@ -4255,7 +4327,8 @@ msgstr "Доля дневной зарплаты за один день отпу
 msgid "Fractional Cost"
 msgstr "Дополнительная стоимость"
 
-#: frontend/src/components/BaseLayout.vue:9
+#. Label of a Desktop Icon
+#: frontend/src/components/BaseLayout.vue:9 hrms/desktop_icon/frappe_hr.json
 msgid "Frappe HR"
 msgstr "Frappe HR"
 
@@ -4538,9 +4611,10 @@ msgstr "Подробности жалобы"
 #. Label of the grievance_type (Link) field in DocType 'Employee Grievance'
 #. Name of a DocType
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_grievance/employee_grievance.json
 #: hrms/hr/doctype/grievance_type/grievance_type.json
-#: hrms/hr/workspace/tenure/tenure.json
+#: hrms/hr/workspace/tenure/tenure.json hrms/workspace_sidebar/tenure.json
 msgid "Grievance Type"
 msgstr "Тип жалобы"
 
@@ -4643,7 +4717,7 @@ msgstr "Дата половины дня должна находиться ме�
 msgid "Half Day Marked Employee Header"
 msgstr "Заголовок для сотрудников с полудневной отметкой"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:168
+#: hrms/hr/report/shift_attendance/shift_attendance.py:172
 msgid "Half Day Records"
 msgstr "Записи о половине дня"
 
@@ -4693,7 +4767,9 @@ msgid "Hiring Settings"
 msgstr "Настройки найма"
 
 #. Name of a DocType
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/holiday_list_assignment/holiday_list_assignment.json
+#: hrms/workspace_sidebar/leaves.json
 msgid "Holiday List Assignment"
 msgstr ""
 
@@ -4926,7 +5002,7 @@ msgstr "Импорт посещаемости"
 
 #. Label of the in_time (Datetime) field in DocType 'Attendance'
 #: hrms/hr/doctype/attendance/attendance.json
-#: hrms/hr/report/shift_attendance/shift_attendance.py:67
+#: hrms/hr/report/shift_attendance/shift_attendance.py:70
 msgid "In Time"
 msgstr "Время"
 
@@ -4954,6 +5030,10 @@ msgstr "Включить дочерние компании"
 #: hrms/hr/doctype/attendance_request/attendance_request.json
 msgid "Include Holidays"
 msgstr "Включить праздники"
+
+#: hrms/hr/report/shift_attendance/shift_attendance.js:64
+msgid "Include Shift Attendance Without Checkins"
+msgstr ""
 
 #. Label of the include_holidays_in_total_working_days (Check) field in DocType
 #. 'Payroll Settings'
@@ -4989,9 +5069,11 @@ msgstr "Компонент подоходного налога"
 #. Name of a report
 #. Label of a Link in the Payroll Workspace
 #. Label of a Link in the Tax & Benefits Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/payroll/report/income_tax_computation/income_tax_computation.json
 #: hrms/payroll/workspace/payroll/payroll.json
 #: hrms/payroll/workspace/tax_&_benefits/tax_&_benefits.json
+#: hrms/workspace_sidebar/tax_&_benefits.json
 msgid "Income Tax Computation"
 msgstr "Расчет подоходного налога"
 
@@ -5004,9 +5086,12 @@ msgstr "Удержанный подоходный налог до даты"
 #. Name of a report
 #. Label of a Link in the Payroll Workspace
 #. Label of a Link in the Tax & Benefits Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/payroll/report/income_tax_deductions/income_tax_deductions.json
 #: hrms/payroll/workspace/payroll/payroll.json
 #: hrms/payroll/workspace/tax_&_benefits/tax_&_benefits.json
+#: hrms/workspace_sidebar/payroll.json
+#: hrms/workspace_sidebar/tax_&_benefits.json
 msgid "Income Tax Deductions"
 msgstr "Удержания подоходного налога"
 
@@ -5017,6 +5102,7 @@ msgstr "Удержания подоходного налога"
 #. Assignment'
 #. Label of a Link in the Payroll Workspace
 #. Label of a Link in the Tax & Benefits Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.json
 #: hrms/payroll/doctype/income_tax_slab/income_tax_slab.json
 #: hrms/payroll/doctype/salary_structure/salary_structure.js:142
@@ -5024,6 +5110,7 @@ msgstr "Удержания подоходного налога"
 #: hrms/payroll/report/income_tax_computation/income_tax_computation.py:623
 #: hrms/payroll/workspace/payroll/payroll.json
 #: hrms/payroll/workspace/tax_&_benefits/tax_&_benefits.json
+#: hrms/workspace_sidebar/tax_&_benefits.json
 msgid "Income Tax Slab"
 msgstr "Налоговая категория"
 
@@ -5114,11 +5201,13 @@ msgstr "Интернет"
 #. Name of a DocType
 #. Label of the interview (Link) field in DocType 'Interview Feedback'
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/interview/interview.json
 #: hrms/hr/doctype/interview_feedback/interview_feedback.json
 #: hrms/hr/doctype/job_applicant/job_applicant.js:25
 #: hrms/hr/doctype/job_applicant/job_applicant_dashboard.html:7
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Interview"
 msgstr "Интервью"
 
@@ -5179,11 +5268,13 @@ msgstr "Интервью успешно перенесено"
 #. Label of the interview_round (Link) field in DocType 'Interview Feedback'
 #. Name of a DocType
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/interview/interview.json
 #: hrms/hr/doctype/interview_feedback/interview_feedback.json
 #: hrms/hr/doctype/interview_round/interview_round.json
 #: hrms/hr/doctype/job_applicant/job_applicant_dashboard.html:8
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Interview Round"
 msgstr "Этап интервью"
 
@@ -5216,9 +5307,11 @@ msgstr "Резюме интервью"
 #. Label of the interview_type (Link) field in DocType 'Interview Round'
 #. Name of a DocType
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/interview_round/interview_round.json
 #: hrms/hr/doctype/interview_type/interview_type.json
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Interview Type"
 msgstr "Тип интервью"
 
@@ -5436,6 +5529,7 @@ msgstr "Jan"
 #. Name of a DocType
 #. Label of the job_applicant (Link) field in DocType 'Job Offer'
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/appointment_letter/appointment_letter.json
 #: hrms/hr/doctype/employee_onboarding/employee_onboarding.json
 #: hrms/hr/doctype/interview/interview.json
@@ -5444,6 +5538,7 @@ msgstr "Jan"
 #: hrms/hr/doctype/job_offer/job_offer.json
 #: hrms/hr/report/recruitment_analytics/recruitment_analytics.py:38
 #: hrms/hr/workspace/recruitment/recruitment.json hrms/setup.py:193
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Job Applicant"
 msgstr "Кандидат на работу"
 
@@ -5480,12 +5575,14 @@ msgstr "Описание вакансии"
 #. Label of the job_offer (Link) field in DocType 'Employee Onboarding'
 #. Name of a DocType
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/employee_onboarding/employee_onboarding.json
 #: hrms/hr/doctype/job_applicant/job_applicant.js:38
 #: hrms/hr/doctype/job_applicant/job_applicant.js:48
 #: hrms/hr/doctype/job_offer/job_offer.json
 #: hrms/hr/report/recruitment_analytics/recruitment_analytics.py:52
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Job Offer"
 msgstr "Предложение о работе"
 
@@ -5519,6 +5616,7 @@ msgstr "Предложение работы: {0} уже отправлено к�
 #. Name of a DocType
 #. Label of a field in the job-application Web Form
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/interview/interview.json
 #: hrms/hr/doctype/job_applicant/job_applicant.json
 #: hrms/hr/doctype/job_opening/job_opening.json
@@ -5526,6 +5624,7 @@ msgstr "Предложение работы: {0} уже отправлено к�
 #: hrms/hr/report/recruitment_analytics/recruitment_analytics.py:31
 #: hrms/hr/web_form/job_application/job_application.json
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Job Opening"
 msgstr "Вакансия"
 
@@ -5551,9 +5650,11 @@ msgstr "Вакансии на должность {0} уже открыты ил�
 #. Label of the job_requisition (Link) field in DocType 'Job Opening'
 #. Name of a DocType
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/job_opening/job_opening.json
 #: hrms/hr/doctype/job_requisition/job_requisition.json
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Job Requisition"
 msgstr "Заявка на работу"
 
@@ -5596,10 +5697,11 @@ msgstr "Июнь"
 #. Goal'
 #. Label of the kra (Link) field in DocType 'Goal'
 #. Name of a DocType
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/appraisal_kra/appraisal_kra.json
 #: hrms/hr/doctype/appraisal_template_goal/appraisal_template_goal.json
 #: hrms/hr/doctype/goal/goal.json hrms/hr/doctype/goal/goal_tree.js:134
-#: hrms/hr/doctype/kra/kra.json
+#: hrms/hr/doctype/kra/kra.json hrms/workspace_sidebar/performance.json
 msgid "KRA"
 msgstr "KRA"
 
@@ -5670,7 +5772,7 @@ msgstr "Последняя синхронизация отметок о вход
 msgid "Last {0} was at {1}"
 msgstr "Последний {0} был в {1}"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:180
+#: hrms/hr/report/shift_attendance/shift_attendance.py:184
 msgid "Late Entries"
 msgstr "Поздние отметки"
 
@@ -5688,7 +5790,7 @@ msgstr "Поздняя отметка"
 msgid "Late Entry & Early Exit Settings for Auto Attendance"
 msgstr "Настройки позднего входа и раннего выхода для автоматического присутствия"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:85
+#: hrms/hr/report/shift_attendance/shift_attendance.py:88
 msgid "Late Entry By"
 msgstr "Поздний вход"
 
@@ -5727,10 +5829,11 @@ msgstr "Оставить. Корректировка для этого расп�
 #. Name of a DocType
 #. Label of the leave_allocation (Link) field in DocType 'Leave Encashment'
 #. Label of a Link in the Leaves Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/compensatory_leave_request/compensatory_leave_request.json
 #: hrms/hr/doctype/leave_allocation/leave_allocation.json
 #: hrms/hr/doctype/leave_encashment/leave_encashment.json
-#: hrms/hr/workspace/leaves/leaves.json
+#: hrms/hr/workspace/leaves/leaves.json hrms/workspace_sidebar/leaves.json
 msgid "Leave Allocation"
 msgstr "Распределение отпуска"
 
@@ -5748,9 +5851,11 @@ msgstr "Распределения отпусков"
 #. Name of a DocType
 #. Label of a Link in the Leaves Workspace
 #. Label of a Link in the People Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/attendance/attendance.json
 #: hrms/hr/doctype/leave_application/leave_application.json
 #: hrms/hr/workspace/leaves/leaves.json hrms/hr/workspace/people/people.json
+#: hrms/workspace_sidebar/leaves.json
 msgid "Leave Application"
 msgstr "Заявка на отпуск"
 
@@ -5788,8 +5893,10 @@ msgid "Leave Approver Name"
 msgstr "Имя согласующего отпуск"
 
 #. Label of the leave_balance (Float) field in DocType 'Leave Encashment'
+#. Label of a Workspace Sidebar Item
 #: frontend/src/components/LeaveBalance.vue:4
 #: hrms/hr/doctype/leave_encashment/leave_encashment.json
+#: hrms/workspace_sidebar/leaves.json
 msgid "Leave Balance"
 msgstr "Остаток отпусков"
 
@@ -5798,10 +5905,17 @@ msgstr "Остаток отпусков"
 msgid "Leave Balance Before Application"
 msgstr "Остаток отпусков до подачи заявки"
 
+#. Label of a Workspace Sidebar Item
+#: hrms/workspace_sidebar/leaves.json
+msgid "Leave Balance Summary"
+msgstr ""
+
 #. Name of a DocType
 #. Label of a Link in the Leaves Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/leave_block_list/leave_block_list.json
 #: hrms/hr/workspace/leaves/leaves.json hrms/setup.py:125
+#: hrms/workspace_sidebar/leaves.json
 msgid "Leave Block List"
 msgstr "Список заблокированных отпусков"
 
@@ -5839,8 +5953,9 @@ msgstr "Отпуск заблокирован"
 
 #. Name of a DocType
 #. Label of a Link in the Leaves Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/leave_control_panel/leave_control_panel.json
-#: hrms/hr/workspace/leaves/leaves.json
+#: hrms/hr/workspace/leaves/leaves.json hrms/workspace_sidebar/leaves.json
 msgid "Leave Control Panel"
 msgstr "Панель управления отпусками"
 
@@ -5851,8 +5966,9 @@ msgstr "Детали отпуска"
 
 #. Name of a DocType
 #. Label of a Link in the Leaves Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/leave_encashment/leave_encashment.json
-#: hrms/hr/workspace/leaves/leaves.json
+#: hrms/hr/workspace/leaves/leaves.json hrms/workspace_sidebar/leaves.json
 msgid "Leave Encashment"
 msgstr "Компенсация отпуска"
 
@@ -5894,12 +6010,13 @@ msgstr "Дата 'По' в записи регистра отпусков дол
 #. Assignment'
 #. Label of the leave_period (Link) field in DocType 'Leave Policy Assignment'
 #. Label of a Link in the Leaves Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/leave_allocation/leave_allocation.json
 #: hrms/hr/doctype/leave_control_panel/leave_control_panel.json
 #: hrms/hr/doctype/leave_encashment/leave_encashment.json
 #: hrms/hr/doctype/leave_period/leave_period.json
 #: hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment.json
-#: hrms/hr/workspace/leaves/leaves.json
+#: hrms/hr/workspace/leaves/leaves.json hrms/workspace_sidebar/leaves.json
 msgid "Leave Period"
 msgstr "Период отпуска"
 
@@ -5908,11 +6025,12 @@ msgstr "Период отпуска"
 #. Name of a DocType
 #. Label of the leave_policy (Link) field in DocType 'Leave Policy Assignment'
 #. Label of a Link in the Leaves Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/leave_allocation/leave_allocation.json
 #: hrms/hr/doctype/leave_control_panel/leave_control_panel.json
 #: hrms/hr/doctype/leave_policy/leave_policy.json
 #: hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment.json
-#: hrms/hr/workspace/leaves/leaves.json
+#: hrms/hr/workspace/leaves/leaves.json hrms/workspace_sidebar/leaves.json
 msgid "Leave Policy"
 msgstr "Политика отпусков"
 
@@ -5922,10 +6040,11 @@ msgstr "Политика отпусков"
 #. Allocation'
 #. Name of a DocType
 #. Label of a Link in the Leaves Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/earned_leave_schedule/earned_leave_schedule.json
 #: hrms/hr/doctype/leave_allocation/leave_allocation.json
 #: hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment.json
-#: hrms/hr/workspace/leaves/leaves.json
+#: hrms/hr/workspace/leaves/leaves.json hrms/workspace_sidebar/leaves.json
 msgid "Leave Policy Assignment"
 msgstr "Назначение политики отпусков"
 
@@ -5976,6 +6095,7 @@ msgstr "Шаблон уведомления согласования отпус�
 #. Name of a DocType
 #. Label of a Link in the Leaves Workspace
 #. Label of the leave_type (Link) field in DocType 'Salary Slip Leave'
+#. Label of a Workspace Sidebar Item
 #: frontend/src/views/leave/List.vue:41
 #: hrms/hr/doctype/attendance/attendance.json
 #: hrms/hr/doctype/compensatory_leave_request/compensatory_leave_request.json
@@ -5995,6 +6115,7 @@ msgstr "Шаблон уведомления согласования отпус�
 #: hrms/hr/report/leave_ledger/leave_ledger.py:65
 #: hrms/hr/workspace/leaves/leaves.json
 #: hrms/payroll/doctype/salary_slip_leave/salary_slip_leave.json
+#: hrms/workspace_sidebar/leaves.json
 msgid "Leave Type"
 msgstr "Тип отпуска"
 
@@ -6079,13 +6200,15 @@ msgstr "Отпуск(а) ожидают утверждения"
 msgid "Leave(s) Taken"
 msgstr "Отпуск(а) взят(ы)"
 
+#. Label of a Desktop Icon
 #. Label of the leaves_tab (Tab Break) field in DocType 'HR Settings'
 #. Label of the leaves (Float) field in DocType 'Leave Ledger Entry'
 #. Name of a Workspace
 #. Label of a Card Break in the People Workspace
 #. Label of the leave_details_section (Tab Break) field in DocType 'Salary
 #. Slip'
-#: frontend/src/components/BottomTabs.vue:53
+#. Title of a Workspace Sidebar
+#: frontend/src/components/BottomTabs.vue:53 hrms/desktop_icon/leaves.json
 #: hrms/hr/doctype/hr_settings/hr_settings.json
 #: hrms/hr/doctype/leave_ledger_entry/leave_ledger_entry.json
 #: hrms/hr/doctype/leave_policy/leave_policy_dashboard.py:8
@@ -6093,6 +6216,7 @@ msgstr "Отпуск(а) взят(ы)"
 #: hrms/hr/report/leave_ledger/leave_ledger.py:59
 #: hrms/hr/workspace/leaves/leaves.json hrms/hr/workspace/people/people.json
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
+#: hrms/workspace_sidebar/leaves.json
 msgid "Leaves"
 msgstr "Отпуска"
 
@@ -6543,9 +6667,11 @@ msgstr "С начала месяца (валюта компании)"
 #. Name of a report
 #. Label of a Link in the People Workspace
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/report/monthly_attendance_sheet/monthly_attendance_sheet.json
 #: hrms/hr/workspace/people/people.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Monthly Attendance Sheet"
 msgstr "Ежемесячный табель посещаемости"
 
@@ -6682,6 +6808,10 @@ msgstr "Для указанного значения поля «Сотрудни
 #: hrms/hr/doctype/appraisal_cycle/appraisal_cycle.py:111 hrms/hr/utils.py:924
 msgid "No Employees Selected"
 msgstr "Сотрудники не выбраны"
+
+#: hrms/utils/holiday_list.py:107
+msgid "No Holiday List was found for Employee {0} or their company {1} for date {2}. Please assign through {3}"
+msgstr ""
 
 #: hrms/hr/doctype/job_applicant/job_applicant_dashboard.html:53
 msgid "No Interview has been scheduled."
@@ -6824,7 +6954,7 @@ msgstr "Элементы не выбраны"
 msgid "No leave allocation found for {0} for {1} on given date."
 msgstr "Не найдено распределение отпуска для {0} для {1} на указанную дату."
 
-#: hrms/hr/doctype/attendance/attendance.py:197
+#: hrms/hr/doctype/attendance/attendance.py:200
 msgid "No leave record found for employee {0} on {1}"
 msgstr "Не найдена запись об отпуске для сотрудника {0} на {1}"
 
@@ -7131,7 +7261,9 @@ msgstr "Дополнительный список праздников не ус
 msgid "Optional Leaves are holidays that Employees can choose to avail from a list of holidays published by the company."
 msgstr "Необязательные отпуска — это выходные дни, которые сотрудники могут выбрать из списка выходных дней, опубликованного компанией."
 
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/page/organizational_chart/organizational_chart.js:4
+#: hrms/workspace_sidebar/people.json
 msgid "Organizational Chart"
 msgstr "Организационная структура"
 
@@ -7143,7 +7275,7 @@ msgstr "Прочие налоги и сборы"
 
 #. Label of the out_time (Datetime) field in DocType 'Attendance'
 #: hrms/hr/doctype/attendance/attendance.json
-#: hrms/hr/report/shift_attendance/shift_attendance.py:73
+#: hrms/hr/report/shift_attendance/shift_attendance.py:76
 msgid "Out Time"
 msgstr "Время ухода"
 
@@ -7164,7 +7296,7 @@ msgstr "Общий средний рейтинг"
 msgid "Overlapping Attendance Request"
 msgstr "Запрос на перекрывающееся присутствие"
 
-#: hrms/hr/doctype/attendance/attendance.py:123
+#: hrms/hr/doctype/attendance/attendance.py:126
 msgid "Overlapping Shift Attendance"
 msgstr "Посещаемость перекрывающихся смен"
 
@@ -7179,9 +7311,11 @@ msgstr "Перекрывающиеся смены"
 #. Label of the overtime_section (Section Break) field in DocType 'Attendance'
 #. Label of the overtime_section (Section Break) field in DocType 'Shift Type'
 #. Label of a Card Break in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/attendance/attendance.json
 #: hrms/hr/doctype/shift_type/shift_type.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Overtime"
 msgstr "Через некоторое время"
 
@@ -7217,8 +7351,10 @@ msgstr "Компонент заработной платы за сверхуро
 
 #. Name of a DocType
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/overtime_slip/overtime_slip.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Overtime Slip"
 msgstr "Скидка за сверхурочную работу"
 
@@ -7278,6 +7414,7 @@ msgstr "Квитанции о сверхурочной работе предос
 #. Label of the overtime_type (Link) field in DocType 'Shift Assignment'
 #. Label of the overtime_type (Link) field in DocType 'Shift Type'
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/attendance/attendance.json
 #: hrms/hr/doctype/employee_checkin/employee_checkin.json
 #: hrms/hr/doctype/overtime_details/overtime_details.json
@@ -7285,6 +7422,7 @@ msgstr "Квитанции о сверхурочной работе предос
 #: hrms/hr/doctype/shift_assignment/shift_assignment.json
 #: hrms/hr/doctype/shift_type/shift_type.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Overtime Type"
 msgstr "Тип сверхурочной работы"
 
@@ -7444,13 +7582,17 @@ msgstr "Способ выплаты"
 msgid "Payout Unclaimed Amount in Final Payroll Cycle"
 msgstr "Выплата невостребованной суммы в последнем расчетном цикле"
 
+#. Label of a Desktop Icon
 #. Label of the payroll (Section Break) field in DocType 'Leave Encashment'
 #. Name of a Workspace
 #. Label of a Card Break in the Payroll Workspace
+#. Title of a Workspace Sidebar
+#: hrms/desktop_icon/payroll.json
 #: hrms/hr/doctype/leave_encashment/leave_encashment.json
 #: hrms/overrides/dashboard_overrides.py:37
 #: hrms/overrides/dashboard_overrides.py:77
 #: hrms/payroll/workspace/payroll/payroll.json
+#: hrms/workspace_sidebar/payroll.json
 msgid "Payroll"
 msgstr "Расчет зарплаты"
 
@@ -7626,8 +7768,11 @@ msgstr "Ожидаемые интервью"
 msgid "Pending Questionnaires"
 msgstr "Ожидаемые анкеты"
 
+#. Label of a Desktop Icon
 #. Name of a Workspace
-#: hrms/hr/workspace/people/people.json
+#. Title of a Workspace Sidebar
+#: hrms/desktop_icon/people.json hrms/hr/workspace/people/people.json
+#: hrms/workspace_sidebar/people.json
 msgid "People"
 msgstr ""
 
@@ -7637,8 +7782,12 @@ msgstr ""
 msgid "Percent Deduction"
 msgstr "Процентный вычет"
 
+#. Label of a Desktop Icon
 #. Name of a Workspace
+#. Title of a Workspace Sidebar
+#: hrms/desktop_icon/performance.json
 #: hrms/hr/workspace/performance/performance.json
+#: hrms/workspace_sidebar/performance.json
 msgid "Performance"
 msgstr "Производительность"
 
@@ -7666,10 +7815,6 @@ msgstr "Сначала включите функцию «Автопосещен�
 #: hrms/payroll/doctype/retention_bonus/retention_bonus.js:8
 msgid "Please Select Company First"
 msgstr "Пожалуйста, сначала выберите компанию"
-
-#: hrms/utils/holiday_list.py:105
-msgid "Please assign Holiday List for Employee {0} or their company {1} through {2}"
-msgstr ""
 
 #: hrms/payroll/doctype/salary_slip/salary_slip.py:836
 msgid "Please assign a Salary Structure for Employee {0} applicable from or before {1} first"
@@ -7757,7 +7902,7 @@ msgstr "Сначала выберите компанию."
 msgid "Please select a csv file"
 msgstr "Пожалуйста, выберите CSV-файл"
 
-#: hrms/hr/doctype/attendance/attendance.py:348
+#: hrms/hr/doctype/attendance/attendance.py:352
 msgid "Please select a date."
 msgstr "Пожалуйста, выберите дату."
 
@@ -7859,7 +8004,7 @@ msgstr ""
 msgid "Please set the Appraisal Template for all the {0} or select the template in the Employees table below."
 msgstr "Пожалуйста, установите Шаблон оценки для всех {0} или выберите шаблон в таблице «Сотрудники» ниже."
 
-#: hrms/hr/doctype/expense_claim/expense_claim.js:522
+#: hrms/hr/doctype/expense_claim/expense_claim.js:523
 msgid "Please set the Company"
 msgstr "Пожалуйста, укажите компанию"
 
@@ -7960,7 +8105,7 @@ msgstr "Предпочтительный район для проживания"
 msgid "Present"
 msgstr "Присутствует"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:162
+#: hrms/hr/report/shift_attendance/shift_attendance.py:166
 msgid "Present Records"
 msgstr "Текущие записи"
 
@@ -8050,8 +8195,10 @@ msgstr "Обработка заявок на смену поставлена в 
 
 #. Name of a report
 #. Label of a Link in the Payroll Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/payroll/report/professional_tax_deductions/professional_tax_deductions.json
 #: hrms/payroll/workspace/payroll/payroll.json
+#: hrms/workspace_sidebar/payroll.json
 msgid "Professional Tax Deductions"
 msgstr "Профессиональные налоговые вычеты"
 
@@ -8066,8 +8213,10 @@ msgstr "Выгода"
 
 #. Name of a report
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/report/project_profitability/project_profitability.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Project Profitability"
 msgstr "Рентабельность проекта"
 
@@ -8119,9 +8268,11 @@ msgstr "Цель и сумма"
 #. Label of the purpose_of_travel (Data) field in DocType 'Purpose of Travel'
 #. Label of the purpose_of_travel (Link) field in DocType 'Travel Request'
 #. Label of a Link in the Expenses Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/purpose_of_travel/purpose_of_travel.json
 #: hrms/hr/doctype/travel_request/travel_request.json
 #: hrms/hr/workspace/expenses/expenses.json
+#: hrms/workspace_sidebar/expenses.json
 msgid "Purpose of Travel"
 msgstr "Цель поездки"
 
@@ -8234,19 +8385,25 @@ msgstr "Рекомендуется для одного биометрическ�
 msgid "Recover Cost"
 msgstr "Возврат стоимости"
 
+#. Label of a Desktop Icon
 #. Label of the recruitment_tab (Tab Break) field in DocType 'HR Settings'
 #. Name of a Workspace
+#. Title of a Workspace Sidebar
+#: hrms/desktop_icon/recruitment.json
 #: hrms/hr/doctype/hr_settings/hr_settings.json
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Recruitment"
 msgstr "Набор персонала"
 
 #. Name of a report
 #. Label of a Link in the People Workspace
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/report/recruitment_analytics/recruitment_analytics.json
 #: hrms/hr/workspace/people/people.json
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Recruitment Analytics"
 msgstr "Аналитика подбора персонала"
 
@@ -8553,7 +8710,9 @@ msgstr "Пересмотренный CTC"
 msgid "Role Allowed to Create Backdated Leave Application"
 msgstr "Роль, разрешенная для подачи заявления на отпуск задним числом"
 
+#. Label of a Workspace Sidebar Item
 #: hrms/public/js/utils/index.js:252 hrms/public/js/utils/index.js:273
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Roster"
 msgstr "Расписание"
 
@@ -8655,6 +8814,7 @@ msgstr "Строка {0}: {1} требуется в таблице расход�
 #. Name of a DocType
 #. Label of the salary_component (Link) field in DocType 'Salary Structure'
 #. Label of a Link in the Payroll Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/overtime_salary_component/overtime_salary_component.json
 #: hrms/payroll/doctype/additional_salary/additional_salary.json
 #: hrms/payroll/doctype/employee_benefit_ledger/employee_benefit_ledger.json
@@ -8667,7 +8827,7 @@ msgstr "Строка {0}: {1} требуется в таблице расход�
 #: hrms/payroll/report/accrued_earnings_report/accrued_earnings_report.js:77
 #: hrms/payroll/report/accrued_earnings_report/accrued_earnings_report.py:33
 #: hrms/payroll/workspace/payroll/payroll.json
-#: hrms/public/js/utils/payroll_utils.js:23
+#: hrms/public/js/utils/payroll_utils.js:23 hrms/workspace_sidebar/payroll.json
 msgid "Salary Component"
 msgstr "Компонент заработной платы"
 
@@ -8757,8 +8917,10 @@ msgstr "Диапазон зарплат"
 
 #. Name of a report
 #. Label of a Link in the Payroll Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/payroll/report/salary_register/salary_register.json
 #: hrms/payroll/workspace/payroll/payroll.json
+#: hrms/workspace_sidebar/payroll.json
 msgid "Salary Register"
 msgstr "Регистр заработной платы"
 
@@ -8769,12 +8931,14 @@ msgstr "Регистр заработной платы"
 #. Settings'
 #. Name of a DocType
 #. Label of a Link in the Payroll Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/leave_application/leave_application.json
 #: hrms/hr/doctype/overtime_slip/overtime_slip.json
 #: hrms/payroll/doctype/employee_benefit_ledger/employee_benefit_ledger.json
 #: hrms/payroll/doctype/payroll_settings/payroll_settings.json
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
 #: hrms/payroll/workspace/payroll/payroll.json hrms/setup.py:309
+#: hrms/workspace_sidebar/payroll.json
 msgid "Salary Slip"
 msgstr "Расчетный листок"
 
@@ -8879,6 +9043,7 @@ msgstr "Расчетные листки, представленные за пе�
 #. Label of the salary_structure (Link) field in DocType 'Salary Structure
 #. Assignment'
 #. Label of a Link in the Payroll Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/payroll/doctype/arrear/arrear.json
 #: hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.json
 #: hrms/payroll/doctype/salary_component/salary_component.js:31
@@ -8886,14 +9051,17 @@ msgstr "Расчетные листки, представленные за пе�
 #: hrms/payroll/doctype/salary_structure/salary_structure.json
 #: hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.json
 #: hrms/payroll/workspace/payroll/payroll.json
+#: hrms/workspace_sidebar/payroll.json
 msgid "Salary Structure"
 msgstr "Структура заработной платы"
 
 #. Name of a DocType
 #. Label of a Link in the Payroll Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/payroll/doctype/income_tax_slab/income_tax_slab.js:8
 #: hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.json
 #: hrms/payroll/workspace/payroll/payroll.json
+#: hrms/workspace_sidebar/payroll.json
 msgid "Salary Structure Assignment"
 msgstr "Назначение структуры заработной платы"
 
@@ -8932,9 +9100,11 @@ msgstr "Структура заработной платы успешно обн
 #. Label of the salary_withholding (Link) field in DocType 'Salary Slip'
 #. Name of a DocType
 #. Label of a Link in the Payroll Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/payroll/doctype/salary_slip/salary_slip.json
 #: hrms/payroll/doctype/salary_withholding/salary_withholding.json
 #: hrms/payroll/workspace/payroll/payroll.json
+#: hrms/workspace_sidebar/payroll.json
 msgid "Salary Withholding"
 msgstr "Удержание из заработной платы"
 
@@ -9062,7 +9232,7 @@ msgstr "Выберите положения и условия"
 msgid "Select Users"
 msgstr "Выбрать пользователей"
 
-#: hrms/hr/doctype/expense_claim/expense_claim.js:567
+#: hrms/hr/doctype/expense_claim/expense_claim.js:568
 msgid "Select an employee to get the employee advance."
 msgstr "Выберите сотрудника, чтобы получить аванс."
 
@@ -9299,8 +9469,12 @@ msgstr "Урегулировать все дебиторские и кредит
 msgid "Shared document with the user {0} with 'Submit' permission"
 msgstr "Документ предоставлен пользователю {0} с разрешением «Отправить»"
 
+#. Label of a Desktop Icon
 #. Name of a Workspace
+#. Title of a Workspace Sidebar
+#: hrms/desktop_icon/shift_&_attendance.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Shift & Attendance"
 msgstr "Смена и посещаемость"
 
@@ -9309,7 +9483,7 @@ msgstr "Смена и посещаемость"
 msgid "Shift Actual End"
 msgstr "Фактический конец смены"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:117
+#: hrms/hr/report/shift_attendance/shift_attendance.py:120
 msgid "Shift Actual End Time"
 msgstr "Фактическое время окончания смены"
 
@@ -9319,7 +9493,7 @@ msgstr "Фактическое время окончания смены"
 msgid "Shift Actual Start"
 msgstr "Фактическое начало смены"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:111
+#: hrms/hr/report/shift_attendance/shift_attendance.py:114
 msgid "Shift Actual Start Time"
 msgstr "Фактическое время начала смены"
 
@@ -9358,8 +9532,10 @@ msgstr "Назначения смен, созданные для расписа�
 
 #. Name of a report
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/report/shift_attendance/shift_attendance.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Shift Attendance"
 msgstr "Посещаемость смены"
 
@@ -9377,7 +9553,7 @@ msgstr "Подробности смены"
 msgid "Shift End"
 msgstr "Конец смены"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:61
+#: hrms/hr/report/shift_attendance/shift_attendance.py:64
 msgid "Shift End Time"
 msgstr "Время окончания смены"
 
@@ -9387,21 +9563,25 @@ msgstr "Время окончания смены"
 #. Label of the shift_location (Link) field in DocType 'Shift Schedule
 #. Assignment'
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/shift_assignment/shift_assignment.json
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.json
 #: hrms/hr/doctype/shift_location/shift_location.json
 #: hrms/hr/doctype/shift_schedule_assignment/shift_schedule_assignment.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Shift Location"
 msgstr "Расположение смены"
 
 #. Label of the shift_request (Link) field in DocType 'Shift Assignment'
 #. Name of a DocType
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/shift_assignment/shift_assignment.json
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.js:220
 #: hrms/hr/doctype/shift_request/shift_request.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Shift Request"
 msgstr "Запрос на смену"
 
@@ -9431,10 +9611,12 @@ msgstr "Запросы на смену, начинающиеся после эт
 #. Label of the shift_schedule (Link) field in DocType 'Shift Schedule
 #. Assignment'
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/shift_assignment_tool/shift_assignment_tool.json
 #: hrms/hr/doctype/shift_schedule/shift_schedule.json
 #: hrms/hr/doctype/shift_schedule_assignment/shift_schedule_assignment.json
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Shift Schedule"
 msgstr "График смен"
 
@@ -9459,7 +9641,7 @@ msgstr "Настройки смены"
 msgid "Shift Start"
 msgstr "Начало смены"
 
-#: hrms/hr/report/shift_attendance/shift_attendance.py:55
+#: hrms/hr/report/shift_attendance/shift_attendance.py:58
 msgid "Shift Start Time"
 msgstr "Время начала смены"
 
@@ -9488,6 +9670,7 @@ msgstr "Инструменты сдвига"
 #. Label of the shift_type (Link) field in DocType 'Shift Schedule'
 #. Name of a DocType
 #. Label of a Link in the Shift & Attendance Workspace
+#. Label of a Workspace Sidebar Item
 #: frontend/src/views/attendance/ShiftAssignmentList.vue:24
 #: frontend/src/views/attendance/ShiftRequestList.vue:42
 #: hrms/hr/doctype/shift_assignment/shift_assignment.json
@@ -9498,6 +9681,7 @@ msgstr "Инструменты сдвига"
 #: hrms/hr/doctype/shift_type/shift_type.json
 #: hrms/hr/report/shift_attendance/shift_attendance.js:28
 #: hrms/hr/workspace/shift_&_attendance/shift_&_attendance.json
+#: hrms/workspace_sidebar/shift_&_attendance.json
 msgid "Shift Type"
 msgstr "Тип смены"
 
@@ -9601,7 +9785,7 @@ msgstr "Пропускаем назначение структуры зараб�
 msgid "Source and Rating"
 msgstr "Источник и рейтинг"
 
-#: hrms/api/roster.py:100
+#: hrms/api/roster.py:95
 msgid "Source and target shifts cannot be the same"
 msgstr "Исходные и целевые сдвиги не могут быть одинаковыми"
 
@@ -9619,10 +9803,12 @@ msgstr "Сведения о персонале"
 #. Label of the staffing_plan (Link) field in DocType 'Job Opening'
 #. Name of a DocType
 #. Label of a Link in the Recruitment Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/job_opening/job_opening.json
 #: hrms/hr/doctype/staffing_plan/staffing_plan.json
 #: hrms/hr/report/recruitment_analytics/recruitment_analytics.py:24
 #: hrms/hr/workspace/recruitment/recruitment.json
+#: hrms/workspace_sidebar/recruitment.json
 msgid "Staffing Plan"
 msgstr "План кадрового обеспечения"
 
@@ -9819,8 +10005,12 @@ msgstr "Синтаксическая ошибка в условии: {0} в се
 msgid "Take Exact Completed Years"
 msgstr "Возьмите точное количество полных лет"
 
+#. Label of a Desktop Icon
 #. Name of a Workspace
+#. Title of a Workspace Sidebar
+#: hrms/desktop_icon/tax_&_benefits.json
 #: hrms/payroll/workspace/tax_&_benefits/tax_&_benefits.json
+#: hrms/workspace_sidebar/tax_&_benefits.json
 msgid "Tax & Benefits"
 msgstr "Налоги и льготы"
 
@@ -9931,10 +10121,12 @@ msgstr "Запросы команды"
 msgid "Team Updates"
 msgstr "Обновления команды"
 
+#. Label of a Desktop Icon
 #. Label of the tenure_tab (Tab Break) field in DocType 'HR Settings'
 #. Name of a Workspace
-#: hrms/hr/doctype/hr_settings/hr_settings.json
-#: hrms/hr/workspace/tenure/tenure.json
+#. Title of a Workspace Sidebar
+#: hrms/desktop_icon/tenure.json hrms/hr/doctype/hr_settings/hr_settings.json
+#: hrms/hr/workspace/tenure/tenure.json hrms/workspace_sidebar/tenure.json
 msgid "Tenure"
 msgstr "Срок полномочий"
 
@@ -10564,6 +10756,7 @@ msgstr "Дата обучения"
 #. Label of the training_event (Link) field in DocType 'Training Feedback'
 #. Label of the training_event (Link) field in DocType 'Training Result'
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/training_event/training_event.json
 #: hrms/hr/doctype/training_feedback/training_feedback.json
 #: hrms/hr/doctype/training_feedback/training_feedback.py:14
@@ -10571,6 +10764,7 @@ msgstr "Дата обучения"
 #: hrms/hr/doctype/training_result/training_result.py:16
 #: hrms/hr/workspace/tenure/tenure.json
 #: hrms/templates/emails/training_event.html:1
+#: hrms/workspace_sidebar/tenure.json
 msgid "Training Event"
 msgstr "Учебное мероприятие"
 
@@ -10589,9 +10783,10 @@ msgstr "Учебные мероприятия"
 
 #. Name of a DocType
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/training_event/training_event.js:16
 #: hrms/hr/doctype/training_feedback/training_feedback.json
-#: hrms/hr/workspace/tenure/tenure.json
+#: hrms/hr/workspace/tenure/tenure.json hrms/workspace_sidebar/tenure.json
 msgid "Training Feedback"
 msgstr "Обратная связь по обучению"
 
@@ -10599,17 +10794,19 @@ msgstr "Обратная связь по обучению"
 #. Name of a DocType
 #. Label of the training_program (Data) field in DocType 'Training Program'
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/training_event/training_event.json
 #: hrms/hr/doctype/training_program/training_program.json
-#: hrms/hr/workspace/tenure/tenure.json
+#: hrms/hr/workspace/tenure/tenure.json hrms/workspace_sidebar/tenure.json
 msgid "Training Program"
 msgstr "Программа обучения"
 
 #. Name of a DocType
 #. Label of a Link in the Tenure Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/training_event/training_event.js:10
 #: hrms/hr/doctype/training_result/training_result.json
-#: hrms/hr/workspace/tenure/tenure.json
+#: hrms/hr/workspace/tenure/tenure.json hrms/workspace_sidebar/tenure.json
 msgid "Training Result"
 msgstr "Результат обучения"
 
@@ -10640,7 +10837,9 @@ msgid "Transfer Date"
 msgstr "Дата перевода"
 
 #. Label of a Card Break in the Expenses Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/workspace/expenses/expenses.json hrms/setup.py:336
+#: hrms/workspace_sidebar/expenses.json
 msgid "Travel"
 msgstr "Командировка"
 
@@ -10671,9 +10870,10 @@ msgstr "Маршрут путешествия"
 #. Name of a DocType
 #. Label of a Link in the Expenses Workspace
 #. Label of a Link in the People Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/travel_request/travel_request.json
 #: hrms/hr/workspace/expenses/expenses.json
-#: hrms/hr/workspace/people/people.json
+#: hrms/hr/workspace/people/people.json hrms/workspace_sidebar/expenses.json
 msgid "Travel Request"
 msgstr "Запрос на поездку"
 
@@ -10724,11 +10924,11 @@ msgstr "Невостребованная сумма (валюта компани
 msgid "Under Review"
 msgstr "На рассмотрении"
 
-#: hrms/hr/doctype/attendance/attendance.py:231
+#: hrms/hr/doctype/attendance/attendance.py:234
 msgid "Unlinked Attendance record from Employee Checkins: {}"
 msgstr "Несвязанная запись о посещаемости из проверок сотрудников: {}"
 
-#: hrms/hr/doctype/attendance/attendance.py:234
+#: hrms/hr/doctype/attendance/attendance.py:237
 msgid "Unlinked logs"
 msgstr "Несвязанные журналы"
 
@@ -10768,8 +10968,10 @@ msgstr "Неоплаченное начисление"
 
 #. Name of a report
 #. Label of a Link in the Expenses Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/report/unpaid_expense_claim/unpaid_expense_claim.json
 #: hrms/hr/workspace/expenses/expenses.json
+#: hrms/workspace_sidebar/expenses.json
 msgid "Unpaid Expense Claim"
 msgstr "Заявление о неоплаченных расходах"
 
@@ -10953,19 +11155,23 @@ msgstr "Вегетарианец"
 
 #. Name of a report
 #. Label of a Link in the Expenses Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/vehicle_log/vehicle_log.py:51
 #: hrms/hr/report/vehicle_expenses/vehicle_expenses.json
 #: hrms/hr/workspace/expenses/expenses.json
+#: hrms/workspace_sidebar/expenses.json
 msgid "Vehicle Expenses"
 msgstr "Расходы на транспортные средства"
 
 #. Label of the vehicle_log (Link) field in DocType 'Expense Claim'
 #. Name of a DocType
 #. Label of a Link in the Expenses Workspace
+#. Label of a Workspace Sidebar Item
 #: hrms/hr/doctype/expense_claim/expense_claim.json
 #: hrms/hr/doctype/vehicle_log/vehicle_log.json
 #: hrms/hr/report/vehicle_expenses/vehicle_expenses.py:37
 #: hrms/hr/workspace/expenses/expenses.json
+#: hrms/workspace_sidebar/expenses.json
 msgid "Vehicle Log"
 msgstr "Журнал транспортного средства"
 
@@ -11221,7 +11427,7 @@ msgstr "Вы можете запланировать не более {0} вак�
 msgid "You can only submit Leave Encashment for a valid encashment amount"
 msgstr "Вы можете подать заявку на получение Leave Encashment только на допустимую сумму инкассации"
 
-#: hrms/api/__init__.py:726
+#: hrms/api/__init__.py:728
 msgid "You can only upload JPG, PNG, PDF, TXT or Microsoft documents."
 msgstr "Вы можете загружать только документы в формате JPG, PNG, PDF, TXT или Microsoft."
 
