@@ -1,5 +1,6 @@
 // Navigation utilities for better browser compatibility
 import router from "@/router"
+import { isNavigationFailure } from "vue-router"
 import { getNavigationDelay, needsBrowserFallbacks } from "./browserCompat"
 
 /**
@@ -43,10 +44,23 @@ export async function navigateTo(route, options = {}) {
 		}
 		
 		// Perform navigation with delay if needed
-		await addNavigationDelay(async () => {
+		const failure = await addNavigationDelay(async () => {
 			return await router[method](route)
 		}, navigationDelay)
-		
+
+		// In Vue Router 4, router.push resolves (not throws) for redirected/aborted
+		// navigations. Detect these failures and use the fallback URL.
+		if (isNavigationFailure(failure)) {
+			const fallback = fallbackUrl || constructFallbackUrl(route)
+			if (fallback) {
+				if (replace) {
+					window.location.replace(fallback)
+				} else {
+					window.location.href = fallback
+				}
+			}
+		}
+
 	} catch (error) {
 		console.error(`Router ${replace ? 'replace' : 'push'} failed:`, error)
 		
