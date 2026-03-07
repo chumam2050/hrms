@@ -84,6 +84,9 @@ const registerServiceWorker = async () => {
 				type: "classic",
 			})
 			.then((registration) => {
+				// Proactively check for a new service worker on every page load
+				registration.update()
+
 				if (config) {
 					window.frappePushNotification.initialize(registration).then(() => {
 						console.log("Frappe Push Notification initialized")
@@ -93,6 +96,16 @@ const registerServiceWorker = async () => {
 			.catch((err) => {
 				console.error("Failed to register service worker", err)
 			})
+
+		// Reload the page when a new service worker takes control so users
+		// immediately get the latest cached assets instead of the old ones.
+		let refreshing = false
+		navigator.serviceWorker.addEventListener("controllerchange", () => {
+			if (!refreshing) {
+				refreshing = true
+				window.location.reload()
+			}
+		})
 	} else {
 		console.error("Service worker not enabled/supported by the browser")
 	}
