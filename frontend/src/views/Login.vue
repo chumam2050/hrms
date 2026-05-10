@@ -38,6 +38,15 @@
 								</template>
 							</TextInput>
 						</div>
+					<div class="text-right">
+						<button
+							type="button"
+							class="text-sm text-blue-600 hover:text-blue-800 focus:outline-none"
+							@click="showForgotPasswordDialog = true"
+						>
+							{{ __("Forgot Password?") }}
+						</button>
+					</div>
 						<ErrorMessage :message="errorMessage" />
 						<Button
 							:loading="isLoggingIn || session.login.loading"
@@ -115,6 +124,67 @@
 					</form>
 				</template>
 			</Dialog>
+
+			<Dialog v-model="showForgotPasswordDialog">
+				<template #body-title>
+					<h2 class="text-lg font-bold">{{ __("Reset Password") }}</h2>
+				</template>
+				<template #body-content>
+					<div v-if="!forgotPasswordSent" class="flex flex-col space-y-4">
+						<p class="text-gray-600">
+							{{ __("Enter your email address and we'll send you a password reset link.") }}
+						</p>
+						<form @submit.prevent="submitForgotPassword" class="flex flex-col space-y-4">
+							<Input
+								:label="__('Email')"
+								:placeholder="__('johndoe@mail.com')"
+								v-model="forgotPasswordEmail"
+								type="email"
+								required
+							/>
+							<ErrorMessage :message="forgotPasswordError" />
+							<Button
+								:loading="isSendingReset"
+								variant="solid"
+								class="disabled:bg-gray-700 disabled:text-white"
+							>
+								{{ __("Send Reset Link") }}
+							</Button>
+						</form>
+					</div>
+
+					<div v-else class="flex flex-col space-y-4 text-center">
+						<svg class="w-12 h-12 mx-auto text-green-600" fill="currentColor" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+						</svg>
+						<h3 class="text-lg font-semibold">{{ __("Reset Link Sent!") }}</h3>
+						<p class="text-gray-600">
+							{{ __("Check your email for the password reset link. The link will expire in 24 hours.") }}
+						</p>
+						<p class="text-sm text-gray-500">
+							{{ __("Email: {0}").replace("{0}", forgotPasswordEmail) }}
+						</p>
+					</div>
+				</template>
+				<template v-if="!forgotPasswordSent" #actions>
+					<button
+						type="button"
+						class="px-4 py-2 text-gray-700 bg-gray-100 hover:bg-gray-200 rounded"
+						@click="showForgotPasswordDialog = false"
+					>
+						{{ __("Cancel") }}
+					</button>
+				</template>
+				<template v-else #actions>
+					<button
+						type="button"
+						class="px-4 py-2 text-white bg-gray-900 hover:bg-gray-800 rounded"
+						@click="closeForgotPasswordDialog"
+					>
+						{{ __("Back to Login") }}
+					</button>
+				</template>
+			</Dialog>
 		</ion-content>
 	</ion-page>
 </template>
@@ -122,6 +192,7 @@
 <script setup>
 import { IonPage, IonContent } from "@ionic/vue"
 import { inject, reactive, ref } from "vue"
+import { useRouter } from "@ionic/vue-router"
 import { Input, FeatherIcon, TextInput, Button, ErrorMessage, Dialog, createResource } from "frappe-ui"
 
 import FrappeHRLogo from "@/components/icons/FrappeHRLogo.vue"
@@ -146,6 +217,59 @@ const otp = reactive({
 
 const session = inject("$session")
 const __ = inject("$translate")
+const router = useRouter()
+
+const showForgotPasswordDialog = ref(false)
+const forgotPasswordEmail = ref(null)
+const forgotPasswordError = ref("")
+const forgotPasswordSent = ref(false)
+const isSendingReset = ref(false)
+
+async function submitForgotPassword() {
+	try {
+		if (!forgotPasswordEmail.value) {
+			forgotPasswordError.value = __("Email is required")
+			return
+		}
+
+		isSendingReset.value = true
+
+		const requestUrl = `/api/method/hrms.utils.password_reset.send_password_reset_email_by_email?email=${encodeURIComponent(forgotPasswordEmail.value.trim())}`
+		const response = await fetch(requestUrl, {
+			method: "GET",
+			headers: {
+				Accept: "application/json",
+			},
+			credentials: "same-origin",
+		})
+
+		const payload = await response.json().catch(() => ({}))
+		if (!response.ok) {
+			const msg = payload?.message || __("Failed to send reset link")
+			throw new Error(msg)
+		}
+
+		if (payload.message && payload.message.success) {
+			forgotPasswordSent.value = true
+			forgotPasswordError.value = ""
+		} else {
+			const msg = payload?.message?.message || __("Failed to send reset link")
+			forgotPasswordError.value = msg
+		}
+	} catch (error) {
+		const errorMsg = error.messages?.join("\n") || error.message || __("Failed to send reset link")
+		forgotPasswordError.value = errorMsg
+	} finally {
+		isSendingReset.value = false
+	}
+}
+
+function closeForgotPasswordDialog() {
+	showForgotPasswordDialog.value = false
+	forgotPasswordEmail.value = null
+	forgotPasswordError.value = ""
+	forgotPasswordSent.value = false
+}
 
 async function submit(e) {
 	try {
@@ -159,6 +283,12 @@ async function submit(e) {
 			} finally {
 				isLoggingIn.value = false
 			}
+		}
+
+		// On successful auth, force users into HRMS module.
+		if (!response?.verification && response?.message !== "Password Reset") {
+			router.push("/home")
+			return
 		}
 
 		if (response.message === "Password Reset") {
