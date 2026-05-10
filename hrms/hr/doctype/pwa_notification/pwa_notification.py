@@ -39,5 +39,9 @@ class PWANotification(Document):
 			return f"{base_url}/leave-applications/{self.reference_document_name}"
 		elif self.reference_document_type == "Expense Claim":
 			return f"{base_url}/expense-claims/{self.reference_document_name}"
+		elif self.reference_document_type == "Shift Assignment":
+			return f"{base_url}/dashboard/attendance"
+		elif self.reference_document_type == "Employee Checkin":
+			return f"{base_url}/employee-checkins"
 
 		return base_url

@@ -18,28 +18,61 @@
 						</div>
 					</header>
 
-					<div class="flex flex-col gap-5 my-4 w-full p-4">
-						<div class="flex flex-col bg-white rounded">
+					<div class="flex flex-col gap-6 my-4 w-full p-4">
+						<section class="rounded-xl bg-white p-4 shadow-sm border border-gray-100">
+							<div class="mb-3">
+								<div class="text-xs font-semibold uppercase tracking-wide text-gray-500">
+									{{ __("Notifications") }}
+								</div>
+								<h3 class="mt-1 text-sm font-semibold text-gray-900">
+									{{ __("Push Notifications") }}
+								</h3>
+							</div>
 							<Switch
 								size="md"
 								:label="__('Enable Push Notifications')"
-								:class="description ? 'p-2' : ''"
+								:class="pushNotificationDescription ? 'p-2' : ''"
 								:model-value="pushNotificationState"
 								:disabled="disablePushSetting"
-								:description="description"
+								:description="pushNotificationDescription"
 								@update:model-value="togglePushNotifications"
 							/>
-						</div>
-						<!-- Loading Indicator -->
-						<div
-							v-if="isLoading"
-							class="flex -mt-2 items-center justify-center gap-2"
-						>
-							<LoadingIndicator class="w-3 h-3 text-gray-800" />
-							<span class="text-gray-900 text-sm">
-								{{ pushNotificationState ? __("Disabling Push Notifications...") : __("Enabling Push Notifications...") }}
-							</span>
-						</div>
+							<div
+								v-if="isLoading"
+								class="mt-2 flex items-center justify-center gap-2"
+							>
+								<LoadingIndicator class="w-3 h-3 text-gray-800" />
+								<span class="text-gray-900 text-sm">
+									{{ pushNotificationState ? __("Disabling Push Notifications...") : __("Enabling Push Notifications...") }}
+								</span>
+							</div>
+						</section>
+
+						<section class="rounded-xl bg-white p-4 shadow-sm border border-gray-100">
+							<div class="mb-3">
+								<div class="text-xs font-semibold uppercase tracking-wide text-gray-500">
+									{{ __("Attendance") }}
+								</div>
+								<h3 class="mt-1 text-sm font-semibold text-gray-900">
+									{{ __("Shift Reminders") }}
+								</h3>
+							</div>
+							<Switch
+								size="md"
+								:label="__('Shift End Reminder')"
+								:model-value="shiftEndReminderEnabled"
+								:disabled="!shiftEndReminderGlobalEnabled || isShiftReminderLoading"
+								:description="shiftReminderDescription"
+								@update:model-value="toggleShiftEndReminder"
+							/>
+							<div
+								v-if="isShiftReminderLoading"
+								class="mt-2 flex items-center justify-center gap-2"
+							>
+								<LoadingIndicator class="w-3 h-3 text-gray-800" />
+								<span class="text-gray-900 text-sm">{{ __("Updating...") }}</span>
+							</div>
+						</section>
 					</div>
 				</div>
 			</div>
@@ -52,7 +85,7 @@ import { IonPage, IonContent } from "@ionic/vue"
 import { useRouter } from "vue-router"
 import { FeatherIcon, Switch, toast, LoadingIndicator } from "frappe-ui"
 
-import { computed, inject, ref } from "vue"
+import { computed, inject, onMounted, ref } from "vue"
 
 import { arePushNotificationsEnabled } from "@/data/notifications"
 
@@ -62,6 +95,69 @@ const pushNotificationState = ref(
 	window.frappePushNotification?.isNotificationEnabled()
 )
 const isLoading = ref(false)
+const shiftEndReminderEnabled = ref(true)
+const shiftEndReminderGlobalEnabled = ref(false)
+const shiftEndReminderMinutes = ref(30)
+const isShiftReminderLoading = ref(false)
+
+onMounted(async () => {
+	try {
+		const res = await fetch(
+			"/api/method/hrms.api.system_settings.get_shift_end_reminder_settings",
+			{ credentials: "same-origin", headers: { Accept: "application/json" } }
+		)
+		const data = await res.json()
+		if (data?.message) {
+			shiftEndReminderGlobalEnabled.value = data.message.global_enabled
+			shiftEndReminderEnabled.value = data.message.user_enabled
+			shiftEndReminderMinutes.value = data.message.minutes_before
+		}
+	} catch (e) {
+		// silently fail
+	}
+})
+
+async function toggleShiftEndReminder(newValue) {
+	isShiftReminderLoading.value = true
+	try {
+		const res = await fetch(
+			"/api/method/hrms.api.system_settings.set_shift_end_reminder_preference",
+			{
+				method: "POST",
+				credentials: "same-origin",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded",
+					Accept: "application/json",
+					"X-Frappe-CSRF-Token": window.csrf_token || "",
+				},
+				body: new URLSearchParams({ enabled: newValue ? "1" : "0" }),
+			}
+		)
+		const data = await res.json()
+		if (data?.message?.success) {
+			shiftEndReminderEnabled.value = newValue
+			toast({
+				title: __("Success"),
+				text: newValue
+					? __("Shift end reminder enabled")
+					: __("Shift end reminder disabled"),
+				icon: "check-circle",
+				position: "bottom-center",
+				iconClasses: "text-green-500",
+			})
+		}
+	} catch (e) {
+		toast({
+			title: __("Error"),
+			text: __("Failed to update preference"),
+			icon: "alert-circle",
+			position: "bottom-center",
+			iconClasses: "text-red-500",
+		})
+	} finally {
+		isShiftReminderLoading.value = false
+	}
+}
 
 const disablePushSetting = computed(() => {
 	return (
@@ -72,13 +168,26 @@ const disablePushSetting = computed(() => {
 	)
 })
 
-const description = computed(() => {
+const pushNotificationDescription = computed(() => {
 	return !(
 		window.frappe?.boot.push_relay_server_url &&
 		arePushNotificationsEnabled.data
 	)
 		? __("Push notifications have been disabled on your site")
 		: ""
+})
+
+const shiftReminderDescription = computed(() => {
+	if (!shiftEndReminderGlobalEnabled.value) {
+		return __("Shift end reminders are disabled by your administrator")
+	}
+
+	return shiftEndReminderMinutes.value
+		? __("Open attendance and notify me {0} minutes before my shift ends").replace(
+				"{0}",
+				shiftEndReminderMinutes.value,
+			)
+		: __("Open attendance before your shift ends")
 })
 
 const togglePushNotifications = (newValue) => {

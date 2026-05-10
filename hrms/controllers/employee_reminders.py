@@ -288,3 +288,106 @@ def send_work_anniversary_reminder(
 
 def get_sender_email() -> str | None:
 	return frappe.db.get_single_value("HR Settings", "sender_email")
+
+
+# ----------------------
+# SHIFT END REMINDERS
+# ----------------------
+def send_shift_end_reminders():
+	"""Send push/in-app notifications to employees before their shift ends.
+	Respects the global enable flag in HR Settings and per-user opt-out preference.
+	"""
+	import json
+	from datetime import datetime, timedelta
+
+	from frappe.utils import cint, now_datetime
+
+	enabled = cint(frappe.db.get_single_value("HR Settings", "enable_shift_end_reminder"))
+	if not enabled:
+		return
+
+	minutes_before = cint(
+		frappe.db.get_single_value("HR Settings", "shift_end_reminder_minutes_before") or 30
+	)
+
+	now = now_datetime()
+	today = getdate()
+	target_time = now + timedelta(minutes=minutes_before)
+
+	# Tolerance window ±2 min to handle scheduler timing drift
+	window_start = (target_time - timedelta(minutes=2)).time()
+	window_end = (target_time + timedelta(minutes=2)).time()
+
+	# Get all active shift assignments for today
+	shift_assignments = frappe.db.sql(
+		"""
+		SELECT sa.name, sa.employee, sa.shift_type, st.end_time
+		FROM `tabShift Assignment` sa
+		INNER JOIN `tabShift Type` st ON st.name = sa.shift_type
+		WHERE sa.status = 'Active'
+		  AND sa.docstatus = 1
+		  AND sa.start_date <= %(today)s
+		  AND (sa.end_date IS NULL OR sa.end_date >= %(today)s)
+		  AND st.end_time IS NOT NULL
+		""",
+		{"today": today},
+		as_dict=True,
+	)
+
+	for assignment in shift_assignments:
+		end_time = assignment.end_time  # timedelta from Frappe Time field
+		if end_time is None:
+			continue
+
+		# Convert timedelta to time object
+		shift_end_time = (datetime.min + end_time).time()
+
+		# Check if shift end falls within the target window
+		if not (window_start <= shift_end_time <= window_end):
+			continue
+
+		# Get user_id from employee
+		user_id = frappe.db.get_value("Employee", assignment.employee, "user_id")
+		if not user_id:
+			continue
+
+		# Check per-user opt-out preference (stored via frappe.client.set_user_setting)
+		try:
+			result = frappe.db.sql(
+				"SELECT `data` FROM `__UserSettings` WHERE `user`=%s AND `doctype`=%s",
+				(user_id, "HRMS"),
+				as_dict=True,
+			)
+			if result and result[0].get("data"):
+				user_prefs = json.loads(result[0]["data"])
+				if not user_prefs.get("shift_end_reminder", True):
+					continue
+		except Exception:
+			pass
+
+		# Avoid duplicate notifications: check if already sent today for this shift assignment
+		already_sent = frappe.db.exists(
+			"PWA Notification",
+			{
+				"to_user": user_id,
+				"reference_document_type": "Shift Assignment",
+				"reference_document_name": assignment.name,
+				"creation": (">=", today),
+			},
+		)
+		if already_sent:
+			continue
+
+		# Create in-app / push notification
+		frappe.get_doc(
+			{
+				"doctype": "PWA Notification",
+				"to_user": user_id,
+				"reference_document_type": "Shift Assignment",
+				"reference_document_name": assignment.name,
+				"message": _("Your shift ({0}) will end in {1} minutes. Don't forget to check out!").format(
+					assignment.shift_type, minutes_before
+				),
+			}
+		).insert(ignore_permissions=True)
+		frappe.db.commit()

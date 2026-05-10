@@ -40,8 +40,10 @@
   "unlink_payment_on_cancellation_of_employee_advance",
   "shift_and_attendance_tab",
   "shift_settings_section",
-  "allow_multiple_shift_assignments",
-  "attendance_settings_section",
+    "allow_multiple_shift_assignments",
+    "enable_shift_end_reminder",
+    "shift_end_reminder_minutes_before",
+    "attendance_settings_section",
   "allow_employee_checkin_from_mobile_app",
   "allow_geolocation_tracking",
   "tenure_tab",
@@ -285,6 +287,19 @@
    "fieldname": "allow_multiple_shift_assignments",
    "fieldtype": "Check",
    "label": "Allow Multiple Shift Assignments for Same Date"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_shift_end_reminder",
+   "fieldtype": "Check",
+   "label": "Enable Shift End Reminder"
+  },
+  {
+   "default": "30",
+   "depends_on": "eval:doc.enable_shift_end_reminder == 1",
+   "fieldname": "shift_end_reminder_minutes_before",
+   "fieldtype": "Int",
+   "label": "Remind Before Shift Ends (Minutes)"
   },
   {
    "fieldname": "shift_settings_section",

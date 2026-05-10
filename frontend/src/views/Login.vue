@@ -192,7 +192,7 @@
 <script setup>
 import { IonPage, IonContent } from "@ionic/vue"
 import { inject, reactive, ref } from "vue"
-import { useRouter } from "@ionic/vue-router"
+import { useRouter } from "vue-router"
 import { Input, FeatherIcon, TextInput, Button, ErrorMessage, Dialog, createResource } from "frappe-ui"
 
 import FrappeHRLogo from "@/components/icons/FrappeHRLogo.vue"

@@ -42,16 +42,16 @@ const quickLinks = [
 		title: __("Request Leave"),
 		route: "LeaveApplicationFormView",
 	},
-	{
-		icon: markRaw(ExpenseIcon),
-		title: __("Claim an Expense"),
-		route: "ExpenseClaimFormView",
-	},
-	{
-		icon: markRaw(EmployeeAdvanceIcon),
-		title: __("Request an Advance"),
-		route: "EmployeeAdvanceFormView",
-	},
+	// {
+	// 	icon: markRaw(ExpenseIcon),
+	// 	title: __("Claim an Expense"),
+	// 	route: "ExpenseClaimFormView",
+	// },
+	// {
+	// 	icon: markRaw(EmployeeAdvanceIcon),
+	// 	title: __("Request an Advance"),
+	// 	route: "EmployeeAdvanceFormView",
+	// },
 	{
 		icon: markRaw(SalaryIcon),
 		title: __("View Salary Slips"),
