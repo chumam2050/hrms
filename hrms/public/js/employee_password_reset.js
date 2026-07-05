@@ -132,11 +132,15 @@ function show_reset_password_dialog(frm) {
         },
     });
 
-    // Add event listener for password strength on text change
+    // Add event listener for password strength on text change with debounce
+    let strength_timeout = null;
     dialog.fields_dict.new_password.$input.on("input", function () {
         const password = $(this).val();
+        clearTimeout(strength_timeout);
         if (password) {
-            check_password_strength(dialog, password);
+            strength_timeout = setTimeout(() => {
+                check_password_strength(dialog, password);
+            }, 500);
         }
     });
 
@@ -164,18 +168,16 @@ function check_password_strength(dialog, password) {
                     5: "Very Strong - Dark Green",
                 };
 
-                dialog.set_df_property(
-                    "strength_section",
-                    "hidden",
-                    false
-                );
-                dialog.set_df_property("strength", "hidden", false);
-                dialog.set_df_property(
-                    "strength",
-                    "value",
-                    strength_map[r.message.score] || "Unknown"
-                );
-                dialog.refresh();
+                const strength_val = strength_map[r.message.score] || "Unknown";
+                
+                // Unhide fields if they are hidden
+                if (dialog.fields_dict.strength.df.hidden) {
+                    dialog.set_df_property("strength_section", "hidden", false);
+                    dialog.set_df_property("strength", "hidden", false);
+                }
+                
+                // Set value without refreshing the whole dialog
+                dialog.set_value("strength", strength_val);
             }
         },
     });

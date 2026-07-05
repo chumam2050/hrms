@@ -39,7 +39,7 @@ def reset_employee_password(employee_id, new_password=None):
     
     # Check permission - only HR users or self can reset
     current_user = frappe.session.user
-    if current_user != user_id and not frappe.has_role("HR User"):
+    if current_user != user_id and "HR User" not in frappe.get_roles(current_user):
         throw(_("You do not have permission to reset this employee's password"))
     
     # Generate password if not provided
@@ -93,7 +93,7 @@ def request_password_reset(employee_id):
         throw(_("No User linked to Employee {}").format(employee_id))
     
     # Check permission
-    if not (frappe.has_role("HR User") or frappe.session.user == user_id):
+    if not ("HR User" in frappe.get_roles(frappe.session.user) or frappe.session.user == user_id):
         throw(_("You do not have permission to request password reset for this employee"))
     
     # Send password reset email
